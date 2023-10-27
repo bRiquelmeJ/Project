@@ -1,0 +1,59 @@
+
+#fuente {
+  font-family:  "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  background-color: rgb(244, 243, 243);
+}
+
+.navbar{
+  background: rgb(145,22,144);
+  background: linear-gradient(90deg, rgba(145,22,144,1) 54%, rgba(196,0,255,1) 100%, rgba(79,0,78,0.821187850140056) 100%);
+  height: 60px;
+}
+#texto_titulo{
+  position: relative;
+}
+#offcanvasDarkNavbar{
+  width: 250px;
+  background: rgb(145,22,144);
+  background: linear-gradient(90deg, rgba(145,22,144,1) 54%, rgba(196,0,255,1) 100%, rgba(79,0,78,0.821187850140056) 100%);
+}
+
+#hamburguesa{
+  margin-top: -10px;
+  border-color: white;
+}
+
+#logoNav{
+  width: 50px;
+  height: 60px;
+  margin-right: 20px;
+  margin-top: -5px;
+}
+
+
+.texto-carousel {
+  background-color: black;
+  color: black;
+}
+.colorPortada{
+  color:hsl(249, 79%, 69%)
+}
+.colorPortada2{
+  color:rgb(207, 7, 110)
+}
+
+.carousel-item {
+  height: 500px;
+  background-size: cover;
+}
+
+#logoNav{
+
+  width: 40px;
+  height: 60px;
+  margin-right: 15px;
+}
+#carrusel{
+
+  margin-top: 55px;
+}
