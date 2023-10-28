@@ -1,4 +1,5 @@
 import React from "react"
+import logo from "../img/Mascota_01-removebg-preview.png"
 
 function Navbar(){
     return(
@@ -6,7 +7,7 @@ function Navbar(){
     <nav className="navbar navbar-dark bg-dark fixed-top">
       <div className="container-fluid">
        <div>
-          <img id="logoNav" src="\img\Mascota_01-removebg-preview.png" alt="logo" className="d-inline-block" />
+          <img id="logoNav" src={logo} alt="logo" className="d-inline-block" />
           <a className="navbar-brand text-white" href="#" id="texto_titulo">EquidApp</a>
        </div>
         <button id="hamburguesa" className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
