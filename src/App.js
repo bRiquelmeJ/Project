@@ -1,14 +1,11 @@
-import Navbar from './components/Navbar';
-import Carrusel from './components/Carrusel';
 import './App.css';
-import About from './components/About';
+import './body.css';
+import Body from './components/Body';
 
 function App() {
   return (
     <div>
-    <Navbar />
-    <Carrusel />
-    <About />
+      <Body/>
     </div>
   );
 }
