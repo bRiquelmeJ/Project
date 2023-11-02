@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Quiz from './img/iconos/Quiz.svg';
+import Recursos from './img/iconos/Recursos.svg';
 
 function Home(){
 
@@ -11,12 +12,13 @@ function Home(){
         <div>Usuario</div>
 
         <div>
-          <button>
-        
-      <img src= "./src/img/Iconos/Quiz.svg" alt="Quiz" /> Quiz
+          <button><img src= {Quiz} alt="Quiz" />Quiz</button> 
+          </div>
+        <div>
+          <button> <img src= {Recursos} alt="Recursos"/>
+          Recursos
           </button>
           </div>
-        <div><button>Recursos</button></div>
         <div><button>Insignias</button></div>
         <div><button>Foro</button></div>
         <div><button>Ajustes</button></div>
