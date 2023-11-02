@@ -1,15 +1,21 @@
-import Navbar from './components/Navbar';
-import Carrusel from './components/Carrusel';
 import './App.css';
-import About from './components/About';
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Registro from './components/Registro';
+import Home from './components/Home';
 function App() {
   return (
-    <div>
-    <Navbar />
-    <Carrusel />
-    <About />
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/registrarse" element={<Registro />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
