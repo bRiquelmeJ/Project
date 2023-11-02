@@ -4,9 +4,9 @@ import Recursos from '../img/iconos/Recursos.svg';
 import Insignia from '../img/iconos/Insignia.png'
 import Foro from '../img/iconos/Foro.png'
 import Ajustes from '../img/iconos/Ajustes.png'
+import '../body.css';
 
-
-function Home(){
+function Body(){
 
   return(
     <div className="app-container">
@@ -51,4 +51,4 @@ function Home(){
   );
 }
 
-export default Home;
+export default Body;
