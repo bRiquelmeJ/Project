@@ -1,6 +1,9 @@
 import React from 'react';
 import Quiz from './img/iconos/Quiz.svg';
 import Recursos from './img/iconos/Recursos.svg';
+import Insignia from './img/iconos/Insignia.png'
+import Foro from './img/iconos/Foro.png'
+import Ajustes from './img/iconos/Ajustes.png'
 
 function Home(){
 
@@ -19,9 +22,23 @@ function Home(){
           Recursos
           </button>
           </div>
-        <div><button>Insignias</button></div>
-        <div><button>Foro</button></div>
-        <div><button>Ajustes</button></div>
+        <div>
+          <button>
+            <img src={Insignia} width="48px" height="48px" alt="Insignias"/>
+          Insignias
+          </button>
+          </div>
+        <div>
+          <button>
+            <img src={Foro} width="48px" height="48px" alt="Foro"/>
+            Foro
+            </button></div>
+        <div>
+          <button>
+            <img src={Ajustes} width="48px" height="48px" alt="Ajustes"/>
+            Ajustes
+            </button>
+            </div>
       </div>
       
       <div className="app-main">
