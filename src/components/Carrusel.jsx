@@ -1,7 +1,6 @@
 import React from "react";
-import ninosConComputador from "../img/ninos-con-computador.jpg";
-import mujerConCasco from "../img/mujer-con-casco-4.jpg";
-import imagenPortada from "../img/imagen-portada-1.jpg";
+import ninosConComputador from "../img/Carrusel-02.jpg";
+import mujerConCasco from "../img/Carrusel-03.jpg";
 import Equidapp1 from "../img/Equidapp.png"
 
 function Carrusel() {
@@ -23,18 +22,12 @@ function Carrusel() {
           </div>
           <div className="carousel-item">
             <img src={ninosConComputador} className="d-block w-100 img-fluid imgCarrusel" alt="ninos-en-computador" />
-            <div className="carousel-caption d-none d-md-block bg-dark text-white">
-              <div>
-                <h5 style={{ color: 'black' }}>¡Explora el fascinante mundo de la tecnología con nuestra guía interactiva!</h5>
-                <p>Si eres un@ adolescente creativ@ que ama la tecnología, este es tu lugar para jugar y empezar a crear. ¡Sumérgete en una experiencia única donde la diversión se encuentra con la innovación! 🚀✨ ¡Tu aventura tecnológica comienza aquí! 🎮🌐</p>
-              </div>
+            <div className="carousel-caption d-none d-md-block text-white">
             </div>
           </div>
           <div className="carousel-item">
             <img src={mujerConCasco} className="d-block w-100 img-fluid imgCarrusel" alt="Mujeres stem" />
             <div className="carousel-caption d-none d-md-block">
-              <h5 className="colorPortada2"> <strong />¡Creemos comunidad!</h5>
-              <p className="colorPortada2"> <em><strong />Con el foro pueden conectarse con otras chicas apasionadas por STEM, para: compartir ideas, hacer preguntas y encontrar mentores.</em></p>
             </div>
           </div>
         </div>
