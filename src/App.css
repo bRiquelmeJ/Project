@@ -1,8 +1,11 @@
 
-#fuente {
-  font-family:  "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-  background-color: rgb(244, 243, 243);
+body {
+  background-color: #f8f0ff;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  src: url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
 }
+
 
 .navbar{
   background: rgb(145,22,144);
@@ -63,3 +66,25 @@
   border-radius: 50px;
 }
 
+
+.cardAbout {
+  width: 22rem;
+  height: 100%;
+}
+
+.card-stem {
+  height: 100%;
+}
+
+.card-texto {
+  background-color: #9A329A;
+}
+
+.btnStem {
+  background-color: #911690;
+  color: white;
+}
+
+.btnStem:hover {
+  background-color: rgba(196,0,255,1) /* Cambia esto al color que desees para el hover */
+}
