@@ -26,7 +26,7 @@ export default function Main() {
           <div className="card mb-4 cardAbout">
             <img src={imagenPortada05} className="card-img-top img-fluid" alt="imagenOrigenEquidApp"/>
             <div className="card-body">
-              <h5 className="card-title">¡Bienvenid@ a EquidApp!</h5>
+              <h5 className="card-title">Origen de EquidApp</h5>
               <p className="card-text"> Además, nacimos como un proyecto integrador en el bootcamp
                 "Generation", donde un apasionado equipo de 5 jóvenes amantes
                 de la programación se unió para acercar el mundo del código a
