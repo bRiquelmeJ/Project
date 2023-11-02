@@ -2,6 +2,7 @@ import React from "react";
 import ninosConComputador from "../img/ninos-con-computador.jpg";
 import mujerConCasco from "../img/mujer-con-casco-4.jpg";
 import imagenPortada from "../img/imagen-portada-1.jpg";
+import Equidapp1 from "../img/Equidapp.png"
 
 function Carrusel() {
   return (
@@ -14,14 +15,14 @@ function Carrusel() {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={imagenPortada} className="d-block w-100 img-fluid" alt="imagen-portada-1" />
+            <img src={Equidapp1} className="d-block w-100 img-fluid imgCarrusel" alt="imagen-portada-1" />
             <div className="carousel-caption d-none d-md-block">
-              <h5 className="colorPortada"><strong />EquidApp</h5>
-              <p className="colorPortada"> <em>Chic@s en el ciberespacio.</em></p>
+              <h5 className="colorPortada"><strong /></h5>
+              <p className="colorPortada"> <em></em></p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src={ninosConComputador} className="d-block w-100 img-fluid" alt="ninos-en-computador" />
+            <img src={ninosConComputador} className="d-block w-100 img-fluid imgCarrusel" alt="ninos-en-computador" />
             <div className="carousel-caption d-none d-md-block bg-dark text-white">
               <div>
                 <h5 style={{ color: 'black' }}>¡Explora el fascinante mundo de la tecnología con nuestra guía interactiva!</h5>
@@ -30,7 +31,7 @@ function Carrusel() {
             </div>
           </div>
           <div className="carousel-item">
-            <img src={mujerConCasco} className="d-block w-100 img-fluid" alt="Mujeres stem" />
+            <img src={mujerConCasco} className="d-block w-100 img-fluid imgCarrusel" alt="Mujeres stem" />
             <div className="carousel-caption d-none d-md-block">
               <h5 className="colorPortada2"> <strong />¡Creemos comunidad!</h5>
               <p className="colorPortada2"> <em><strong />Con el foro pueden conectarse con otras chicas apasionadas por STEM, para: compartir ideas, hacer preguntas y encontrar mentores.</em></p>

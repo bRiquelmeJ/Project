@@ -47,7 +47,13 @@
   height: 60px;
   margin-right: 15px;
 }
-#carrusel{
 
-  margin-top: 55px;
+#carrusel{
+  margin: 55px;
 }
+
+
+.carousel-inner {
+  border-radius: 50px;
+}
+
