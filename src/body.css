@@ -1,0 +1,59 @@
+.app-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(238, 219, 252, 0.53);
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+  }
+  
+  .app-sidebar {
+    flex-basis: 20%;
+    height: 80%;
+    padding: 20px 0;
+    background-color: rgba(179, 255, 0, 0.80);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 110px;
+  }
+  
+  .user-box {
+    width: 100px;
+    height: 100px;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .app-main {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: rgba(255, 207, 0, 0.73);
+    border-radius: 110px;
+    width: 200px;
+    height: 80%;
+  }
+  
+  .welcome-box{
+    
+    
+  }
+
+
+  .quiz-box {
+    border: 1px solid #000;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  
