@@ -14,6 +14,7 @@ function Home(){
         <div><button>Foro</button></div>
         <div><button>Ajustes</button></div>
       </div>
+      
       <div className="app-main">
         <div className="welcome-box">Bienvenid@ de vuelta</div>
         <div className="news-activities">
