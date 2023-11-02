@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import imagenLogin from "../img/imagen-login.png";
+import '../register.css';
 
 function Registro() {
   return (
@@ -36,9 +37,21 @@ function Registro() {
                     <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
                     <input type="password" className="form-control" id="exampleInputPassword1" />
                   </div>
-                  <button id="btnRegistro" type="submit" className="btn btn-danger">Registrarse</button>
+                  <button id="btnRegistro" type="submit" className="btn btn-purple">Registrarse</button>
+                  <div>
+                  <button className="btn btn-light border">
+    <i className="fab fa-google"></i> Registrate con Google
+</button>
+<div>
+                  <button className="btn btn-light border">
+    <i className="fab fa-google"></i> Registrate con Facebook
+</button>
+
+</div>
+</div>
                 </form>
               </div>
+              
             </div>
           </div>
           <div className="col-lg-4 col-md-12">

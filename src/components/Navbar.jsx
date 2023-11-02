@@ -24,7 +24,7 @@ function Navbar(){
     <Link to="/home" className="nav-link text-white">Home</Link>
   </li>
               <li className="nav-item">
-                <a className="nav-link active" href="#">Iniciar sesión</a>
+                <Link to= '/Login' className="nav-link active" href="#">Iniciar sesión</Link>
               </li>
               <li className="nav-item">
   <Link to="/registrarse" className="nav-link text-white">Registrarse</Link>
