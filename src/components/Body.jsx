@@ -7,8 +7,15 @@ function Home(){
     <div className="app-container">
      
       <div className="app-sidebar">
-        <div className="user-box">Usuario</div>
-        <div><button>Quiz</button></div>
+        <div className="user-box">Img Usuario</div>
+        <div>Usuario</div>
+
+        <div>
+          <button>
+        
+      <img src= "./src/img/Iconos/Quiz.svg" alt="Quiz" /> Quiz
+          </button>
+          </div>
         <div><button>Recursos</button></div>
         <div><button>Insignias</button></div>
         <div><button>Foro</button></div>
