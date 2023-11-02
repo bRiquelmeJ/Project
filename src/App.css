@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  background-color: #f8f0ff;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+}
 .navbar{
   background: rgb(145,22,144);
   background: linear-gradient(90deg, rgba(145,22,144,1) 54%, rgba(196,0,255,1) 100%, rgba(79,0,78,0.821187850140056) 100%);
@@ -80,3 +88,4 @@
 .btnStem:hover {
   background-color: rgba(196,0,255,1) /* Cambia esto al color que desees para el hover */
 }
+
