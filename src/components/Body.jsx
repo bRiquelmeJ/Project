@@ -9,6 +9,7 @@ import T from '../img/iconos/T.svg'
 import E from '../img/iconos/E.svg'
 import M from '../img/iconos/M.svg'
 import MujerSTEM from '../img/STEMimg.jpg'
+import Body2 from '../components/Body2'
 
 import '../body.css';
 
@@ -17,36 +18,40 @@ function Body(){
   return(
     <div className="app-container">
       <div className="app-sidebar">
-        <div className="user-box">Img Usuario</div>
-        <div>Usuario</div>
-
-        <div>
-          <button type="button" class="btn btn-outline-dark btn-sm"><img src= {Quiz} alt="Quiz" />Quiz</button> 
+        <div className="user-box">
+          Img Usuario
+        </div>
+        <div className="user-box-text">
+          Usuario
+        </div>
+        <div className= "btn-group-vertical">
+          <div>
+          <button type="button" class="btn btn-outline-dark btn-sm"><img src= {Quiz} alt="Quiz" /></button> 
+          <span>Quiz</span>
           </div>
-        <div>
+          <div>
           <button  type="button" class="btn btn-outline-dark btn-sm"> <img src= {Recursos} alt="Recursos"/>
-          Recursos
           </button>
+          <span>Recursos</span>
           </div>
-        <div>
+          <div>
           <button type="button" class="btn btn-outline-dark btn-sm">
             <img src={Insignia} width="48px" height="48px" alt="Insignias"/>
-          Insignias
           </button>
+          <span>Insignia</span>
           </div>
-        <div>
+          <div>
           <button type="button" class="btn btn-outline-dark btn-sm">
-            <img src={Foro} width="48px" height="48px" alt="Foro"/>
-            Foro
-            </button></div>
-        <div>
-          <button type="button" class="btn btn-outline-dark btn-sm">
-            <img src={Ajustes} width="48px" height="48px" alt="Ajustes"/>
-            Ajustes
-            </button>
+            <img src={Foro} width="48px" height="48px" alt="Foro"/></button>
+            <span>Foro</span>
+            </div>
+            <div>
+            <button type="button" class="btn btn-outline-dark btn-sm">
+            <img src={Ajustes} width="48px" height="48px" alt="Ajustes"/></button>
+            <span>Ajustes</span>
+            </div>
             </div>
       </div>
-      
       <div className="app-main">
           <div className="welcome-box">
             <div className="welcome-box-text">
@@ -67,16 +72,8 @@ function Body(){
               </div>
             </div>
           </div>
-        
-          <div className="news-activities">
-            <div className="news-activities-text">
-            <h2>Noticias y actividades</h2>
-          </div>   
-          
-          </div>
-          <div className="links-activities">
-          <img src={MujerSTEM} alt="Mujeres en STEM" className="mujeres-stem"/>
-          </div>
+
+          <Body2 />
       
     </div> 
   </div>
