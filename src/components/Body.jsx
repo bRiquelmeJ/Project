@@ -26,29 +26,47 @@ function Body() {
         </div>
         <div className="btn-group-vertical ">
           <div className='row'>
-            <button type="button" class="btn btn-sm "><img src={Quiz} alt="Quiz" /><span>Quiz</span></button>
+            <img className='col icons-btn' src={Quiz} alt="Quiz" />
+
+
+            <div className='col'>
+            <button type="button" class="btn btn-sm ">
+              Quiz
+            </button>
+            </div>
+            
+
           </div>
           <div className='row'>
-            <button type="button" class="btn  btn-sm"> <img src={Recursos} alt="Recursos" />
-              <span>Recursos</span>
+            <img className='col icons-btn' src={Recursos} alt="Recursos" />
+            <div className='col'>
+            <button type="button" class="btn btn-sm ">
+              Recursos
+            </button>
+            </div>
+          </div>
+          <div className='row'>
+            <img className='col icons-btn' src={Insignia} alt="Insignias" />
+            <button type="button" class="btn  btn-sm col">
+              Insignia
             </button>
 
           </div>
           <div className='row'>
-            <button type="button" class="btn  btn-sm">
-              <img src={Insignia} alt="Insignias" />
-              <span>Insignia</span>
+            <img className=' col icons-btn' src={Foro} alt="Foro" />
+            
+          <div className='col'>
+          <button type="button" className="btn  btn-sm ">
+              Foro
             </button>
-
+          </div>
+            
           </div>
           <div className='row'>
-            <button type="button" class="btn  btn-sm">
-              <img src={Foro} alt="Foro" /><span>Foro</span></button>
-
-          </div>
-          <div className='row'>
-            <button type="button" class="btn btn-sm">
-              <img src={Ajustes} alt="Ajustes" /><span>Ajustes</span></button>
+            <img className='col icons-btn' src={Ajustes} alt="Ajustes" />
+            <button type="button" class="btn btn-sm col">
+              Ajustes
+            </button>
 
           </div>
         </div>
@@ -59,19 +77,19 @@ function Body() {
             <h2>Bienvenid@ de vuelta</h2>
           </div>
           <div className=" m-4 row ">
-              <div className=" col">
-                <img src={S} alt="Icono S" />
-              </div>
-              <div className=" col">
-                <img src={T} alt="Icono T" />
-              </div>
-              <div className=" col">
-                <img src={E} alt="Icono E" />
-              </div>
-              <div className=" col">
-                <img src={M} alt="Icono M" />
-              </div>
+            <div className=" col">
+              <img src={S} alt="Icono S" />
             </div>
+            <div className=" col">
+              <img src={T} alt="Icono T" />
+            </div>
+            <div className=" col">
+              <img src={E} alt="Icono E" />
+            </div>
+            <div className=" col">
+              <img src={M} alt="Icono M" />
+            </div>
+          </div>
         </div>
         <Body2 />
       </div>

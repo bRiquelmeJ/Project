@@ -96,7 +96,16 @@ border-radius: 113px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
-
+  /*tamaño iconos en plataforma cursos*/
+  .icons-btn{
+    width: 70%;
+    height: 70%;
+    
+  }
+  /*botones plataforma cursos*/
+  .btn{
+    left: 200px;
+  }
 
 
   
