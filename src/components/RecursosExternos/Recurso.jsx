@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
+import { createPortal } from 'react-dom';
+import ModalContent from '../RecursosExternos/RecursoContenido'
 import Quiz from '../img/iconos/Quiz.svg';
 import Recursos from '../img/iconos/Recursos.svg';
 import Insignia from '../img/iconos/Insignia.png'
@@ -9,24 +10,13 @@ import S from '../img/iconos/S.svg'
 import T from '../img/iconos/T.svg'
 import E from '../img/iconos/E.svg'
 import M from '../img/iconos/M.svg'
-import '../recurso.css';
+import '../RecursosExternos/recurso.css';
 
-Modal.setAppElement('#root');
+
 
 function Recurso () {
+const [showModal, setShowModal] = useState(false);
 
-const [isModalOpen, setIsModalOpen] = useState(false);
-const [selectedResource, setSelectedResource] = useState(null);
-
-const openModal = (resource) => {
-setSelectedResource(resource);
-setIsModalOpen(true);
-};
-
-const closeModal = () => {
-setSelectedResource(null);
-setIsModalOpen(false);
-};
 
 const resources = [
 {
@@ -113,18 +103,30 @@ return (
         </div>
     </div>
         <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-            <button type="button" class="btn btn-outline-light" onClick={() => openModal({ title: 'Recurso S', description: 'Descripción del Recurso S', url: 'URL del Recurso S'})}> 
+            <button 
+            type="button" 
+            class="btn btn-outline-light" 
+            onClick={() => setShowModal(true)}> 
             <img src={S} alt="Icono S" />
             </button>
-            <button type="button" class="btn btn-outline-light">
+            <button 
+            type="button" 
+            class="btn btn-outline-light">
             <img src={T} alt="Icono T" />
             </button>
-            <button type="button" class="btn btn-outline-light">
+            <button 
+            type="button" 
+            class="btn btn-outline-light">
             <img src={E} alt="Icono E" />
             </button>
-            <button type="button" class="btn btn-outline-light">
+            <button 
+            type="button" 
+            class="btn btn-outline-light">
             <img src={M} alt="Icono M" />
             </button>
+            {showModal && createPortal(
+            <ModalContent onClose={() => setShowModal(false)} />,
+            document.body)}
         </div>
     </div>
 </div>
