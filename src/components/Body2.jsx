@@ -1,4 +1,4 @@
-import '../body.css';
+import '../pCursos.css';
 import MujerSTEM from '../img/STEMimg.jpg'
 
 function Body2(){

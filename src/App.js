@@ -5,9 +5,8 @@ import Navbar from "./components/Navbar";
 import Registro from "./components/Registro";
 import Home from "./components/Home";
 import Login from "./components/Login";
-import Body from "./components/Body";
+import Pcursos from "./components/Pcursos";
 import Recurso from "./components/RecursosExternos/Recurso"
-
 function App() {
   return (
     <div>
@@ -19,9 +18,9 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/registrarse" element={<Registro />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/body" element={<Body />} />
+          <Route path="/PlataformaCursos" element={<Pcursos />} />
           <Route path="/recurso" element={<Recurso/>} />
-          <Route path="/" element={<Body/>} />
+          <Route path="/" element={<Pcursos/>} />
         </Routes>
       </div>
     </Router>
