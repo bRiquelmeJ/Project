@@ -1,0 +1,69 @@
+.app-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(238, 219, 252, 0.53);
+    
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+}
+
+.app-sidebar {
+    flex-basis: 20%;
+    height: 85%;
+    padding: 20px 0;
+    background-color: rgba(179, 255, 0, 0.80);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 110px;
+    margin-top:80px;
+    margin-left: 10px;
+}
+
+.user-box {
+    width: 100px;
+    height: 100px;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.user-box-text{
+    text-align: center;
+    color: black;
+    font-size: 30; 
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.app-main {
+    flex-grow: 1;
+    margin-left: 20px;
+    padding: 4%;
+    background-color: rgba(255, 207, 0, 0.73);
+    border-radius: 110px;
+    max-width: 970px;
+    height: 85%;
+    margin-top: 80px;
+}
+
+.header-box{
+    
+    border-radius: 48px;
+
+}
+
+.welcome-box-text {
+    text-align: center;
+    color: black;
+    font-size: 30;
+    font-weight: 400;
+    word-wrap:break-word;
+}
+
