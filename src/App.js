@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Registro from "./components/Registro";
 import Home from "./components/Home";
 import Login from "./components/Login";
-import Body from "./components/Body";
+import Pcursos from "./components/Pcursos";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/registrarse" element={<Registro />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/body" element={<Body />} />
+          <Route path="/PlataformaCursos" element={<Pcursos />} />
         </Routes>
       </div>
     </Router>

@@ -1,10 +1,10 @@
-import '../body.css';
+import '../pCursos.css';
 import MujerSTEM from '../img/STEMimg.jpg'
 
 function Body2(){
 
 return(
-    <div class="container text-center">
+    <div class="container-fluid text-center">
             <div class="row">
             <div class="col order-first">
                 <div className="news-activities">
