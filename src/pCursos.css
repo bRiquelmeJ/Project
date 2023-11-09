@@ -1,11 +1,13 @@
 .app-container {
 position: relative;  
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100vh;
   background-color: rgba(238, 219, 252, 0.53);
 
 }
-
+ul>li{
+  list-style-type: none;
+}
 .menu-button {
   background: none;
   border: none;
@@ -14,7 +16,6 @@ position: relative;
 
 .app-sidebar {
   flex-basis: 20%;
-  height: 100%;
   background-color: rgba(179, 255, 0, 0.80);
   display: flex;
   flex-direction: column;
@@ -50,8 +51,6 @@ position: relative;
   padding: 8px;
   background-color: rgba(255, 207, 0);
   border-radius: 80px;
-  max-width: 100%;
-  height: 100%;
   margin-top: 80px;
 }
 
@@ -59,15 +58,13 @@ position: relative;
 
   border-radius: 48px;
   background-color: rgba(255, 228, 112);
-  width: 90%;
-  height: 60%;
+ 
   
 
 }
 .welcome-box{
   background-color: rgba(255, 238, 164);
   border-radius: 15px;
-  width:46%;
   position: relative;
   top: 10px;
   left: 5%;
