@@ -8,7 +8,7 @@ import S from '../img/iconos/S.svg'
 import T from '../img/iconos/T.svg'
 import E from '../img/iconos/E.svg'
 import M from '../img/iconos/M.svg'
-import MujerSTEM from '../img/STEMimg.jpg'
+import perfil from '../img/perfil.jpg'
 import Body2 from '../components/Body2'
 
 import '../body.css';
@@ -16,78 +16,83 @@ import '../body.css';
 function Body() {
 
   return (
-    <div className="app-container">
-      <div className="app-sidebar col">
+    <div className="app-container row">
+      <div className="app-sidebar col-1">
         <div className="user-box row">
-          Img Usuario
+        <img src={perfil} alt="" className="foto-perfil"/>
         </div>
         <div className="user-box-text row ">
-          Usuario
+          Camila
         </div>
         <div className="btn-group-vertical ">
           <div className='row'>
-            <img className='col icons-btn' src={Quiz} alt="Quiz" />
-
-
-            <div className='col'>
-            <button type="button" class="btn btn-sm ">
+          <div className='col'>
+            <img className=' icons-btn' src={Quiz} alt="Quiz" />
+            <button type="button" class="btn   ">
               Quiz
             </button>
             </div>
             
-
           </div>
           <div className='row'>
-            <img className='col icons-btn' src={Recursos} alt="Recursos" />
-            <div className='col'>
-            <button type="button" class="btn btn-sm ">
+          <div className='col'>
+            <img className='icons-btn' src={Recursos} alt="Recursos" />
+            <button type="button" class="btn  ">
               Recursos
             </button>
             </div>
           </div>
           <div className='row'>
+          <div className='col'>
             <img className='col icons-btn' src={Insignia} alt="Insignias" />
-            <button type="button" class="btn  btn-sm col">
+           
+           <button type="button" class="btn ">
               Insignia
             </button>
+           </div>
 
           </div>
           <div className='row'>
-            <img className=' col icons-btn' src={Foro} alt="Foro" />
-            
           <div className='col'>
-          <button type="button" className="btn  btn-sm ">
+            <img className='icons-btn' src={Foro} alt="Foro" />
+            
+          <button type="button" className="btn ">
               Foro
             </button>
           </div>
             
           </div>
           <div className='row'>
+          <div className='col'>
             <img className='col icons-btn' src={Ajustes} alt="Ajustes" />
-            <button type="button" class="btn btn-sm col">
+            <button type="button" class="btn ">
               Ajustes
             </button>
+            </div>
 
           </div>
         </div>
       </div>
-      <div className="app-main ">
-        <div className="header-box container bg-warning-subtle ">
-          <div className="welcome-box-text">
+      <div className="app-main col">
+        <div className="header-box container ">
+          <div className="welcome-box row ">
+            <div className="welcome-box-text">
             <h2>Bienvenid@ de vuelta</h2>
+            </div>
+            
           </div>
-          <div className=" m-4 row ">
+          <div className="  m-4 row ">
             <div className=" col">
-              <img src={S} alt="Icono S" />
+              <button className='icons-stem border-0'><img src={S} alt="Icono S" /></button>
             </div>
             <div className=" col">
-              <img src={T} alt="Icono T" />
+              <button className='icons-stem border-0'><img src={T} alt="Icono T" /></button>
             </div>
             <div className=" col">
-              <img src={E} alt="Icono E" />
+              <button className='icons-stem border-0'><img src={E} alt="Icono E" /></button>         
             </div>
             <div className=" col">
-              <img src={M} alt="Icono M" />
+              <button className='icons-stem border-0'><img src={M} alt="Icono M" /></button>
             </div>
           </div>
         </div>
