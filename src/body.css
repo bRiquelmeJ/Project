@@ -1,111 +1,143 @@
 .app-container {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(238, 219, 252, 0.53);
-    
-  }
-  
-  .menu-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-  }
-  
-  .app-sidebar {
-    flex-basis: 20%;
-    height: 85%;
-    padding: 20px 0;
-    background-color: rgba(179, 255, 0, 0.80);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    border-radius: 110px;
-    margin-top:80px;
-    margin-left: 10px;
-  }
-  
-  .user-box {
-    width: 100px;
-    height: 100px;
-    background-color: #FFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
-  .user-box-text{
-    text-align: center;
-    color: black;
-    font-size: 30; 
-    font-weight: 400;
-    word-wrap: break-word;
-  }
-  
-  .app-main {
-    flex-grow: 1;
-    margin-left: 20px;
-    padding: 4%;
-    background-color: rgba(255, 207, 0, 0.73);
-    border-radius: 110px;
-    max-width: 970px;
-    height: 85%;
-    margin-top: 80px;
-  }
-  
-  .header-box{
-    
-    border-radius: 48px;
 
-  }
-
-  .welcome-box-text {
-    text-align: center;
-    color: black;
-    font-size: 30;
-    font-weight: 400;
-    word-wrap:break-word;
-  }
-
-.news-activities{
-  margin-top:20px;
-  width: 100%; 
-  height: 90%;
-  border-radius: 73px; 
-}
-.news-activities-text{
-padding-top: 20px;
-color: black;
-font-size: 24;
-font-weight: 400; 
-word-wrap: break-word;
-}
-
-.img-mujeres-stem{
-padding-top: 20px;
-height: 50%;
-width: 60%;
-border-radius: 113px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(238, 219, 252, 0.53);
 
 }
+
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+
+.app-sidebar {
+  flex-basis: 20%;
+  height: 100%;
+  background-color: rgba(179, 255, 0, 0.80);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-radius: 70px;
+  margin-top: 80px;
+  margin-left: 20px;
+  padding: 25px;
+}
+
+
+.user-box {
+  width: 45%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.user-box-text {
+  text-align: center;
+  color: black;
+  font-size: 30;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.app-main {
+
+  margin-left: 20px;
+  padding: 8px;
+  background-color: rgba(255, 207, 0);
+  border-radius: 80px;
+  max-width: 100%;
+  height: 100%;
+  margin-top: 80px;
+}
+
+.header-box {
+
+  border-radius: 48px;
+  background-color: rgba(255, 228, 112);
+  width: 90%;
+  height: 60%;
+  
+
+}
+.welcome-box{
+  background-color: rgba(255, 238, 164);
+  border-radius: 15px;
+  width:46%;
+  position: relative;
+  top: 10px;
+  left: 5%;
+}
+.welcome-box-text {
+  text-align: center;
+  color: black;
+  font-size: 30;
+  font-weight: 400;
+  word-wrap: break-word;
+  
+}
+
+.news-activities {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 73px;
+  background-color: rgba(255, 228, 112);
+}
+
+.news-activities-text {
+  
+  color: black;
+  font-size: 16;
+  font-weight: 400;
+  word-wrap: break-word;
+  background-color: rgba(255, 238, 164);
+  border-radius: 15px;
+  width: 80%;
+  position: relative;
+  top: 10px;
+  left: 10%;
+ 
+}
+
+.img-mujeres-stem {
+  padding-top: 20px;
+  height: 50%;
+  width: 60%;
+  border-radius: 113px;
+
+}
+.foto-perfil{
+  max-width: 100%;
+  max-height: 60%;
+  border-radius: 50%;
+}
+
+
 .quiz-box {
-    border: 1px solid #000;
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  /*tamaño iconos en plataforma cursos*/
-  .icons-btn{
-    width: 70%;
-    height: 70%;
-    
-  }
-  /*botones plataforma cursos*/
-  .btn{
-    left: 200px;
-  }
+  border: 1px solid #000;
+  padding: 20px;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
+/*tamaño iconos en plataforma cursos QUIZ-RECURSO-ISIGNIA-FORO-AJUSTES*/
+.icons-btn {
 
+  padding-top: 5px;
+  max-height: 50%;
+  max-width: 50%;
   
+}
+
+/*botones plataforma cursos S-T-E-M*/
+.icons-stem{
+  background-color: rgba(255, 228, 112);
+  width: 100%;
+  
+}
