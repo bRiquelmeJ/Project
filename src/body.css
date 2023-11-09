@@ -1,143 +1,68 @@
+/* Reset básico para remover márgenes y paddings por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Asegura que el contenedor de la aplicación llene al menos toda la altura del viewport */
 .app-container {
-
-  width: 100%;
-  height: 100%;
-  background-color: rgba(238, 219, 252, 0.53);
-
-}
-
-.menu-button {
-  background: none;
-  border: none;
-  font-size: 24px;
-}
-
-.app-sidebar {
-  flex-basis: 20%;
-  height: 100%;
-  background-color: rgba(179, 255, 0, 0.80);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  border-radius: 70px;
-  margin-top: 80px;
-  margin-left: 20px;
+  min-height: 100vh; /* Usa la altura completa del viewport */
+  background-color: rgba(238, 219, 252, 0.53); /* Color de fondo del contenedor principal */
+}
+
+/* Configura la barra lateral para que se alinee correctamente */
+.app-sidebar {
+  background-color: rgba(179, 255, 0, 0.80); /* Color de fondo de la barra lateral */
   padding: 25px;
+  border-radius: 70px;
+  /* Opcional: si necesitas que la sidebar tenga su propia scroll */
+  overflow-y: auto;
 }
 
-
-.user-box {
-  width: 45%;
-  height: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-
-.user-box-text {
-  text-align: center;
-  color: black;
-  font-size: 30;
-  font-weight: 400;
-  word-wrap: break-word;
-}
-
+/* Ajusta el contenedor principal para llenar el espacio restante */
 .app-main {
-
-  margin-left: 20px;
-  padding: 8px;
-  background-color: rgba(255, 207, 0);
-  border-radius: 80px;
-  max-width: 100%;
-  height: 100%;
-  margin-top: 80px;
+  display: flex; /* Importante para permitir que los hijos se expandan */
+  flex-direction: column; /* Los hijos se apilan verticalmente */
+  flex-grow: 1; /* Permite que el contenedor crezca y llene el espacio restante */
+  background-color: rgba(255, 207, 0); /* Color de fondo amarillo */
+  border-radius: 80px; /* Opcional: para bordes redondeados */
+  padding: 8px; /* Agrega padding dentro del contenedor */
+  /* Asegúrate de que el contenido interno se expanda adecuadamente */
+  justify-content: space-between; /* Esto empujará el footer hacia abajo si hay poco contenido */
 }
 
-.header-box {
+/* Asegura que la barra de navegación y el pie de página tengan la altura correcta */
+.navbar, .footer {
+  /* Tus estilos existentes para navbar y footer */
+}
 
-  border-radius: 48px;
-  background-color: rgba(255, 228, 112);
-  width: 90%;
-  height: 60%;
+/* Estilos para imágenes y botones para que sean responsivos */
+.icons-btn, .icons-stem, .img-fluid {
+  max-width: 100%; /* Las imágenes no deben exceder el ancho de su contenedor */
+  height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+/* Media queries para ajustar estilos en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .app-sidebar {
+    width: 100%; /* La barra lateral toma todo el ancho en móviles */
+    border-radius: 0; /* Los bordes redondeados pueden ser eliminados en móviles */
+    padding: 15px; /* Ajusta el padding como sea necesario en móviles */
+  }
+
+  .app-main {
+    border-radius: 0; /* Los bordes redondeados pueden ser eliminados en móviles */
+    margin: 0; /* Elimina márgenes en móviles para que el contenido llene todo el ancho */
+  }
   
-
-}
-.welcome-box{
-  background-color: rgba(255, 238, 164);
-  border-radius: 15px;
-  width:46%;
-  position: relative;
-  top: 10px;
-  left: 5%;
-}
-.welcome-box-text {
-  text-align: center;
-  color: black;
-  font-size: 30;
-  font-weight: 400;
-  word-wrap: break-word;
-  
+  /* Ajusta otros elementos como botones e imágenes para pantallas pequeñas si es necesario */
 }
 
-.news-activities {
-  margin-top: 10px;
-  width: 100%;
-  height: 100%;
-  border-radius: 73px;
-  background-color: rgba(255, 228, 112);
-}
-
-.news-activities-text {
-  
-  color: black;
-  font-size: 16;
-  font-weight: 400;
-  word-wrap: break-word;
-  background-color: rgba(255, 238, 164);
-  border-radius: 15px;
-  width: 80%;
-  position: relative;
-  top: 10px;
-  left: 10%;
- 
-}
-
-.img-mujeres-stem {
-  padding-top: 20px;
-  height: 50%;
-  width: 60%;
-  border-radius: 113px;
-
-}
-.foto-perfil{
-  max-width: 100%;
-  max-height: 60%;
-  border-radius: 50%;
-}
-
-
-.quiz-box {
-  border: 1px solid #000;
-  padding: 20px;
-  margin: 20px;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-/*tamaño iconos en plataforma cursos QUIZ-RECURSO-ISIGNIA-FORO-AJUSTES*/
-.icons-btn {
-
-  padding-top: 5px;
-  max-height: 50%;
-  max-width: 50%;
-  
-}
-
-/*botones plataforma cursos S-T-E-M*/
-.icons-stem{
-  background-color: rgba(255, 228, 112);
-  width: 100%;
-  
+/* Si hay un footer, ajusta la altura mínima de app-container para tenerlo en cuenta */
+.app-container {
+  min-height: calc(100vh - alturaDelNavbar - alturaDelFooter); /* Ajusta las alturas acorde a tus elementos */
 }

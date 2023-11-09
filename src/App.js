@@ -6,6 +6,7 @@ import Registro from "./components/Registro";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Body from "./components/Body";
+import TecnoPage from "./components/Tecnologia/TecnoPage"; // Asegúrate de que la ruta de importación es correcta
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/registrarse" element={<Registro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/body" element={<Body />} />
+          <Route path="/tecno" element={<TecnoPage />} /> {/* Ruta agregada para TecnoPage */}
         </Routes>
       </div>
     </Router>
