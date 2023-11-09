@@ -6,6 +6,7 @@ import Registro from "./components/Registro";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Body from "./components/Body";
+import Recurso from "./components/RecursosExternos/Recurso.jsx"
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="/registrarse" element={<Registro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/body" element={<Body />} />
+          <Route path="/recurso" component={Recurso} />
+          <Route path="/" component={Body} />
         </Routes>
       </div>
     </Router>

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import ModalContent from '../RecursosExternos/RecursoContenido'
-import Quiz from '../img/iconos/Quiz.svg';
-import Recursos from '../img/iconos/Recursos.svg';
-import Insignia from '../img/iconos/Insignia.png'
-import Foro from '../img/iconos/Foro.png'
-import Ajustes from '../img/iconos/Ajustes.png'
-import S from '../img/iconos/S.svg'
-import T from '../img/iconos/T.svg'
-import E from '../img/iconos/E.svg'
-import M from '../img/iconos/M.svg'
+import Quiz from '../../img/iconos/Quiz.svg';
+import Recursos from '../../img/iconos/Recursos.svg';
+import Insignia from '../../img/iconos/Insignia.png'
+import Foro from '../../img/iconos/Foro.png'
+import Ajustes from '../../img/iconos/Ajustes.png'
+import S from '../../img/iconos/S.svg'
+import T from '../../img/iconos/T.svg'
+import E from '../../img/iconos/E.svg'
+import M from '../../img/iconos/M.svg'
 import '../RecursosExternos/recurso.css';
 
 
