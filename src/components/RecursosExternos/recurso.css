@@ -56,6 +56,9 @@
 .header-box{
     
     border-radius: 48px;
+    background-color: rgba(255, 228, 112);
+    width: 90%;
+    height: 60%;
 
 }
 
@@ -67,3 +70,17 @@
     word-wrap:break-word;
 }
 
+.modal {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    background-color: rgba(238, 219, 252);
+    border: 2px solid rgb(240, 240, 240);
+    border-radius: 12px;
+    position:  absolute;
+    width: 50%;
+    top: 70px;
+    left: calc(50% - 125px);
+    bottom: 70px;
+}

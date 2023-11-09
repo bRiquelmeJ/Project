@@ -10,6 +10,7 @@ import E from '../img/iconos/E.svg'
 import M from '../img/iconos/M.svg'
 import perfil from '../img/perfil.jpg'
 import Body2 from '../components/Body2'
+
 import { Link } from 'react-router-dom';
 
 import '../body.css';

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import ModalContent from '../RecursosExternos/RecursoContenido'
+import ModalContentS from './RecursoContenidoS'
+import ModalContentT from './RecursoContenidoT'
+import ModalContentE from './RecursoContenidoE'
+import ModalContentM from './RecursoContenidoM'
 import Quiz from '../../img/iconos/Quiz.svg';
 import Recursos from '../../img/iconos/Recursos.svg';
 import Insignia from '../../img/iconos/Insignia.png'
@@ -14,37 +17,11 @@ import '../RecursosExternos/recurso.css';
 
 
 
-function Recurso () {
-const [showModal, setShowModal] = useState(false);
-
-
-const resources = [
-{
-    title: 'Recurso S',
-    description: 'Descripción del Recurso S',
-    url: 'URL del Recurso S',
-    icon: S,
-},
-{
-    title: 'Recurso T',
-    description: 'Descripción del Recurso T',
-    url: 'URL del Recurso T',
-    icon: T,
-},
-{
-    title: 'Recurso E',
-    description: 'Descripción del Recurso E',
-    url: 'URL del Recurso E',
-    icon: E,
-},
-{
-    title: 'Recurso M',
-    description: 'Descripción del Recurso M',
-    url: 'URL del Recurso M',
-    icon: M,
-},
-];
-
+function Recurso() {
+    const [showModalS, setShowModalS] = useState(false);
+    const [showModalT, setShowModalT] = useState(false);
+    const [showModalE, setShowModalE]= useState(false);
+    const [showModalM, setShowModalM] = useState(false);
 
 return (
     <div className="app-container">
@@ -97,37 +74,61 @@ return (
     </div>
     </div>
     <div className="app-main ">
-    <div className="header-box container bg-warning-subtle ">
-        <div className="welcome-box-text">
-            <h2>¡Sigamos Aprendiendo! : Recursos Divertidos</h2>
+        <div className="header-box container bg-warning-subtle ">
+            <div className="welcome-box-text">
+                <h2>¡Sigamos Aprendiendo! : Recursos Divertidos</h2>
+            </div>
         </div>
-    </div>
         <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+            <>
             <button 
             type="button" 
             class="btn btn-outline-light" 
-            onClick={() => setShowModal(true)}> 
+            onClick={() => setShowModalS(true)}> 
             <img src={S} alt="Icono S" />
             </button>
+            {showModalS && createPortal(
+            <ModalContentS onClose={() => setShowModalS(false)} />,
+            document.body)}
+            </>
+            <>
             <button 
             type="button" 
-            class="btn btn-outline-light">
+            class="btn btn-outline-light"
+            onClick={() => setShowModalT(true)}>
             <img src={T} alt="Icono T" />
             </button>
+            {showModalT && createPortal(
+            <ModalContentT onClose={() => setShowModalT(false)} />,
+            document.body)}
+            </>
+            <>
             <button 
             type="button" 
-            class="btn btn-outline-light">
+            class="btn btn-outline-light"
+            onClick={() => setShowModalE(true)}>
             <img src={E} alt="Icono E" />
             </button>
+            {showModalE && createPortal(
+            <ModalContentE onClose={() => setShowModalE(false)} />,
+            document.body)}
+            </>
+
+            <>
             <button 
             type="button" 
-            class="btn btn-outline-light">
+            class="btn btn-outline-light"
+            onClick={() => setShowModalM(true)}>
             <img src={M} alt="Icono M" />
             </button>
-            {showModal && createPortal(
-            <ModalContent onClose={() => setShowModal(false)} />,
+            {showModalM && createPortal(
+            <ModalContentM onClose={() => setShowModalM(false)} />,
             document.body)}
+            </>
         </div>
+
+    
+
     </div>
 </div>
 )
