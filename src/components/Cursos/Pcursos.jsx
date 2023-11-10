@@ -1,5 +1,5 @@
 import React from 'react';
-import '../pCursos.css';
+import '../../Styles/pCursos.css';
 import StemBtn from './StemBtn';
 import Sidebar from './Sidebar';
 import Body2 from './Body2';
