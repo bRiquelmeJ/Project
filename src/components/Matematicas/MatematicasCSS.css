@@ -1,0 +1,13 @@
+.btn-math {
+    color: #FFF37A;
+    background-color: #911690;
+}
+
+.btn-math:hover {
+    background-color: #FFF37A;
+    color: #911690;
+}
+
+.border {
+    border-radius: 10px;
+}
