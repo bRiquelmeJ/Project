@@ -5,8 +5,9 @@ import Navbar from "./components/Navbar";
 import Registro from "./components/Registro";
 import Home from "./components/Home";
 import Login from "./components/Login";
-import Pcursos from "./components/Pcursos";
-import Matematicas from "./components/Matematicas/Matematicas-1";
+import Pcursos from "./components/Cursos/Pcursos";
+import Matematicas from "./components/Cursos/Matematicas/Matematicas-1"
+import Recurso from "./components/RecursosExternos/Recurso";
 
 function App() {
   return (

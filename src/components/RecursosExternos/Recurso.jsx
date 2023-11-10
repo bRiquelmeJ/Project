@@ -4,7 +4,7 @@ import ModalContentS from './RecursoContenidoS'
 import ModalContentT from './RecursoContenidoT'
 import ModalContentE from './RecursoContenidoE'
 import ModalContentM from './RecursoContenidoM'
-import Sidebar from '../Sidebar';
+import Sidebar from '../Cursos/Sidebar';
 import S from '../../img/iconos/S.svg'
 import T from '../../img/iconos/T.svg'
 import E from '../../img/iconos/E.svg'
