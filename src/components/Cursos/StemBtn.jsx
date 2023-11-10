@@ -17,16 +17,16 @@ function StemBtn(){
           </div>
           <div className="  m-4 row ">
             <div className=" col">
-              <button className='icons-stem border-0'><img src={S} alt="Icono S" /></button>
+              <button className='icons-stem btn rounded-circle'><img src={S} alt="Icono S" /></button>
             </div>
             <div className=" col">
-              <button className='icons-stem border-0'><img src={T} alt="Icono T" /></button>
+              <button className='icons-stem btn rounded-circle'><img src={T} alt="Icono T" /></button>
             </div>
             <div className=" col">
-              <button className='icons-stem border-0'><img src={E} alt="Icono E" /></button>         
+              <button className='icons-stem btn rounded-circle'><img src={E} alt="Icono E" /></button>         
             </div>
             <div className=" col">
-              <Link to={Matematicas} className='icons-stem border-0'><img src={M} alt="Icono M" /></Link>
+              <Link to="/Matematicas" className='icons-stem btn rounded-circle'><img src={M} alt="Icono M" /></Link>
             </div>
           </div>
         </div>
