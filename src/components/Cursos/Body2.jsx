@@ -1,5 +1,5 @@
-import '../pCursos.css';
-import MujerSTEM from '../img/STEMimg.jpg'
+import '../../Styles/pCursos.css';
+import MujerSTEM from "../../img/STEMimg.jpg";
 
 function Body2(){
 

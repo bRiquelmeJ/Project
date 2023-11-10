@@ -6,8 +6,6 @@ import Registro from "./components/Registro";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Pcursos from "./components/Pcursos";
-
-import Recurso from "./components/RecursosExternos/Recurso"
 import Matematicas from "./components/Matematicas/Matematicas-1";
 
 function App() {
