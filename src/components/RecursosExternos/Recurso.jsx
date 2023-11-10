@@ -84,7 +84,7 @@ return (
         </>
         </div>
         </div>
-        <div class="col">
+        <div class="col" >
 
         <div class="card mb-3" style={{ width: '660px', backgroundColor: 'rgb(243, 243, 218)'}}>
     <div class="row g-0">

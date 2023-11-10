@@ -79,6 +79,7 @@
     border-radius: 12px;
     position:  absolute;
     width: 40%;
+    height: 70%;
     top: 70px;
     left: calc(50% - 125px);
     bottom: 70px;
