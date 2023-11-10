@@ -1,10 +1,10 @@
-import Quiz from '../../img/iconos/Quiz.svg';
-import Recursos from '../../img/iconos/Recursos.svg';
-import Insignia from '../../img/iconos/Insignia.png'
-import Foro from '../../img/iconos/Foro.png'
-import Ajustes from '../../img/iconos/Ajustes.png'
-import perfil from '../../img/computadora (1).png'
-import '../../Styles/pCursos.css';
+import Quiz from '../img/iconos/Quiz.svg';
+import Recursos from '../img/iconos/Recursos.svg';
+import Insignia from '../img/iconos/Insignia.png'
+import Foro from '../img/iconos/Foro.png'
+import Ajustes from '../img/iconos/Ajustes.png'
+import perfil from '../img/computadora (1).png'
+import '../pCursos.css';
 
 function Sidebar() {
 
