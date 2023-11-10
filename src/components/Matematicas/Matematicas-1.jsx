@@ -17,6 +17,9 @@ const Matematicas1 = () => {
           <div className="col-lg-6 col-md-6 col-sm-12 col-12 container-fluid mb-4">
             <div className="text-center border border-dark rounded p-3">
               <h3>Capítulos:</h3>
+              <Link to="/Matematicas-intro" className="btn btn-math mb-2 w-100">
+                Introducción a las Matemáticas
+              </Link>
               <Link to="" className="btn btn-math mb-2 w-100">
                 Capítulo 1: El Origen de las Matemáticas
               </Link>
@@ -35,7 +38,7 @@ const Matematicas1 = () => {
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 col-12 container-fluid mb-4">
-            <div className="text-center border border-dark rounded p-3">
+            <div className="text-center border border-dark rounded p-3 h-100">
               <h3>Información sobre carreras:</h3>
               {/* Agrega aquí la información sobre carreras */}
             </div>

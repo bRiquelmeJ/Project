@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Pcursos from "./components/Pcursos";
 import Matematicas from "./components/Matematicas/Matematicas-1";
+import MatematicasIntro from "./components/Matematicas/Matematicas-intro";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/PlataformaCursos" element={<Pcursos />} />
           <Route path="/Matematicas" element={<Matematicas />} />
+          <Route path="/Matematicas-intro" element={<MatematicasIntro />} />
         </Routes>
       </div>
     </Router>
