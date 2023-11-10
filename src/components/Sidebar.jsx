@@ -12,10 +12,14 @@ function Sidebar() {
     return (
         <div className="user-box row">
             <div>
-                <img src={perfil} alt="" className="foto-perfil" />
+                <img src={perfil} alt="perfil" className="foto-perfil" />
             </div>
             <div >
+
             <h3>Usuario</h3> 
+
+
+
             </div>
 
             <ul>
