@@ -9,21 +9,34 @@ import '../pCursos.css';
 function Sidebar() {
 
     return (
-        <div className="user-box row">
-            <div>
+        <div className="user-box d-flex flex-column ">
+            <div className='p-5 '>
                 <img src={perfil} alt="" className="foto-perfil" />
             </div>
-            <div >
-               <h1>Camila</h1> 
+            <div>
+                <div className='userText '>
+                    <h1 className='fs-1'>Camila</h1>
+                </div>
             </div>
-
-            <ul>
-                <li><img className=' icons-btn' src={Quiz} alt="Quiz" /></li>
-                <li><img className='icons-btn' src={Recursos} alt="Recursos" /></li>
-                <li><img className='col icons-btn' src={Insignia} alt="Insignias" /></li>
-                <li><img className='icons-btn' src={Foro} alt="Foro" /></li>
-                <li><img className='col icons-btn' src={Ajustes} alt="Ajustes" /></li>
-            </ul>
+            <ul className="nav nav-tabs sidebar-menu">
+                <li className="nav-item p-4">
+                 <img className=' icons-btn' src={Quiz} alt="Quiz" />
+                </li>
+                <li className="nav-item p-4 ">
+                <img className='icons-btn' src={Recursos} alt="Recursos" />
+                </li>
+                <li className="nav-item p-4">
+                <img className='col icons-btn' src={Insignia} alt="Insignias" />
+                </li>
+                <li className="nav-item p-4 ">
+                <img className='icons-btn' src={Foro} alt="Foro" />
+                </li>
+                <li className="nav-item p-4">
+                <img className='col icons-btn' src={Ajustes} alt="Ajustes" />
+                </li>
+                
+           </ul>
+            
         </div>
 
     )
