@@ -5,6 +5,7 @@ import Foro from '../../img/iconos/Foro.png'
 import Ajustes from '../../img/iconos/Ajustes.png'
 import perfil from '../../img/computadora (1).png'
 import '../../Styles/pCursos.css';
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
 
@@ -19,7 +20,7 @@ function Sidebar() {
 
             <ul>
                 <li><img className=' icons-btn' src={Quiz} alt="Quiz" /></li>
-                <li><img className='icons-btn' src={Recursos} alt="Recursos" /></li>
+                <li><Link to="/recurso"><img className='icons-btn' src={Recursos} alt="Recursos" /></Link></li>
                 <li><img className='col icons-btn' src={Insignia} alt="Insignias" /></li>
                 <li><img className='icons-btn' src={Foro} alt="Foro" /></li>
                 <li><img className='col icons-btn' src={Ajustes} alt="Ajustes" /></li>
