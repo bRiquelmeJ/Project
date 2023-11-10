@@ -10,7 +10,7 @@ import T from '../../img/iconos/T.svg'
 import E from '../../img/iconos/E.svg'
 import M from '../../img/iconos/M.svg'
 import Cookies from '../../img/recurs/galleta.png'
-import '../RecursosExternos/recurso.css';
+import '../../Styles/recurso.css';
 
 
 
