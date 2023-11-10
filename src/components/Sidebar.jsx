@@ -3,7 +3,7 @@ import Recursos from '../img/iconos/Recursos.svg';
 import Insignia from '../img/iconos/Insignia.png'
 import Foro from '../img/iconos/Foro.png'
 import Ajustes from '../img/iconos/Ajustes.png'
-import perfil from '../img/perfil.jpg'
+import perfil from '../img/computadora (1).png'
 import '../pCursos.css';
 
 function Sidebar() {
@@ -11,10 +11,10 @@ function Sidebar() {
     return (
         <div className="user-box row">
             <div>
-                <img src={perfil} alt="" className="foto-perfil" />
+                <img src={perfil} alt="perfil" className="foto-perfil" />
             </div>
             <div >
-               <h1>Camila</h1> 
+            <h4>Usuario</h4> 
             </div>
 
             <ul>
