@@ -12,11 +12,12 @@
     border-radius: 10px;
 }
 
+.btn-intromath {
+    background-color: #911690;
+    color: #FFF37A;
+}
+
 .btn-intromath:hover {
     background-color: #FFF37A;
     color: #911690;
-}
-.btn-intromath {
-    background-color: #911690;
-    color: #FFF37A;
 }
