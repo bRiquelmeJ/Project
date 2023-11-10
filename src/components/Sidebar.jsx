@@ -3,7 +3,7 @@ import Recursos from '../img/iconos/Recursos.svg';
 import Insignia from '../img/iconos/Insignia.png'
 import Foro from '../img/iconos/Foro.png'
 import Ajustes from '../img/iconos/Ajustes.png'
-import perfil from '../img/perfil.jpg'
+import perfil from '../img/Mascota_01-removebg-preview.png'
 import '../pCursos.css';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ function Sidebar() {
                 <img src={perfil} alt="" className="foto-perfil" />
             </div>
             <div >
-            <h1>Camila</h1> 
+            <h3>Usuario</h3> 
             </div>
 
             <ul>
