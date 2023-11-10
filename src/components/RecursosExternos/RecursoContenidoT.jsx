@@ -1,7 +1,7 @@
 
 import FreeCodeCamp from '../../img/recurs/FreeCodeCamp.jpg'
 import BlockyGames from '../../img/recurs/Blocky-Games.jpg'
-import { toHaveDescription } from '@testing-library/jest-dom/dist/matchers';
+import Scratch from '../../img/recurs/Scratch.png'
 export default function ModalContentT({ onClose }) {
     const toFreeCodeCamp = () => {
         window.open("https://www.freecodecamp.org/espanol/", "_blank");
@@ -46,14 +46,14 @@ export default function ModalContentT({ onClose }) {
                 </div>
             </div>
             <div className="card" style={{ width: '10rem' }}>
-            <img src={BlockyGames} 
-                alt="Blocky-Games"
+            <img src={Scratch} 
+                alt="Scratch"
                 onClick={toScratch}
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
                 />
                 <div class="card-body">
-                    <p class="card-text"> Plataforma interactiva para aprender programación mediante bloques visuales y divertidos desafíos.</p>
+                    <p class="card-text">Plataforma creativa de programación para niños. Crea historias, juegos y animaciones visualmente.</p>
                 </div>
             </div>
     </div> 
