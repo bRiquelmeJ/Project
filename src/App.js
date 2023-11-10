@@ -6,6 +6,7 @@ import Registro from "./components/Registro";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Pcursos from "./components/Pcursos";
+import Matematicas from "./components/Matematicas/Matematicas-1";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/registrarse" element={<Registro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/PlataformaCursos" element={<Pcursos />} />
+          <Route path="/Matematicas" element={<Matematicas />} />
         </Routes>
       </div>
     </Router>

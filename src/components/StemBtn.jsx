@@ -2,6 +2,8 @@ import S from '../img/iconos/S.svg'
 import T from '../img/iconos/T.svg'
 import E from '../img/iconos/E.svg'
 import M from '../img/iconos/M.svg'
+import { Link } from 'react-router-dom'
+import Matematicas from './Matematicas/Matematicas-1'
 
 function StemBtn(){
 
@@ -24,7 +26,7 @@ function StemBtn(){
               <button className='icons-stem border-0'><img src={E} alt="Icono E" /></button>         
             </div>
             <div className=" col">
-              <button className='icons-stem border-0'><img src={M} alt="Icono M" /></button>
+              <Link to={Matematicas} className='icons-stem border-0'><img src={M} alt="Icono M" /></Link>
             </div>
           </div>
         </div>

@@ -15,9 +15,9 @@ return(
             </div>
             <div class="col order-last">
                 <div>
-                    <a>
+                    
                         <img src={MujerSTEM} alt="Mujeres en STEM" className="img-mujeres-stem"/>
-                    </a>
+                    
                 </div>
             </div>
            
