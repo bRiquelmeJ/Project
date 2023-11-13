@@ -20,7 +20,7 @@ ul>li{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
   border-radius: 70px;
   margin-top: 80px;
   margin-left: 20px;
@@ -29,12 +29,13 @@ ul>li{
 
 
 .user-box {
-  width: 45%;
-  height: 80%;
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  
 }
 
 .user-box-text {
@@ -143,3 +144,4 @@ ul>li{
   background-color: #FFF37A;
   width: 100%;
 }
+
