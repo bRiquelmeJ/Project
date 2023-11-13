@@ -18,10 +18,10 @@ function StemBtn(){
               <Link to="/Ciencia" className='icons-stem btn rounded-circle'><img src={S} alt="Icono S" /></Link>
             </div>
             <div className=" col">
-              <button className='icons-stem btn rounded-circle'><img src={T} alt="Icono T" /></button>
+            <Link to="/Tecnologia" className='icons-stem btn rounded-circle'><img src={T} alt="Icono T" /></Link>
             </div>
             <div className=" col">
-              <button className='icons-stem btn rounded-circle'><img src={E} alt="Icono E" /></button>         
+            <Link to="/Ingenieria" className='icons-stem btn rounded-circle'><img src={E} alt="Icono E" /></Link>         
             </div>
             <div className=" col">
               <Link to="/Matematicas" className='icons-stem btn rounded-circle'><img src={M} alt="Icono M" /></Link>
