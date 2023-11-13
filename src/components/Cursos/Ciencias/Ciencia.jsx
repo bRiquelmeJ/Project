@@ -19,20 +19,20 @@ function Ciencia() {
                     </div>
                 </div>
 
-                <div className="mt-3 row d-flex align-items-center justify-content-center">
+                <div className="mt-3 row d-flex align-items-center justify-content-center courses-btn">
                     <div className="btn-group col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
                         <Link to="/Biologia" type="button" className="btn btn-lg btn-block">
-                            <img src={Biologia} alt="Biologia" className="img-fluid" />
+                            <img src={Biologia} alt="Biologia" className="img-fluid imgZoom" />
                         </Link>
                     </div>
                     <div className="btn-group col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
                         <Link to="/Quimica" type="button" className="btn btn-lg btn-block">
-                            <img src={Quimica} alt="Quimica" className="img-fluid" />
+                            <img src={Quimica} alt="Quimica" className="img-fluid imgZoom" />
                         </Link>
                     </div>
                     <div className="btn-group col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
                         <Link to="/Fisica" type="button" className="btn btn-lg btn-block">
-                            <img src={Fisica} alt="Fisica" className="img-fluid" />
+                            <img src={Fisica} alt="Fisica" className="img-fluid imgZoom" />
                         </Link>
                     </div>
                 </div>
