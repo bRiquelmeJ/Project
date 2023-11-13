@@ -3,8 +3,6 @@ import T from '../../img/iconos/T.svg'
 import E from '../../img/iconos/E.svg'
 import M from '../../img/iconos/M.svg'
 import { Link } from 'react-router-dom'
-import Matematicas from './Matematicas/Matematicas-1'
-
 function StemBtn(){
 
     return(
