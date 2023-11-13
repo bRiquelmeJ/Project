@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
+import ModalContentInfo from './QuimicaContenidoInfo';
+import ModalContentVideo from './QuimicaContenido';
 import Sidebar from '../../Cursos/Sidebar';
 import '../../../Styles/ciencias.css';
 import Lectura from '../../../img/iconos/ciencias-lectura.png';
 import Video from '../../../img/iconos/ciencias-video.png';
 
 function Quimica() {
+    const [showModalVideo, setShowModalVideo] = useState(false);
+    const [showModalInfo, setShowModalInfo] = useState(false);
+
     return (
         <div className="app-container container-fluid  row">
             <div className="container-fluid app-sidebar col-lg-10 col-md-12 w-50 h-80">
@@ -26,8 +32,19 @@ function Quimica() {
                         En su esencia, la química busca entender la naturaleza íntima de la materia y las fuerzas que la rigen en el universo.</p>
                 </div>
                 <div className='container-fluid d-flex justify-content-evenly'>
-                    <img src={Video} alt='Ciencias-Video' />
-                    <img src={Lectura} alt='Ciencias-Lectura' />
+                    <>
+                    <img src={Video} alt='Ciencias-Video' onClick={() => setShowModalVideo(true)}/>
+                    {showModalVideo && createPortal(
+                    <ModalContentVideo onClose={() => setShowModalVideo(false)} />,
+                    document.body)}
+                    </>
+                    <>
+                    <img src={Lectura} alt='Ciencias-Lectura' onClick={() => setShowModalInfo(true)}/>
+                    {showModalInfo && createPortal(
+                        <ModalContentInfo onClose={() => setShowModalInfo(false)} />,
+                        document.body)}
+                    </>
+                
                 </div>
             </div>
 

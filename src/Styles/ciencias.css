@@ -67,3 +67,19 @@
   .button:hover span {
     transform: translateX(7px);
   }
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    background-color:rgba(255, 238, 164);
+    border: 2px solid rgb(211, 173, 5);
+    border-radius: 12px;
+    position:  absolute;
+    width: 40%;
+    height: 70%;
+    top: 100px;
+    left: calc(50% - 125px);
+    bottom: 70px;
+
+}
