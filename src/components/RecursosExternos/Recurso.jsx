@@ -86,7 +86,7 @@ return (
         </div>
         <div class="col" >
 
-        <div class="card mb-3" style={{ width: '660px', backgroundColor: 'rgb(243, 243, 218)'}}>
+        <div class="card mb-3 mt-5" style={{ width: '660px', backgroundColor: 'rgb(243, 243, 218)'}}>
     <div class="row g-0">
         <div class="col-md-4">
         <img src={Cookies} class="img-fluid rounded-start" alt="Cookies"/>

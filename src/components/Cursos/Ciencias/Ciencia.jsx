@@ -30,21 +30,26 @@ return (
             type="button" 
             class="btn"
             img src={Biologia} alt="Biologia"> Biologia
-            </button> </Link>
+            </button> 
+            </Link>
+            
             <Link to="/Quimica" className='icons-stem btn rounded-circle'>
             <button 
             type="button" 
             class="btn"
             img src={Quimica} alt="Quimica"> Quimica
 
-            </button></Link>
+            </button>
+            </Link>
+
             <Link to="/Fisica" className='icons-stem btn rounded-circle'>
             <button 
             type="button" 
             class="btn"
             img src={Fisica} alt="Fisica"> Fisica
 
-            </button></Link>
+            </button>
+            </Link>
         </div>
 
         </div>

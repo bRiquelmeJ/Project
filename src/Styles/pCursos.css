@@ -2,8 +2,6 @@
 position: relative;  
   width: 100%;
   height: 100vh;
-  background-color: rgba(238, 219, 252, 0.53);
-
 }
 ul>li{
   list-style-type: none;
