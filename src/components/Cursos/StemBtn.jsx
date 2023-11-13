@@ -17,7 +17,7 @@ function StemBtn(){
           </div>
           <div className="  m-4 row ">
             <div className=" col">
-              <button className='icons-stem btn rounded-circle'><img src={S} alt="Icono S" /></button>
+              <Link to="/Ciencia" className='icons-stem btn rounded-circle'><img src={S} alt="Icono S" /></Link>
             </div>
             <div className=" col">
               <button className='icons-stem btn rounded-circle'><img src={T} alt="Icono T" /></button>
