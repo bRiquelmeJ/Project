@@ -13,3 +13,57 @@
     word-wrap: break-word;
     
 }
+
+.course-text {
+    height: 70%;
+}
+
+.border-course-text {
+    font-size: larger;
+    background-color: rgba(255, 238, 164) ;
+}
+
+.btn-test {
+    background-color: #911690;
+    color: #FFF37A;
+}
+
+.btn-test:hover {
+    background-color: #FFF37A;
+    color: #911690;
+}
+
+.button {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: large;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: white;
+    background: #911690;
+    background: linear-gradient(to right, #550b55, #911690, #550b55);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+  }
+  
+  svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  .button:hover svg {
+    transform: translateX(5px) rotate(90deg);
+  }
+  
+  .button:hover span {
+    transform: translateX(7px);
+  }
