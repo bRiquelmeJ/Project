@@ -15,12 +15,12 @@ return(
             </div>
             <div class="col order-last">
                 <div>
-                    
+
                         <img src={MujerSTEM} alt="Mujeres en STEM" className="img-mujeres-stem"/>
-                    
+
                 </div>
             </div>
-        
+
             </div>
         </div>
 )}
