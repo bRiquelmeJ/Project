@@ -15,6 +15,8 @@ import Fisica from "./components/Cursos/Ciencias/Fisica"
 import Quimica from "./components/Cursos/Ciencias/Quimica"
 import Tecnologia from "./components/Cursos/Tecnologia/Tecnologia"
 import Ingenieria from "./components/Cursos/Ingenieria/Ingenieria"
+import Computacion from "./components/Cursos/Ingenieria/Computacion"
+import Robotica from "./components/Cursos/Ingenieria/Robotica"
 
 function App() {
   return (
@@ -38,7 +40,8 @@ function App() {
           <Route path="/Quimica" element={<Quimica/>} />
           <Route path="/Tecnologia" element={<Tecnologia/>} />
           <Route path="/Ingenieria" element={<Ingenieria/>} />
-          
+          <Route path="/Computacion" element={<Computacion/>} />
+          <Route path="/Robotica" element={<Robotica/>} />
 
         </Routes>
       </div>
