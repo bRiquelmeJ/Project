@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 .app-container {
 position: relative;  
   width: 100%;
@@ -144,4 +146,59 @@ ul>li{
   background-color: #FFF37A;
   width: 100%;
 }
+
+
+
+  /* ESTA ES LA CLASE DE LOS QUIZZ*/
+.quizzCard {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  background-color: transparent;
+
+}
+
+  /* ESTA ES LA IMAGEN DE LA MASCOTA HABLANDO*/
+.mascota-image {
+  max-width: 100%;
+  height: auto;
+  /* Ajusta los márgenes para alinear la imagen a la derecha */
+  margin-left: auto;
+  display: block; /* Esto asegura que la imagen no sea inline */
+}
+
+/* Estilos para la lista de botones */
+.quiz .answer-section ul {
+  list-style: none; /* Elimina los marcadores de lista */
+  padding: 0; /* Elimina el padding por defecto */
+}
+
+.quiz .answer-section li {
+  margin-bottom: 10px; /* Añade un margen entre los botones */
+}
+
+/* Estilos para los botones */
+.quiz .answer-section button {
+  width: 100%; /* Hace que los botones ocupen todo el ancho del contenedor */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10rem;
+  transition: all 0.02s;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+
+.quiz .answer-section button:hover {
+  background: rgb(250, 91, 215);
+  color: rgb(33, 0, 85);
+
+}
+
+
 

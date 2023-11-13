@@ -9,6 +9,7 @@ import Pcursos from "./components/Cursos/Pcursos";
 import Matematicas from "./components/Cursos/Matematicas/Matematicas-1"
 import Recurso from "./components/RecursosExternos/Recurso";
 import MatematicasIntro from "./components/Cursos/Matematicas/Matematicas-Intro";
+import CursoIntro from "./components/Cursos/CursoIntro";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<Pcursos/>} />
           <Route path="/Matematicas" element={<Matematicas />} />
           <Route path="/Matematicas-intro" element={<MatematicasIntro />} />
+          <Route path="/Quizz-intro" element = {<CursoIntro />}/>
 
         </Routes>
       </div>
