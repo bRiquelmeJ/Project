@@ -4,6 +4,7 @@ import '../../../Styles/ciencias.css';
 import Biologia from '../../../img/BIOLOGIA.png'
 import Quimica from '../../../img/QUIMICA.png'
 import Fisica from '../../../img/FISICA.png'
+import { Link } from 'react-router-dom'
 
 
 
@@ -24,23 +25,26 @@ return (
 
         <div className="mt-3">
         <div class="btn-group" role="group" aria-label="iconos">
+            <Link to="/Biologia" className='icons-stem btn rounded-circle'>
             <button 
             type="button" 
             class="btn"
-            img src={Biologia} alt="Biologia">
-            </button>
+            img src={Biologia} alt="Biologia"> Biologia
+            </button> </Link>
+            <Link to="/Quimica" className='icons-stem btn rounded-circle'>
             <button 
             type="button" 
             class="btn"
-            img src={Quimica} alt="Quimica">
+            img src={Quimica} alt="Quimica"> Quimica
 
-            </button>
+            </button></Link>
+            <Link to="/Fisica" className='icons-stem btn rounded-circle'>
             <button 
             type="button" 
             class="btn"
-            img src={Fisica} alt="Fisica">
+            img src={Fisica} alt="Fisica"> Fisica
 
-            </button>
+            </button></Link>
         </div>
 
         </div>

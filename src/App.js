@@ -10,6 +10,9 @@ import Matematicas from "./components/Cursos/Matematicas/Matematicas-1"
 import Recurso from "./components/RecursosExternos/Recurso";
 import MatematicasIntro from "./components/Cursos/Matematicas/Matematicas-Intro";
 import Ciencia from "./components/Cursos/Ciencias/Ciencia"
+import Biologia from "./components/Cursos/Ciencias/Biologia"
+import Fisica from "./components/Cursos/Ciencias/Fisica"
+import Quimica from "./components/Cursos/Ciencias/Quimica"
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
           <Route path="/Matematicas" element={<Matematicas />} />
           <Route path="/Matematicas-intro" element={<MatematicasIntro />} />
           <Route path="/Ciencia" element={<Ciencia/>} />
+          <Route path="/Biologia" element={<Biologia/>} />
+          <Route path="/Fisica" element={<Fisica/>} />
+          <Route path="/Quimica" element={<Quimica/>} />
 
         </Routes>
       </div>
