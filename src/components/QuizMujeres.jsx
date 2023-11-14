@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Mascota from "../img/Logo EquidApp.png";
 
 const questions = [
   {
@@ -54,14 +54,23 @@ function QuizIntroSTEM() {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState(""); // Agregado para la retroalimentación
 
   const handleAnswerOptionClick = (answerOption) => {
     const isCorrect = answerOption.isCorrect;
     setSelectedAnswer(answerOption.answerText);
+    
+    // Agregar retroalimentación basada en si la respuesta es correcta o no
     if (isCorrect) {
       setScore(score + 1);
+      setFeedbackMessage("¡Correcto! Esa es la respuesta.");
+    } else {
+      setFeedbackMessage("Incorrecto. Vuelve a intentarlo.");
     }
+
+    // Espera para mostrar la siguiente pregunta y limpiar la retroalimentación
     setTimeout(() => {
+      setFeedbackMessage(""); // Limpia la retroalimentación
       const nextQuestion = currentQuestion + 1;
       if (nextQuestion < questions.length) {
         setCurrentQuestion(nextQuestion);
@@ -69,55 +78,20 @@ function QuizIntroSTEM() {
         setShowScore(true);
       }
       setSelectedAnswer("");
-    }, 1000);
+    }, 2000); // Ajusta este tiempo según lo que desees para mostrar la retroalimentación
   };
 
-  const resetQuiz = () => {
-    setCurrentQuestion(0);
-    setScore(0);
-    setShowScore(false);
-  };
+  // ... Resto del componente
 
   return (
     <div className='quiz'>
-      <div className='quiz-intro'>
-        {/* ... Mensaje de bienvenida ... */}
+      {/* ... Resto del JSX ... */}
+      <div className="mascot-feedback">
+        {feedbackMessage && <div className="feedback-bubble">{feedbackMessage}</div>}
+        <img src={Mascota} alt="Mascota" className="mascota-image" />
       </div>
-
-      {showScore ? (
-        <div className='score-section'>
-          Has acertado {score} de {questions.length} preguntas.
-          <button onClick={resetQuiz} className='btn btn-purple'>Volver a empezar</button>
-        </div>
-      ) : (
-        <div className='card quizzCard'>
-          <div className='card-body'>
-            <div className='question-section'>
-              <div className='question-count'>
-                <span>Pregunta {currentQuestion + 1}</span>/{questions.length}
-              </div>
-              <div className='question-text'>{questions[currentQuestion].questionText}</div>
-            </div>
-            <div className='answer-section'>
-              <ul>
-                {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                  <li key={index}>
-                    <button
-                      onClick={() => handleAnswerOptionClick(answerOption)}
-                      className={`btn m-2 ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn btn-purple'}`}
-                      disabled={selectedAnswer !== ""}
-                    >
-                      {answerOption.answerText}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* ... Resto del JSX ... */}
     </div>
   );
 }
-
 export default QuizIntroSTEM;

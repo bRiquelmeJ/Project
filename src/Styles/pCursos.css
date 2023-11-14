@@ -301,4 +301,28 @@ button.learn-more:active::before {
 
 
 
+/* Fedback mascota*/
+.feedback-bubble {
+  position: absolute;
+  bottom: 80%; /* Ajustar según sea necesario para que aparezca sobre la mascota */
+  left: 30%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  background-color: #ffcccb;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  z-index: 100;
+}
 
+.feedback-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #ffcccb transparent transparent transparent;
+}
