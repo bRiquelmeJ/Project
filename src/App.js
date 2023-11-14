@@ -9,6 +9,7 @@ import Pcursos from "./components/Cursos/Pcursos";
 import Matematicas from "./components/Cursos/Matematicas/Matematicas-1"
 import Recurso from "./components/RecursosExternos/Recurso";
 import MatematicasIntro from "./components/Cursos/Matematicas/Matematicas-Intro";
+
 import Ciencia from "./components/Cursos/Ciencias/Ciencia"
 import Biologia from "./components/Cursos/Ciencias/Biologia"
 import Fisica from "./components/Cursos/Ciencias/Fisica"
@@ -20,6 +21,7 @@ import Robotica from "./components/Cursos/Ingenieria/Robotica"
 import Programacion from "./components/Cursos/Tecnologia/Programacion"
 import IA from "./components/Cursos/Tecnologia/IA"
 import CienciaDeDatos from "./components/Cursos/Tecnologia/CienciaDeDatos"
+import CursoIntro from "./components/Cursos/CursoIntro";
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
           <Route path="/" element={<Pcursos/>} />
           <Route path="/Matematicas" element={<Matematicas />} />
           <Route path="/Matematicas-intro" element={<MatematicasIntro />} />
+
           <Route path="/Ciencia" element={<Ciencia/>} />
           <Route path="/Biologia" element={<Biologia/>} />
           <Route path="/Fisica" element={<Fisica/>} />
@@ -48,6 +51,7 @@ function App() {
           <Route path="/Ingenieria" element={<Ingenieria/>} />
           <Route path="/Computacion" element={<Computacion/>} />
           <Route path="/Robotica" element={<Robotica/>} />
+          <Route path="/Quizz-intro" element = {<CursoIntro />}/>
 
         </Routes>
       </div>
