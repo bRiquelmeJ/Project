@@ -22,6 +22,7 @@ import Programacion from "./components/Cursos/Tecnologia/Programacion"
 import IA from "./components/Cursos/Tecnologia/IA"
 import CienciaDeDatos from "./components/Cursos/Tecnologia/CienciaDeDatos"
 import CursoIntro from "./components/Cursos/CursoIntro";
+import IntroStem from "./components/Cursos/STEM/IntroStem";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route path="/Robotica" element={<Robotica/>} />
           <Route path="/Quizz-intro" element = {<CursoIntro />}/>
           <Route path="/MujeresSTEM" element = {<MujeresSTEM />}/>
+          <Route path="/IntroStem" element = {<IntroStem />}/>
 
 
         </Routes>

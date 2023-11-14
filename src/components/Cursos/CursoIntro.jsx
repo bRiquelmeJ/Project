@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 import QuizzInicial from './QuizzInicial';
 
 
-function Pcursos() {
+function CursoIntro() {
 
   return (
     <div className="app-container container-fluid  row">
@@ -24,4 +24,4 @@ function Pcursos() {
   );
 }
 
-export default Pcursos;
+export default CursoIntro;
