@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../Styles/pCursos.css';
 import MujerSTEM from "../../img/STEMimg.jpg";
 import { Link } from 'react-router-dom';
