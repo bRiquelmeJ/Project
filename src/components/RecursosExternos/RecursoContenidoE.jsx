@@ -10,15 +10,16 @@ export default function ModalContentE({ onClose }) {
             
         
         <div class="card-group">
-            <div className="card" style={{ width: '18rem' }}>
+            <div className="card" style={{ width: '18rem' }} onClick={toTryEngineering}>
             <img src={TryEngineering} 
                 alt="tryengineering"
-                onClick={toTryEngineering}
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
+                viewBox="0 0 24 24"
                 />
-                <div className="card-body">
-                    <p className="card-text" >Recursos educativos para estudiantes. Explora la ingeniería a través de actividades prácticas y desafíos.</p>
+                <div class="card__content">
+                <p class="card__title"> TryEngineering </p>
+                <p class="card__description" >Recursos educativos para estudiantes. Explora la ingeniería a través de actividades prácticas y desafíos.</p>
                 </div>
             </div>
 

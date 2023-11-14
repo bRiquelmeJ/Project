@@ -84,28 +84,38 @@ return (
         </>
         </div>
         </div>
-        <div class="col" >
-
-        <div class="card  mb-3 mt-5" style={{ width: '660px'}}>
-    <div class="row g-0">
-        <div class="col-md-4">
-        <img src={Cookies} class="img-fluid rounded-start" alt="Cookies"/>
+        <div class="col mt-5" >
+        <div class="flip-card">
+        <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <p class="title">¿Qué son las Cookies?</p>
+            <img src={Cookies} class="img-fluid rounded-start" alt="Cookies"/>
         </div>
-        <div class="col-md-8">
-        <div class="card-body">
-        <h5 class="card-title">¿Qué son las Cookies?</h5>
-        <p class="card-text ">Las cookies en internet no son galletas, ¡son algo digital!</p>
-        <p class="card-text">Son como pequeñas notas que guardan información sobre lo que me gusta en una página web.</p>
-        <p class="card-text">Ayudan a que las páginas funcionen mejor.</p>
-        <p class="card-text"><small class="text-body-secondary">Recuerda siempre contarle a un adulto si algo parece extraño o no lo entiendes bien. 
-            ¡La seguridad es lo primero!</small></p>
-        </div>
+        <div class="flip-card-back">
+            <p class="title">Las cookies en internet no son galletas, ¡son algo digital!</p>
         </div>
     </div>
+</div>
+
+
         </div>
+        <div class="col mt-5">
+        <div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <p class="title">Ayudan a que las páginas funcionen mejor</p>
+            <p>Aunque no necesitan saber todo <br></br>¡La seguridad es lo primero!</p>
         </div>
-        <div class="col"></div>
-            </div>
+        <div class="flip-card-back">
+            <p class="title">Son como pequeñas notas que guardan información sobre lo que me gusta en una página web.</p>
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
     </div>
     </div>
     </div>
@@ -115,3 +125,21 @@ return (
 
 
 export default Recurso;
+
+<div class="card  mb-3 mt-5" style={{ width: '660px'}}>
+<div class="row g-0">
+    <div class="col-md-4">
+    <img src={Cookies} class="img-fluid rounded-start" alt="Cookies"/>
+    </div>
+    <div class="col-md-8">
+    <div class="card-body">
+    <h5 class="card-title">¿Qué son las Cookies?</h5>
+    <p class="card-text ">Las cookies en internet no son galletas, ¡son algo digital!</p>
+    <p class="card-text">Son como pequeñas notas que guardan información sobre lo que me gusta en una página web.</p>
+    <p class="card-text">Ayudan a que las páginas funcionen mejor.</p>
+    <p class="card-text"><small class="text-body-secondary">Recuerda siempre contarle a un adulto si algo parece extraño o no lo entiendes bien. 
+        ¡La seguridad es lo primero!</small></p>
+    </div>
+    </div>
+</div>
+    </div>
