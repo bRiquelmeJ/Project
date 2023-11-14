@@ -55,6 +55,15 @@ export default function Registro() {
     .then((data) => {
       console.log('Success:', data);
       alert('Usuario creado correctamente');
+      // Limpiar el formulario
+      setName('');
+      setLastname('');
+      setEmail('');
+      setPassword('');
+      setDate('');
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     });
   };
 
