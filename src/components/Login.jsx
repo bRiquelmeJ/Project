@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import imagenLogin from "../img/imagen-login.png";
 
 function Login() {
@@ -65,6 +65,7 @@ function Login() {
     .then((data) => {
       console.log('Login Success:', data);
       // Aquí puedes redirigir al usuario o manejar la sesión
+      navigate('/home');
     })
     .catch((error) => {
       console.error('Login Error:', error);

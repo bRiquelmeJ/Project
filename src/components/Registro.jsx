@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import imagenLogin from "../img/imagen-login.png";
 import '../register.css';
+import { Link, Navigate } from 'react-router-dom';
 
 export default function Registro() {
   const [name, setName] = useState('');
@@ -61,6 +61,7 @@ export default function Registro() {
       setEmail('');
       setPassword('');
       setDate('');
+      navigate('/login'); // Redirige al usuario a la ruta de inicio de sesión
     })
     .catch((error) => {
       console.error('Error:', error);
