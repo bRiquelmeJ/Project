@@ -3,7 +3,7 @@ import Sidebar from '../Sidebar';
 import '../../../Styles/tecnologia.css';
 
 
-function Tecnologia() {
+function CienciaDeDatos() {
 
   return (
     <div className="app-container container-fluid  row">
@@ -21,4 +21,4 @@ function Tecnologia() {
   );
 }
 
-export default Tecnologia;
+export default CienciaDeDatos;

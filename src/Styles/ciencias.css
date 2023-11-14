@@ -1,5 +1,4 @@
 .welcome-box{
-    background-color: rgba(255, 238, 164);
     border-radius: 15px;
     position: relative;
     top: 10px;
@@ -81,6 +80,7 @@
     top: 100px;
     left: calc(50% - 125px);
     bottom: 70px;
+  }
 
 
 .imgZoom {

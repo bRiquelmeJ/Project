@@ -14,7 +14,6 @@
     flex-basis: 20%;
     height: 85%;
     padding: 20px 0;
-    background-color: rgba(179, 255, 0, 0.80);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,7 +44,7 @@
 
     margin-left: 20px;
     padding: 8px;
-    background-color: rgba(255, 207, 0);
+  
     border-radius: 80px;
     margin-top: 80px;
 }
@@ -53,7 +52,7 @@
 .header-box{
     
     border-radius: 48px;
-    background-color: rgba(255, 228, 112);
+   
     width: 90%;
     height: 60%;
 

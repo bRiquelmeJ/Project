@@ -14,28 +14,28 @@ function Tecnologia() {
       <div className="container-fluid app-sidebar col-lg-10 col-md-12">
         
         <Sidebar/>
-      </div>
-      
-      <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
+    </div>
+    
+    <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
                 <div className="welcome-box w-50 row ">
-                    <div className="welcome-box-text">
-                        <h2>Bienvenid@ a Ciencias</h2>
+                    <div>
+                        <h1> Bienvenidos a Tecnologia</h1>
                     </div>
                 </div>
 
                 <div className="mt-3 row d-flex align-items-center justify-content-center courses-btn">
                     <div className="btn-group col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
-                        <Link to="/Biologia" type="button" className="btn btn-lg btn-block">
+                        <Link to="/programacion" type="button" className="btn btn-lg btn-block">
                             <img src={Programacion} alt="Programacion" className="img-fluid imgZoom" />
                         </Link>
                     </div>
                     <div className="btn-group col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
-                        <Link to="/Quimica" type="button" className="btn btn-lg btn-block">
+                        <Link to="/IA" type="button" className="btn btn-lg btn-block">
                             <img src={IA} alt="IA" className="img-fluid imgZoom" />
                         </Link>
                     </div>
                     <div className="btn-group col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
-                        <Link to="/Fisica" type="button" className="btn btn-lg btn-block">
+                        <Link to="/CienciadeDatos" type="button" className="btn btn-lg btn-block">
                             <img src={CienciaDatos} alt="CienciaDatos" className="img-fluid imgZoom" />
                         </Link>
                     </div>
