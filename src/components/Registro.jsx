@@ -44,7 +44,7 @@ export default function Registro() {
       "date": date,
     }
    
-    fetch('http://localhost:8080/api/v1/crear', {
+    fetch('http://localhost:4000/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

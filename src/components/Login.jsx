@@ -49,7 +49,7 @@ function Login() {
       password,
     };
 
-    fetch('http://localhost:8080/api/v1/login', {
+    fetch('http://localhost:4000/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ function Login() {
       body: JSON.stringify(userData),
     })
     .then((response) => {
-      if (!response.ok) {
+      if (!response) {
         throw new Error('Error en el inicio de sesión');
       }
       return response.json();
