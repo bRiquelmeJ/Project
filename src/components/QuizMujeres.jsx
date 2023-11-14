@@ -49,35 +49,41 @@ const questions = [
   },
 ];
 
-function QuizIntroSTEM() {
+function QuizIntroSTEM({ setFeedbackMessage }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
 
   const handleAnswerOptionClick = (answerOption) => {
-    const isCorrect = answerOption.isCorrect;
     setSelectedAnswer(answerOption.answerText);
-    if (isCorrect) {
+
+    if (answerOption.isCorrect) {
       setScore(score + 1);
+      setFeedbackMessage("¡Correcto! ¡Muy bien!"); // No hay mensaje de retroalimentación si es correcto
+    } else {
+      setFeedbackMessage("¡Ups! Esa no es la respuesta correcta."); // Mensaje de retroalimentación para la mascota
     }
-    setTimeout(() => {
-      const nextQuestion = currentQuestion + 1;
-      if (nextQuestion < questions.length) {
+
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < questions.length) {
+      setTimeout(() => {
         setCurrentQuestion(nextQuestion);
-      } else {
-        setShowScore(true);
-      }
-      setSelectedAnswer("");
-    }, 1000);
+        setSelectedAnswer("");
+        setFeedbackMessage(""); // Limpiar mensaje para la siguiente pregunta
+      }, 2000); // Esperar 2 segundos antes de mostrar la siguiente pregunta
+    } else {
+      setShowScore(true);
+    }
   };
 
   const resetQuiz = () => {
     setCurrentQuestion(0);
     setScore(0);
     setShowScore(false);
+    setSelectedAnswer("");
+    setFeedbackMessage("");
   };
-
   return (
     <div className='quiz'>
       <div className='quiz-intro'>
@@ -119,5 +125,4 @@ function QuizIntroSTEM() {
     </div>
   );
 }
-
 export default QuizIntroSTEM;
