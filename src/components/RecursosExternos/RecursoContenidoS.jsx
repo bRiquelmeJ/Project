@@ -14,35 +14,35 @@ export default function ModalContentS({ onClose }) {
     <div className="modal">
         
         <div class="card-group">
-            <div className="card" style={{ width: '18rem' }} onClick={toKhanAcademy}>
+            <div className="card1" style={{ width: '18rem' }} onClick={toKhanAcademy}>
             <img src={Khan} 
                 alt="Khan Academy"
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
                 viewBox="0 0 24 24"
                 />
-                <div class="card__content">
-                <p class="card__title">
+                <div class="card__content1">
+                <p class="card__title1">
                     Khan Academy
                 </p>
-                <p class="card__description">Plataforma educativa global, ofrece cursos gratuitos, recursos interactivos, aprendizaje personalizado.</p>
+                <p class="card1__description1">Plataforma educativa global, ofrece cursos gratuitos, recursos interactivos, aprendizaje personalizado.</p>
                 </div>
             </div>
             
 
             
-            <div class="card" onClick={toMicroMundo}>
+            <div class="card1" onClick={toMicroMundo}>
                 <img src={MicroMundo} 
                 alt="MicroMundo"
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
                 viewBox="0 0 24 24"
                 />
-                <div class="card__content">
-                <p class="card__title">
+                <div class="card__content1">
+                <p class="card__title1">
                     MicroMundo 
                 </p>
-                <p class="card__description">Microscopia Virtual, Plataforma multimedia, Actividades & Talleres</p>
+                <p class="card__description1">Microscopia Virtual, Plataforma multimedia, Actividades & Talleres</p>
                 </div>
             </div>
             

@@ -14,30 +14,30 @@ export default function ModalContentM({ onClose }) {
     <div className="modal">
         <div class="card-group">
 
-            <div className="card" style={{ width: '18rem' }} onClick={toCokitos}>
+            <div className="card1" style={{ width: '18rem' }} onClick={toCokitos}>
             <img src={Cokitos} 
                 alt="Cokitos"
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
                 viewBox="0 0 24 24"
                 />
-            <div class="card__content">
-                <p class="card__title"> Cokitos </p>
-                <p class="card__description"> Juegos de matemáticas para niños, aprendizaje divertido y educativo en línea.</p>
+            <div class="card__content1">
+                <p class="card__title1"> Cokitos </p>
+                <p class="card__description1"> Juegos de matemáticas para niños, aprendizaje divertido y educativo en línea.</p>
                 </div>
             </div>
 
         
-            <div className="card" style={{ width: '10rem' }} onClick={toCerebriti}>
+            <div className="card1" style={{ width: '10rem' }} onClick={toCerebriti}>
             <img src={Cerebriti} 
-                alt="Khan Academy"
+                alt="Cerebriti"
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
                 viewBox="0 0 24 24"
                 />
-                <div class="card__content">
-                <p class="card__title"> Cerebriti </p>
-                <p class="card__description">  Plataforma educativa con juegos y actividades para el aprendizaje interactivo y personalizado</p>
+                <div class="card__content1">
+                <p class="card__title1"> Cerebriti </p>
+                <p class="card__description1">  Plataforma educativa con juegos y actividades para el aprendizaje interactivo y personalizado</p>
                 </div>
             </div>
         <button onClick={onClose}  type="button" class="btn-close" aria-label="Close"></button>
