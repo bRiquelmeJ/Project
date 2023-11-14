@@ -9,7 +9,7 @@ function StemBtn(){
         <div className="header-box container w-60 h-auto   ">
           <div className="welcome-box w-50 row ">
             <div className="welcome-box-text">
-            <h2>Bienvenid@ de vuelta</h2>
+            <h2 className='perfilFont'>Bienvenid@ de vuelta</h2>
             </div>
             
           </div>
