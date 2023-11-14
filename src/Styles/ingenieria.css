@@ -1,0 +1,15 @@
+.welcome-box{
+
+    border-radius: 15px;
+    position: relative;
+    top: 10px;
+    left: 5%;
+}
+.welcome-box-text {
+    text-align: center;
+    color: black;
+    font-size: 30;
+    font-weight: 400;
+    word-wrap: break-word;
+    
+}

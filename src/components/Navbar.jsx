@@ -38,11 +38,6 @@ function Navbar() {
                   </a>
                   <ul className="dropdown-menu dropdown-menu-dark">
                     <Link to="/PlataformaCursos" className="dropdown-item">Plataforma cursos</Link>
-                    <li><a className="dropdown-item" href="#">Ingenieria</a></li>
-                    <li><a className="dropdown-item" href="#">Programación</a></li>
-                    <li><a className="dropdown-item" href="#">Ciencia</a></li>
-                    <li><a className="dropdown-item" href="#">Matemáticas</a></li>
-
                   </ul>
                 </li>
               </ul>
