@@ -104,7 +104,7 @@ function QuizzInge({ setFeedbackMessage }) {
 
     if (answerOption.isCorrect) {
       setScore(score + 1);
-      setFeedbackMessage(""); // No hay mensaje de retroalimentación si es correcto
+      setFeedbackMessage("¡Correcto! ¡Muy bien!"); // No hay mensaje de retroalimentación si es correcto
     } else {
       setFeedbackMessage("¡Ups! Esa no es la respuesta correcta."); // Mensaje de retroalimentación para la mascota
     }
