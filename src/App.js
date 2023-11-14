@@ -9,7 +9,7 @@ import Pcursos from "./components/Cursos/Pcursos";
 import Matematicas from "./components/Cursos/Matematicas/Matematicas-1"
 import Recurso from "./components/RecursosExternos/Recurso";
 import MatematicasIntro from "./components/Cursos/Matematicas/Matematicas-Intro";
-
+import MujeresSTEM from "./components/Cursos/MujeresSTEM/Mujeres"
 import Ciencia from "./components/Cursos/Ciencias/Ciencia"
 import Biologia from "./components/Cursos/Ciencias/Biologia"
 import Fisica from "./components/Cursos/Ciencias/Fisica"
@@ -52,6 +52,8 @@ function App() {
           <Route path="/Computacion" element={<Computacion/>} />
           <Route path="/Robotica" element={<Robotica/>} />
           <Route path="/Quizz-intro" element = {<CursoIntro />}/>
+          <Route path="/MujeresSTEM" element = {<MujeresSTEM />}/>
+
 
         </Routes>
       </div>
