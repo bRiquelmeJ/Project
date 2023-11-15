@@ -1,9 +1,11 @@
+// ContainerQuizz.js
 import React, { useState } from 'react';
-import '../../Styles/quizzIntro.css';
-import QuizMujeres from '../QuizMujeres'; // Asegúrate de que la ruta sea correcta
-import MascotaFeliz from "../../img/Logo EquidApp.png";
+import "../../../../Styles/pCursos.css";
+import QuizzMate from './QuizzMate';
+import MascotaFeliz from "../../../../img/Logo EquidApp.png";
 
-function QuizzInicial() {
+
+function ContainerMateQuizz() {
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [mascotaImage, setMascotaImage] = useState(MascotaFeliz); // Estado para la imagen de la mascota
 
@@ -12,7 +14,7 @@ function QuizzInicial() {
       <div className="row">
         <div className="col-lg-8 mx-auto h-100">
           <div className="news-activities-text">
-            <QuizMujeres setFeedbackMessage={setFeedbackMessage} setMascotaImage={setMascotaImage} />
+            <QuizzMate setFeedbackMessage={setFeedbackMessage} setMascotaImage={setMascotaImage} />
           </div>
         </div>
         <div className="col-lg-4 d-flex justify-content-end align-items-center position-relative">
@@ -28,4 +30,4 @@ function QuizzInicial() {
   );
 }
 
-export default QuizzInicial;
+export default ContainerMateQuizz;
