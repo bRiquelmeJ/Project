@@ -1,5 +1,6 @@
 import StemImage from '../img/STEMimg.jpg'
 import '../App.css'
+import '../Styles/card-stem.css'
 
 export default function Stem() {
     return (
@@ -19,18 +20,20 @@ export default function Stem() {
                 {/* Tarjetas STEM */}
                 <div className="row justify-content-center">
                   <div className="col-md-3 mb-3">
-                    <div className="card text-center card-stem d-flex flex-column justify-content-between">
-                      <div className="card-body text-white card-texto">
-                        <h5 className="card-title">S</h5>
-                        <p className="card-text fst-italic">Science</p>
-                      </div>
-                      <div className="card-body">
-                        <p className="card-text">Desarrolla competencias en un campo que trata problemas de cambio climático, medicina o calentamiento global.</p>
-                        
-                        <button className="btn btnStem">Ir al curso</button>
-                        
-                      </div>
-                    </div>
+                  <div className="card-stem">
+  <div className="card-title-stem">
+    <h1 className="display-1">S</h1>
+    <p className="card-body-stem fst-italic">Science</p>
+  </div>
+  <div className="card-body-stem">
+    <p className="card-text-stem">
+      Desarrolla competencias en un campo que trata problemas de cambio climático, medicina o calentamiento global.
+    </p>
+    <button className="btn btnStem">Ir al curso</button>
+  </div>
+</div>
+
+
                   </div>
   
                   <div className="col-md-3 mb-3">
