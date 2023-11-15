@@ -35,7 +35,7 @@ function Ingenieria() {
                     </div>
                 </div>
                 <div className='row container-fluid d-flex align-content-center justify-content-center'> 
-                <button class="button1"> ¡Vamos al Quiz!</button>     
+                <Link to="/Quizz-Ingenieria" class="btn button1"> ¡Vamos al Quiz! </Link>    
                 </div>
             </div>
       
