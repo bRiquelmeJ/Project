@@ -25,7 +25,7 @@ function CienciaDeDatos() {
           <h2 className= "perfilFont">¡Bienvenid@s al mundo de los datos!</h2>
           </div>
         </div>
-        <div className="mt-3 course-text container-fluid w-50 d-flex align-items-center justify-content-center">
+        <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
           <p className="text-center border-course-text border rounded p-4">
           La Ciencia de Datos, un campo fascinante e interdisciplinario, se erige como la brújula que guía la era digital. 
           En su esencia, es la búsqueda de conocimiento a través del análisis de datos, aprovechando información cruda para desvelar patrones, tendencias y revelaciones que impulsan la toma de decisiones
