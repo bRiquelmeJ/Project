@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../../Styles/pCursos.css';
-import StemBtnQuizz from '../StemBtnQuizz';
-import Sidebar from '../Sidebar';
-import ContainerQuizz from './ContainerQuizz';
+import '../../../../Styles/pCursos.css';
+import StemBtnQuizz from '../../StemBtnQuizz';
+import Sidebar from '../../Sidebar';
+import ContainerQuizz from './ContainerCienciaQuizz';
 
 
 function IngeIntro() {
