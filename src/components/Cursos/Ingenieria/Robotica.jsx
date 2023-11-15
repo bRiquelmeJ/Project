@@ -18,7 +18,7 @@ function Ingenieria() {
           <h2 className= "perfilFont">Bienvenid@ a Robótica</h2>
           </div>
         </div>
-        <div className="mt-3 course-text container-fluid w-50 d-flex align-items-center justify-content-center">
+        <div className="mt-3 course-text container-fluid d-flex align-items-center justify-content-center">
           <p className="text-center border-course-text border rounded p-4">
           En este campo vanguardista, la creatividad y la tecnología convergen para dar vida a máquinas inteligentes y autónomas. <br></br>
 La Robótica es mucho más que simples robots; es una ventana al futuro donde la ingeniería, la inteligencia artificial y la automatización se fusionan. <br></br>

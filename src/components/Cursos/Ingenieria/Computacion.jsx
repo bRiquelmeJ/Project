@@ -18,10 +18,9 @@ function Ingenieria() {
           <h2 className= "perfilFont">Bienvenid@ a Computación</h2>
           </div>
         </div>
-        <div className="mt-3 course-text container-fluid w-50 d-flex align-items-center justify-content-center">
+        <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
           <p className="text-center border-course-text border rounded p-4">
-            Los biólogos estudian la vida a diferentes niveles, desde las células individuales, pasando por los organismos, hasta la biósfera completa del planeta Tierra. Ven y aprende más acerca de los temas fundamentales de la biología.
-          </p>
+          Los expertos en computación exploran el fascinante mundo de las máquinas y la información a diferentes niveles, desde el código en programas individuales hasta la gestión de sistemas complejos en toda la red.  </p>
         </div>
         <div className='container-fluid d-flex justify-content-evenly'>
           <img src={Video} alt='Ciencias-Video'/>
