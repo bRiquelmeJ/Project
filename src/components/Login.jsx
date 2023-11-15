@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate,useNavigate } from 'react-router-dom';
 import imagenLogin from "../img/imagen-login.png";
 
 function Login() {
+ 
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
@@ -65,7 +68,7 @@ function Login() {
     .then((data) => {
       console.log('Login Success:', data);
       // Aquí puedes redirigir al usuario o manejar la sesión
-      navigate('/home');
+      navigate('/PlataformaCursos');
     })
     .catch((error) => {
       console.error('Login Error:', error);

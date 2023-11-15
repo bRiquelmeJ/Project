@@ -20,12 +20,12 @@ function Programacion() {
       </div>
       
       <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-      <div className="welcome-box w-50 mb-3">
-          <div className="welcome-box-text text-center">
-            <h2>Bienvenid@ a Programación</h2>
+      <div className="welcome-box mb-3">
+          <div className=" text-center">
+          <h2 className= "perfilFont">Bienvenid@ a Programación</h2>
           </div>
         </div>
-        <div className="mt-3 course-text container-fluid w-50 d-flex align-items-center justify-content-center">
+        <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
           <p className="text-center border-course-text border rounded p-4">
           La programación es el arte de dar vida a tus ideas en el mundo digital. Es como aprender un nuevo idioma para crear aplicaciones, juegos y soluciones innovadoras. Cada línea de código es un paso más cerca de convertir tus pensamientos en realidad. Bienvenido al emocionante viaje de la programación, donde la creatividad se encuentra con el potencial ilimitado de la tecnología
           </p>

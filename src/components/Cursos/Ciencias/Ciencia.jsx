@@ -13,13 +13,11 @@ function Ciencia() {
                 <Sidebar />
             </div>
             <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-                <div className="welcome-box w-50 row ">
-                    <div className="welcome-box-text">
-                        <h2>Bienvenid@ a Ciencias</h2>
-                    </div>
+                <div className="welcome-box row ">
+                    <h2 className='perfilFont'>Bienvenid@ a Ciencias</h2>
                 </div>
 
-                <div className="mt-3 row d-flex align-items-center justify-content-center courses-btn">
+                <div className="row d-flex align-items-center justify-content-center courses-btn">
                     <div className="btn-group col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
                         <Link to="/Biologia" type="button" className="btn btn-lg btn-block">
                             <img src={Biologia} alt="Biologia" className="img-fluid imgZoom" />
