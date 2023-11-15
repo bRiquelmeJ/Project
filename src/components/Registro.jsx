@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import imagenLogin from "../img/imagen-login.png";
 import '../register.css';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import {useForm, userForm} from 'react-hook-form'
 
 export default function Registro() {
+
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [lastName, setLastname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [date, setDate] = useState('');
   
+  const {register} = useForm()
+  
+
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -62,8 +68,7 @@ export default function Registro() {
       setPassword('');
       setDate('');
       navigate('/login'); // Redirige al usuario a la ruta de inicio de sesión
-    })
-    .catch((error) => {
+    }).catch((error) => {
       console.error('Error:', error);
     });
   };
