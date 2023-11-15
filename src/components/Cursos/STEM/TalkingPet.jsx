@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../../Styles/pCursos.css';
-import Mascota from "../../../img/Logo EquidApp.png";
+import Mascota from '../../../img/Logo EquidApp.png';
+import IntroStem from '../Contenido/IntroStem.json';
 
 function TalkingPet() {
   const [paragraphs, setParagraphs] = useState([]);
@@ -8,9 +9,9 @@ function TalkingPet() {
 
   useEffect(() => {
     // Cargar datos desde el archivo JSON
-    fetch('IntroStem.json')
+    fetch(IntroStem)
       .then(response => response.json())
-      .then(data => setParagraphs(data))
+      .then(paragraphs => setParagraphs(paragraphs))
       .catch(error => console.error('Error al cargar el archivo JSON:', error));
   }, []);
 
