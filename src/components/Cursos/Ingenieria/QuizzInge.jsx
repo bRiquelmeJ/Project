@@ -102,16 +102,17 @@ function QuizzInge({ setFeedbackMessage, setMascotaImage }) {
   const [showScore, setShowScore] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [randomQuestions, setRandomQuestions] = useState([]);
- // Función para seleccionar 7 preguntas aleatorias
- const selectRandomQuestions = (allQuestions, numQuestions) => {
-  const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, numQuestions);
-};
 
-// Inicializar el cuestionario con preguntas aleatorias al montar el componente
-useEffect(() => {
-  setRandomQuestions(selectRandomQuestions(questions, 7));
-}, []);
+  // Función para seleccionar 7 preguntas aleatorias
+  const selectRandomQuestions = (allQuestions, numQuestions) => {
+    const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, numQuestions);
+  };
+
+  // Inicializar el cuestionario con preguntas aleatorias al montar el componente
+  useEffect(() => {
+    setRandomQuestions(selectRandomQuestions(questions, 7));
+  }, []);
 
   const handleAnswerOptionClick = (answerOption) => {
     setSelectedAnswer(answerOption.answerText);
@@ -119,19 +120,19 @@ useEffect(() => {
     if (answerOption.isCorrect) {
       setMascotaImage(MascotaFeliz);
       setScore(score + 1);
-      setFeedbackMessage("¡Correcto! ¡Muy bien!"); // No hay mensaje de retroalimentación si es correcto
+      setFeedbackMessage("¡Correcto! ¡Muy bien!");
     } else {
       setMascotaImage(MascotaTriste);
-      setFeedbackMessage("¡Ups! Esa no es la respuesta correcta."); // Mensaje de retroalimentación para la mascota
+      setFeedbackMessage("¡Ups! Esa no es la respuesta correcta.");
     }
 
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
+    if (nextQuestion < randomQuestions.length) {
       setTimeout(() => {
         setCurrentQuestion(nextQuestion);
         setSelectedAnswer("");
-        setFeedbackMessage(""); // Limpiar mensaje para la siguiente pregunta
-      }, 1000); // Esperar 2 segundos antes de mostrar la siguiente pregunta
+        setFeedbackMessage("");
+      }, 1000);
     } else {
       setShowScore(true);
     }
@@ -148,7 +149,7 @@ useEffect(() => {
   return (
     <div className='quiz'>
       <div className='quiz-intro'>
-        {/* ... Mensaje de bienvenida ... */}
+        {/* Mensaje de bienvenida */}
       </div>
 
       {showScore ? (
@@ -159,7 +160,7 @@ useEffect(() => {
       ) : (
         <div className='card quizzCard'>
           <div className='card-body'>
-            {randomQuestions.length > 0 ? (
+            {randomQuestions.length > 0 && currentQuestion < randomQuestions.length ? (
               <>
                 <div className='question-section'>
                   <div className='question-count'>
@@ -184,7 +185,7 @@ useEffect(() => {
                 </div>
               </>
             ) : (
-              <div>Cargando preguntas...</div> // Mostrar mientras las preguntas se cargan
+              <div>Cargando preguntas...</div>
             )}
           </div>
         </div>

@@ -23,7 +23,9 @@ import IA from "./components/Cursos/Tecnologia/IA"
 import CienciaDeDatos from "./components/Cursos/Tecnologia/CienciaDeDatos"
 import CursoIntro from "./components/Cursos/CursoIntro";
 import IngeIntro from "./components/Cursos/Ingenieria/IngeIntro";
-
+import CienciaIntro from "./components/Cursos/Ciencias/QuizzCiencia/CienciaIntro";
+import MatematicasIntroQuizz from "./components/Cursos/Matematicas/QuizzMate/MateIntro";
+import TecIntroQuizz from "./components/Cursos/Tecnologia/QuizzTec/TecIntro";
 function App() {
   return (
     <div>
@@ -40,7 +42,6 @@ function App() {
           <Route path="/" element={<Pcursos/>} />
           <Route path="/Matematicas" element={<Matematicas />} />
           <Route path="/MatematicasIntro" element={<MatematicasIntro />} />
-
           <Route path="/Ciencia" element={<Ciencia/>} />
           <Route path="/Biologia" element={<Biologia/>} />
           <Route path="/Fisica" element={<Fisica/>} />
@@ -54,6 +55,9 @@ function App() {
           <Route path="/Robotica" element={<Robotica/>} />
           <Route path="/Quizz-intro" element = {<CursoIntro />}/>
           <Route path="/Quizz-Ingenieria" element = {<IngeIntro/>}/>
+          <Route path="/Quizz-Ciencia" element = {<CienciaIntro/>}/>
+          <Route path="/Quizz-Matematicas" element = {<MatematicasIntroQuizz/>}/>
+          <Route path="/Quizz-Tecnologia" element = {<TecIntroQuizz/>}/>
           <Route path="/MujeresSTEM" element = {<MujeresSTEM />}/>
 
 
