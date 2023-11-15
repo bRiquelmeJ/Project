@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import MascotaFeliz from "../../../img/Logo EquidApp.png";
+import MascotaTriste from "../../../img/Logo EquidApp.png";
+
 
 const questions = [
   {
@@ -93,7 +96,7 @@ const questions = [
   },
 ];
 
-function QuizzInge({ setFeedbackMessage }) {
+function QuizzInge({ setFeedbackMessage, setMascotaImage }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -114,9 +117,11 @@ useEffect(() => {
     setSelectedAnswer(answerOption.answerText);
 
     if (answerOption.isCorrect) {
+      setMascotaImage(MascotaFeliz);
       setScore(score + 1);
       setFeedbackMessage("¡Correcto! ¡Muy bien!"); // No hay mensaje de retroalimentación si es correcto
     } else {
+      setMascotaImage(MascotaTriste);
       setFeedbackMessage("¡Ups! Esa no es la respuesta correcta."); // Mensaje de retroalimentación para la mascota
     }
 
@@ -126,7 +131,7 @@ useEffect(() => {
         setCurrentQuestion(nextQuestion);
         setSelectedAnswer("");
         setFeedbackMessage(""); // Limpiar mensaje para la siguiente pregunta
-      }, 2000); // Esperar 2 segundos antes de mostrar la siguiente pregunta
+      }, 1000); // Esperar 2 segundos antes de mostrar la siguiente pregunta
     } else {
       setShowScore(true);
     }
@@ -148,33 +153,39 @@ useEffect(() => {
 
       {showScore ? (
         <div className='score-section'>
-          Has acertado {score} de {questions.length} preguntas.
+          Has acertado {score} de {randomQuestions.length} preguntas.
           <button onClick={resetQuiz} className='btn btn-purple'>Volver a empezar</button>
         </div>
       ) : (
         <div className='card quizzCard'>
           <div className='card-body'>
-            <div className='question-section'>
-              <div className='question-count'>
-                <span>Pregunta {currentQuestion + 1}</span>/{questions.length}
-              </div>
-              <div className='question-text'>{questions[currentQuestion].questionText}</div>
-            </div>
-            <div className='answer-section'>
-              <ul>
-                {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                  <li key={index}>
-                    <button
-                      onClick={() => handleAnswerOptionClick(answerOption)}
-                      className={`btn m-2 ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn btn-purple'}`}
-                      disabled={selectedAnswer !== ""}
-                    >
-                      {answerOption.answerText}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {randomQuestions.length > 0 ? (
+              <>
+                <div className='question-section'>
+                  <div className='question-count'>
+                    <span>Pregunta {currentQuestion + 1}</span>/{randomQuestions.length}
+                  </div>
+                  <div className='question-text'>{randomQuestions[currentQuestion].questionText}</div>
+                </div>
+                <div className='answer-section'>
+                  <ul>
+                    {randomQuestions[currentQuestion].answerOptions.map((answerOption, index) => (
+                      <li key={index}>
+                        <button
+                          onClick={() => handleAnswerOptionClick(answerOption)}
+                          className={`btn m-2 ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn btn-purple'}`}
+                          disabled={selectedAnswer !== ""}
+                        >
+                          {answerOption.answerText}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            ) : (
+              <div>Cargando preguntas...</div> // Mostrar mientras las preguntas se cargan
+            )}
           </div>
         </div>
       )}
