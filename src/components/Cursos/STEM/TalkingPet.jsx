@@ -11,7 +11,7 @@ function TalkingPet() {
     // Cargar datos desde el archivo JSON
     fetch(IntroStem)
       .then(response => response.json())
-      .then(paragraphs => setParagraphs(paragraphs))
+      .then(data => setParagraphs(data.paragraphs))  // Ajusta según la estructura real del JSON
       .catch(error => console.error('Error al cargar el archivo JSON:', error));
   }, []);
 
