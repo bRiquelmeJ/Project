@@ -89,7 +89,7 @@ return (
         <div class="flip-card-inner">
         <div class="flip-card-front">
             <p class="title">¿Qué son las Cookies?</p>
-            <img src={Cookies} class="img-fluid rounded-start" alt="Cookies"/>
+            <img src={Cookies} class="img-fluid  rounded-start" alt="Cookies"/>
         </div>
         <div class="flip-card-back">
             <p class="title">Las cookies en internet no son galletas, ¡son algo digital!</p>

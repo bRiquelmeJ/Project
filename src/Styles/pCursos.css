@@ -32,15 +32,15 @@ ul>li{
   padding: 25px;
 }
 
-
 .user-box{
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
 }
+
 
 .user-box-text {
   text-align: center;
@@ -115,14 +115,24 @@ ul>li{
 }
 .foto-perfil{
   max-width: 100%;
-  max-height: 60%;
+  max-height: 100%;
   border-radius: 56%;
   margin-bottom: 30px;
+  object-fit: cover;
+  object-position: center center
   
 }
 .perfilFont{
   font-style: italic;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
