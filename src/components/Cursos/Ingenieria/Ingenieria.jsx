@@ -16,9 +16,9 @@ function Ingenieria() {
       </div>
       
       <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-                <div className="welcome-box w-50 row ">
-                    <div className="welcome-box-text">
-                        <h2>Bienvenid@ a Ingeniería</h2>
+                <div className="welcome-box  row ">
+                    <div className="">
+                    <h2 className= "perfilFont">Bienvenid@ a Ingeniería</h2>
                     </div>
                 </div>
 

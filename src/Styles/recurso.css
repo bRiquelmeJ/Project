@@ -51,19 +51,12 @@
 .header-box{
     
     border-radius: 48px;
-   
     width: 90%;
     height: 60%;
 
 }
 
-.welcome-box-text {
-    text-align: center;
-    color: black;
-    font-size: 30;
-    font-weight: 400;
-    word-wrap:break-word;
-}
+
 
 .modal {
     display: flex;

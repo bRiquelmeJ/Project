@@ -13,9 +13,9 @@ function Ingenieria() {
         <Sidebar />
       </div>
       <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-        <div className="welcome-box w-50 mb-3">
-          <div className="welcome-box-text text-center">
-            <h2>Bienvenid@ a Robótica</h2>
+        <div className="welcome-box mb-3">
+          <div className="text-center">
+          <h2 className= "perfilFont">Bienvenid@ a Robótica</h2>
           </div>
         </div>
         <div className="mt-3 course-text container-fluid w-50 d-flex align-items-center justify-content-center">

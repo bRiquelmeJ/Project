@@ -17,9 +17,9 @@ function Tecnologia() {
     </div>
     
     <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-                <div className="welcome-box w-50 row ">
+                <div className="welcome-box row ">
                     <div>
-                        <h1> Bienvenidos a Tecnologia</h1>
+                        <h2 className= "perfilFont"> Bienvenidos a Tecnologia</h2>
                     </div>
                 </div>
 

@@ -13,10 +13,8 @@ function Pcursos() {
       </div>
       
       <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-      <div className="welcome-box w-50 row ">
-                    <div className="welcome-box-text">
-                        <h2>Descubriendo el Legado Femenino en Ciencia, Tecnología, Ingeniería y Matemáticas (STEM)</h2>
-                    </div>
+              <div className="welcome-box row ">
+                    <h2 className= "perfilFont"> Descubriendo el Legado Femenino: Ciencia, Tecnología, Ingeniería y Matemáticas (STEM)</h2> 
                 </div>
       <div className="mt-0 course-text container-fluid w-100 d-flex align-items-center justify-content-center">
       <h3 className="text-center border-course-text border rounded p-4">

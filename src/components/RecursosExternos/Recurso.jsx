@@ -30,9 +30,7 @@ return (
 <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
     <div className="app-main ">
         <div className="header-box container bg-warning-subtle ">
-        <div className="welcome-box-text">
-        <h2>¡Sigamos Aprendiendo! : Recursos Divertidos</h2>
-        </div>
+    <h2 className= "perfilFont">¡Sigamos Aprendiendo! : Recursos Divertidos</h2>
             </div>
     <div class="row align-items-start">
     <div class="col">
