@@ -1,6 +1,7 @@
 import Imagen06 from '../img/ImagenPortada06.jpg'
 import Imagen10 from '../img/ImagenPortada10.jpg'
 import '../App.css'
+import { Link } from 'react-router-dom'
 
 export default function StemInfo() {
     return (
@@ -34,7 +35,7 @@ export default function StemInfo() {
                   <div className="card-body">
                     <h5 className="card-title">Únete a nuestra comunidad</h5>
                     <p className="card-text">Ofrecemos recursos, tutoriales y guías específicamente diseñados para mujeres que buscan adentrarse o avanzar en campos STEM.</p>
-                    <button className="btn btnStem">Regístrate</button>
+                    <Link to="/registrarse" className="btn btnStem"> Regístrate </Link>
                   </div>
                 </div>
               </div>
