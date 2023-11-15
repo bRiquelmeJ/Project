@@ -24,8 +24,12 @@ const Matematicas1 = () => {
                         </Link>
                     </div>
         </div>
-        </div>
+        </div>     
+              <div className='row container-fluid d-flex align-content-center justify-content-center'> 
+              <button class="button1"> ¡Vamos al Quiz!</button>     
+              </div>
       </div>
+
     </div>
   );
 };
