@@ -98,6 +98,17 @@ function QuizzInge({ setFeedbackMessage }) {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [randomQuestions, setRandomQuestions] = useState([]);
+ // Función para seleccionar 7 preguntas aleatorias
+ const selectRandomQuestions = (allQuestions, numQuestions) => {
+  const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, numQuestions);
+};
+
+// Inicializar el cuestionario con preguntas aleatorias al montar el componente
+useEffect(() => {
+  setRandomQuestions(selectRandomQuestions(questions, 7));
+}, []);
 
   const handleAnswerOptionClick = (answerOption) => {
     setSelectedAnswer(answerOption.answerText);
