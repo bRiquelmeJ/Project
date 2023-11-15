@@ -68,6 +68,7 @@ function Login() {
     .then((data) => {
       console.log('Login Success:', data);
       // Aquí puedes redirigir al usuario o manejar la sesión
+      Navigate('/home');
       navigate('/PlataformaCursos');
     })
     .catch((error) => {

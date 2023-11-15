@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../Styles/pCursos.css';
-import StemBtn from './StemBtn';
+import StemBtnQuizz from './StemBtnQuizz';
 import Sidebar from './Sidebar';
 import QuizzInicial from './QuizzInicial';
 
@@ -14,8 +14,9 @@ function Pcursos() {
         <Sidebar/>
       </div>
       <div className="app-main container-fluid col-lg col-md-12 w- h-80">
+        <StemBtnQuizz />
         
-        <StemBtn/>
+      
         <QuizzInicial/>
       </div>
       
