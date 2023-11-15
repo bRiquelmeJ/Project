@@ -66,8 +66,14 @@ export default function Registro() {
       setEmail('');
       setPassword('');
       setDate('');
+
+      Navigate('/login'); // Redirige al usuario a la ruta de inicio de sesión
+    })
+    .catch((error) => {
+
       navigate('/login'); // Redirige al usuario a la ruta de inicio de sesión
     }).catch((error) => {
+
       console.error('Error:', error);
     });
   };

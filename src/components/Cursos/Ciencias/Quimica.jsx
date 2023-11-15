@@ -32,18 +32,28 @@ function Quimica() {
                         En su esencia, la química busca entender la naturaleza íntima de la materia y las fuerzas que la rigen en el universo.</p>
                 </div>
                 <div className='container-fluid d-flex justify-content-evenly'>
-                    <>
-                    <img src={Video} alt='Ciencias-Video' onClick={() => setShowModalVideo(true)}/>
-                    {showModalVideo && createPortal(
-                    <ModalContentVideo onClose={() => setShowModalVideo(false)} />,
-                    document.body)}
-                    </>
-                    <>
-                    <img src={Lectura} alt='Ciencias-Lectura' onClick={() => setShowModalInfo(true)}/>
-                    {showModalInfo && createPortal(
-                        <ModalContentInfo onClose={() => setShowModalInfo(false)} />,
-                        document.body)}
-                    </>
+                <>
+            <button class="game-button" onClick={() => setShowModalVideo(true)}>
+            <svg class="play-icon" viewBox="0 0 40 40">
+            <path d="M 10,10 L 30,20 L 10,30 z"></path>
+            </svg>
+            PLAY VIDEO
+            </button>
+            {showModalVideo && createPortal(
+            <ModalContentVideo onClose={() => setShowModalVideo(false)} />,
+            document.body)}
+            </>
+            <>
+            <button class="game-button" onClick={() => setShowModalInfo(true)}>
+            <svg class="play-icon" viewBox="0 0 40 40">
+            <path d="M 10,10 L 30,20 L 10,30 z"></path>
+            </svg>
+            INFORMACION CURSO
+            </button>
+            {showModalInfo && createPortal(
+            <ModalContentInfo onClose={() => setShowModalInfo(false)} />,
+            document.body)}
+            </>
                 
                 </div>
             </div>
