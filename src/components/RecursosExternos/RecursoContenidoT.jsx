@@ -18,42 +18,45 @@ export default function ModalContentT({ onClose }) {
 
     return (
         <div className="modal">
-            
-        
         <div class="card-group">
-            <div className="card" style={{ width: '18rem' }}>
+            
+            <div className="card1" style={{ width: '18rem' }} onClick={toFreeCodeCamp}>
             <img src={FreeCodeCamp} 
                 alt="FreeCodeCamp"
-                onClick={toFreeCodeCamp}
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
+                viewBox="0 0 24 24"
                 />
-                <div className="card-body">
-                    <p className="card-text" >Plataforma educativa, aprendizaje de desarrollo web gratuito.</p>
+                <div class="card__content1">
+                <p class="card__title1"> FreeCodeCamp </p>
+                <p class="card__description1"> Plataforma educativa, aprendizaje de desarrollo web gratuito.</p>
                 </div>
             </div>
 
         
-            <div className="card" style={{ width: '10rem' }}>
+            <div className="card1" style={{ width: '10rem' }} onClick={toBlockyGames}>
+            
             <img src={BlockyGames} 
                 alt="Blocky-Games"
-                onClick={toBlockyGames}
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
+                viewBox="0 0 24 24"
                 />
-                <div class="card-body">
-                    <p class="card-text"> Plataforma interactiva para aprender programación mediante bloques visuales y divertidos desafíos.</p>
+                <div class="card__content1">
+                <p class="card__title1"> Blocky Games </p>
+                    <p class="card__description1"> Plataforma interactiva para aprender programación mediante bloques visuales y divertidos desafíos.</p>
                 </div>
             </div>
-            <div className="card" style={{ width: '10rem' }}>
+            <div className="card1" style={{ width: '10rem' }} onClick={toScratch}>
             <img src={Scratch} 
                 alt="Scratch"
-                onClick={toScratch}
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
+                viewBox="0 0 24 24"
                 />
-                <div class="card-body">
-                    <p class="card-text">Plataforma creativa de programación para niños. Crea historias, juegos y animaciones visualmente.</p>
+                <div class="card__content1">
+                <p class="card__title1"> Scratch </p>
+                <p class="card__description1">Plataforma creativa de programación para niños. Crea historias, juegos y animaciones visualmente.</p>
                 </div>
             </div>
     </div> 

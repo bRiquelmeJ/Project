@@ -17,12 +17,12 @@ function Fisica() {
                 <Sidebar />
             </div>
             <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-                <div className="welcome-box w-50 mb-3">
-                    <div className="welcome-box-text text-center">
-                        <h2>Bienvenid@ a Física</h2>
+                <div className="welcome-box mb-3">
+                    <div className="text-center">
+                        <h2 className= "perfilFont">Bienvenid@ a Física</h2>
                     </div>
                 </div>
-                <div className="mt-3 course-text container-fluid w-50 d-flex align-items-center justify-content-center">
+                <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
                     <p className="text-center border-course-text border rounded p-4">
                         La física, es una disciplina fundamental en la comprensión del universo que nos rodea. Se adentra en el estudio de la naturaleza y sus leyes fundamentales. <br></br>
 

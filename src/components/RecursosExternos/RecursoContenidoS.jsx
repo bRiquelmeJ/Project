@@ -14,33 +14,43 @@ export default function ModalContentS({ onClose }) {
     <div className="modal">
         
         <div class="card-group">
-            <div className="card" style={{ width: '18rem' }}>
+            <div className="card1" style={{ width: '18rem' }} onClick={toKhanAcademy}>
             <img src={Khan} 
                 alt="Khan Academy"
-                onClick={toKhanAcademy}
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
+                viewBox="0 0 24 24"
                 />
-                <div className="card-body">
-                    <p className="card-text" >  Plataforma educativa global, ofrece cursos gratuitos, recursos interactivos, aprendizaje personalizado.</p>
+                <div class="card__content1">
+                <p class="card__title1">
+                    Khan Academy
+                </p>
+                <p class="card1__description1">Plataforma educativa global, ofrece cursos gratuitos, recursos interactivos, aprendizaje personalizado.</p>
                 </div>
             </div>
+            
 
-        
-            <div className="card" style={{ width: '10rem' }}>
-            <img src={MicroMundo} 
-                alt="Khan Academy"
-                onClick={toMicroMundo}
+            
+            <div class="card1" onClick={toMicroMundo}>
+                <img src={MicroMundo} 
+                alt="MicroMundo"
                 style={{ cursor: "pointer" }}
                 className="card-img-top"
+                viewBox="0 0 24 24"
                 />
-                <div class="card-body">
-                    <p class="card-text"> Microscopia Virtual, Plataforma multimedia, Actividades & Talleres</p>
+                <div class="card__content1">
+                <p class="card__title1">
+                    MicroMundo 
+                </p>
+                <p class="card__description1">Microscopia Virtual, Plataforma multimedia, Actividades & Talleres</p>
                 </div>
             </div>
-        </div>
-
+            
+            </div>
         <button onClick={onClose}  type="button" className="btn-close" aria-label="Close"></button>
     </div>
     );
 }
+
+
+
