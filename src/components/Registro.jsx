@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import imagenLogin from "../img/imagen-login.png";
 import '../register.css';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import {useForm, userForm} from 'react-hook-form'
 
 export default function Registro() {
 
@@ -13,7 +12,7 @@ export default function Registro() {
   const [password, setPassword] = useState('');
   const [date, setDate] = useState('');
   
-  const {register} = useForm()
+
   
 
   const handleName = (e) => {
