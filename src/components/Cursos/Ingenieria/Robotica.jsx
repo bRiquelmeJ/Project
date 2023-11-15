@@ -1,4 +1,8 @@
 import React from 'react';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
+import ModalContentVideo from './RoboticaContenido';
+import ModalContentInfo from './RoboticaContenidoInfo';
 import Sidebar from '../Sidebar';
 import '../../../Styles/ingenieria.css';
 import Lectura from '../../../img/iconos/ciencias-lectura.png';
@@ -6,6 +10,9 @@ import Video from '../../../img/iconos/ciencias-video.png';
 
 
 function Ingenieria() {
+  const [showModalVideo, setShowModalVideo] = useState(false);
+  const [showModalInfo, setShowModalInfo] = useState(false);
+
 
   return (
     <div className="app-container container-fluid row">
@@ -25,8 +32,18 @@ La Robótica es mucho más que simples robots; es una ventana al futuro donde la
 Explorarás la creación de dispositivos capaces de moverse, interactuar y tomar decisiones por sí mismos.          </p>
         </div>
         <div className='container-fluid d-flex justify-content-evenly'>
-          <img src={Video} alt='Ciencias-Video'/>
-          <img src={Lectura} alt='Ciencias-Lectura' />
+          <>
+          <img src={Video} alt='Ciencias-Video' onClick={() => setShowModalVideo(true)}/>
+          {showModalVideo && createPortal(
+          <ModalContentVideo onClose={() => setShowModalVideo(false)} />,
+          document.body)}
+          </>
+          <>
+          <img src={Lectura} alt='Ciencias-Lectura' onClick={() => setShowModalInfo(true)} />          
+          {showModalInfo && createPortal(
+          <ModalContentInfo onClose={() => setShowModalInfo(false)} />,
+          document.body)}
+          </>
         </div>
       </div>
     </div>

@@ -1,4 +1,8 @@
 import React from 'react';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
+import ModalContentVideo from './ComputacionContenido'
+import ModalContentInfo from './ComputacionContenidoInfo'
 import Sidebar from '../Sidebar';
 import '../../../Styles/ingenieria.css';
 import Lectura from '../../../img/iconos/ciencias-lectura.png';
@@ -6,6 +10,8 @@ import Video from '../../../img/iconos/ciencias-video.png';
 
 
 function Ingenieria() {
+  const [showModalVideo, setShowModalVideo] = useState(false);
+  const [showModalInfo, setShowModalInfo] = useState(false);
 
   return (
     <div className="app-container container-fluid row">
@@ -23,8 +29,18 @@ function Ingenieria() {
           Los expertos en computación exploran el fascinante mundo de las máquinas y la información a diferentes niveles, desde el código en programas individuales hasta la gestión de sistemas complejos en toda la red.  </p>
         </div>
         <div className='container-fluid d-flex justify-content-evenly'>
-          <img src={Video} alt='Ciencias-Video'/>
-          <img src={Lectura} alt='Ciencias-Lectura' />
+          <>
+          <img src={Video} alt='Ciencias-Video'onClick={() => setShowModalVideo(true)}/>
+          {showModalVideo && createPortal(
+          <ModalContentVideo onClose={() => setShowModalVideo(false)} />,
+          document.body)}
+          </>
+          <>
+          <img src={Lectura} alt='Ciencias-Lectura' onClick={() => setShowModalInfo(true)} />          
+          {showModalInfo && createPortal(
+          <ModalContentInfo onClose={() => setShowModalInfo(false)} />,
+          document.body)}
+          </>
         </div>
       </div>
     </div>
