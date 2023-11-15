@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../../Styles/pCursos.css';
-import StemBtn from '../../StemBtn';
+import StemBtnQuizz from '../../StemBtnQuizz';
 import Sidebar from '../../Sidebar';
 import ContainerTecQuizz from './ContainerTecQuizz';
 
@@ -15,7 +15,7 @@ function TecIntro() {
       </div>
       <div className="app-main container-fluid col-lg col-md-12 w- h-80">
         
-        <StemBtn/>
+        <StemBtnQuizz/>
         <ContainerTecQuizz/>
       </div>
       
