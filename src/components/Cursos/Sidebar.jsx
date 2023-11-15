@@ -13,7 +13,10 @@ function Sidebar() {
         <div className="user-box row">
             <div>
             <div>
-                <img src={perfil} alt="perfil" className="foto-perfil" />
+            <Link to="/PlataformaCursos">
+      <img src={perfil} alt="perfil" className="foto-perfil" />
+    </Link>
+
             </div>
             <div >
             <h4 className='perfilFont'>Usuario</h4> 
