@@ -65,7 +65,7 @@ function Login() {
     .then((data) => {
       console.log('Login Success:', data);
       // Aquí puedes redirigir al usuario o manejar la sesión
-      navigate('/home');
+      Navigate('/home');
     })
     .catch((error) => {
       console.error('Login Error:', error);
