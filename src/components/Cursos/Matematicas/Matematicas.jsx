@@ -1,6 +1,8 @@
 
 import Sidebar from '../Sidebar';
+import Math from '../../../img/Math.png'
 import "../../../Styles/MatematicasCSS.css"
+import { Link } from 'react-router-dom';
 
 const Matematicas1 = () => {
   return (
@@ -12,6 +14,15 @@ const Matematicas1 = () => {
       <div className="welcome-box  row ">
         <div className="">
           <h2 className= "perfilFont">Bienvenid@ a Matemáticas</h2>
+        </div>
+
+
+        <div className="row d-flex align-items-center justify-content-center courses-btn">
+                    <div className="btn-group col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
+                        <Link to="/MatematicasIntro" type="button" className="btn btn-lg btn-block">
+                            <img src={Math} alt="Biologia" className="img-fluid imgZoom" />
+                        </Link>
+                    </div>
         </div>
         </div>
       </div>
