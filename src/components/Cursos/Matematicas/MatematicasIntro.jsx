@@ -14,7 +14,7 @@ const MatematicasIntro = () => {
 
     return (
         <div className="app-container container-fluid row">
-      <div className="app-sidebar col-lg-3 col-md-4 col-sm-5 col-12">
+      <div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100">
         <Sidebar />
       </div>
       <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">

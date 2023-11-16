@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Matematicas1 = () => {
   return (
     <div className="app-container container-fluid row">
-      <div className="app-sidebar col-lg-3 col-md-4 col-sm-5 col-12">
+      <div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100">
         <Sidebar />
       </div>
       <div className="app-main container-fluid col-lg-9 col-md-8 col-sm-7 col-12">
