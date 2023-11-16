@@ -23,18 +23,21 @@ export default function Registro() {
   });
 
   return (
+
     <section id="about">
+      {
+        registerErrors.map((error, i) => (
+          <div className="bg-red-500 p-2 text-white" key={i}>
+            {error}
+          </div>
+        ))
+        }
       <div className="container mt-4 p-4">
         <div className="row mt-4">
           <div className="col-lg-8 col-md-12">
             <h3 id="subtituloRegistro" className="text pt-">Regístrate para ser parte <br /> de nuestra comunidad</h3>
             <div className="row">
               <div className="col-md-12">
-                {registerErrors.map((error, i) => (
-                    <div className="bg-red-500 p-2 text-white" key={i}>
-                      {error}
-                    </div>
-                  ))}
                 <form onSubmit={onSubmit} style={{ width: '80%', margin: 'auto' }}> {/* Agregado onSubmit aquí */}
                   <div className="row pt-2 pb-3">
                     <div className="col">

@@ -5,8 +5,8 @@ import Cookies from "js-cookie";
 
 export const AuthContext = createContext()
 
-export const useAuth = () => {
-    const context = useContext(AuthContext)
+export const useAuth = ( ) => {
+    const context = useContext(AuthContext);
     if (!context) {
         throw new Error("useAuth must be used within an AuthProvider");
     }
@@ -16,7 +16,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] =  useState([]);
     const [loading, setLoading] = useState(true);
 
     const signup = async (user) => {
@@ -27,11 +27,11 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(true);
 
         } catch (error) {
-
-            setErrors(error.response.data)
+            console.log(error.response)
+            setErrors(error.response.data);
 
         }
-    }
+    };
 
     const signin = async (user) => {
 
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    const logout = () =>{
+    const logout = () => {
         Cookies.remove("token");
         setIsAuthenticated(false);
         setUser(null);
@@ -74,40 +74,42 @@ export const AuthProvider = ({ children }) => {
             if (!cookies.token) {
                 setIsAuthenticated(false);
                 setLoading(false);
-                 return(setUser(null));
+                return (setUser(null));
             }
-                try {
-                    const res = await verifyTokenRequest(cookies.token);
-                    if (!res.data) {
-                        setIsAuthenticated(false);
-                        setLoading(false);
-                        return;
-                    }
-
-                    setIsAuthenticated(true);
-                    setUser(res.data);
+            try {
+                const res = await verifyTokenRequest(cookies.token);
+                if (!res.data) {
+                    setIsAuthenticated(false);
                     setLoading(false);
-                } catch (error) {
-                    setIsAuthenticated(false)
-                    setUser(null)
-                    setLoading(false);
+                    return;
                 }
+
+                setIsAuthenticated(true);
+                setUser(res.data);
+                setLoading(false);
+            } catch (error) {
+                setIsAuthenticated(false)
+                setUser(null)
+                setLoading(false);
             }
-        
+        }
+
         checkLogin();
     }, []);
 
     return (
-        <AuthContext.Provider value={{
+        <AuthContext.Provider 
+        value={{
             signup,
             signin,
             logout,
             loading,
             user,
             isAuthenticated,
-            errors,
-        }}>
+            errors
+        }}
+        >
             {children}
         </AuthContext.Provider>
-    )
-}
+    );
+};
