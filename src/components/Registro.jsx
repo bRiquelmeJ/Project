@@ -1,77 +1,26 @@
-import React, { useState } from 'react';
 import imagenLogin from "../img/imagen-login.png";
 import '../register.css';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
-import {useForm, userForm} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
+import { useAuth } from "../context/AuthContext";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 
 export default function Registro() {
 
-  const navigate = useNavigate();
-  const [name, setName] = useState('');
-  const [lastName, setLastname] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [date, setDate] = useState('');
-  
-  const {register} = useForm()
-  
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { signup, isAuthenticated, errors: registerErrors } = useAuth();
+  const navigate = useNavigate()
 
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
-  
-  const handleLastname = (e) => {
-    setLastname(e.target.value);
-  };
-  
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
-  
-  const handleDate = (e) => {
-    setDate(e.target.value);
-  };
+  useEffect(() => {
+    if (isAuthenticated) navigate('/PlataformaCursos')
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Previene el comportamiento por defecto del formulario
-    if (name === '' || lastName === '' || email === '' || password === '' || date === '') {
-      alert('Todos los campos son obligatorios');
-      return;
-    }
-    const user = {
-      "name": name,
-      "lastname": lastName,
-      "email": email,
-      "password": password,
-      "date": date,
-    }
-   
-    fetch('http://localhost:4000/api/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(user),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success:', data);
-      alert('Usuario creado correctamente');
-      // Limpiar el formulario
-      setName('');
-      setLastname('');
-      setEmail('');
-      setPassword('');
-      setDate('');
-      navigate('/login'); // Redirige al usuario a la ruta de inicio de sesión
-    }).catch((error) => {
-      console.error('Error:', error);
-    });
-  };
+  }, [isAuthenticated])
+
+
+  const onSubmit = handleSubmit(async (values) => {
+    signup(values);
+  });
 
   return (
     <section id="about">
@@ -81,37 +30,61 @@ export default function Registro() {
             <h3 id="subtituloRegistro" className="text pt-">Regístrate para ser parte <br /> de nuestra comunidad</h3>
             <div className="row">
               <div className="col-md-12">
-                <form onSubmit={handleSubmit} style={{ width: '80%', margin: 'auto' }}> {/* Agregado onSubmit aquí */}
+                {registerErrors.map((error, i) => (
+                    <div className="bg-red-500 p-2 text-white" key={i}>
+                      {error}
+                    </div>
+                  ))}
+                <form onSubmit={onSubmit} style={{ width: '80%', margin: 'auto' }}> {/* Agregado onSubmit aquí */}
                   <div className="row pt-2 pb-3">
                     <div className="col">
-                      <input type="text" className="form-control" placeholder="Nombre" aria-label="First name" onChange={handleName} />
+                      <input type="text" className="form-control" placeholder="Nombre" aria-label="First name"  {...register('name', { required: true })} />
+                      {errors.name && (
+                        <p className="text-red-500">nombre es requerido</p>
+                      )}
                     </div>
                     <div className="col">
-                      <input type="text" className="form-control" placeholder="Apellido" aria-label="Last name" onChange={handleLastname} />
+
+                      <input type="text" className="form-control" placeholder="Apellido" aria-label="Last name"  {...register('lastname', { required: true })} />
+                      {errors.lastname && (
+                        <p className="text-red-500">apellido es requerido</p>
+                      )}
                     </div>
                   </div>
                   <div className="row">
                     <h6>Fecha de Nacimiento</h6>
                   </div>
                   <div className="row p-3">
-                    <input type="date" onChange={handleDate}/>
+                    <input type="date" />
+                    {errors.date && (
+                      <p className="text-red-500">fecha de nacimiento es requerida</p>
+                    )}
                   </div>
                   <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Correo</label>
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={handleEmail} />
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  {...register('email', { required: true })} />
+                    {errors.email && (
+                      <p className="text-red-500">correo es requerido</p>
+                    )}
                   </div>
                   <div className="mb-3">
                     <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
-                    <input type="password" className="form-control" id="exampleInputPassword1" onChange={handlePassword} />
+                    <input type="password" className="form-control" id="exampleInputPassword1" {...register('password', { required: true })} />
+                    {errors.password && (
+                      <p className="text-red-500">Contraseña es requerida</p>
+                    )}
                   </div>
                   <button type="submit" className="btn btn-purple">Registrarse</button>
+                  <div>
+                    <Link to="/login">ya tienes cuenta?</Link>
+                  </div>
                 </form>
               </div>
             </div>
           </div>
           <div className="col-lg-4 col-md-12">
             <div className="d-flex justify-content-lg-end justify-content-md-center">
-              <img src={imagenLogin} alt="imagen-login-principal" className="img-fluid" id="imagen-login-principal1" style={{maxWidth: '120%', height: 'auto', marginTop: '250px', marginRight: '10px'}} />
+              <img src={imagenLogin} alt="imagen-login-principal" className="img-fluid" id="imagen-login-principal1" style={{ maxWidth: '120%', height: 'auto', marginTop: '250px', marginRight: '10px' }} />
             </div>
           </div>
         </div>
