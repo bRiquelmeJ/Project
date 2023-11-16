@@ -30,17 +30,18 @@ ul>li{
   margin-top: 80px;
   margin-left: 20px;
   padding: 25px;
+  
 }
 
-
 .user-box{
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
 }
+
 
 .user-box-text {
   text-align: center;
@@ -68,20 +69,14 @@ ul>li{
 
 }
 .welcome-box{
-
-  border-radius: 15px;
-  position: relative;
-  top: 10px;
-  left: 5%;
-}
-.welcome-box-text {
-  text-align: center;
   color: black;
-  font-size: 30;
-  font-weight: 400;
+  font-size: 100%;
+  font-weight: 600;
   word-wrap: break-word;
+  margin-top: 15px;
   
 }
+
 
 .news-activities {
   margin-top: 10px;
@@ -113,16 +108,26 @@ ul>li{
   border-radius: 113px;
 
 }
-.foto-perfil{
-  max-width: 100%;
-  max-height: 60%;
-  border-radius: 56%;
-  margin-bottom: 30px;
-  
-}
+
 .perfilFont{
   font-style: italic;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.perfilFontM{
+  font-style: italic;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -164,7 +169,7 @@ ul>li{
 
 /*botones plataforma cursos S-T-E-M*/
 .icons-stem{
-  background-color: rgba(255, 228, 112);
+  
   width: 100%;
   
 }
@@ -297,3 +302,83 @@ button.learn-more:active::before {
   -webkit-transform: translate3d(0, 0, -1em);
   transform: translate3d(0, 0, -1em);
 }
+
+/* Fedback mascota*/
+.feedback-bubble {
+  position: absolute;
+  bottom: 80%; /* Ajustar según sea necesario para que aparezca sobre la mascota */
+  left: 30%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  background-color: #ffcccb;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.feedback-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #ffcccb transparent transparent transparent;
+}
+
+/* Estilos para los botones pagina mujeres */
+.btnM {
+  color: #B500FF;
+  padding: 13px 20px;
+  border: 2px solid #B500FF;
+  font-size: 17px;
+  transition: 0.3s;
+  border-radius: 10px;
+  font-family: Arial;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:50%;
+  background-color: #f7f4e6;
+ }
+ 
+ .btnM:hover {
+  transition: 0.3s;
+  background-color: #B500FF;
+  margin-top: -20px;
+  color: #FFF;
+  animation-name: button_animation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+ }
+ 
+ .btnM:active {
+  transform: scale(0.97);
+ }
+ 
+ @keyframes button_animation {
+  0% {
+   background-color: #B500FF;
+  }
+ 
+  25% {
+   background-color: #3c0154;
+  }
+ 
+  50% {
+   background-color: #B500FF;
+  }
+ 
+  75% {
+   background-color: #3c0154;
+  }
+ 
+  100% {
+   background-color: #B500FF;
+  }
+ }
+

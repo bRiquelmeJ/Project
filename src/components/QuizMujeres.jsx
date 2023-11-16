@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-
+import React, { useState,useEffect } from 'react';
+import MascotaFeliz from "../img/Logo EquidApp.png";
+import MascotaTriste from "../img/Equidapp-Triste.png";
 
 const questions = [
   {
@@ -49,75 +50,101 @@ const questions = [
   },
 ];
 
-function QuizIntroSTEM() {
+function QuizIntroSTEM({ setFeedbackMessage,setMascotaImage }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [randomQuestions, setRandomQuestions] = useState([]);
+
+  // Función para seleccionar 7 preguntas aleatorias
+  const selectRandomQuestions = (allQuestions, numQuestions) => {
+    const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, numQuestions);
+  };
+
+  // Inicializar el cuestionario con preguntas aleatorias al montar el componente
+  useEffect(() => {
+    setRandomQuestions(selectRandomQuestions(questions, 7));
+  }, []);
 
   const handleAnswerOptionClick = (answerOption) => {
-    const isCorrect = answerOption.isCorrect;
     setSelectedAnswer(answerOption.answerText);
-    if (isCorrect) {
+
+    if (answerOption.isCorrect) {
+      setMascotaImage(MascotaFeliz);
       setScore(score + 1);
+      setFeedbackMessage("¡Correcto! ¡Muy bien!");
+    } else {
+      setMascotaImage(MascotaTriste);
+      setFeedbackMessage("¡Ups! Esa no es la respuesta correcta.");
     }
-    setTimeout(() => {
-      const nextQuestion = currentQuestion + 1;
-      if (nextQuestion < questions.length) {
+
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < randomQuestions.length) {
+      setTimeout(() => {
         setCurrentQuestion(nextQuestion);
-      } else {
-        setShowScore(true);
-      }
-      setSelectedAnswer("");
-    }, 1000);
+        setSelectedAnswer("");
+        setFeedbackMessage("");
+      }, 1000);
+    } else {
+      setShowScore(true);
+    }
   };
 
   const resetQuiz = () => {
     setCurrentQuestion(0);
     setScore(0);
     setShowScore(false);
+    setSelectedAnswer("");
+    setFeedbackMessage("");
   };
 
   return (
     <div className='quiz'>
       <div className='quiz-intro'>
-        {/* ... Mensaje de bienvenida ... */}
+        {/* Mensaje de bienvenida */}
       </div>
 
       {showScore ? (
         <div className='score-section'>
-          Has acertado {score} de {questions.length} preguntas.
+          Has acertado {score} de {randomQuestions.length} preguntas.
           <button onClick={resetQuiz} className='btn btn-purple'>Volver a empezar</button>
         </div>
       ) : (
         <div className='card quizzCard'>
           <div className='card-body'>
-            <div className='question-section'>
-              <div className='question-count'>
-                <span>Pregunta {currentQuestion + 1}</span>/{questions.length}
-              </div>
-              <div className='question-text'>{questions[currentQuestion].questionText}</div>
-            </div>
-            <div className='answer-section'>
-              <ul>
-                {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                  <li key={index}>
-                    <button
-                      onClick={() => handleAnswerOptionClick(answerOption)}
-                      className={`btn m-2 ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn btn-purple'}`}
-                      disabled={selectedAnswer !== ""}
-                    >
-                      {answerOption.answerText}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {randomQuestions.length > 0 && currentQuestion < randomQuestions.length ? (
+              <>
+                <div className='question-section'>
+                  <div className='question-count'>
+                    <span>Pregunta {currentQuestion + 1}</span>/{randomQuestions.length}
+                  </div>
+                  <div className='question-text'>{randomQuestions[currentQuestion].questionText}</div>
+                </div>
+                <div className='answer-section'>
+                  <ul>
+                    {randomQuestions[currentQuestion].answerOptions.map((answerOption, index) => (
+                      <li key={index}>
+                        <button
+                          onClick={() => handleAnswerOptionClick(answerOption)}
+                          className={`btn m-2 ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn btn-purple'}`}
+                          disabled={selectedAnswer !== ""}
+                        >
+                          {answerOption.answerText}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            ) : (
+              <div>Cargando preguntas...</div>
+            )}
           </div>
         </div>
       )}
     </div>
   );
 }
-
 export default QuizIntroSTEM;

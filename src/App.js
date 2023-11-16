@@ -6,9 +6,9 @@ import Registro from "./components/Registro";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Pcursos from "./components/Cursos/Pcursos";
-import Matematicas from "./components/Cursos/Matematicas/Matematicas-1"
+import Matematicas from "./components/Cursos/Matematicas/Matematicas"
 import Recurso from "./components/RecursosExternos/Recurso";
-import MatematicasIntro from "./components/Cursos/Matematicas/Matematicas-Intro";
+import MatematicasIntro from "./components/Cursos/Matematicas/MatematicasIntro";
 import MujeresSTEM from "./components/Cursos/MujeresSTEM/Mujeres"
 import Ciencia from "./components/Cursos/Ciencias/Ciencia"
 import Biologia from "./components/Cursos/Ciencias/Biologia"
@@ -23,6 +23,10 @@ import IA from "./components/Cursos/Tecnologia/IA"
 import CienciaDeDatos from "./components/Cursos/Tecnologia/CienciaDeDatos"
 import CursoIntro from "./components/Cursos/CursoIntro";
 import IntroStem from "./components/Cursos/STEM/IntroStem";
+import IngeIntro from "./components/Cursos/Ingenieria/IngeIntro";
+import CienciaIntro from "./components/Cursos/Ciencias/QuizzCiencia/CienciaIntro";
+import MatematicasIntroQuizz from "./components/Cursos/Matematicas/QuizzMate/MateIntro";
+import TecIntroQuizz from "./components/Cursos/Tecnologia/QuizzTec/TecIntro";
 
 function App() {
   return (
@@ -39,8 +43,7 @@ function App() {
           <Route path="/recurso" element={<Recurso/>} />
           <Route path="/" element={<Pcursos/>} />
           <Route path="/Matematicas" element={<Matematicas />} />
-          <Route path="/Matematicas-intro" element={<MatematicasIntro />} />
-
+          <Route path="/MatematicasIntro" element={<MatematicasIntro />} />
           <Route path="/Ciencia" element={<Ciencia/>} />
           <Route path="/Biologia" element={<Biologia/>} />
           <Route path="/Fisica" element={<Fisica/>} />
@@ -53,6 +56,10 @@ function App() {
           <Route path="/Computacion" element={<Computacion/>} />
           <Route path="/Robotica" element={<Robotica/>} />
           <Route path="/Quizz-intro" element = {<CursoIntro />}/>
+          <Route path="/Quizz-Ingenieria" element = {<IngeIntro/>}/>
+          <Route path="/Quizz-Ciencia" element = {<CienciaIntro/>}/>
+          <Route path="/Quizz-Matematicas" element = {<MatematicasIntroQuizz/>}/>
+          <Route path="/Quizz-Tecnologia" element = {<TecIntroQuizz/>}/>
           <Route path="/MujeresSTEM" element = {<MujeresSTEM />}/>
           <Route path="/IntroStem" element = {<IntroStem />}/>
 
