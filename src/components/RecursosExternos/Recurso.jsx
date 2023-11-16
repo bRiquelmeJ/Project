@@ -23,7 +23,7 @@ function Recurso() {
 
     return (
         <div className="app-container container-fluid row">
-            <div className="container-fluid app-sidebar col-lg-10 col-md-12 w-50 h-80">
+            <div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100 col">
                 <Sidebar />
             </div>
 
@@ -103,21 +103,3 @@ function Recurso() {
 
 
 export default Recurso;
-
-<div class="card  mb-3 mt-5" style={{ width: '660px' }}>
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src={Cookies} class="img-fluid rounded-start" alt="Cookies" />
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">¿Qué son las Cookies?</h5>
-                <p class="card-text ">Las cookies en internet no son galletas, ¡son algo digital!</p>
-                <p class="card-text">Son como pequeñas notas que guardan información sobre lo que me gusta en una página web.</p>
-                <p class="card-text">Ayudan a que las páginas funcionen mejor.</p>
-                <p class="card-text"><small class="text-body-secondary">Recuerda siempre contarle a un adulto si algo parece extraño o no lo entiendes bien.
-                    ¡La seguridad es lo primero!</small></p>
-            </div>
-        </div>
-    </div>
-</div>
