@@ -11,6 +11,7 @@ import Matematicas from "./components/Cursos/Matematicas/Matematicas"
 import Recurso from "./components/RecursosExternos/Recurso";
 import MatematicasIntro from "./components/Cursos/Matematicas/MatematicasIntro";
 import MujeresSTEM from "./components/Cursos/MujeresSTEM/Mujeres"
+import MujeresBio from "./components/Cursos/MujeresSTEM/MujeresBio"
 import Ciencia from "./components/Cursos/Ciencias/Ciencia"
 import Biologia from "./components/Cursos/Ciencias/Biologia"
 import Fisica from "./components/Cursos/Ciencias/Fisica"
