@@ -4,6 +4,10 @@ import AvatarModal from './Avatar/AvatarModal'; // Verifica la ruta
 import perfil from '../../img/perfil.jpeg';
 import '../../Styles/pCursos.css'; // Verifica la ruta
 import { Link } from 'react-router-dom';
+import Quiz from '../../img/iconos/Quiz.svg';
+import Recursos from '../../img/iconos/Recursos.svg';
+import Foro from '../../img/iconos/Foro.png'
+import Ajustes from '../../img/iconos/Ajustes.png'
 
 function Sidebar() {
     const [isAvatarModalOpen, setAvatarModalOpen] = useState(false);
@@ -22,40 +26,41 @@ function Sidebar() {
         <div className="user-box row">
             <div>
                 <img src={avatar} alt="perfil" className="foto-perfil" />
-                <button className="bookmarkBtn" onClick={() => setAvatarModalOpen(true)}>
-                    <span className="IconContainer">
-                        {/* Agrega aquí el SVG o ícono para "Cambiar Avatar" */}
-                    </span>
-                    <p className="text">Cambiar Avatar</p>
-                </button>
+            </div>
+            <div >
+            <h4 className='perfilFont'>Usuario</h4> 
+            </div>
+            <div className="btn-group-vertical sidebar" role="group" aria-label="Vertical button group">
+            <button type="button" className="btn ">
+                <Link to="/quizz-intro">
+                    <img className=' icons-btn' src={Quiz} alt="Quiz" />
+                </Link>
+            </button>
 
+            
+            <button type="button" className="btn">
+                <Link to="/recurso">
+                    <img className='icons-btn' src={Recursos} alt="Recursos" />
+                    </Link>
+            </button>
+
+                <button type="button" className="btn">
+                    <Link to="/foro">
+                    <img className='icons-btn' src={Foro} alt="Foro" />
+                    </Link>
+                </button>
+                <>
+                <button type="button" className="btn" onClick={() => setAvatarModalOpen(true)}>
+                    <span >
+                         <img className='col icons-btn' src={Ajustes} alt="Ajustes" />{/* Agrega aquí el SVG o ícono para "Cambiar Avatar" */}
+                    </span>
+                </button>
                 <AvatarModal
                     isOpen={isAvatarModalOpen}
                     onClose={() => setAvatarModalOpen(false)}
                     onSelectAvatar={handleAvatarChange}
                 />
-            </div>
-            <div className="btn-group-vertical sidebar" role="group" aria-label="Vertical button group">
-                <button type="button" className="bookmarkBtn">
-                    <Link to="/quizz-intro">
-                        <p className="text">Quiz</p>
-                    </Link>
-                </button>
-                <button type="button" className="bookmarkBtn">
-                    <Link to="/recurso">
-                        <p className="text">Recursos</p>
-                    </Link>
-                </button>
-                <button type="button" className="bookmarkBtn">
-                    <Link to="/foro">
-                        <p className="text">Foro</p>
-                    </Link>
-                </button>
-                <button type="button" className="bookmarkBtn">
-                    <Link to="/ajustes">
-                        <p className="text">Ajustes</p>
-                    </Link>
-                </button>
+                </>
             </div>
         </div>
     );

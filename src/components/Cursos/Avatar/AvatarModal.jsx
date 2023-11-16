@@ -14,7 +14,7 @@ import av08 from '../../../img/avatars/8.png'
 import av09 from '../../../img/avatars/9.png'
 import av10 from '../../../img/avatars/10.png'
 import av11 from '../../../img/avatars/11.png'
-import av12 from '../../../img/avatars/12.png'
+import av12 from '../../../img/avatars/perfil.jpeg'
 
 // AvatarModal.js
 // ... tus imports ...
