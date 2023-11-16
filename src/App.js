@@ -70,6 +70,7 @@ function App() {
                 <Route path="/Quizz-Tecnologia" element = {<TecIntroQuizz/>}/>
                 <Route path="/MujeresSTEM" element = {<MujeresSTEM />}/>
                 <Route path="/IntroStem" element = {<IntroStem />}/>
+                <Route path="/MujeresBio" element = {<MujeresBio />}/>
               
               </Route>
               </Routes>
