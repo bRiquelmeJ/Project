@@ -8,6 +8,7 @@ import Quiz from '../../img/iconos/Quiz.svg';
 import Recursos from '../../img/iconos/Recursos.svg';
 import Foro from '../../img/iconos/Foro.png'
 import Ajustes from '../../img/iconos/Ajustes.png'
+import CambioImagen from '../../img/iconos/cambioimagen.png'
 
 function Sidebar() {
     const [isAvatarModalOpen, setAvatarModalOpen] = useState(false);
@@ -52,7 +53,7 @@ function Sidebar() {
                 <>
                 <button type="button" className="btn" onClick={() => setAvatarModalOpen(true)}>
                     <span >
-                         <img className='col icons-btn' src={Ajustes} alt="Ajustes" />{/* Agrega aquí el SVG o ícono para "Cambiar Avatar" */}
+                         <img className='icons-btn' src={CambioImagen} alt="CambiosImagen" />{/* Agrega aquí el SVG o ícono para "Cambiar Avatar" */}
                     </span>
                 </button>
                 <AvatarModal
@@ -61,6 +62,11 @@ function Sidebar() {
                     onSelectAvatar={handleAvatarChange}
                 />
                 </>
+                <button type="button" className="btn">
+                    <Link to="/ajustes">
+                    <img className='icons-btn' src={Ajustes} alt="Ajustes" />
+                    </Link>
+                </button>
             </div>
         </div>
     );
