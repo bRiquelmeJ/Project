@@ -303,9 +303,6 @@ button.learn-more:active::before {
   transform: translate3d(0, 0, -1em);
 }
 
-
-
-
 /* Fedback mascota*/
 .feedback-bubble {
   position: absolute;
@@ -384,3 +381,4 @@ button.learn-more:active::before {
    background-color: #B500FF;
   }
  }
+
