@@ -8,7 +8,7 @@ function Pcursos() {
 
   return (
     <div className="app-container container-fluid  row">
-      <div className="container-fluid app-sidebar col-lg-10 col-md-12">
+      <div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100">
         
         <Sidebar/>
       </div>

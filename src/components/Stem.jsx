@@ -35,50 +35,46 @@ export default function Stem() {
 
 
                   </div>
-  
-                  <div className="col-md-3 mb-3">
-                    <div className="card text-center card-stem d-flex flex-column justify-content-between">
-                      <div className="card-body card-texto text-white">
-                        <h5 className="card-title">T</h5>
-                        <p className="card-text fst-italic">Technology </p>
-                        
-                      </div>
-                      <div className="card-body">
-                        <p className="card-text">Expresa la relación del profesional con el campo tecnológico, desde el lenguaje programático hasta la Inteligencia Artificial.</p>
-                    
-                          <button className="btn btnStem">Ir al curso</button>
-                        
-                      </div>
+                </div>
+
+                {/* Technology Card */}
+                <div className="col-md-3 mb-3">
+                  <div className="card text-center card-stem">
+                    <div className="card-body card-texto text-white">
+                      <h5 className="card-title">T</h5>
+                      <p className="card-text fst-italic">Technology</p>
+                    </div>
+                    <div className="card-body d-flex flex-column">
+                      <p className="card-text">Expresa la relación del profesional con el campo tecnológico, desde el lenguaje programático hasta la Inteligencia Artificial.</p>
+                      <Link to="/Tecnologia" className="btn btnStem mt-auto">Ir al curso</Link>
                     </div>
                   </div>
-  
-                  <div className="col-md-3 mb-3">
-                    <div className="card text-center card-stem d-flex flex-column justify-content-between">
-                      <div className="card-body card-texto text-white">
-                        <h5 className="card-title">E</h5>
-                        <p className="card-text fst-italic">Engineering</p>
-                      </div>
-                      <div className="card-body">
-                        <p className="card-text">Plantea soluciones a nivel de infraestructura, diseño de ciudades inteligentes e infraestructuras.</p>
-                        
-                        <button className="btn btnStem">Ir al curso</button>
-                        
-                      </div>
+                </div>
+
+                {/* Engineering Card */}
+                <div className="col-md-3 mb-3">
+                  <div className="card text-center card-stem">
+                    <div className="card-body card-texto text-white">
+                      <h5 className="card-title">E</h5>
+                      <p className="card-text fst-italic">Engineering</p>
+                    </div>
+                    <div className="card-body d-flex flex-column">
+                      <p className="card-text">Plantea soluciones a nivel de infraestructura, diseño de ciudades inteligentes e infraestructuras.</p>
+                      <Link to="/Ingenieria" className="btn btnStem mt-auto">Ir al curso</Link>
                     </div>
                   </div>
-  
-                  <div className="col-md-3 mb-3">
-                    <div className="card text-center card-stem d-flex flex-column justify-content-between">
-                      <div className="card-body card-texto text-white">
-                        <h5 className="card-title">M</h5>
-                        <p className="card-text fst-italic">Mathematics</p>
-                      </div>
-                      <div className="card-body">
-                        <p className="card-text">Enfocada en campos de análisis financiero, economía, contabilidad, inversión e, incluso, economía circular.</p>
-                        
-                        <button className="btn btnStem">Ir al curso</button>
-                        
-                      </div>
+                </div>
+
+                {/* Mathematics Card */}
+                <div className="col-md-3 mb-3">
+                  <div className="card text-center card-stem">
+                    <div className="card-body card-texto text-white">
+                      <h5 className="card-title">M</h5>
+                      <p className="card-text fst-italic">Mathematics</p>
+                    </div>
+                    <div className="card-body d-flex flex-column">
+                      <p className="card-text">Enfocada en campos de análisis financiero, economía, contabilidad, inversión e, incluso, economía circular.</p>
+                      <Link to="/Matematicas" className="btn btnStem mt-auto">Ir al curso</Link>
                     </div>
                   </div>
                 </div>
@@ -87,8 +83,6 @@ export default function Stem() {
           </div>
         </div>
       </div>
-    );
-  }
-  
-  
-  
+    </div>
+  );
+}

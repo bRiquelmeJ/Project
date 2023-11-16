@@ -139,3 +139,13 @@ body {
 .by-name-about {
   font-weight: 700;
 }
+/* CSS adicional para centrar los botones en la tarjeta */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Esto asegurará que el botón se pegue al fondo de la tarjeta */
+}
+
+.btnStem {
+  margin-top: auto; /* Esto empujará el botón hacia abajo si hay espacio disponible */
+}
