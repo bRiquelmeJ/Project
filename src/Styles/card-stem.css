@@ -1,7 +1,6 @@
 .card-stem {
   
     width: 100%;
-  
     border-radius: 20px;
     background: #e8e8e8;
     box-shadow: 5px 5px 6px #dadada,
@@ -16,7 +15,7 @@
   .card-title-stem {
     font-size: 18px;
     font-weight: 600;
-    color: #2e54a7;
+    color: #911690;
     margin: 15px 0 0 10px;
   }
   
@@ -29,7 +28,7 @@
   }
   
   .card-body-stem {
-    margin: 13px 0 0 10px;
+    margin: 10px 0 10px 10px;
     color: rgb(31, 31, 31);
     font-size: 15px;
   }
