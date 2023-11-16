@@ -5,6 +5,7 @@ import Modal from "../components/Cursos/Avatar/Medallas/Mmodal";
 import Medal from "../components/Cursos/Avatar/Medallas/Medal";
 import Insignia from "../img/medallas/STEM.png";
 
+
 const questions = [
   {
     questionText: "¿Qué ciencia se centra en el estudio de los seres vivos y su entorno?",
@@ -65,7 +66,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
     return savedMedals ? JSON.parse(savedMedals) : Array(6).fill(false);
   });
 
-  const MEDAL_INDEX = 6;
+  const MEDAL_INDEX = 0;
 
   useEffect(() => {
     const randomizedQuestions = [...questions].sort(() => Math.random() - 0.5);
@@ -146,7 +147,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
                     <li key={index}>
                       <button
                         onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)}
-                        className={`btn btn-purple mt-2 ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : ''}`}
+                        className={`btn btn-purple mt-2 w-100 shadow-hover ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : ''}`}
                         disabled={selectedAnswer !== null}
                       >
                         {answerOption.answerText}
