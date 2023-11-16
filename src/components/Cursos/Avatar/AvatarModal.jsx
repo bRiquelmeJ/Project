@@ -1,8 +1,7 @@
 // AvatarModal.js
 import React from 'react';
-import '../../../Styles/AvatarModal.css'; // Asegúrate de que tienes este archivo CSS en tu proyecto
+import '../../../Styles/AvatarModal.css'; 
 
-// Importa las imágenes de los avatares
 import av01 from '../../../img/avatars/1.png'
 import av02 from '../../../img/avatars/2.png'
 import av03 from '../../../img/avatars/3.png'
@@ -16,8 +15,6 @@ import av10 from '../../../img/avatars/10.png'
 import av11 from '../../../img/avatars/11.png'
 import av12 from '../../../img/avatars/perfil.jpeg'
 
-// AvatarModal.js
-// ... tus imports ...
 
 const AvatarModal = ({ isOpen, onClose, onSelectAvatar }) => {
     const avatars = [av01, av02, av03, av04, av05, av06, av07, av08, av09, av10, av11, av12];
@@ -32,7 +29,7 @@ const AvatarModal = ({ isOpen, onClose, onSelectAvatar }) => {
             <div className="avatar-grid">
                 {avatars.map((avatar, index) => (
                     <div key={index} className="avatar-item" onClick={() => onSelectAvatar(avatar)}>
-                        <img src={avatar} alt={`Avatar ${index + 1}`} className="avatar-image" />
+                        <img src={avatar} alt={`Avatar ${index + 1}`} className="avatar-image img-fluid imgZoom" />
                     </div>
                 ))}
             </div>
