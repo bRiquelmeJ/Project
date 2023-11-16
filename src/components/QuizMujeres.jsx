@@ -53,83 +53,126 @@ const questions = [
   },
 ];
 
-function QuizIntroSTEM() {
+function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [randomQuestions, setRandomQuestions] = useState([]);
   const [showMedalModal, setShowMedalModal] = useState(false);
   const [medals, setMedals] = useState(() => {
-      const savedMedals = localStorage.getItem('medalsUnlocked');
-      return savedMedals ? JSON.parse(savedMedals) : Array(6).fill(false);
+    const savedMedals = localStorage.getItem('medalsUnlocked');
+    return savedMedals ? JSON.parse(savedMedals) : Array(6).fill(false);
   });
 
-  const handleAnswerButtonClick = (isCorrect) => {
-      if (isCorrect) {
-          setScore(score + 1);
-      }
+  const MEDAL_INDEX = 6;
 
-      const nextQuestion = currentQuestion + 1;
-      if (nextQuestion < questions.length) {
+  useEffect(() => {
+    const randomizedQuestions = [...questions].sort(() => Math.random() - 0.5);
+    setRandomQuestions(randomizedQuestions);
+  }, []);
+  
+  useEffect(() => {
+    if (medals[MEDAL_INDEX]) {
+      setShowScore(true);
+      setFeedbackMessage("Explora otras secciones para seguir aprendiendo y desbloqueando medallas.");
+      setMascotaImage(MascotaFeliz);
+    }
+  }, [medals, MEDAL_INDEX, setFeedbackMessage, setMascotaImage]);
+
+  const handleAnswerButtonClick = (isCorrect, answerText) => {
+    if (selectedAnswer === null) {
+      setSelectedAnswer(answerText);
+      setFeedbackMessage(isCorrect ? "¡Correcto! ¡Muy bien hecho!" : "¡Incorrecto! Intenta de nuevo.");
+      setMascotaImage(isCorrect ? MascotaFeliz : MascotaTriste);
+      setScore(isCorrect ? score + 1 : score);
+  
+      setTimeout(() => {
+        const nextQuestion = currentQuestion + 1;
+        if (nextQuestion < questions.length) {
           setCurrentQuestion(nextQuestion);
-      } else {
+          setSelectedAnswer(null); // Reiniciar la selección de respuesta para la próxima pregunta
+        } else {
           setShowScore(true);
           if (score + 1 === questions.length) {
-              const updatedMedals = [...medals];
-              updatedMedals[0] = true; // Este es el índice para la medalla del Quiz Intro
-              setMedals(updatedMedals);
-              localStorage.setItem('medalsUnlocked', JSON.stringify(updatedMedals));
-              setShowMedalModal(true);
+            const updatedMedals = [...medals];
+            updatedMedals[MEDAL_INDEX] = true;
+            setMedals(updatedMedals);
+            localStorage.setItem('medalsUnlocked', JSON.stringify(updatedMedals));
+            setShowMedalModal(true);
           }
-      }
+        }
+      }, 1000); // Esperar 1 segundo antes de pasar a la siguiente pregunta
+    }
   };
 
-  const handleRetryButton = () => {
-      setCurrentQuestion(0);
-      setScore(0);
-      setShowScore(false);
-      setShowMedalModal(false);
+  const resetQuiz = () => {
+    setCurrentQuestion(0);
+    setScore(0);
+    setShowScore(false);
+    setSelectedAnswer(null);
+    setShowMedalModal(false);
   };
 
   return (
-      <div className='quiz'>
-          {showScore ? (
-              <div className='score-section'>
-                  {`Has acertado ${score} de ${questions.length} preguntas.`}
-                  <button onClick={handleRetryButton}>Reintentar</button>
-              </div>
+    <div className='container mt-5'>
+      {showScore ? (
+        <div className='score-section text-center'>
+          {medals[MEDAL_INDEX] ? (
+            <div>
+              <p className="h4">Felicidades, ya has completado este quiz y desbloqueado la medalla.</p>
+              <img src={Insignia} alt="Medalla" className="img-fluid" />
+            </div>
           ) : (
-              <>
-                  <div className='question-section'>
-                      <div className='question-count'>
-                          <span>Pregunta {currentQuestion + 1}</span>/{questions.length}
-                      </div>
-                      <div className='question-text'>
-                          {questions[currentQuestion].questionText}
-                      </div>
-                  </div>
-                  <div className='answer-section'>
-                      {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                          <button key={index} onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>
-                              {answerOption.answerText}
-                          </button>
-                      ))}
-                  </div>
-              </>
+            <>
+              <p className="h4">Has acertado {score} de {questions.length} preguntas.</p>
+              <button className="btn btn-purple" onClick={resetQuiz}>Reintentar</button>
+            </>
           )}
+        </div>
+      ) : (
+        <div className='card quizzCard'>
+          <div className='card-body'>
+            <div className='question-section mb-4'>
+              <div className='question-count'>
+                <span className="h6">Pregunta {currentQuestion + 1}</span>/{questions.length}
+              </div>
+              <div className='question-text h5'>
+                {randomQuestions[currentQuestion] && randomQuestions[currentQuestion].questionText}
+              </div>
+              <div className='answer-section'>
+                <ul className="list-group mt-2">
+                  {randomQuestions[currentQuestion] && randomQuestions[currentQuestion].answerOptions.map((answerOption, index) => (
+                    <li key={index}>
+                      <button
+                        onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)}
+                        className={`btn btn-purple mt-2 ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : ''}`}
+                        disabled={selectedAnswer !== null}
+                      >
+                        {answerOption.answerText}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
-          {showMedalModal && (
-              <Modal onClose={() => setShowMedalModal(false)}>
-                  <h2>¡Felicidades!</h2>
-                  <p>Has desbloqueado una medalla por tu excelente desempeño.</p>
-                  {/* Asegúrate de que la ruta a la imagen de la medalla desbloqueada sea correcta */}
-                  <Medal
-                      unlocked={true}
-                      imageUnlocked={Insignia}
-                  />
-                  <button onClick={() => setShowMedalModal(false)}>Cerrar</button>
-              </Modal>
-          )}
-      </div>
+      {showMedalModal && (
+        <Modal onClose={() => setShowMedalModal(false)}>
+          <h2>¡Felicidades!</h2>
+          <p>Has desbloqueado una medalla por tu excelente desempeño.</p>
+          <Medal
+            unlocked={true}
+            imageUnlocked={Insignia}
+            imageLocked={Insignia}
+          />
+          <button className="btn btn-purple" onClick={() => setShowMedalModal(false)}>Cerrar</button>
+        </Modal>
+      )}
+    </div>
   );
 }
 
