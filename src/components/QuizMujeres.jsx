@@ -1,6 +1,9 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import MascotaFeliz from "../img/Logo EquidApp.png";
 import MascotaTriste from "../img/Equidapp-Triste.png";
+import Modal from "../components/Cursos/Avatar/Medallas/Mmodal";
+import Medal from "../components/Cursos/Avatar/Medallas/Medal";
+import Insignia from "../img/medallas/STEM.png";
 
 const questions = [
   {
@@ -50,20 +53,20 @@ const questions = [
   },
 ];
 
-function QuizIntroSTEM({ setFeedbackMessage,setMascotaImage }) {
+function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [randomQuestions, setRandomQuestions] = useState([]);
+  const [showMedalModal, setShowMedalModal] = useState(false);
+  const [awardedMedal, setAwardedMedal] = useState(false);
 
-  // Función para seleccionar 7 preguntas aleatorias
   const selectRandomQuestions = (allQuestions, numQuestions) => {
     const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, numQuestions);
   };
 
-  // Inicializar el cuestionario con preguntas aleatorias al montar el componente
   useEffect(() => {
     setRandomQuestions(selectRandomQuestions(questions, 7));
   }, []);
@@ -73,8 +76,8 @@ function QuizIntroSTEM({ setFeedbackMessage,setMascotaImage }) {
 
     if (answerOption.isCorrect) {
       setMascotaImage(MascotaFeliz);
-      setScore(score + 1);
       setFeedbackMessage("¡Correcto! ¡Muy bien!");
+      setScore(score + 1);
     } else {
       setMascotaImage(MascotaTriste);
       setFeedbackMessage("¡Ups! Esa no es la respuesta correcta.");
@@ -88,6 +91,10 @@ function QuizIntroSTEM({ setFeedbackMessage,setMascotaImage }) {
         setFeedbackMessage("");
       }, 1000);
     } else {
+      if (score + 1 === randomQuestions.length) {
+        setAwardedMedal(true);
+        setShowMedalModal(true);
+      }
       setShowScore(true);
     }
   };
@@ -98,6 +105,7 @@ function QuizIntroSTEM({ setFeedbackMessage,setMascotaImage }) {
     setShowScore(false);
     setSelectedAnswer("");
     setFeedbackMessage("");
+    setAwardedMedal(false);
   };
 
   return (
@@ -144,7 +152,17 @@ function QuizIntroSTEM({ setFeedbackMessage,setMascotaImage }) {
           </div>
         </div>
       )}
+
+      {showMedalModal && (
+        <div className="medal-modal">
+          <div className="medal-container">
+            <img src={Insignia} alt="Medalla 100%" className="medal" />
+            <p className="medal-text">Medalla otorgada por finalizar con 100% el quiz de introducción</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
 export default QuizIntroSTEM;
