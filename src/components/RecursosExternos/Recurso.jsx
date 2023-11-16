@@ -23,16 +23,14 @@ function Recurso() {
 
 return (
 <div className="app-container container-fluid  row">
-    <div className="container-fluid app-sidebar col-lg-10 col-md-12 w-50 h-80">
+<div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100 col ">
     <Sidebar/>
     </div>
 
 <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
     <div className="app-main ">
         <div className="header-box container bg-warning-subtle ">
-        <div className="welcome-box-text">
-        <h2>¡Sigamos Aprendiendo! : Recursos Divertidos</h2>
-        </div>
+    <h2 className= "perfilFont">¡Sigamos Aprendiendo! : Recursos Divertidos</h2>
             </div>
     <div class="row align-items-start">
     <div class="col">
@@ -89,7 +87,7 @@ return (
         <div class="flip-card-inner">
         <div class="flip-card-front">
             <p class="title">¿Qué son las Cookies?</p>
-            <img src={Cookies} class="img-fluid rounded-start" alt="Cookies"/>
+            <img src={Cookies} class="img-fluid  rounded-start" alt="Cookies"/>
         </div>
         <div class="flip-card-back">
             <p class="title">Las cookies en internet no son galletas, ¡son algo digital!</p>

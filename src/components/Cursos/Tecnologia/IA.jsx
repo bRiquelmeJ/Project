@@ -20,25 +20,35 @@ function IA() {
       </div>
       
       <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-      <div className="welcome-box w-50 mb-3">
-          <div className="welcome-box-text text-center">
-            <h2>¡Bienvenid@s al asombroso universo de la inteligencia artificial!</h2>
+      <div className="welcome-box mb-3">
+          <div className=" text-center">
+          <h2 className= "perfilFont">¡Bienvenid@s al asombroso universo de la inteligencia artificial!</h2>
           </div>
         </div>
-        <div className="mt-3 course-text container-fluid w-50 d-flex align-items-center justify-content-center">
+        <div className="mt-3 course-text container-fluid d-flex align-items-center justify-content-center">
           <p className="text-center border-course-text border rounded p-4">
-          La programación es el arte de dar vida a tus ideas en el mundo digital. Es como aprender un nuevo idioma para crear aplicaciones, juegos y soluciones innovadoras. Cada línea de código es un paso más cerca de convertir tus pensamientos en realidad. Bienvenido al emocionante viaje de la programación, donde la creatividad se encuentra con el potencial ilimitado de la tecnología
+          Sumérgete en el apasionante mundo de la inteligencia artificial, desentrañando los secretos de cómo las máquinas pueden reconocer patrones en datos, tomar decisiones autónomas y hasta entender el lenguaje humano. Explora cómo la inteligencia artificial puede transformar nuestra forma de trabajar y vivir, desde asistentes virtuales hasta vehículos autónomos. ¡Únete y descubre los asombrosos poderes de las IAs
           </p>
         </div>
         <div className='container-fluid d-flex justify-content-evenly'>
-          <>
-          <img src={Video} alt='Ciencias-Video' onClick={() => setShowModalVideo(true)}/> 
+        <>
+          <button class="game-button" onClick={() => setShowModalVideo(true)}>
+          <svg class="play-icon" viewBox="0 0 40 40">
+          <path d="M 10,10 L 30,20 L 10,30 z"></path>
+          </svg>
+            PLAY VIDEO
+          </button>
           {showModalVideo && createPortal(
         <ModalContentVideo onClose={() => setShowModalVideo(false)} />,
         document.body)}
           </>
           <>
-          <img src={Lectura} alt='Ciencias-Lectura' onClick={() => setShowModalInfo(true)} />
+          <button class="game-button" onClick={() => setShowModalInfo(true)}>
+          <svg class="play-icon" viewBox="0 0 40 40">
+          <path d="M 10,10 L 30,20 L 10,30 z"></path>
+          </svg>
+            INFORMACION CURSO
+          </button>
           {showModalInfo && createPortal(
         <ModalContentInfo onClose={() => setShowModalInfo(false)} />,
         document.body)}
