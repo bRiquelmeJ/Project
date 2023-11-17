@@ -65,11 +65,6 @@ function Sidebar() {
                         <img className='icons-btn' src={Recursos} alt="Recursos" />
                     </Link>
                 </button>
-                <button type="button" className="btn">
-                    <Link to="/foro">
-                        <img className='icons-btn' src={Foro} alt="Foro" />
-                    </Link>
-                </button>
                 <button type="button" className="btn" onClick={() => setAvatarModalOpen(true)}>
                     <span >
                          <img className='icons-btn' src={CambioImagen} alt="CambiosImagen" />{/* Agrega aquí el SVG o ícono para "Cambiar Avatar" */}
