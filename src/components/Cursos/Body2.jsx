@@ -9,7 +9,6 @@ return(
     <div class="container text-center">
             <div class="row">
             <div class="col order-first">
-            <button class="learn-more mt-5"> Noticias y Actividades </button>
             </div>
             <div class="col order-last">
                 <div>
