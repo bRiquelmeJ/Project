@@ -1,8 +1,9 @@
-
+import '../App.css'
+import PNG from '../img/generales/generationpng.png'
 
 export default function Footer() {
     return (
-        <footer className="bg-dark text-light text-center py-4">
+        <footer className="footer text-light text-center py-4">
         <div className="container">
           <div className="row">
             {/* Columna de Agradecimientos */}
@@ -25,8 +26,8 @@ export default function Footer() {
           </div>
   
           {/* Derechos de Autor */}
-          <p className="mb-0 mt-4">
-            © 2023 EquidApp. Todos los derechos reservados.
+          <p className="mb-0">
+            <img src={PNG} alt='Generation logo' className='img-fluid png-footer'/>
           </p>
         </div>
       </footer>

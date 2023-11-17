@@ -1,7 +1,7 @@
 import React from "react";
-import ninosConComputador from "../img/Carrusel-02.jpg";
-import mujerConCasco from "../img/Carrusel-03.jpg";
-import Equidapp1 from "../img/Equidapp.png"
+import EquidappPortada from '../img/generales/EQUIDAPP-portadaprueba.png'
+import Banner2 from '../img/generales/Banner2.png'
+import Banner3 from '../img/generales/Banner3.png'
 
 function Carrusel() {
   return (
@@ -14,19 +14,19 @@ function Carrusel() {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={Equidapp1} className="d-block w-100 img-fluid imgCarrusel" alt="imagen-portada-1" />
+            <img src={EquidappPortada} className="d-block w-100 img-fluid imgCarrusel" alt="imagen-portada-1" />
             <div className="carousel-caption d-none d-md-block">
               <h5 className="colorPortada"><strong /></h5>
               <p className="colorPortada"> <em></em></p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src={ninosConComputador} className="d-block w-100 img-fluid imgCarrusel" alt="ninos-en-computador" />
+            <img src={Banner2} className="d-block w-100 img-fluid imgCarrusel" alt="ninos-en-computador" />
             <div className="carousel-caption d-none d-md-block text-white">
             </div>
           </div>
           <div className="carousel-item">
-            <img src={mujerConCasco} className="d-block w-100 img-fluid imgCarrusel" alt="Mujeres stem" />
+            <img src={Banner3} className="d-block w-100 img-fluid imgCarrusel" alt="Mujeres stem" />
             <div className="carousel-caption d-none d-md-block">
             </div>
           </div>

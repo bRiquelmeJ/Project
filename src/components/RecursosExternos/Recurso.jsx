@@ -18,126 +18,88 @@ import '../../Styles/recurso.css';
 function Recurso() {
     const [showModalS, setShowModalS] = useState(false);
     const [showModalT, setShowModalT] = useState(false);
-    const [showModalE, setShowModalE]= useState(false);
+    const [showModalE, setShowModalE] = useState(false);
     const [showModalM, setShowModalM] = useState(false);
 
-return (
-<div className="app-container container-fluid  row">
-<div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100 col ">
-    <Sidebar/>
-    </div>
-
-<div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-    <div className="app-main ">
-        <div className="header-box container bg-warning-subtle ">
-    <h2 className= "perfilFont">¡Sigamos Aprendiendo! : Recursos Divertidos</h2>
+    return (
+        <div className="app-container container-fluid row">
+            <div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100 col">
+                <Sidebar />
             </div>
-    <div class="row align-items-start">
-    <div class="col">
-        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-        <>
-        <button 
-        type="button" 
-        class="btn btn-outline-light" 
-        onClick={() => setShowModalS(true)}> 
-        <img src={S} alt="Icono S" />
-        </button>
-        {showModalS && createPortal(
-        <ModalContentS onClose={() => setShowModalS(false)} />,
-        document.body)}
-        </>
-        <>
-        <button 
-        type="button" 
-        class="btn btn-outline-light"
-        onClick={() => setShowModalT(true)}>
-        <img src={T} alt="Icono T" />
-        </button>
-        {showModalT && createPortal(
-        <ModalContentT onClose={() => setShowModalT(false)} />,
-        document.body)}
-        </>
-        <>
-        <button 
-        type="button" 
-        class="btn btn-outline-light"
-        onClick={() => setShowModalE(true)}>
-        <img src={E} alt="Icono E" />
-        </button>
-        {showModalE && createPortal(
-        <ModalContentE onClose={() => setShowModalE(false)} />,
-        document.body)}
-        </>
 
-        <>
-        <button 
-        type="button" 
-        class="btn btn-outline-light"
-        onClick={() => setShowModalM(true)}>
-        <img src={M} alt="Icono M" />
-        </button>
-        {showModalM && createPortal(
-        <ModalContentM onClose={() => setShowModalM(false)} />,
-        document.body)}
-        </>
-        </div>
-        </div>
-        <div class="col mt-5" >
-        <div class="flip-card">
-        <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <p class="title">¿Qué son las Cookies?</p>
-            <img src={Cookies} class="img-fluid  rounded-start" alt="Cookies"/>
-        </div>
-        <div class="flip-card-back">
-            <p class="title">Las cookies en internet no son galletas, ¡son algo digital!</p>
-        </div>
-    </div>
-</div>
+            <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
+                <div className="app-main">
+                    <div className="header-box container ">
+                        <h2 className="perfilFont">¡Sigamos Aprendiendo! : Recursos Divertidos</h2>
+                    </div>
+
+                    <div className="row">
+                        <div className="col">
+                            {/* Letras STEM en una fila */}
+                            <div className="btn-group-horizontal d-flex flex-wrap justify-content-center" role="group" aria-label="Horizontal button group">
+                                <button type="button" className="btn btn-outline-light flex-grow-1" onClick={() => setShowModalS(true)}>
+                                    <img src={S} alt="Icono S" className="img-fluid" />
+                                </button>
+                                {showModalS && createPortal(<ModalContentS onClose={() => setShowModalS(false)} />, document.body)}
+
+                                <button type="button" className="btn btn-outline-light flex-grow-1" onClick={() => setShowModalT(true)}>
+                                    <img src={T} alt="Icono T" className="img-fluid" />
+                                </button>
+                                {showModalT && createPortal(<ModalContentT onClose={() => setShowModalT(false)} />, document.body)}
+
+                                <button type="button" className="btn btn-outline-light flex-grow-1" onClick={() => setShowModalE(true)}>
+                                    <img src={E} alt="Icono E" className="img-fluid" />
+                                </button>
+                                {showModalE && createPortal(<ModalContentE onClose={() => setShowModalE(false)} />, document.body)}
+
+                                <button type="button" className="btn btn-outline-light flex-grow-1" onClick={() => setShowModalM(true)}>
+                                    <img src={M} alt="Icono M" className="img-fluid" />
+                                </button>
+                                {showModalM && createPortal(<ModalContentM onClose={() => setShowModalM(false)} />, document.body)}
+                            </div>
+                        </div>
+                    </div>
 
 
-        </div>
-        <div class="col mt-5">
-        <div class="flip-card">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <p class="title">Ayudan a que las páginas funcionen mejor</p>
-            <p>Aunque no necesitan saber todo <br></br>¡La seguridad es lo primero!</p>
-        </div>
-        <div class="flip-card-back">
-            <p class="title">Son como pequeñas notas que guardan información sobre lo que me gusta en una página web.</p>
-        </div>
-    </div>
-</div>
+                    <div className="row mt-5 d-flex justify-content-center align-items-center ">
+                        <div className="col-md-6 flip-card-container">
+                            {/* Primera flipcard */}
+                            <div className="flip-card">
+                                <div className="flip-card-inner">
+                                    <div className="flip-card-front">
+                                        <p className="title">¿Qué son las Cookies?</p>
+                                        <img src={Cookies} className="img-fluid rounded-start" alt="Cookies" />
+                                    </div>
+                                    <div className="flip-card-back">
+                                        <p className="title">Las cookies en internet no son galletas, ¡son algo digital!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-
-
+                        <div className="col-md-6 flip-card-container">
+                            {/* Segunda flipcard */}
+                            <div className="flip-card">
+                                <div className="flip-card-inner">
+                                    <div className="flip-card-front">
+                                        <p className="title">Ayudan a que las páginas funcionen mejor</p>
+                                        <p>Aunque no necesitan saber todo <br />¡La seguridad es lo primero!</p>
+                                    </div>
+                                    <div className="flip-card-back">
+                                        <p className="title">Son como pequeñas notas que guardan información sobre lo que me gusta en una página web.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
-)
+    );
 }
 
 
 
-export default Recurso;
 
-<div class="card  mb-3 mt-5" style={{ width: '660px'}}>
-<div class="row g-0">
-    <div class="col-md-4">
-    <img src={Cookies} class="img-fluid rounded-start" alt="Cookies"/>
-    </div>
-    <div class="col-md-8">
-    <div class="card-body">
-    <h5 class="card-title">¿Qué son las Cookies?</h5>
-    <p class="card-text ">Las cookies en internet no son galletas, ¡son algo digital!</p>
-    <p class="card-text">Son como pequeñas notas que guardan información sobre lo que me gusta en una página web.</p>
-    <p class="card-text">Ayudan a que las páginas funcionen mejor.</p>
-    <p class="card-text"><small class="text-body-secondary">Recuerda siempre contarle a un adulto si algo parece extraño o no lo entiendes bien. 
-        ¡La seguridad es lo primero!</small></p>
-    </div>
-    </div>
-</div>
-    </div>
+
+export default Recurso;

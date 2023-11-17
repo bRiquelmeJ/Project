@@ -2,6 +2,8 @@ import React from 'react';
 import '../../../Styles/pCursos.css';
 import Mascota from '../../../img/Logo EquidApp.png';
 import ContenidoStem from './ContenidoStem';
+import Mascota from '../../../img/generales/Logo EquidApp.png';
+
 
 function TalkingPet() {
   return (

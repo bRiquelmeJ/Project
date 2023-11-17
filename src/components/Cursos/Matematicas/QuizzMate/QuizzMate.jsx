@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
-import MascotaFeliz from "../../../../img/Logo EquidApp.png";
-import MascotaTriste from "../../../../img/Equidapp-Triste.png"
+import MascotaFeliz from "../../../../img/generales/Logo EquidApp.png";
+import MascotaTriste from "../../../../img/generales/Equidapp-Triste.png"
 
 
 

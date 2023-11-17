@@ -3,8 +3,6 @@ import { createPortal } from 'react-dom';
 import ModalContentVideo from './MatematicasContenido';
 import ModalContentInfo from './MatematicasContenidoInfo';
 import Sidebar from "../Sidebar";
-import Lectura from '../../../img/iconos/ciencias-lectura.png';
-import Video from '../../../img/iconos/ciencias-video.png';
 
 import "../../../Styles/MatematicasCSS.css"
 
@@ -14,7 +12,7 @@ const MatematicasIntro = () => {
 
     return (
         <div className="app-container container-fluid row">
-      <div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100">
+      <div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100 col ">
         <Sidebar />
       </div>
       <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
