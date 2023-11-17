@@ -66,7 +66,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
     return savedMedals ? JSON.parse(savedMedals) : Array(6).fill(false);
   });
 
-  const MEDAL_INDEX = 0;
+  const MEDAL_INDEX = 4;
 
   useEffect(() => {
     const randomizedQuestions = [...questions].sort(() => Math.random() - 0.5);
@@ -136,7 +136,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
           <div className='card-body'>
             <div className='question-section mb-4'>
               <div className='question-count'>
-                <span className="h6">Pregunta {currentQuestion + 1}</span>/{questions.length}
+                <span className="h3">Pregunta {currentQuestion + 1}</span>/{questions.length}
               </div>
               <div className='question-text h5'>
                 {randomQuestions[currentQuestion] && randomQuestions[currentQuestion].questionText}

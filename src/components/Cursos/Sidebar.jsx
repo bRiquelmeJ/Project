@@ -16,6 +16,7 @@ import MUJERES from '../../img/medallas/MUJERES.png';
 import STEM from '../../img/medallas/STEM.png';
 import TECNOLOGIA from '../../img/medallas/TECNOLOGIA.png';
 
+
 function Sidebar() {
     const [isAvatarModalOpen, setAvatarModalOpen] = useState(false);
     const [avatar, setAvatar] = useState(() => localStorage.getItem('userAvatar') || perfil);
