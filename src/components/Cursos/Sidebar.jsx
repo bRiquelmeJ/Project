@@ -21,7 +21,7 @@ import CambioImagen from '../../img/iconos/cambioimagen.png'
 function Sidebar() {
     const [isAvatarModalOpen, setAvatarModalOpen] = useState(false);
     const [avatar, setAvatar] = useState(() => localStorage.getItem('userAvatar') || perfil);
-    const [medalsUnlocked, setMedalsUnlocked] = useState(() => {
+    const [medalsUnlocked] = useState(() => {
         const savedMedals = localStorage.getItem('medalsUnlocked');
         return savedMedals ? JSON.parse(savedMedals) : Array(7).fill(false);
     });
