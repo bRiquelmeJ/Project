@@ -15,6 +15,7 @@ import MATEMATICAS from '../../img/medallas/MATEMATICAS.png';
 import MUJERES from '../../img/medallas/MUJERES.png';
 import STEM from '../../img/medallas/STEM.png';
 import TECNOLOGIA from '../../img/medallas/TECNOLOGIA.png';
+import CambioImagen from '../../img/iconos/cambioimagen.png'
 
 
 function Sidebar() {
@@ -70,12 +71,22 @@ function Sidebar() {
                 </button>
                 <button type="button" className="btn" onClick={() => setAvatarModalOpen(true)}>
                     <img className='col icons-btn' src={Ajustes} alt="Ajustes" />
+
+                    <span >
+                         <img className='icons-btn' src={CambioImagen} alt="CambiosImagen" />{/* Agrega aquí el SVG o ícono para "Cambiar Avatar" */}
+                    </span>
                 </button>
                 <AvatarModal
                     isOpen={isAvatarModalOpen}
                     onClose={() => setAvatarModalOpen(false)}
                     onSelectAvatar={handleAvatarChange}
                 />
+                </>
+                <button type="button" className="btn">
+                    <Link to="/ajustes">
+                    <img className='icons-btn' src={Ajustes} alt="Ajustes" />
+                    </Link>
+                </button>
             </div>
         </div>
     );

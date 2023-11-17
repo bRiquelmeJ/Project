@@ -305,9 +305,6 @@ button.learn-more:active::before {
   transform: translate3d(0, 0, -1em);
 }
 
-
-
-
 /* Fedback mascota*/
 .feedback-bubble {
   position: absolute;
@@ -386,3 +383,44 @@ button.learn-more:active::before {
    background-color: #B500FF;
   }
  }
+
+ .talkingPetText {
+  color: rgb(0, 0, 0);
+  font-size: 16px; /* Ajusta el tamaño del texto según sea necesario */
+  font-weight: 400;
+  word-wrap: break-word;
+  border-radius: 15px;
+  width: 50%;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  background-color: #ffcccb;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+
+.Pet-Talk {
+  width: 20%;
+  position: absolute;
+  top: 50%; /* Ajustar para que esté a la misma altura que el texto */
+  left: 85%;
+  transform: translateX(-35%);
+}
+
+.image-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ajustar según sea necesario */
+
+  .carousel-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Otra estilización que desees aplicar */
+  }
+}
