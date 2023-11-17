@@ -1,7 +1,7 @@
 import React from 'react';
-import imagenPortada03 from '../img/ImagenPortada03.jpg';
-import imagenPortada04 from '../img/ImagenPortada04.jpg';
-import imagenPortada05 from '../img/ImagenPortada05.jpg';
+import imagenPortada03 from '../img/generales/ImagenPortada03.jpg';
+import imagenPortada04 from '../img/generales/ImagenPortada04.jpg';
+import imagenPortada05 from '../img/generales/ImagenPortada05.jpg';
 
 
 

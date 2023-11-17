@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../Styles/quizzIntro.css';
 import QuizMujeres from '../QuizMujeres'; // Asegúrate de que la ruta sea correcta
-import MascotaFeliz from "../../img/Logo EquidApp.png";
+import MascotaFeliz from "../../img/generales/Logo EquidApp.png";
 
 function QuizzInicial() {
   const [feedbackMessage, setFeedbackMessage] = useState("");

@@ -1,9 +1,9 @@
 import React from 'react';
 import Sidebar from '../../Cursos/Sidebar';
 import '../../../Styles/ciencias.css';
-import Biologia from '../../../img/BIOLOGIA.png';
-import Quimica from '../../../img/QUIMICA.png';
-import Fisica from '../../../img/FISICA.png';
+import Biologia from '../../../img/generales/BIOLOGIA.png';
+import Quimica from '../../../img/generales/QUIMICA.png';
+import Fisica from '../../../img/generales/FISICA.png';
 import { Link } from 'react-router-dom';
 
 function Ciencia() {

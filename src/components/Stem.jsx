@@ -1,4 +1,4 @@
-import StemImage from '../img/STEMimg.jpg';
+import StemImage from '../img/generales/STEMimg.jpg';
 import '../App.css';
 import '../Styles/card-stem.css';
 import { Link } from 'react-router-dom';
