@@ -2,9 +2,8 @@
 import React, { useState } from 'react';
 import "../../../Styles/pCursos.css";
 import QuizzInge from './QuizzInge';
-import MascotaFeliz from "../../../img/Logo EquidApp.png";
-import Mascota from "../../../img/generales/Logo EquidApp.png";
-import MascotaTriste from "../../../img/generales/Equidapp-Triste.png"
+import MascotaFeliz from "../../../img/generales/Logo EquidApp.png";
+
 
 function ContainerQuizz() {
   const [feedbackMessage, setFeedbackMessage] = useState("");

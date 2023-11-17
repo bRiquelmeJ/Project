@@ -3,7 +3,7 @@ import Sidebar from '../../Cursos/Sidebar';
 import '../../../Styles/tecnologia.css';
 import { Link } from 'react-router-dom';
 import Programacion from '../../../img/generales/PROGRAMACION.png';
-import IA from '../../../img/IA.png';
+import IA from '../../../img/generales/IA.png';
 import CienciaDatos from '../../../img/generales/CIENCIADATOS.png';
 
 
