@@ -33,8 +33,7 @@ function Sidebar() {
         MUJERES,
         STEM,
         TECNOLOGIA,
-      ];
-      
+    ];
 
     const handleAvatarChange = (newAvatarSrc) => {
         setAvatar(newAvatarSrc);
