@@ -56,8 +56,8 @@
   }
   
   .book:hover .cover {
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: all 2.5s;
+    transition: all 2.5s;
     -webkit-transform: rotatey(-90deg);
     -ms-transform: rotatey(-90deg);
     transform: rotatey(-90deg);
@@ -70,4 +70,26 @@
     font-size: 15px;
     font-weight: bolder;
     margin-left: 10px;
+  }
+
+  .cover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; 
+    padding: 15px;
+    opacity: 0; 
+    transition: opacity 0s ease; /* Transición suave de la opacidad */
+  }
+  
+  .cover:hover .cover-overlay {
+    opacity: 1; 
   }
