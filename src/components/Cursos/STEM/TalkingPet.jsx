@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../../Styles/pCursos.css';
-import Mascota from '../../../img/Logo EquidApp.png';
+import Mascota from '../../../img/generales/Logo EquidApp.png';
 
 function TalkingPet() {
   const paragraphs = [

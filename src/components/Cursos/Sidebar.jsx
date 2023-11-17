@@ -1,7 +1,7 @@
 // Sidebar.js
 import React, { useState } from 'react';
 import AvatarModal from './Avatar/AvatarModal'; // Verifica la ruta
-import perfil from '../../img/perfil.jpeg';
+import perfil from '../../img/generales/perfil.jpeg';
 import '../../Styles/pCursos.css'; // Verifica la ruta
 import { Link } from 'react-router-dom';
 import Quiz from '../../img/iconos/Quiz.svg';

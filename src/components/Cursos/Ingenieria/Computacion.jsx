@@ -5,8 +5,7 @@ import ModalContentVideo from './ComputacionContenido'
 import ModalContentInfo from './ComputacionContenidoInfo'
 import Sidebar from '../Sidebar';
 import '../../../Styles/ingenieria.css';
-import Lectura from '../../../img/iconos/ciencias-lectura.png';
-import Video from '../../../img/iconos/ciencias-video.png';
+
 
 
 function Ingenieria() {

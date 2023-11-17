@@ -1,5 +1,5 @@
-import Imagen06 from '../img/ImagenPortada06.jpg'
-import Imagen10 from '../img/ImagenPortada10.jpg'
+import Imagen06 from '../img/generales/ImagenPortada06.jpg'
+import Imagen10 from '../img/generales/ImagenPortada10.jpg'
 import '../App.css'
 import { Link } from 'react-router-dom'
 

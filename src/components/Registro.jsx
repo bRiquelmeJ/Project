@@ -1,4 +1,4 @@
-import imagenLogin from "../img/imagen-login.png";
+import imagenLogin from "../img/generales/imagen-login.png";
 import '../register.css';
 import { useForm } from 'react-hook-form'
 import { useAuth } from "../context/AuthContext";

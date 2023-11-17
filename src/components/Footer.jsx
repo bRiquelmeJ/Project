@@ -1,5 +1,5 @@
 import '../App.css'
-import PNG from '../img/generationpng.png'
+import PNG from '../img/generales/generationpng.png'
 
 export default function Footer() {
     return (

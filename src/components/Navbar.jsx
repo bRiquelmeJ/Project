@@ -1,5 +1,5 @@
 import React from "react"
-import logo from "../img/Mascota_01-removebg-preview.png"
+import logo from "../img/generales/Mascota_01-removebg-preview.png"
 import { Link } from 'react-router-dom';
 import { useAuth } from "../context/AuthContext";
 function Navbar() {

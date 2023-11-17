@@ -1,10 +1,7 @@
 import React from "react";
-import ninosConComputador from "../img/Carrusel-02.jpg";
-import mujerConCasco from "../img/Carrusel-03.jpg";
-import Equidapp1 from "../img/Equidapp.png"
-import EquidappPortada from '../img/EQUIDAPP-portadaprueba.png'
-import Banner2 from '../img/Banner2.png'
-import Banner3 from '../img/Banner3.png'
+import ninosConComputador from "../img/generales/Carrusel-02.jpg";
+import mujerConCasco from "../img/generales/Carrusel-03.jpg";
+import Equidapp1 from "../img/generales/Equidapp.png"
 
 function Carrusel() {
   return (

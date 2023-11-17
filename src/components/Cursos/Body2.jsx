@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../Styles/pCursos.css';
-import MujerSTEM from "../../img/STEMimg.jpg";
+import MujerSTEM from "../../img/generales/STEMimg.jpg";
 import { Link } from 'react-router-dom';
 function Body2(){
 

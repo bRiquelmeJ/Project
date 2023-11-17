@@ -2,8 +2,8 @@ import React from 'react';
 import Sidebar from '../../Cursos/Sidebar';
 import '../../../Styles/ingenieria.css';
 import {Link} from 'react-router-dom';
-import COMPUTACION from '../../../img/COMPUTACION.png';
-import ROBOTICA from '../../../img/ROBOTICA.png';
+import COMPUTACION from '../../../img/generales/COMPUTACION.png';
+import ROBOTICA from '../../../img/generales/ROBOTICA.png';
 
 
 function Ingenieria() {

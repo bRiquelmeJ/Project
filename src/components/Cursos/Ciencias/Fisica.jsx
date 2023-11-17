@@ -4,8 +4,6 @@ import ModalContentVideo from './FisicaContenido';
 import ModalContentInfo from './FisicaContenidoInfo';
 import Sidebar from '../../Cursos/Sidebar';
 import '../../../Styles/ciencias.css';
-import Lectura from '../../../img/iconos/ciencias-lectura.png';
-import Video from '../../../img/iconos/ciencias-video.png';
 
 function Fisica() {
 

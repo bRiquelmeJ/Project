@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import "../../../../Styles/pCursos.css";
 import QuizzCiencia from './QuizzCiencia';
-import MascotaFeliz from "../../../../img/Logo EquidApp.png";
+import MascotaFeliz from "../../../../img/generales/Logo EquidApp.png";
 
 
 function ContainerQuizz() {
