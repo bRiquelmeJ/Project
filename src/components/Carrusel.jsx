@@ -2,6 +2,9 @@ import React from "react";
 import ninosConComputador from "../img/generales/Carrusel-02.jpg";
 import mujerConCasco from "../img/generales/Carrusel-03.jpg";
 import Equidapp1 from "../img/generales/Equidapp.png"
+import EquidappPortada from '../img/generales/EQUIDAPP-portadaprueba.png'
+import Banner2 from '../img/generales/Banner2.png'
+import Banner3 from '../img/generales/Banner3.png'
 
 function Carrusel() {
   return (
