@@ -2,6 +2,9 @@ import React from 'react';
 import '../../Styles/pCursos.css';
 import MujerSTEM from "../../img/STEMimg.jpg";
 import { Link } from 'react-router-dom';
+import Carreras from './Carreras';
+
+
 function Body2(){
 
 return(
@@ -9,7 +12,7 @@ return(
     <div class="container text-center">
             <div class="row">
             <div class="col order-first">
-            <button class="learn-more mt-5"> Noticias y Actividades </button>
+            <Carreras />
             </div>
             <div class="col order-last">
                 <div>
