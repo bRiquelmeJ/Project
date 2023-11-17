@@ -70,8 +70,6 @@ function Sidebar() {
                     </Link>
                 </button>
                 <button type="button" className="btn" onClick={() => setAvatarModalOpen(true)}>
-                    <img className='col icons-btn' src={Ajustes} alt="Ajustes" />
-
                     <span >
                          <img className='icons-btn' src={CambioImagen} alt="CambiosImagen" />{/* Agrega aquí el SVG o ícono para "Cambiar Avatar" */}
                     </span>
@@ -81,7 +79,7 @@ function Sidebar() {
                     onClose={() => setAvatarModalOpen(false)}
                     onSelectAvatar={handleAvatarChange}
                 />
-                </>
+            
                 <button type="button" className="btn">
                     <Link to="/ajustes">
                     <img className='icons-btn' src={Ajustes} alt="Ajustes" />
