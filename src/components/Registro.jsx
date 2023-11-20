@@ -20,17 +20,18 @@ export default function Registro() {
 
   const onSubmit = handleSubmit(async (values) => {
     signup(values);
+    console.log(registerErrors);
   });
 
   return (
 
     <section id="about">
       {
-        registerErrors.map((error, i) => (
+        registerErrors.length !== 0 ? registerErrors.map((error, i) => (
           <div className="bg-red-500 p-2 text-white" key={i}>
             {error}
           </div>
-        ))
+        )):null
         }
       <div className="container mt-4 p-4">
         <div className="row mt-4">
@@ -58,7 +59,7 @@ export default function Registro() {
                     <h6>Fecha de Nacimiento</h6>
                   </div>
                   <div className="row p-3">
-                    <input type="date" />
+                    <input type="date" {...register('date', { required: true })} />
                     {errors.date && (
                       <p className="text-red-500">fecha de nacimiento es requerida</p>
                     )}
