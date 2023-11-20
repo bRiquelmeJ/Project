@@ -1,7 +1,7 @@
 // Sidebar.js
 import React, { useState } from 'react';
 import AvatarModal from './Avatar/AvatarModal'; // Verifica la ruta
-import perfil from '../../img/perfil.jpeg';
+import perfil from '../../img/generales/perfil.jpeg';
 import '../../Styles/pCursos.css'; // Verifica la ruta
 import { Link } from 'react-router-dom';
 import Quiz from '../../img/iconos/Quiz.svg';
@@ -16,12 +16,14 @@ import MUJERES from '../../img/medallas/MUJERES.png';
 import STEM from '../../img/medallas/STEM.png';
 import TECNOLOGIA from '../../img/medallas/TECNOLOGIA.png';
 import CambioImagen from '../../img/iconos/cambioimagen.png'
-
+import { useAuth } from "../../context/AuthContext";
 
 function Sidebar() {
+
+    const {user} = useAuth()
     const [isAvatarModalOpen, setAvatarModalOpen] = useState(false);
     const [avatar, setAvatar] = useState(() => localStorage.getItem('userAvatar') || perfil);
-    const [medalsUnlocked, setMedalsUnlocked] = useState(() => {
+    const [medalsUnlocked] = useState(() => {
         const savedMedals = localStorage.getItem('medalsUnlocked');
         return savedMedals ? JSON.parse(savedMedals) : Array(7).fill(false);
     });
@@ -50,7 +52,7 @@ function Sidebar() {
                         <Medal key={index} unlocked={medalsUnlocked[index]} imageUnlocked={image} imageLocked={image} />
                     ))}
                 </div>
-                <h4 className='perfilFont'>Usuario</h4>
+                <h4 className='perfilFont'>{user.name}</h4>
             </div>
             <div className="btn-group-vertical sidebar" role="group" aria-label="Vertical button group">
                 <button type="button" className="btn">
@@ -61,11 +63,6 @@ function Sidebar() {
                 <button type="button" className="btn">
                     <Link to="/recurso">
                         <img className='icons-btn' src={Recursos} alt="Recursos" />
-                    </Link>
-                </button>
-                <button type="button" className="btn">
-                    <Link to="/foro">
-                        <img className='icons-btn' src={Foro} alt="Foro" />
                     </Link>
                 </button>
                 <button type="button" className="btn" onClick={() => setAvatarModalOpen(true)}>

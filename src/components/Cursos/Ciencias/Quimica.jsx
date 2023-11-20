@@ -4,8 +4,6 @@ import ModalContentInfo from './QuimicaContenidoInfo';
 import ModalContentVideo from './QuimicaContenido';
 import Sidebar from '../../Cursos/Sidebar';
 import '../../../Styles/ciencias.css';
-import Lectura from '../../../img/iconos/ciencias-lectura.png';
-import Video from '../../../img/iconos/ciencias-video.png';
 
 function Quimica() {
     const [showModalVideo, setShowModalVideo] = useState(false);

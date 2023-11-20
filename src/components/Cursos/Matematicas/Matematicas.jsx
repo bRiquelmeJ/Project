@@ -1,6 +1,6 @@
 
 import Sidebar from '../Sidebar';
-import Math from '../../../img/Math.png'
+import Math from '../../../img/generales/Math.png'
 import "../../../Styles/MatematicasCSS.css"
 import { Link } from 'react-router-dom';
 

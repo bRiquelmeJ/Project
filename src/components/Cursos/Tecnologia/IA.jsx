@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import ModalContentInfo from './IAContenidoInfo'
 import ModalContentVideo from './IAContenido'
-import Lectura from '../../../img/iconos/ciencias-lectura.png';
-import Video from '../../../img/iconos/ciencias-video.png';
 import Sidebar from '../Sidebar';
 import '../../../Styles/tecnologia.css';
 

@@ -5,8 +5,6 @@ import ModalContentVideo from './RoboticaContenido';
 import ModalContentInfo from './RoboticaContenidoInfo';
 import Sidebar from '../Sidebar';
 import '../../../Styles/ingenieria.css';
-import Lectura from '../../../img/iconos/ciencias-lectura.png';
-import Video from '../../../img/iconos/ciencias-video.png';
 
 
 function Ingenieria() {
