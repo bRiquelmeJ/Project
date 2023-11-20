@@ -1,12 +1,11 @@
 // Sidebar.js
 import React, { useState } from 'react';
-import AvatarModal from './Avatar/AvatarModal'; // Verifica la ruta
+import AvatarModal from './Avatar/AvatarModal'; 
 import perfil from '../../img/generales/perfil.jpeg';
-import '../../Styles/pCursos.css'; // Verifica la ruta
+import '../../Styles/pCursos.css'; 
 import { Link } from 'react-router-dom';
 import Quiz from '../../img/iconos/Quiz.svg';
 import Recursos from '../../img/iconos/Recursos.svg';
-import Foro from '../../img/iconos/Foro.png'
 import Ajustes from '../../img/iconos/Ajustes.png'
 import Medal from './Avatar/Medallas/Medal';
 import CIENCIA from '../../img/medallas/CIENCIA.png';
