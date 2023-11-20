@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-
-
 .app-container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(238, 219, 252, 0.53);
-
+  margin:0
 }
 ul>li{
   list-style-type: none;
