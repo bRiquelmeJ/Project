@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../../Styles/Mujeres.css';
+import '../../../Styles/pCursos.css';
 import Sidebar from '../Sidebar';
 import { useState } from 'react';
 import S from '../../../img/iconos/S.svg'
@@ -150,7 +151,7 @@ function MujeresBio() {
         <Sidebar/>
       </div>
       
-      <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
+      <div className="app-main container-fluid col-lg col-md-12">
       
       <div>
         <div className="btn-group-horizontal1 d-flex flex-wrap justify-content-center" role="group" aria-label="Horizontal button group">

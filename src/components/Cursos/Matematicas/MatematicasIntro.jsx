@@ -5,6 +5,7 @@ import ModalContentInfo from './MatematicasContenidoInfo';
 import Sidebar from "../Sidebar";
 import { Link } from 'react-router-dom';
 import '../../../Styles/btn-back.css';
+import '../../../Styles/pCursos.css';
 import '../../../Styles/text-content.css';
 import Imagen from '../../../img/generales/Logo EquidApp.png';
 import "../../../Styles/MatematicasCSS.css"
@@ -18,7 +19,7 @@ const MatematicasIntro = () => {
       <div className="container-fluid app-sidebar col-lg-10 col-md-12 col ">
         <Sidebar />
       </div>
-      <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
+      <div className="app-main container-fluid col-lg col-md-12">
         <div className="welcome-box mb-3 d-flex flex-row align-items-center justify-content-around">
           <Link to="/Matematicas" className="text-start btn btn-back">
             Volver atrás

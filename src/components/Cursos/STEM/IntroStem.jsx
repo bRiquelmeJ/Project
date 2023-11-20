@@ -12,7 +12,7 @@ function IntroStem() {
         <Sidebar/>
       </div>
       
-      <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
+      <div className="app-main container-fluid col-lg col-md-12">
         <div>
           <ImagenesIntro/>
         </div>

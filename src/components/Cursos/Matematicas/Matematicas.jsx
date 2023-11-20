@@ -2,6 +2,7 @@
 import Sidebar from '../Sidebar';
 import Math from '../../../img/generales/Math.png'
 import "../../../Styles/MatematicasCSS.css"
+import '../../../Styles/pCursos.css';
 import { Link } from 'react-router-dom';
 
 const Matematicas1 = () => {
@@ -10,7 +11,7 @@ const Matematicas1 = () => {
       <div className="container-fluid app-sidebar col-lg-10 col-md-12 col ">
         <Sidebar />
       </div>
-      <div className="app-main container-fluid col-lg-9 col-md-8 col-sm-7 col-12">
+      <div className="app-main container-fluid col-lg col-md-12">
       <div className="welcome-box mb-3 d-flex flex-row align-items-center justify-content-around">
         <Link to="/PlataformaCursos" className="text-start btn btn-back">
             Volver atrás

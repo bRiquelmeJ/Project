@@ -7,6 +7,7 @@ import '../../../Styles/tecnologia.css';
 import { Link } from 'react-router-dom';
 import '../../../Styles/btn-back.css';
 import '../../../Styles/text-content.css';
+import '../../../Styles/pCursos.css';
 import Imagen from '../../../img/generales/Logo EquidApp.png';
 
 
@@ -21,7 +22,7 @@ function CienciaDeDatos() {
         <Sidebar />
       </div>
 
-      <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
+      <div className="app-main container-fluid col-lg col-md-12">
         <div className="welcome-box mb-3 d-flex flex-row align-items-center justify-content-around">
           <Link to="/Tecnologia" className="text-start btn btn-back">
             Volver atrás

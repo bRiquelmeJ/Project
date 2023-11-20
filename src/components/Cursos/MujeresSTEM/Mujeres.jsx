@@ -15,7 +15,7 @@ function Mujeres() {
         <Sidebar/>
       </div>
       
-      <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
+      <div className="app-main container-fluid col-lg col-md-12">
               <div className="welcome-box row ">
                     <h2 className= "perfilFontM"> Descubriendo el Legado Femenino: Ciencia, Tecnología, Ingeniería y Matemáticas (STEM)</h2> 
                 </div>

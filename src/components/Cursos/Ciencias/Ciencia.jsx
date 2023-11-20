@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from '../../Cursos/Sidebar';
 import '../../../Styles/ciencias.css';
+import '../../../Styles/pCursos.css';
 import Biologia from '../../../img/generales/BIOLOGIA.png';
 import Quimica from '../../../img/generales/QUIMICA.png';
 import Fisica from '../../../img/generales/FISICA.png';
@@ -12,7 +13,7 @@ function Ciencia() {
         <div className="container-fluid app-sidebar col-lg-10 col-md-12">
                 <Sidebar />
             </div>
-            <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
+            <div className="app-main container-fluid col-lg col-md-12">
                 <div className="welcome-box mb-3 d-flex flex-row align-items-center justify-content-around">
                     <Link to="/PlataformaCursos" className="text-start btn btn-back">
                     Volver atrás
