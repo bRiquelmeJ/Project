@@ -11,6 +11,7 @@ import E from '../../img/iconos/E.svg'
 import M from '../../img/iconos/M.svg'
 import Cookies from '../../img/recurs/galleta.png'
 import '../../Styles/recurso.css';
+import '../../Styles/pCursos.css';
 
 
 
@@ -23,7 +24,7 @@ function Recurso() {
 
     return (
         <div className="app-container container-fluid row">
-            <div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100 col">
+            <div className="container-fluid app-sidebar col-lg-10 col-md-12 col">
                 <Sidebar />
             </div>
 
