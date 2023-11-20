@@ -1,28 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import '../../../Styles/pCursos.css';
+import Bienvenida from '../../../img/contenido/Stem/Bienvenida.jpg';
 
 const ImagenesIntro = ({ currentIndex, changePoints }) => {
   const [images] = useState([
-    'url_imagen_1',
-    'url_imagen_2',
-    'url_imagen_3',
+    Bienvenida,
+    'url_de_la_imagen_2',
+    'url_de_la_imagen_3',
     // ... otras imágenes
   ]);
 
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
-    // Cambiar la imagen cuando el índice actual coincide con un punto de cambio
-    if (changePoints.includes(currentIndex)) {
-      setCurrentImage(currentImage + 1);
+    // Cambiar automáticamente la imagen solo en los puntos de cambio
+    if (Array.isArray(changePoints) && changePoints.includes(currentIndex)) {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
     }
-  }, [currentIndex, currentImage, changePoints]);
+  }, [currentIndex, changePoints, images]);
 
   return (
-    <div className="image-carousel">
+    <div className="container col">
       <img
         src={images[currentImage]}
         alt={`Imagen ${currentImage + 1}`}
-        className="image-carousel"
+        className="image-carousel" // Añade la clase aquí
       />
     </div>
   );

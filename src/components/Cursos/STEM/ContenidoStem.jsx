@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ImagenesIntro from './ImagenesIntro'; // Ajusta la ruta según sea necesario
+import ImagenesIntro from './ImagenesIntro';
 import '../../../Styles/pCursos.css';
 
 const ContenidoStem = () => {
@@ -31,7 +31,11 @@ const ContenidoStem = () => {
   const imageChangePoints = [2, 4];
 
   return (
-    <div className="col-lg-8 mx-auto h-100 container">
+    <div className="col-lg-8 mx-auto h-100 mg-5">
+      <div className="row">
+      {/* Pasa el índice actual y los puntos de cambio como propiedades */}
+      <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
+      </div>
       <div className="talkingPetText" onClick={handleNext}>
         <p>{paragraphs[currentIndex]}</p>
         <p className='ClickContinuar'>Click para Continuar</p>
@@ -41,8 +45,6 @@ const ContenidoStem = () => {
           </button>
         </div>
       </div>
-      {/* Pasa el índice actual y los puntos de cambio como propiedades */}
-      <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
     </div>
   );
 };
