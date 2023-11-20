@@ -40,7 +40,7 @@ function Programacion() {
           </div>
         </div>
 
-        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly'>
+        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5'>
         <>
           <button class="game-button" onClick={() => setShowModalVideo(true)}>
           <svg class="play-icon" viewBox="0 0 40 40">

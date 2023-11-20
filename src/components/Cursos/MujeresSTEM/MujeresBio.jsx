@@ -153,7 +153,7 @@ function MujeresBio() {
       <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
       
       <div>
-        <div className="btn-group-horizontal d-flex flex-wrap justify-content-center" role="group" aria-label="Horizontal button group">
+        <div className="btn-group-horizontal1 d-flex flex-wrap justify-content-center" role="group" aria-label="Horizontal button group">
         <button onClick={() => handleCategoryChange('ciencia')}  className="btn btn-outline-light flex-grow-1">
         <img src={S} alt="Icono S" className="img-fluid" />
         </button>
