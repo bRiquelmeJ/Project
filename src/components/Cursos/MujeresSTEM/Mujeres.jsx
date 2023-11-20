@@ -21,9 +21,9 @@ function Mujeres() {
                 </div>
 
         <div>
-          <h3 className="text-center  p-4">
+          <h4 className="text-center  p-4">
               A lo largo de la historia, las mujeres han desempeñado un papel fundamental en el avance de la ciencia, la tecnología, la ingeniería y las matemáticas, aunque sus contribuciones no siempre han sido ampliamente reconocidas o celebradas.
-          </h3>
+          </h4>
         </div>
         <div className='row container-fluid d-flex align-content-center justify-content-center mb-5'>
           <MujeresIntro />
