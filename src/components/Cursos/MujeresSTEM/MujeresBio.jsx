@@ -28,6 +28,7 @@ import Reshma from '../../../img/mujeres/Reshma.jpeg'
 import Kimberly from '../../../img/mujeres/Kimberly Bryant.webp'
 import Mae from '../../../img/mujeres/Mae_Carol_Jemison.jpg'
 
+
 function MujeresBio() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const mujeresCientificasData = [

@@ -12,9 +12,8 @@ return(
     <div class="container text-center">
             <div class="row">
             <div class="col order-first">
-            </div>
-            <div class="col order-last">
-                <div>
+                
+            <div>
                     <>
                     <Link to="/MujeresSTEM">
                         <img 
@@ -24,6 +23,9 @@ return(
                         </Link>  
                     </>
                 </div>
+            </div>
+            <div class="col order-last">
+
             </div>
 
             </div>

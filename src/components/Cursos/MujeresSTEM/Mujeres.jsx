@@ -2,6 +2,7 @@ import React from 'react';
 import '../../../Styles/pCursos.css';
 import Sidebar from '../Sidebar';
 import { Link } from 'react-router-dom';
+import MujeresIntro from './QuizzMujeres/MujeresIntro';
 
 
 function Mujeres() {
@@ -22,6 +23,10 @@ function Mujeres() {
       <h3 className="text-center border-course-text border rounded p-4">
       A lo largo de la historia, las mujeres han desempeñado un papel fundamental en el avance de la ciencia, la tecnología, la ingeniería y las matemáticas, aunque sus contribuciones no siempre han sido ampliamente reconocidas o celebradas.
       </h3>
+        </div>
+        <div className='col'>
+          <MujeresIntro />
+
         </div>
           <div className='row container-fluid d-flex align-content-center justify-content-center'>
           
