@@ -17,11 +17,14 @@ function Tecnologia() {
     </div>
     
     <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-                <div className="welcome-box row ">
-                    <div>
-                        <h2 className= "perfilFont"> Bienvenidos a Tecnologia</h2>
-                    </div>
-                </div>
+    <div className="welcome-box mb-3 d-flex flex-row align-items-center justify-content-around">
+        <Link to="/PlataformaCursos" className="text-start btn btn-back">
+            Volver atrás
+        </Link>
+        <h2 className="perfilFont text-start">Bienvenid@ a Tecnología</h2>
+        <p></p>
+        <p></p>
+        </div>
 
                 <div className="mt-3 row d-flex align-items-center justify-content-center courses-btn">
                     <div className="btn-group col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
