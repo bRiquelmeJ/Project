@@ -62,7 +62,7 @@ function Recurso() {
 
 
                     <div className="row mt-5 d-flex justify-content-center align-items-center ">
-                        <div className="col-md-6 flip-card-container">
+                        <div className="col-lg-6 col-md-6 col-sm-12 flip-card-container">
                             {/* Primera flipcard */}
                             <div className="flip-card">
                                 <div className="flip-card-inner">
@@ -77,7 +77,7 @@ function Recurso() {
                             </div>
                         </div>
 
-                        <div className="col-md-6 flip-card-container">
+                        <div className="col-lg-6 col-md-6 col-sm-12 flip-card-container">
                             {/* Segunda flipcard */}
                             <div className="flip-card">
                                 <div className="flip-card-inner">

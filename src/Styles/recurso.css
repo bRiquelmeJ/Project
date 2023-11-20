@@ -81,13 +81,14 @@
 
  /*Carta Cookies */
 
-.flip-card {
+ .flip-card {
     background-color: transparent;
-    width: 250px;
-    height: 354px;
+    width: 300px;
+    height: 400px;
     perspective: 1000px;
+    margin: 10px;
     font-family: sans-serif;
-}
+  }
 
 .flip-card-container {
     display: flex;
@@ -95,12 +96,19 @@
     flex-wrap: wrap;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 992px) {
     .flip-card {
-        width: 150px;
-        height: 200px;
+      width: 250px;
+      height: 350px;
     }
-}
+  }
+  
+  @media (max-width: 768px) {
+    .flip-card {
+      width: 200px;
+      height: 300px;
+    }
+  }
   
 .title {
     font-size: 1.5em;
