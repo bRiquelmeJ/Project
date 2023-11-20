@@ -1,36 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import '../../../Styles/pCursos.css';
+import React, { useEffect, useState } from 'react';
 
-const ImagenesIntro = () => {
+const ImagenesIntro = ({ currentIndex, changePoints }) => {
   const [images] = useState([
-    'url_de_la_imagen_1',
-    'url_de_la_imagen_2',
-    'url_de_la_imagen_3',
+    'url_imagen_1',
+    'url_imagen_2',
+    'url_imagen_3',
     // ... otras imágenes
   ]);
 
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
-    // Cambiar automáticamente la imagen cada 5 segundos
-    const intervalId = setInterval(() => {
-      if (currentImage < images.length - 1) {
-        setCurrentImage(currentImage + 1);
-      } else {
-        setCurrentImage(0);
-      }
-    }, 5000);
-
-    // Limpiar el intervalo cuando el componente se desmonta
-    return () => clearInterval(intervalId);
-  }, [currentImage, images]);
+    // Cambiar la imagen cuando el índice actual coincide con un punto de cambio
+    if (changePoints.includes(currentIndex)) {
+      setCurrentImage(currentImage + 1);
+    }
+  }, [currentIndex, currentImage, changePoints]);
 
   return (
     <div className="image-carousel">
       <img
         src={images[currentImage]}
         alt={`Imagen ${currentImage + 1}`}
-        className="image-carousel" // Añade la clase aquí
+        className="image-carousel"
       />
     </div>
   );

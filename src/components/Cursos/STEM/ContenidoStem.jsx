@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import ImagenesIntro from './ImagenesIntro'; // Ajusta la ruta según sea necesario
 import '../../../Styles/pCursos.css';
 
-function ContenidoStem() {
+const ContenidoStem = () => {
   const paragraphs = [
     "Hola soy “ingrese nombre aquí” y seré tu compañera en EquidApp.",
     "Muchas gracias por registrarte, estás por entrar en un mundo lleno de oportunidades y descubrimiento",
@@ -26,20 +27,24 @@ function ContenidoStem() {
     }
   };
 
+  // Añade los índices en los que deseas cambiar la imagen
+  const imageChangePoints = [2, 4];
+
   return (
     <div className="col-lg-8 mx-auto h-100 container">
       <div className="talkingPetText" onClick={handleNext}>
         <p>{paragraphs[currentIndex]}</p>
         <p className='ClickContinuar'>Click para Continuar</p>
         <div>
-          {/* Botón Retroceder dentro del contenedor, fuera del área de clic */}
           <button onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
             Retroceder
           </button>
         </div>
       </div>
+      {/* Pasa el índice actual y los puntos de cambio como propiedades */}
+      <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
     </div>
   );
-}
+};
 
 export default ContenidoStem;
