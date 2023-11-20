@@ -75,11 +75,6 @@ function Sidebar() {
                     onSelectAvatar={handleAvatarChange}
                 />
             
-                <button type="button" className="btn">
-                    <Link to="/ajustes">
-                    <img className='icons-btn' src={Ajustes} alt="Ajustes" />
-                    </Link>
-                </button>
             </div>
         </div>
     );
