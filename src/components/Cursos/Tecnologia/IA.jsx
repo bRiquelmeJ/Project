@@ -24,9 +24,9 @@ function IA() {
           </div>
         </div>
         <div className="mt-3 course-text container-fluid d-flex align-items-center justify-content-center">
-          <p className="text-center border-course-text border rounded p-4">
+          <h4 className="text-center p-4">
           Sumérgete en el apasionante mundo de la inteligencia artificial, desentrañando los secretos de cómo las máquinas pueden reconocer patrones en datos, tomar decisiones autónomas y hasta entender el lenguaje humano. Explora cómo la inteligencia artificial puede transformar nuestra forma de trabajar y vivir, desde asistentes virtuales hasta vehículos autónomos. ¡Únete y descubre los asombrosos poderes de las IAs
-          </p>
+          </h4>
         </div>
         <div className='container-fluid d-flex justify-content-evenly'>
         <>

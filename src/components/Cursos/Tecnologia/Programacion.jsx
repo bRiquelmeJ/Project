@@ -24,9 +24,9 @@ function Programacion() {
           </div>
         </div>
         <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
-          <p className="text-center border-course-text border rounded p-4">
+          <h4 className="text-center p-4">
           La programación es el arte de dar vida a tus ideas en el mundo digital. Es como aprender un nuevo idioma para crear aplicaciones, juegos y soluciones innovadoras. Cada línea de código es un paso más cerca de convertir tus pensamientos en realidad. Bienvenido al emocionante viaje de la programación, donde la creatividad se encuentra con el potencial ilimitado de la tecnología
-          </p>
+          </h4>
         </div>
         <div className='container-fluid d-flex justify-content-evenly'>
         <>

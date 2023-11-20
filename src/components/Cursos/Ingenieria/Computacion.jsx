@@ -24,8 +24,8 @@ function Ingenieria() {
           </div>
         </div>
         <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
-          <p className="text-center border-course-text border rounded p-4">
-          Los expertos en computación exploran el fascinante mundo de las máquinas y la información a diferentes niveles, desde el código en programas individuales hasta la gestión de sistemas complejos en toda la red.  </p>
+          <h4 className="text-center p-4">
+          Los expertos en computación exploran el fascinante mundo de las máquinas y la información a diferentes niveles, desde el código en programas individuales hasta la gestión de sistemas complejos en toda la red.  </h4>
         </div>
         <div className='container-fluid d-flex justify-content-evenly'>
         <>

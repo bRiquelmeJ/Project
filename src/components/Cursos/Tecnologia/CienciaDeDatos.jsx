@@ -24,11 +24,11 @@ function CienciaDeDatos() {
           </div>
         </div>
         <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
-          <p className="text-center border-course-text border rounded p-4">
+          <h4 className="text-center p-4">
           La Ciencia de Datos, un campo fascinante e interdisciplinario, se erige como la brújula que guía la era digital. 
           En su esencia, es la búsqueda de conocimiento a través del análisis de datos, aprovechando información cruda para desvelar patrones, tendencias y revelaciones que impulsan la toma de decisiones
           ¡Te invitamos a estudiar análisis de datos y desatar el potencial de la información!
-          </p>
+          </h4>
         </div>
         <div className='container-fluid d-flex justify-content-evenly'>
         <>

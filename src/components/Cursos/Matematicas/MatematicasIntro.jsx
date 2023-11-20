@@ -22,9 +22,9 @@ const MatematicasIntro = () => {
           </div>
         </div>
         <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
-          <p className="text-center border-course-text border rounded p-4">
+          <h4 className="text-center p-4">
           Los matemáticos exploran el fascinante mundo de los números y las formas, desde problemas simples hasta complejas ecuaciones y patrones en la naturaleza. Únete y descubre más acerca de los conceptos fundamentales de las matemáticas, desde la aritmética básica hasta las complejas fórmulas que ayudan a entender el universo que nos rodea.
-          </p>
+          </h4>
         </div>
         
         <div className='container-fluid d-flex justify-content-evenly'>

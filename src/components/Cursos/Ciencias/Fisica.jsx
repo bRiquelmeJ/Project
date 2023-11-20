@@ -21,10 +21,10 @@ function Fisica() {
                     </div>
                 </div>
                 <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
-                    <p className="text-center border-course-text border rounded p-4">
+                    <h4 className="text-center p-4">
                         La física, es una disciplina fundamental en la comprensión del universo que nos rodea. Se adentra en el estudio de la naturaleza y sus leyes fundamentales. <br></br>
 
-                        A través de la observación, la experimentación y la formulación de teorías, los físicos buscan entender y predecir el comportamiento de los objetos y fenómenos en el cosmos.</p>
+                        A través de la observación, la experimentación y la formulación de teorías, los físicos buscan entender y predecir el comportamiento de los objetos y fenómenos en el cosmos.</h4>
                 </div>
                 <div className='container-fluid d-flex justify-content-evenly'>
                 <>

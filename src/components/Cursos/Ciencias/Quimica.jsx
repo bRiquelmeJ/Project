@@ -21,13 +21,13 @@ function Quimica() {
                     </div>
                 </div>
                 <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
-                    <p className="text-center border-course-text border rounded p-4">
+                    <h4 className="text-center p-4">
 
                         La química explora la composición y transformación de la materia. <br></br>
 
                         A través de experimentos y teorías, desentraña cómo interactúan las sustancias, proporcionando las bases para avances científicos y tecnológicos clave. <br></br>
 
-                        En su esencia, la química busca entender la naturaleza íntima de la materia y las fuerzas que la rigen en el universo.</p>
+                        En su esencia, la química busca entender la naturaleza íntima de la materia y las fuerzas que la rigen en el universo.</h4>
                 </div>
                 <div className='container-fluid d-flex justify-content-evenly'>
                 <>
