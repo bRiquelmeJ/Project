@@ -157,11 +157,18 @@ ul>li{
   color: #FFFFFF; /* Choose a color that fits the sidebar theme */
   font-size: 14px; /* Adjust as needed */
 }
-.icons-btn {
-  transition: transform 0.3s ease;
-  /* other existing styles */
+.btn .icons-btn {
+  width: 100%; /* Esto hará que los iconos se expandan para llenar el ancho del botón */
+  height: auto; /* Esto mantendrá la proporción de los iconos */
 }
 
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .btn .icons-btn {
+      width: 80%; /* Ajusta el tamaño como sea necesario */
+      height: auto;
+  }
+}
 .icons-btn:hover {
   transform: scale(1.2); /* Enlarge the icons */
   /* If you want to add a description bubble on hover, you'll need additional styling and HTML changes */
