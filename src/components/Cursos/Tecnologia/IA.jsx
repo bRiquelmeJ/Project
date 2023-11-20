@@ -34,7 +34,7 @@ function IA() {
           <div className="text-center text-content p-4">
           <p>
           Sumérgete en el apasionante mundo de la inteligencia artificial, desentrañando los secretos de cómo las máquinas pueden reconocer patrones en datos, tomar decisiones autónomas y hasta entender el lenguaje humano. Explora cómo la inteligencia artificial puede transformar nuestra forma de trabajar y vivir, desde asistentes virtuales hasta vehículos autónomos. ¡Únete y descubre los asombrosos poderes de las IAs
-          </h4>
+          </p>
         </div>
         <div className="text-center">
             <img src={Imagen} alt="Biologia" className="img-fluid" />

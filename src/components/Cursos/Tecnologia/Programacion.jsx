@@ -29,11 +29,11 @@ function Programacion() {
           <p></p><p></p>
         </div>
 
-         <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+        <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
           <div className="text-center text-content p-4">
           <p>
           La programación es el arte de dar vida a tus ideas en el mundo digital. Es como aprender un nuevo idioma para crear aplicaciones, juegos y soluciones innovadoras. Cada línea de código es un paso más cerca de convertir tus pensamientos en realidad. Bienvenido al emocionante viaje de la programación, donde la creatividad se encuentra con el potencial ilimitado de la tecnología
-          </h4>
+          </p>
         </div>
         <div>
             <img src={Imagen} alt="Biologia" className="img-fluid" />
