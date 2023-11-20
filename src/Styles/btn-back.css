@@ -1,0 +1,10 @@
+.btn-back{
+    background-color: #C979FF;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+        background-color: #9E0FFF;
+        color: #fff;
+    }
+}
