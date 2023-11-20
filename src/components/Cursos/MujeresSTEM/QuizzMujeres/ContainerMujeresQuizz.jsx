@@ -1,8 +1,8 @@
 // ContainerQuizz.js
 import React, { useState } from 'react';
 import "../../../../Styles/pCursos.css";
-import QuizzMate from './QuizzMate';
-import MascotaFeliz from "../../../../img/Logo EquidApp.png";
+import QuizzMujeres from './QuizzMujeres';
+import MascotaFeliz from "../../../../img/generales/Logo EquidApp.png";
 
 
 function ContainerMujeresQuizz() {
@@ -14,7 +14,7 @@ function ContainerMujeresQuizz() {
       <div className="row">
         <div className="col-lg-8 mx-auto h-100">
           <div className="news-activities-text">
-            <QuizzMate setFeedbackMessage={setFeedbackMessage} setMascotaImage={setMascotaImage} />
+            <QuizzMujeres setFeedbackMessage={setFeedbackMessage} setMascotaImage={setMascotaImage} />
           </div>
         </div>
         <div className="col-lg-4 d-flex justify-content-end align-items-center position-relative">
