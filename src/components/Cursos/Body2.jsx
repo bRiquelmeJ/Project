@@ -10,8 +10,6 @@ function Body2(){
 return(
 
     <div class="container-flex text-center">
-            <div class="row">
-            <div class="col order-first">
                 
             <div>
                     <>
@@ -22,12 +20,6 @@ return(
                         className="img-mujeres-stem img-fluid imgZoom" />
                         </Link>  
                     </>
-                </div>
-            </div>
-            <div class="col order-last">
-
-            </div>
-
             </div>
         </div>
 )}

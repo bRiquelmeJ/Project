@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useAuth } from '../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
+import '../Styles/Login.css'
 
 function Login() {
 
@@ -24,7 +25,7 @@ const navigate = useNavigate()
       <div className="container mt-4 p-4">
         <div className="row mt-4">
           <div className="col-lg-8 col-md-12">
-            <h3 id="subtituloRegistro" className="text">Inicia sesión y conecta <br /> con nuestra comunidad</h3>
+            <h3 id="subtituloRegistro" className="textLogin">Inicia sesión y conecta con nuestra comunidad.</h3>
             <div className="row">
               <div className="col-md-12">
                 {signinErrors.map((error, i) => (
@@ -47,9 +48,10 @@ const navigate = useNavigate()
                       <p className="text-red-500">Contraseña es requerida</p>
                     )}
                   </div>
-                  <button type="submit" className="btn btn-purple">Iniciar sesion</button>
+                  <button type="submit" className="btn botonlogin mb-2"> <b>Iniciar sesion</b></button>
                   <div>
-                  <Link to="/registrarse">No tienes cuenta?</Link>
+                  <Link to="/registrarse" className="btn botonlogin"> <b>¿No tienes cuenta?</b></Link>
+                  
                   </div>
                   
                 </form>

@@ -37,10 +37,12 @@ function Ingenieria() {
                             <img src={ROBOTICA} alt="Robotica" className="img-fluid imgZoom" />
                         </Link>
                     </div>
-                </div>
                 <div className='row container-fluid d-flex align-content-center justify-content-center'> 
                 <Link to="/Quizz-Ingenieria" class="btn button1"> ¡Vamos al Quiz! </Link>    
                 </div>
+
+                </div>
+
             </div>
       
     </div>

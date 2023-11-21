@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "../Styles/Login.css"
 
 
 export default function Registro() {
@@ -36,7 +37,7 @@ export default function Registro() {
       <div className="container mt-4 p-4">
         <div className="row mt-4">
           <div className="col-lg-8 col-md-12">
-            <h3 id="subtituloRegistro" className="text pt-">Regístrate para ser parte <br /> de nuestra comunidad</h3>
+            <h3 id="subtituloRegistro" className="textLogin">Regístrate para ser parte de nuestra comunidad</h3>
             <div className="row">
               <div className="col-md-12">
                 <form onSubmit={onSubmit} style={{ width: '80%', margin: 'auto' }}> {/* Agregado onSubmit aquí */}
@@ -78,9 +79,9 @@ export default function Registro() {
                       <p className="text-red-500">Contraseña es requerida</p>
                     )}
                   </div>
-                  <button type="submit" className="btn btn-purple">Registrarse</button>
+                  <button type="submit" className="btn botonlogin mb-2">Registrarse</button>
                   <div>
-                    <Link to="/login">ya tienes cuenta?</Link>
+                    <Link to="/login" className="btn botonlogin">¿Ya tienes cuenta?</Link>
                   </div>
                 </form>
               </div>

@@ -20,20 +20,16 @@ const Matematicas1 = () => {
         <p></p>
         <p></p>
         </div>
-
-
-
         <div className="row d-flex align-items-center justify-content-center courses-btn">
                     <div className="btn-group col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
                         <Link to="/MatematicasIntro" type="button" className="btn btn-lg btn-block">
-                            <img src={Math} alt="Biologia" className="img-fluid imgZoom" />
+                            <img src={Math} alt="Matematica" className="img-fluid imgZoom mb-3" />
                         </Link>
                     </div>
-        </div>
-            
-              <div className='row container-fluid d-flex align-content-center justify-content-center'> 
+                    <div className='row container-fluid d-flex align-content-center justify-content-center'> 
               <Link to="/Quizz-Matematicas" class="btn button1"> ¡Vamos al Quiz! </Link>   
               </div>
+      </div>
       </div>
     </div> 
   );

@@ -83,10 +83,15 @@ ul>li{
 
 .img-mujeres-stem {
   padding-top: 20px;
-  height: 55%;
-  width: 55%;
+  height: 25%;
+  width: 25%;
   border-radius: 113px;
 
+}
+@media(max-width: 768px){
+  .img-mujeres-stem {
+    min-width: 70%;
+  }
 }
 
 .perfilFont{
