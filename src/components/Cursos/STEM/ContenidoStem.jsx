@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import '../../../Styles/pCursos.css';
 import Mascota from '../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesIntro';
+
+import ImagenesIntro from './ImagenesIntro'
+
+
 
 function ContenidoStem() {
   const paragraphs = [
