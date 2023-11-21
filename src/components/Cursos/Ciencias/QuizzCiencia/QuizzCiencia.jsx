@@ -160,11 +160,11 @@ function QuizzCiencia({ setFeedbackMessage, setMascotaImage }) {
     return savedMedals ? JSON.parse(savedMedals) : Array(6).fill(false);
   });
 
-  const MEDAL_INDEX = 0;
+  const MEDAL_INDEX = 4;
 
 
     useEffect(() => {
-      const randomizedQuestions = [...questions].sort(() => Math.random() - 0.5).slice(0, 7);
+      const randomizedQuestions = [...questions].sort(() => Math.random() - 0.5);
       setRandomQuestions(randomizedQuestions);
     }, []);
   useEffect(() => {
@@ -215,7 +215,7 @@ function QuizzCiencia({ setFeedbackMessage, setMascotaImage }) {
         <div className='score-section text-center'>
           {medals[MEDAL_INDEX] ? (
             <div>
-              <p className="h4">Felicidades, ya has completado este quiz y desbloqueado la medalla.</p>
+              <p className="h4">¡Felicidades! Medalla desbloqueada..</p>
               <img src={Insignia} alt="Medalla" className="img-fluid" />
             </div>
           ) : (
@@ -230,7 +230,7 @@ function QuizzCiencia({ setFeedbackMessage, setMascotaImage }) {
           <div className='card-body'>
             <div className='question-section mb-4'>
               <div className='question-count'>
-                <span className="h3">Pregunta {1 + 1}</span>/{7}
+                <span className="h3">Pregunta {currentQuestion + 1}</span>/{questions.length}
               </div>
               <div className='question-text h5'>
                 {randomQuestions[currentQuestion] && randomQuestions[currentQuestion].questionText}
@@ -264,7 +264,6 @@ function QuizzCiencia({ setFeedbackMessage, setMascotaImage }) {
             imageUnlocked={Insignia}
             imageLocked={Insignia}
           />
-          <button className="btn btn-purple" onClick={() => setShowMedalModal(false)}>Cerrar</button>
         </Modal>
       )}
     </div>
