@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../../../Styles/pCursos.css';
+import img1 from '../../../img/generales/Copia de EQUIDAPP.png';
+import img2 from '../../../img/generales/EQUIDAPP-portadaprueba.png';
+import img3 from '../../../img/generales/Banner3.png';
 
 const ImagenesIntro = () => {
   const [images] = useState([
-    'url_de_la_imagen_1',
-    'url_de_la_imagen_2',
-    'url_de_la_imagen_3',
+    img1,
+    img2,
+    img3
     // ... otras imágenes
   ]);
 

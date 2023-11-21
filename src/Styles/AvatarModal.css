@@ -46,6 +46,20 @@
     padding: 10px;
   }
   
+  @media (max-width: 600px) {
+    .avatar-grid {
+        justify-content: center; /* Centra las columnas horizontalmente */
+        align-items: center; /* Centra las filas verticalmente */
+        margin: auto; /* Centra el grid en el contenedor */
+    }
+
+    /* Opcional: ajusta el tamaño de las imágenes de avatar para pantallas pequeñas */
+    .avatar-item .avatar-image {
+        width: 80px;
+        height: 80px;
+    }
+}
+
   .avatar-item {
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -87,6 +101,7 @@
   
 
 /*BOTON GUARDAR AVATAR */
+
 
 .bookmarkBtn {
     width: auto; /* Permite que el botón se ajuste al contenido */

@@ -6,7 +6,7 @@ import Banner3 from '../img/generales/Banner3.png'
 function Carrusel() {
   return (
     <section id="carrusel">
-      <div id="carouselExampleCaptions" className="carousel slide carrusel" data-bs-touch="false" >
+      <div id="carouselExampleCaptions" className="carousel slide carrusel" data-bs-ride="carousel" data-bs-touch="false" data-bs-interval="4000">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
