@@ -107,7 +107,7 @@ ul>li{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 30px;
+  margin-left: 25px;
 }
 .sidebar {
   display: flex;
@@ -370,4 +370,15 @@ ul>li{
   max-width: 100%;
   max-height: 100%;
 
+}
+
+
+.question-count{
+  font-size:70%;
+}
+.question-text {
+  font-size: 50%;
+}
+.answer-section {
+  font-size: 50%;
 }

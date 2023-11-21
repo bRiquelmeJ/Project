@@ -182,7 +182,6 @@ function QuizzMujeres({ setFeedbackMessage, setMascotaImage }) {
   return (
     <div className='quiz'>
       <div className='quiz-intro'>
-        {/* Mensaje de bienvenida */}
       </div>
 
       {showScore ? (
