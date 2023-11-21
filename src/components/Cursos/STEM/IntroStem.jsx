@@ -13,7 +13,7 @@ function IntroStem() {
       </div>
       
       
-      <div className="app-main container-fluid col-lg col-md-12">
+      <div className="app-main container-fluid col-lg col-md-12 col">
       <ContenidoStem/>
       </div>
     </div>
