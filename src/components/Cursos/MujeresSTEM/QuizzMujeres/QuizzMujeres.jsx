@@ -1,143 +1,128 @@
 import React, { useState,useEffect } from 'react';
-import MascotaFeliz from "../../../../img/Logo EquidApp.png";
-import MascotaTriste from "../../../../img/Equidapp-Triste.png"
+import MascotaFeliz from "../../../../img/generales/Logo EquidApp.png";
+import MascotaTriste from "../../../../img/generales/Equidapp-Triste.png"
 
 
 
   const questions = [
     {
-      questionText: "¿Qué antiguo matemático griego es conocido por haber dicho: 'Todo es número'?",
+      questionText: "¿Quién es reconocida como la primera programadora de computadoras?",
       answerOptions: [
-        { answerText: "Sócrates", isCorrect: false },
-        { answerText: "Aristóteles", isCorrect: false },
-        { answerText: "Platón", isCorrect: false },
-        { answerText: "Pitágoras", isCorrect: true },
+        { answerText: "Marie Curie", isCorrect: false },
+        { answerText: "Alan Turing", isCorrect: false },
+        { answerText: "Ada Lovelace", isCorrect: true },
       ],
     },
     {
-      questionText: "¿Qué significa el término 'realismo matemático' en filosofía de las matemáticas?",
+      questionText: "¿Quién, destacado en la informática, desarrolló el primer compilador y popularizó el término debugging ?",
       answerOptions: [
-        { answerText: "Que las matemáticas son meras invenciones humanas", isCorrect: false },
-        { answerText: "Que las matemáticas son descubrimientos de hechos objetivos que existen independientemente de la mente humana", isCorrect: true },
-        { answerText: "Que las matemáticas son construcciones mentales basadas en reglas", isCorrect: false },
-        { answerText: "Que las matemáticas son subjetivas y varían según la cultura", isCorrect: false },
+        { answerText: "Margaret Hamilton", isCorrect: false },
+        { answerText: "Grace Hopper", isCorrect: true },
+        { answerText: " John McCarthy", isCorrect: false },
       ],
     },
     {
-      questionText: "¿Quién es famoso por sus teoremas de incompletitud, que limitan lo que puede demostrarse en matemáticas?",
+      questionText: "¿Quién es conocida por sus contribuciones a protocolos de red y la prevención de bucles en redes Ethernet?",
       answerOptions: [
-        { answerText: "Euclides", isCorrect: false },
-        { answerText: "Pitágoras", isCorrect: false },
-        { answerText: "Kurt Gödel", isCorrect: true },
-        { answerText: "Leonhard Euler", isCorrect: false },
+        { answerText: "Shafi Goldwasser", isCorrect: false },
+        { answerText: "Radia Perlman", isCorrect: true },
+        { answerText: "Tim Berners-Lee", isCorrect: false },
       ],
     },
     {
-      questionText: "¿Cuál de los siguientes conceptos matemáticos está relacionado con la idea de infinitud y ha sido objeto de debate filosófico durante siglos?",
+      questionText: "¿Quién es reconocida por sus contribuciones a la teoría de la complejidad computacional y la criptografía?",
       answerOptions: [
-        { answerText: "Números complejos", isCorrect: false },
-        { answerText: "Teorema de Pitágoras", isCorrect: false },
-        { answerText: "Series infinitas", isCorrect: true },
-        { answerText: "Fractales", isCorrect: false },
+        { answerText: "Donna Strickland", isCorrect: false },
+        { answerText: "Richard Stallman", isCorrect: false },
+        { answerText: "Shafi Goldwasser", isCorrect: true },
       ],
     },
     {
-      questionText: "¿Cuál es la rama de las matemáticas que se ocupa del estudio de la estructura y propiedades de los números enteros?",
+      questionText: "¿Quién es la primera mujer afroamericana en obtener un doctorado en astrofísica y ha destacado por su investigación sobre agujeros negros supermasivos en el centro de las galaxias?",
       answerOptions: [
-        { answerText: "Álgebra lineal", isCorrect: false },
-        { answerText: "Geometría", isCorrect: false },
-        { answerText: "Teoría de números", isCorrect: true },
-        { answerText: "Cálculo", isCorrect: false },
+        { answerText: "Chanda Prescod-Weinstein", isCorrect: false },
+        { answerText: "Mae Jemison", isCorrect: false },
+        { answerText: "Jedidah C. Isler", isCorrect: true },
       ],
     },
     {
-      questionText: "¿Qué es la geometría?",
+      questionText: "¿Quién es conocida por su trabajo en modelado matemático de procesos biológicos, como el crecimiento de tumores y la respuesta inmune?",
       answerOptions: [
-        { answerText: "El estudio de las propiedades de los números enteros", isCorrect: false },
-        { answerText: "El estudio de las formas y las propiedades del espacio", isCorrect: true },
-        { answerText: "La rama de las matemáticas que se enfoca en ecuaciones y cálculos", isCorrect: false },
-        { answerText: "El estudio de la lógica y la argumentación", isCorrect: false },
+        { answerText: "Trachette Jackson", isCorrect: true },
+        { answerText: "Mary Cartwright", isCorrect: false },
+        { answerText: "Ingrid Daubechies", isCorrect: false },
       ],
     },
     {
-      questionText: "¿Qué matemático y filósofo griego desarrolló una serie de axiomas y demostraciones que se convirtieron en la base de la geometría euclidiana?",
+      questionText: "¿Quién, utilizando el modelado digital en 3D, desarrollo personajes de videojuegos que se mueven de manera realista, con extremidades y expresiones faciales convincentes?",
       answerOptions: [
-        { answerText: "Arquímedes", isCorrect: false },
-        { answerText: "Tales de Mileto", isCorrect: false },
-        { answerText: "Euclides", isCorrect: true },
-        { answerText: "Heráclito", isCorrect: false },
+        { answerText: "Amy Hennig", isCorrect: false },
+        { answerText: " Brenda Laurel", isCorrect: false },
+        { answerText: "Lisette Titre-Montgomery", isCorrect: true },
       ],
     },
     {
-      questionText: "¿Cuál es la relación entre el 'problema de los tres cuerpos' en física y la filosofía de las matemáticas?",
+      questionText: "¿Quién es la investigadora guatemalteca y exploradora de National Geographic especializada en el uso de tecnologías geoespaciales para el monitoreo forestal y la estimación de biomasa?",
       answerOptions: [
-        { answerText: "El problema de los tres cuerpos demuestra que las matemáticas son objetivas", isCorrect: false },
-        { answerText: "El problema de los tres cuerpos demuestra que las matemáticas son subjetivas", isCorrect: false },
-        { answerText: "El problema de los tres cuerpos es un ejemplo de cómo las matemáticas pueden ser aplicadas en la física", isCorrect: true },
-        { answerText: "El problema de los tres cuerpos desafía la existencia de las matemáticas", isCorrect: false },
+        { answerText: "Radia Perlman", isCorrect: false },
+        { answerText: "África Flores-Anderson", isCorrect: true },
+        { answerText: "Evelyn Boyd Granville", isCorrect: false },
       ],
     },
     {
-      questionText: "¿Cuál es el concepto filosófico que plantea que las matemáticas son universales y existen independientemente de la cultura o la mente humana?",
+      questionText: "¿Quién es una destacada bioinformática y genetista computacional, conocida por su papel en el Proyecto Genoma Humano?",
       answerOptions: [
-        { answerText: "Nominalismo", isCorrect: false },
-        { answerText: "Constructivismo", isCorrect: false },
-        { answerText: "Realismo matemático", isCorrect: true },
-        { answerText: "Escepticismo matemático", isCorrect: false },
+        { answerText: "Rosalind Franklin", isCorrect: false },
+        { answerText: "Barbara McClintock", isCorrect: false },
+        { answerText: "Elaine Mardis", isCorrect: true }
       ],
     },
     {
-      questionText: "¿Qué filósofo y matemático griego se considera uno de los fundadores de la matemática y afirmó que 'todo es número'?",
+      questionText: "¿Quién es conocida como la creadora del primer robot social y es una pionera en el campo de la robótica social?",
       answerOptions: [
-        { answerText: "Tales de Mileto", isCorrect: false },
-        { answerText: "Aristóteles", isCorrect: false },
-        { answerText: "Pitágoras", isCorrect: true },
-        { answerText: "Heráclito", isCorrect: false },
+        { answerText: "Mae Jemison", isCorrect: false },
+        { answerText: " Cynthia Breazeal", isCorrect: true },
+        { answerText: "Nergis Mavalvala", isCorrect: false },
       ],
     },
     {
-      questionText: "¿Qué es la filosofía de las matemáticas?",
+      questionText: "¿Quién es la matemática hindú conocida como 'la computadora humana' y destacada por su asombrosa capacidad para realizar cálculos mentales complejos, incluso logrando superar a las computadoras en ciertos casos?",
       answerOptions: [
-        { answerText: "El estudio de las matemáticas desde una perspectiva histórica", isCorrect: false },
-        { answerText: "El estudio de las matemáticas desde una perspectiva filosófica, cuestionando su naturaleza y origen", isCorrect: true },
-        { answerText: "El estudio de las matemáticas desde una perspectiva artística", isCorrect: false },
-        { answerText: "El estudio de las matemáticas desde una perspectiva religiosa", isCorrect: false },
+        { answerText: "Shakuntala Devi", isCorrect: true },
+        { answerText: "Evelyn Boyd Granville", isCorrect: false },
+        { answerText: "Ingrid Daubechies", isCorrect: false },
       ],
     },
     {
-      questionText: "¿Qué término describe la visión filosófica de que las matemáticas son construcciones mentales basadas en reglas y símbolos?",
+      questionText: "¿Quién es la informática y científica de la computación que recibió el premio Turing en 2008 por sus contribuciones fundamentales a la programación orientada a objetos?",
       answerOptions: [
-        { answerText: "Realismo matemático", isCorrect: false },
-        { answerText: "Formalismo", isCorrect: true },
-        { answerText: "Nominalismo", isCorrect: false },
-        { answerText: "Idealismo matemático", isCorrect: false },
+        { answerText: "Barbara Liskov", isCorrect: true },
+        { answerText: "Grace Hopper", isCorrect: false },
+        { answerText: "Shakuntala Devi", isCorrect: false },
       ],
     },
     {
-      questionText: "¿Cuál es la afirmación que representa la visión filosófica conocida como 'idealismo matemático'?",
+      questionText: "¿Quién fue la astrónoma que proporcionó evidencia clave para la existencia de la materia oscura?",
       answerOptions: [
-        { answerText: "Las matemáticas son descubrimientos de hechos objetivos", isCorrect: false },
-        { answerText: "Las matemáticas son meras invenciones humanas sin base en la realidad", isCorrect: true },
-        { answerText: "Las matemáticas son subjetivas y varían según la cultura", isCorrect: false },
-        { answerText: "Las matemáticas son construcciones mentales basadas en reglas", isCorrect: false },
+        { answerText: "Carolyn Porco", isCorrect: false },
+        { answerText: "Vera Rubin", isCorrect: true },
+        { answerText: "Maria Mitchell", isCorrect: false },
       ],
     },
     {
-      questionText: "¿Qué matemático griego fue famoso por su trabajo en geometría, incluyendo la creación de los Elementos, un influyente tratado matemático?",
+      questionText: "¿Quién es la bioquímica y genetista conocida por su papel fundamental en el desarrollo de la herramienta revolucionaria de edición genética?",
       answerOptions: [
-        { answerText: "Tales de Mileto", isCorrect: false },
-        { answerText: "Pitágoras", isCorrect: false },
-        { answerText: "Euclides", isCorrect: true },
-        { answerText: "Heráclito", isCorrect: false },
+        { answerText: "Barbara Liskov", isCorrect: false },
+        { answerText: "Carolyn Porco", isCorrect: false },
+        { answerText: "Jennifer Doudna", isCorrect: true },
       ],
     },
     {
-      questionText: "¿Qué es el formalismo en filosofía de las matemáticas?",
+      questionText: "¿Quién es la científica, investigadora y divulgadora científica chilena, reconocida por sus contribuciones en microbiología marina y su labor como coordinadora del equipo Ciencia, Tecnología y Sociedad en la Universidad de Antofagasta?",
       answerOptions: [
-        { answerText: "La idea de que las matemáticas son invenciones humanas sin base en la realidad", isCorrect: false },
-        { answerText: "La idea de que las matemáticas son descubrimientos de hechos objetivos", isCorrect: false },
-        { answerText: "La idea de que las matemáticas son construcciones mentales basadas en reglas y símbolos", isCorrect: true },
-        { answerText: "La idea de que las matemáticas son subjetivas y varían según la cultura", isCorrect: false },
+        { answerText: "Rosa Ester Salazar", isCorrect: false },
+        { answerText: "Ruth Rodríguez", isCorrect: false },
+        { answerText: "Gladys Hayashida", isCorrect: true },
       ],
     },
   ];

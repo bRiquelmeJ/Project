@@ -1,4 +1,4 @@
-
+import '../../Styles/recurso.css';
 import TryEngineering from '../../img/recurs/TryEngineering.png'
 export default function ModalContentE({ onClose }) {
     const toTryEngineering = () => {
@@ -6,15 +6,15 @@ export default function ModalContentE({ onClose }) {
     
     };
     return (
-    <div className="modal">
+    <div className="modal-1">
             
         
         <div class="card-group">
-            <div className="card1" style={{ width: '18rem' }} onClick={toTryEngineering}>
+            <div className="card1" style={{ width: '100%', maxWidth: '18rem' }} onClick={toTryEngineering}>
             <img src={TryEngineering} 
                 alt="tryengineering"
                 style={{ cursor: "pointer" }}
-                className="card-img-top"
+                className="img-fluid"
                 viewBox="0 0 24 24"
                 />
                 <div class="card__content1">
@@ -25,7 +25,7 @@ export default function ModalContentE({ onClose }) {
 
         
             
-        <button onClick={onClose}  type="button" class="btn-close" aria-label="Close"></button>
+        <button onClick={onClose}  type="button" class="btn-close mt-4" aria-label="Close"></button>
     </div>
     </div>
     );

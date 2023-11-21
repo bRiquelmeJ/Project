@@ -4,7 +4,7 @@ export default function ModalContentVideo({ onClose }) {
 
     return (
     
-    <div className="modal">
+    <div className="modal-1">
 
         <ReactPlayer
             url={require('../../../video/Recurso-video-programacion.mp4')}

@@ -6,7 +6,7 @@ export default function ModalContentVideo({ onClose }) {
 
     return (
     
-    <div className="modal">
+    <div className="modal-1">
 
             <ReactPlayer
             url='https://www.youtube.com/watch?v=ktxH-lN_tiQ'

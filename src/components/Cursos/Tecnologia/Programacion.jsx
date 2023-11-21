@@ -4,7 +4,11 @@ import ModalContentVideo from './ProgramacionContenido'
 import ModalContentInfo from './ProgramacionContenidoInfo'
 import Sidebar from '../Sidebar';
 import '../../../Styles/tecnologia.css';
-
+import { Link } from 'react-router-dom';
+import '../../../Styles/btn-back.css';
+import '../../../Styles/text-content.css';
+import '../../../Styles/pCursos.css';
+import Imagen from '../../../img/generales/Logo EquidApp.png';
 
 function Programacion() {
   const [showModalVideo, setShowModalVideo] = useState(false);
@@ -17,18 +21,27 @@ function Programacion() {
         <Sidebar/>
       </div>
       
-      <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-      <div className="welcome-box mb-3">
-          <div className=" text-center">
-          <h2 className= "perfilFont">Bienvenid@ a Programación</h2>
-          </div>
+      <div className="app-main container-fluid col-lg col-md-12">
+        <div className="welcome-box mb-3 d-flex flex-row align-items-center justify-content-around">
+          <Link to="/Tecnologia" className="text-start btn btn-back">
+            Volver atrás
+          </Link>
+          <h2 className="perfilFont">Bienvenid@ a Programación</h2>
+          <p></p><p></p>
         </div>
-        <div className="mt-3 course-text container-fluid  d-flex align-items-center justify-content-center">
-          <p className="text-center border-course-text border rounded p-4">
+
+        <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+          <div className="text-center text-content p-4">
+          <p>
           La programación es el arte de dar vida a tus ideas en el mundo digital. Es como aprender un nuevo idioma para crear aplicaciones, juegos y soluciones innovadoras. Cada línea de código es un paso más cerca de convertir tus pensamientos en realidad. Bienvenido al emocionante viaje de la programación, donde la creatividad se encuentra con el potencial ilimitado de la tecnología
           </p>
         </div>
-        <div className='container-fluid d-flex justify-content-evenly'>
+        <div>
+            <img src={Imagen} alt="Biologia" className="img-fluid" />
+          </div>
+        </div>
+
+        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5'>
         <>
           <button class="game-button" onClick={() => setShowModalVideo(true)}>
           <svg class="play-icon" viewBox="0 0 40 40">

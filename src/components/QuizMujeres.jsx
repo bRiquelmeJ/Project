@@ -121,7 +121,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
         <div className='score-section text-center'>
           {medals[MEDAL_INDEX] ? (
             <div>
-              <p className="h4">Felicidades, ya has completado este quiz y desbloqueado la medalla.</p>
+              <p className="h4">¡Felicidades! Medalla desbloqueada.</p>
               <img src={Insignia} alt="Medalla" className="img-fluid" />
             </div>
           ) : (
@@ -170,7 +170,6 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
             imageUnlocked={Insignia}
             imageLocked={Insignia}
           />
-          <button className="btn btn-purple" onClick={() => setShowMedalModal(false)}>Cerrar</button>
         </Modal>
       )}
     </div>

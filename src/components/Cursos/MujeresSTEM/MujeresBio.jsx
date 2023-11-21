@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../../Styles/Mujeres.css';
+import '../../../Styles/pCursos.css';
 import Sidebar from '../Sidebar';
 import { useState } from 'react';
 import S from '../../../img/iconos/S.svg'
@@ -27,6 +28,7 @@ import Jennifer from '../../../img/mujeres/Jennifer Doudna.jpg'
 import Reshma from '../../../img/mujeres/Reshma.jpeg'
 import Kimberly from '../../../img/mujeres/Kimberly Bryant.webp'
 import Mae from '../../../img/mujeres/Mae_Carol_Jemison.jpg'
+
 
 function MujeresBio() {
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -144,15 +146,15 @@ function MujeresBio() {
     return (
     <div className="app-container container-fluid  row">
       
-      <div className="container-fluid app-sidebar col-lg-10 col-md-12 h-100">
+      <div className="container-fluid app-sidebar col-lg-10 col-md-12 ">
         
         <Sidebar/>
       </div>
       
-      <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
+      <div className="app-main container-fluid col-lg col-md-12">
       
       <div>
-        <div className="btn-group-horizontal d-flex flex-wrap justify-content-center" role="group" aria-label="Horizontal button group">
+        <div className="btn-group-horizontal1 d-flex flex-wrap justify-content-center" role="group" aria-label="Horizontal button group">
         <button onClick={() => handleCategoryChange('ciencia')}  className="btn btn-outline-light flex-grow-1">
         <img src={S} alt="Icono S" className="img-fluid" />
         </button>

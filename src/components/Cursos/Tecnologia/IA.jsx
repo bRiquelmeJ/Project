@@ -4,6 +4,12 @@ import ModalContentInfo from './IAContenidoInfo'
 import ModalContentVideo from './IAContenido'
 import Sidebar from '../Sidebar';
 import '../../../Styles/tecnologia.css';
+import'../../../Styles/pCursos.css';
+import { Link } from 'react-router-dom';
+import '../../../Styles/btn-back.css';
+import '../../../Styles/text-content.css';
+import '../../../Styles/pCursos.css';
+import Imagen from '../../../img/generales/Logo EquidApp.png';
 
 
 function IA() {
@@ -17,18 +23,27 @@ function IA() {
         <Sidebar/>
       </div>
       
-      <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-      <div className="welcome-box mb-3">
-          <div className=" text-center">
-          <h2 className= "perfilFont">¡Bienvenid@s al asombroso universo de la inteligencia artificial!</h2>
-          </div>
+      <div className="app-main container-fluid col-lg col-md-12">
+        <div className="welcome-box mb-3 d-flex flex-row align-items-center justify-content-around">
+          <Link to="/Tecnologia" className="text-start btn btn-back">
+            Volver atrás
+          </Link>
+          <h2 className="perfilFont">Bienvenid@ a Inteligencia Artificial</h2>
+          <p></p><p></p>
         </div>
-        <div className="mt-3 course-text container-fluid d-flex align-items-center justify-content-center">
-          <p className="text-center border-course-text border rounded p-4">
+
+        <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+          <div className="text-center text-content p-4">
+          <p>
           Sumérgete en el apasionante mundo de la inteligencia artificial, desentrañando los secretos de cómo las máquinas pueden reconocer patrones en datos, tomar decisiones autónomas y hasta entender el lenguaje humano. Explora cómo la inteligencia artificial puede transformar nuestra forma de trabajar y vivir, desde asistentes virtuales hasta vehículos autónomos. ¡Únete y descubre los asombrosos poderes de las IAs
           </p>
         </div>
-        <div className='container-fluid d-flex justify-content-evenly'>
+        <div className="text-center">
+            <img src={Imagen} alt="Biologia" className="img-fluid" />
+          </div>
+        </div>
+
+        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5'>
         <>
           <button class="game-button" onClick={() => setShowModalVideo(true)}>
           <svg class="play-icon" viewBox="0 0 40 40">
