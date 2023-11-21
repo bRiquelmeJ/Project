@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import ImagenesIntro from './ImagenesIntro';
 import '../../../Styles/pCursos.css';
 import Mascota from '../../../img/generales/Logo EquidApp.png';
 
-const ContenidoStem = () => {
+function ContenidoStem() {
   const paragraphs = [
     "Hola soy “ingrese nombre aquí” y seré tu compañera en EquidApp.",
     "Muchas gracias por registrarte, estás por entrar en un mundo lleno de oportunidades y descubrimiento",
@@ -28,10 +27,8 @@ const ContenidoStem = () => {
     }
   };
 
-  // Añade los índices en los que deseas cambiar la imagen
-  const imageChangePoints = [2, 4];
-
   return (
+
     <div>
     <div className="row ">
       <div className="imagenintro">
@@ -45,6 +42,7 @@ const ContenidoStem = () => {
           <p>{paragraphs[currentIndex]}</p>
           <p className='ClickContinuar'>Click para Continuar</p>
           <div>
+
           <button onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
             Retroceder
           </button>
@@ -55,8 +53,10 @@ const ContenidoStem = () => {
       </div>
       </div>
     </div>
+
     </div>
+
   );
-};
+}
 
 export default ContenidoStem;
