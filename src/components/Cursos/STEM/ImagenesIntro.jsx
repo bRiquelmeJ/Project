@@ -29,11 +29,13 @@ const ImagenesIntro = () => {
   }, [currentImage, images]);
 
   return (
-    <div className="image-carousel">
-      <img
-        src={images[currentImage]} 
-        alt={`${images[currentImage + 1]}`}        
-        className="image-carousel" // Añade la clase aquí
+
+    <div className="container">
+      <img 
+        src={images[currentImage]}
+        alt={`Imagen ${currentImage + 1}`}
+        className="img-fluid insideBox" // Añade la clase aquí
+
       />
     </div>
   );

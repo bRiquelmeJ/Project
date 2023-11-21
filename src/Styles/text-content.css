@@ -8,3 +8,9 @@
     text-align: justify;
     width: 50%;
 }
+
+@media (max-width: 600px) {
+    .text-content {
+        width: 100%;
+    }
+}
