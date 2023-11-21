@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../../Styles/pCursos.css';
 import Mascota from '../../../img/generales/Logo EquidApp.png';
+import ImagenesIntro from './ImagenesIntro'
 
 function ContenidoStem() {
   const paragraphs = [
@@ -26,6 +27,7 @@ function ContenidoStem() {
       setCurrentIndex(currentIndex - 1);
     }
   };
+  const imageChangePoints = [2, 4];
 
   return (
 
