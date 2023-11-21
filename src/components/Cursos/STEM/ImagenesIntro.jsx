@@ -21,10 +21,10 @@ const ImagenesIntro = ({ currentIndex, changePoints }) => {
 
   return (
     <div className="container">
-      <img img-fluid
+      <img 
         src={images[currentImage]}
         alt={`Imagen ${currentImage + 1}`}
-        className="imageIntro" // Añade la clase aquí
+        className="img-fluid insideBox" // Añade la clase aquí
       />
     </div>
   );

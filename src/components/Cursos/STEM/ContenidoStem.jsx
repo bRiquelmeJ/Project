@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ImagenesIntro from './ImagenesIntro';
 import '../../../Styles/pCursos.css';
+import Mascota from '../../../img/generales/Logo EquidApp.png';
 
 const ContenidoStem = () => {
   const paragraphs = [
@@ -32,14 +33,14 @@ const ContenidoStem = () => {
 
   return (
     <div>
-    <div className="row">
-      <div className="col-lg-8 mx-auto h-100 mg-5">
+    <div className="row ">
+      <div className="imagenintro">
       {/* Pasa el índice actual y los puntos de cambio como propiedades */}
       <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
       </div>
     </div>
-    <div className="row pt-5">
-      <div className="col-lg-8 mx-auto h-100">
+    <div className="row pt-2">
+      <div className="col-lg-8 mx-auto">
         <div className="talkingPetText" onClick={handleNext}>
           <p>{paragraphs[currentIndex]}</p>
           <p className='ClickContinuar'>Click para Continuar</p>
@@ -47,9 +48,12 @@ const ContenidoStem = () => {
           <button onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
             Retroceder
           </button>
-        </div>
+          </div>
       </div>
-    </div>
+      <div className="col-lg-4">
+      <img className="contentPet" src={Mascota} alt="Mascota" />
+      </div>
+      </div>
     </div>
     </div>
   );
