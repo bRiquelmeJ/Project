@@ -11,10 +11,10 @@ export default function ModalContentM({ onClose }) {
     
     };
     return (
-    <div className="modal">
+    <div className="modal-1">
         <div class="card-group">
 
-            <div className="card1" style={{ width: '18rem' }} onClick={toCokitos}>
+            <div className="card1" style={{ width: '100%', maxWidth: '18rem' }} onClick={toCokitos}>
             <img src={Cokitos} 
                 alt="Cokitos"
                 style={{ cursor: "pointer" }}
@@ -40,7 +40,7 @@ export default function ModalContentM({ onClose }) {
                 <p class="card__description1">  Plataforma educativa con juegos y actividades para el aprendizaje interactivo y personalizado</p>
                 </div>
             </div>
-        <button onClick={onClose}  type="button" class="btn-close" aria-label="Close"></button>
+        <button onClick={onClose}  type="button" class="btn-close mt-4" aria-label="Close"></button>
     </div>
     </div>
     );

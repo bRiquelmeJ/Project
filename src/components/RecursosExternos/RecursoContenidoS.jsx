@@ -11,10 +11,10 @@ export default function ModalContentS({ onClose }) {
     };
     return (
     
-    <div className="modal">
+    <div className="modal-1">
         
         <div class="card-group">
-            <div className="card1" style={{ width: '18rem' }} onClick={toKhanAcademy}>
+            <div className="card1" style={{ width: '100%', maxWidth: '18rem' }} onClick={toKhanAcademy}>
             <img src={Khan} 
                 alt="Khan Academy"
                 style={{ cursor: "pointer" }}

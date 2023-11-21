@@ -1,7 +1,7 @@
 
 
 
-.modal {
+.modal-1 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -20,6 +20,25 @@
     bottom: 70px;
 
 }
+
+@media (max-width: 768px) {
+    .cardT {
+        width: 100%;
+        max-width: 18rem;
+        max-height: 9.5rem;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .modal-1 {
+      top: 110%; /* Cambia el valor según tu preferencia */
+      left: 10%; /* Cambia el valor según tu preferencia */
+      width: 90%; /* Cambia el valor según tu preferencia */
+    }
+  }
+
 
 
  /*Carta Cookies */
@@ -51,6 +70,18 @@
     text-align: center;
     margin: 0;
 }
+
+@media (max-width: 992px) {
+    .title {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1rem;
+    }
+  }
   
 .flip-card-inner {
     position: relative;
@@ -105,11 +136,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.card1 svg {
-    width: 48px;
-    fill: #333;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
+
   
 .card1:hover {
     transform: rotate(-5deg) scale(1.1);
@@ -143,14 +170,29 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   }
   
   .card__description1 {
-    margin: 10px 0 0;
-    font-size: 14px;
+    margin: 1em 0 0;
+    font-size: 1rem;
     color: #777;
     line-height: 1.4;
   }
   
+  @media (max-width: 768px) {
+    .card__description1 {
+      font-size: 0.875rem;
+    }
+  }
+
   .card1:hover svg {
     scale: 0;
     transform: rotate(-45deg);
   }
   
+  @media (max-width: 768px) {
+    .card1 {
+        width: 100%;
+    }
+  
+    .card__content1 {
+      font-size: 16px;
+    }
+  }

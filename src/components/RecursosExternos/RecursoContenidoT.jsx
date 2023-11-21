@@ -17,14 +17,14 @@ export default function ModalContentT({ onClose }) {
     
 
     return (
-        <div className="modal">
+        <div className="modal-1">
         <div class="card-group">
             
-            <div className="card1" style={{ width: '18rem' }} onClick={toFreeCodeCamp}>
+            <div className="card1 cardT" style={{ width: '100%', maxWidth: '18rem' }} onClick={toFreeCodeCamp}>
             <img src={FreeCodeCamp} 
                 alt="FreeCodeCamp"
                 style={{ cursor: "pointer" }}
-                className="card-img-top"
+                className="img-fluid"
                 viewBox="0 0 24 24"
                 />
                 <div class="card__content1">
@@ -34,12 +34,12 @@ export default function ModalContentT({ onClose }) {
             </div>
 
         
-            <div className="card1" style={{ width: '10rem' }} onClick={toBlockyGames}>
+            <div className="card1 cardT" style={{ width: '100%', maxWidth: '18rem' }} onClick={toBlockyGames}>
             
             <img src={BlockyGames} 
                 alt="Blocky-Games"
                 style={{ cursor: "pointer" }}
-                className="card-img-top"
+                className="img-fluid"
                 viewBox="0 0 24 24"
                 />
                 <div class="card__content1">
@@ -47,11 +47,11 @@ export default function ModalContentT({ onClose }) {
                     <p class="card__description1"> Plataforma interactiva para aprender programación mediante bloques visuales y divertidos desafíos.</p>
                 </div>
             </div>
-            <div className="card1" style={{ width: '10rem' }} onClick={toScratch}>
+            <div className="card1 cardT" style={{ width: '100%', maxWidth: '18rem' }} onClick={toScratch}>
             <img src={Scratch} 
                 alt="Scratch"
                 style={{ cursor: "pointer" }}
-                className="card-img-top"
+                className="img-fluid"
                 viewBox="0 0 24 24"
                 />
                 <div class="card__content1">
@@ -60,7 +60,7 @@ export default function ModalContentT({ onClose }) {
                 </div>
             </div>
     </div> 
-        <button onClick={onClose}  type="button" class="btn-close" aria-label="Close"></button>
+        <button onClick={onClose}  type="button" class="btn-close mt-4" aria-label="Close"></button>
     </div>
     );
 }

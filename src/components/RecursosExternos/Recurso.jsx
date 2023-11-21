@@ -28,8 +28,7 @@ function Recurso() {
                 <Sidebar />
             </div>
 
-            <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-                <div className="app-main">
+            <div className="app-main container-fluid col-lg col-md-12 ">
                     <div className="header-box container ">
                         <h2 className="perfilFont">¡Sigamos Aprendiendo! : Recursos Divertidos</h2>
                     </div>
@@ -63,7 +62,7 @@ function Recurso() {
 
 
                     <div className="row mt-5 d-flex justify-content-center align-items-center ">
-                        <div className="col-md-6 flip-card-container">
+                        <div className="col-md-6 flip-card-container mb-2">
                             {/* Primera flipcard */}
                             <div className="flip-card">
                                 <div className="flip-card-inner">
@@ -93,7 +92,6 @@ function Recurso() {
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     );
