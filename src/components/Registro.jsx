@@ -37,7 +37,7 @@ export default function Registro() {
       <div className="container mt-4 p-4">
         <div className="row mt-4">
           <div className="col-lg-8 col-md-12">
-            <h3 id="subtituloRegistro" className="textlogin">Regístrate para ser parte de nuestra comunidad</h3>
+            <h3 id="subtituloRegistro" className="textLogin">Regístrate para ser parte de nuestra comunidad</h3>
             <div className="row">
               <div className="col-md-12">
                 <form onSubmit={onSubmit} style={{ width: '80%', margin: 'auto' }}> {/* Agregado onSubmit aquí */}
