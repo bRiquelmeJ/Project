@@ -27,37 +27,36 @@ function ContenidoStem() {
       setCurrentIndex(currentIndex - 1);
     }
   };
+  
   const imageChangePoints = [2, 4];
 
   return (
-
-    <div>
-    <div className="row ">
-      <div className="imagenintro">
-      {/* Pasa el índice actual y los puntos de cambio como propiedades */}
-      <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
-      </div>
-    </div>
-    <div className="row pt-2">
-      <div className="col-lg-8 mx-auto">
-        <div className="talkingPetText" onClick={handleNext}>
-          <p>{paragraphs[currentIndex]}</p>
-          <p className='ClickContinuar'>Click para Continuar</p>
-          <div>
-
-          <button onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
-            Retroceder
-          </button>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-8">
+          <div className="imagenintro">
+            {/* Pasa el índice actual y los puntos de cambio como propiedades */}
+            <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
           </div>
+        </div>
+        <div className="col-lg-4 d-flex align-items-end">
+          <div className="talkingPetText" onClick={handleNext}>
+            <p>{paragraphs[currentIndex]}</p>
+            <p className='ClickContinuar'>Click para Continuar</p>
+            <div>
+              <button onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
+                Retroceder
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="col-lg-4">
-      <img className="contentPet" src={Mascota} alt="Mascota" />
-      </div>
+      <div className="row">
+        <div className="col-lg-4 offset-lg-8 d-flex align-items-end">
+          <img className="contentPet" src={Mascota} alt="Mascota" />
+        </div>
       </div>
     </div>
-
-    </div>
-
   );
 }
 

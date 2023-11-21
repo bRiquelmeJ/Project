@@ -306,7 +306,7 @@ ul>li{
   border-radius: 15px;
   width: 50%;
   position: absolute;
-  bottom: 20%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 200px;
@@ -317,6 +317,8 @@ ul>li{
   z-index: 100;
   cursor: pointer;
   user-select: none;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 
@@ -353,8 +355,8 @@ ul>li{
 .insideBox {
   margin-top: 10px;
   margin-left: 4%;
-  max-height: 50%;
-  max-width: 50%;
+  max-height: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
