@@ -4,7 +4,7 @@ import img1 from '../../../img/generales/Copia de EQUIDAPP.png';
 import img2 from '../../../img/generales/EQUIDAPP-portadaprueba.png';
 import img3 from '../../../img/generales/Banner3.png';
 
-const ImagenesIntro = () => {
+const ImagenesIntro = ({ currentIndex, changePoints }) => {
   const [images] = useState([
     img1,
     img2,
@@ -15,25 +15,18 @@ const ImagenesIntro = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
-    // Cambiar automáticamente la imagen cada 5 segundos
-    const intervalId = setInterval(() => {
-      if (currentImage < images.length - 1) {
-        setCurrentImage(currentImage + 1);
-      } else {
-        setCurrentImage(0);
-      }
-    }, 5000);
-
-    // Limpiar el intervalo cuando el componente se desmonta
-    return () => clearInterval(intervalId);
-  }, [currentImage, images]);
+    // Cambiar automáticamente la imagen solo en los puntos de cambio
+    if (Array.isArray(changePoints) && changePoints.includes(currentIndex)) {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }
+  }, [currentIndex, changePoints, images]);
 
   return (
-    <div className="image-carousel">
-      <img
+    <div className="container">
+      <img img-fluid
         src={images[currentImage]}
         alt={`Imagen ${currentImage + 1}`}
-        className="image-carousel" // Añade la clase aquí
+        className="imageIntro" // Añade la clase aquí
       />
     </div>
   );
