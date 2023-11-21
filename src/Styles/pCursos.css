@@ -280,9 +280,9 @@ ul>li{
   align-items: center;
   width:50%;
   background-color: #f7f4e6;
- }
+}
  
- .btnM:hover {
+.btnM:hover {
   transition: 0.3s;
   background-color: #B500FF;
   margin-top: -20px;
@@ -290,17 +290,17 @@ ul>li{
   animation-name: button_animation;
   animation-duration: 3s;
   animation-iteration-count: infinite;
- }
+}
  
- .btnM:active {
+.btnM:active {
   transform: scale(0.97);
- }
+}
  
- @keyframes button_animation {
+@keyframes button_animation {
   0% {
    background-color: #B500FF;
-  }
- 
+ }
+
   25% {
    background-color: #3c0154;
   }
@@ -318,7 +318,7 @@ ul>li{
   }
  }
 
- .talkingPetText {
+.talkingPetText {
   color: rgb(0, 0, 0);
   background-color: #ffcccb;
   font-size: 20px;

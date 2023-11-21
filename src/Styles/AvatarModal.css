@@ -44,6 +44,7 @@
     grid-template-columns: repeat(3, 1fr); /* 3 columnas para un diseño de gato */
     grid-gap: 15px;
     padding: 10px;
+
   }
   
   .avatar-item {
@@ -63,7 +64,7 @@
   
   @media (max-width: 600px) {
     .modal-content {
-      width: 90%; /* Para pantallas pequeñas, el modal toma el 90% del ancho */
+      width: 100%; /* Para pantallas pequeñas, el modal toma el 90% del ancho */
     }
   
     .avatar-image {
