@@ -20,7 +20,7 @@ const ImagenesIntro = ({ currentIndex, changePoints }) => {
   }, [currentIndex, changePoints, images]);
 
   return (
-    <div className="container col">
+    <div className="container">
       <img img-fluid
         src={images[currentImage]}
         alt={`Imagen ${currentImage + 1}`}

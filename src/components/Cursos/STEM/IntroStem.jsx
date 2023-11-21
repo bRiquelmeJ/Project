@@ -12,7 +12,6 @@ function IntroStem() {
       </div>
       
       <div className="app-main container-fluid col-lg col-md-12 w-50 h-80">
-
       <TalkingPet/>
       </div>
     </div>
