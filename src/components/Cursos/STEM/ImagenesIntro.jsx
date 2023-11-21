@@ -21,10 +21,10 @@ const ImagenesIntro = ({ currentIndex, changePoints }) => {
 
   return (
     <div className="container col">
-      <img
+      <img img-fluid
         src={images[currentImage]}
         alt={`Imagen ${currentImage + 1}`}
-        className="image-carousel" // Añade la clase aquí
+        className="imageIntro" // Añade la clase aquí
       />
     </div>
   );
