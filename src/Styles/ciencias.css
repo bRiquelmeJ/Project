@@ -195,3 +195,8 @@
   box-shadow: 2px 2px 20px #2f3640;
   transform: translateY(-2px);
 }
+
+.pdf {
+  width: 50%;
+  height: 50%;
+}
