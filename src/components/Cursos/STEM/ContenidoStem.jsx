@@ -35,15 +35,15 @@ function ContenidoStem() {
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-lg-8">
+      <div className="row pt-5">
+        <div className="col-lg-12">
           <div className="imagenintro">
             {/* Pasa el índice actual y los puntos de cambio como propiedades */}
             <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
           </div>
         </div>
-        <div className="col-lg-4 d-flex align-items-end">
-          <div className="talkingPetText" onClick={handleNext}>
+        <div className="col-lg-8 d-flex pt-5">
+          <div className="col talkingPetText" onClick={handleNext}>
             <p>{paragraphs[currentIndex]}</p>
             <p className='ClickContinuar'>Click para Continuar</p>
             <div>
@@ -53,11 +53,11 @@ function ContenidoStem() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="col-lg-4 offset-lg-8 d-flex align-items-end">
+        <div className="col-lg-4">
+        <div className="d-flex align-items-end">
           <img className="contentPet" src={Mascota} alt="Mascota" />
         </div>
+      </div>
       </div>
     </div>
   );

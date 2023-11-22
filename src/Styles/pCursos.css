@@ -305,18 +305,12 @@ ul>li{
 
 .talkingPetText {
   color: rgb(0, 0, 0);
-  font-size: 16px; /* Ajusta el tamaño del texto según sea necesario */
+  font-size: 30px; /* Ajusta el tamaño del texto según sea necesario */
   font-weight: 400;
   word-wrap: break-word;
   border-radius: 15px;
   width: 50%;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 200px;
   background-color: #ffcccb;
-  padding: 10px;
   text-align: center;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   z-index: 100;
@@ -371,7 +365,6 @@ ul>li{
 .contentPet {
   max-width: 100%;
   max-height: 100%;
-
 }
 
 

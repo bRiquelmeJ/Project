@@ -6,7 +6,7 @@ import ContenidoStem from './ContenidoStem';
 function IntroStem() {
   return (
     <div className="app-container container-fluid row">
-      <div className="container-fluid app-sidebar col-lg-2 col-md-12">
+      <div className="container-fluid app-sidebar col-lg-2 col">
         <Sidebar />
       </div>
 
