@@ -22,6 +22,7 @@ function Sidebar() {
     const {user} = useAuth()
     const [isAvatarModalOpen, setAvatarModalOpen] = useState(false);
     const [avatar, setAvatar] = useState(() => localStorage.getItem('userAvatar') || perfil);
+   // TODO: aca se debe usar el estado del context
     const [medalsUnlocked] = useState(() => {
         const savedMedals = localStorage.getItem('medalsUnlocked');
         return savedMedals ? JSON.parse(savedMedals) : Array(7).fill(false);
