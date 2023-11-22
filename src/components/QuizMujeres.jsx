@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import MascotaFeliz from "../img/generales/Logo EquidApp.png";
 import MascotaTriste from "../img/generales/Equidapp-Triste.png";
 import Modal from "../components/Cursos/Avatar/Medallas/Mmodal";
 import Medal from "../components/Cursos/Avatar/Medallas/Medal";
 import Insignia from "../img/medallas/STEM.png";
+import { useAuth } from '../context/AuthContext'; // Asegúrate de que esta es la ruta correcta
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { updateMedallas } from '../api/auth'; // Asegúrate de que la ruta es correcta
+
 
 
 const questions = [
@@ -59,67 +64,45 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [randomQuestions, setRandomQuestions] = useState([]);
   const [showMedalModal, setShowMedalModal] = useState(false);
-  const [medals, setMedals] = useState(() => {
-    const savedMedals = localStorage.getItem('medalsUnlocked');
-    return savedMedals ? JSON.parse(savedMedals) : Array(6).fill(false);
-  });
 
-  const MEDAL_INDEX = 4;
+  const { user,id } = useAuth();
+  const token = Cookies.get('token');
 
-  useEffect(() => {
-    const randomizedQuestions = [...questions].sort(() => Math.random() - 0.5);
-    setRandomQuestions(randomizedQuestions);
-  }, []);
-  
-  useEffect(() => {
-    if (medals[MEDAL_INDEX]) {
-      setShowScore(true);
-      setFeedbackMessage("Explora otras secciones para seguir aprendiendo y desbloqueando medallas.");
-      setMascotaImage(MascotaFeliz);
-    }
-  }, [medals, MEDAL_INDEX, setFeedbackMessage, setMascotaImage]);
+  const handleAnswerOptionClick = async (isCorrect, answerText) => {
+    setSelectedAnswer(answerText);
+    setFeedbackMessage(isCorrect ? "¡Correcto! ¡Muy bien hecho!" : "¡Incorrecto! Intenta de nuevo.");
+    setMascotaImage(isCorrect ? MascotaFeliz : MascotaTriste);
 
-  const handleAnswerButtonClick = (isCorrect, answerText) => {
-    if (selectedAnswer === null) {
-      setSelectedAnswer(answerText);
-      setFeedbackMessage(isCorrect ? "¡Correcto! ¡Muy bien hecho!" : "¡Incorrecto! Intenta de nuevo.");
-      setMascotaImage(isCorrect ? MascotaFeliz : MascotaTriste);
-      setScore(isCorrect ? score + 1 : score);
-  
-      setTimeout(() => {
-        const nextQuestion = currentQuestion + 1;
-        if (nextQuestion < questions.length) {
-          setCurrentQuestion(nextQuestion);
-          setSelectedAnswer(null); // Reiniciar la selección de respuesta para la próxima pregunta
-        } else {
-          setShowScore(true);
-          if (score + 1 === questions.length) {
-            const updatedMedals = [...medals];
-            updatedMedals[MEDAL_INDEX] = true;
-            setMedals(updatedMedals);
-            localStorage.setItem('medalsUnlocked', JSON.stringify(updatedMedals));
-            setShowMedalModal(true);
+    if (isCorrect) {
+        setScore(score + 1);
+        if (score + 1 === questions.length) {
+            // Aquí usamos updateMedallas de auth.js para actualizar la medalla
+            try {
+              const medalUpdateResponse = await updateMedallas(user.id._id, 'CienciaM', token);
+              console.log('Medalla actualizada:', medalUpdateResponse);
+              setShowMedalModal(true);
+          } catch (error) {
+              console.error('Error al actualizar la medalla:', error);
           }
         }
-      }, 1000); // Esperar 1 segundo antes de pasar a la siguiente pregunta
     }
-  };
-// TODO: aca se debe usar la funcion que obtiene las nuevas medallas del context
-  const resetQuiz = () => {
-    setCurrentQuestion(0);
-    setScore(0);
-    setShowScore(false);
-    setSelectedAnswer(null);
-    setShowMedalModal(false);
-  };
 
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < questions.length) {
+        setCurrentQuestion(nextQuestion);
+    } else {
+        setShowScore(true);
+    }
+};
+  
+
+  // Renderizado del componente
   return (
     <div className='container mt-5'>
       {showScore ? (
         <div className='score-section text-center'>
-          {medals[MEDAL_INDEX] ? (
+          {showMedalModal ? (
             <div>
               <p className="h4">¡Felicidades! Medalla desbloqueada.</p>
               <img src={Insignia} alt="Medalla" className="img-fluid" />
@@ -127,7 +110,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
           ) : (
             <>
               <p className="h4">Has acertado {score} de {questions.length} preguntas.</p>
-              <button className="btn btn-purple" onClick={resetQuiz}>Reintentar</button>
+              <button className="btn btn-purple" onClick={() => setCurrentQuestion(0)}>Reintentar</button>
             </>
           )}
         </div>
@@ -139,16 +122,15 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
                 <span className="h3">Pregunta {currentQuestion + 1}</span>/{questions.length}
               </div>
               <div className='question-text h5'>
-                {randomQuestions[currentQuestion] && randomQuestions[currentQuestion].questionText}
+                {questions[currentQuestion].questionText}
               </div>
               <div className='answer-section'>
                 <ul className="list-group mt-2">
-                  {randomQuestions[currentQuestion] && randomQuestions[currentQuestion].answerOptions.map((answerOption, index) => (
-                    <li key={index}>
+                  {questions[currentQuestion].answerOptions.map((answerOption, index) => (
+                    <li key={index} className="list-group-item">
                       <button
-                        onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)}
-                        className={`btn btn-purple mt-2 w-100 shadow-hover ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : ''}`}
-                        disabled={selectedAnswer !== null}
+                        className={`btn btn-purple ${selectedAnswer === answerOption.answerText ? 'selected' : ''}`}
+                        onClick={() => handleAnswerOptionClick(answerOption.isCorrect, answerOption.answerText)}
                       >
                         {answerOption.answerText}
                       </button>

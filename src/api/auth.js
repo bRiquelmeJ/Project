@@ -36,18 +36,23 @@ export const fetchMedalsFromApi = async (userId, token) => {
     }
 };
 
-const winQuiz = async () => {
-    try {
-        const response = await axios.put(`/medals/win-quizz/${user._id}`, {
-            medalName: 'nombreDeLaMedalla', // Reemplaza esto con el nombre de la medalla que el usuario ha ganado
-        }, {
-            headers: {
-                Authorization: `Bearer ${token}`, // Reemplaza esto con el token de autenticación del usuario
-            },
-        });
 
-        console.log(response.data); // Imprime la medalla actualizada
+// Función para actualizar el estado de una medalla específica para un usuario
+export const updateMedallas = async (userId, nombreMedalla, token) => {
+    try {
+        const config = {
+            headers: { Authorization: `Bearer ${token}` }
+        };
+
+        const body = {
+            nombreMedalla: nombreMedalla,
+            obtenida: true
+        };
+
+        const response = await axios.put(`/medals/${userId}`, body, config);
+        return response.data;
     } catch (error) {
-        console.error('Error al ganar el quiz:', error.response ? error.response.data : error);
+        console.error('Error al actualizar la medalla:', error.response ? error.response.data : error);
+        throw error;
     }
 };
