@@ -28,6 +28,7 @@ import Jennifer from '../../../img/mujeres/Jennifer Doudna.jpg'
 import Reshma from '../../../img/mujeres/Reshma.jpeg'
 import Kimberly from '../../../img/mujeres/Kimberly Bryant.webp'
 import Mae from '../../../img/mujeres/Mae_Carol_Jemison.jpg'
+import { Link } from 'react-router-dom';
 
 
 function MujeresBio() {
@@ -152,6 +153,9 @@ function MujeresBio() {
       </div>
       
       <div className="app-main container-fluid col-lg col-md-12">
+      <Link to="/MujeresSTEM" className="text-start btn btn-back-mujeres">
+            Volver atrás
+        </Link>
       
       <div>
         <div className="btn-group-horizontal1 d-flex flex-wrap justify-content-center" role="group" aria-label="Horizontal button group">
@@ -168,6 +172,15 @@ function MujeresBio() {
         <img src={M} alt="Icono M" className="img-fluid" />
         </button>
       </div>
+
+      <div>
+          <h4 className="text-center p-4 font-size-mujeres">
+            A lo largo de la historia, las mujeres han desempeñado un papel
+            fundamental en el avance de la ciencia, la tecnología, la ingeniería
+            y las matemáticas, aunque sus contribuciones no siempre han sido
+            ampliamente reconocidas o celebradas.
+          </h4>
+        </div>
     
       <div className="row">
         {mujeresCientificasData.map((cientifica, index) => (

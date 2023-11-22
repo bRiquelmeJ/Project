@@ -2,6 +2,8 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext'
+import { pdfjs } from 'react-pdf';
+
 import Navbar from "./components/Navbar";
 import Registro from "./components/Registro";
 import Home from "./components/Home";
@@ -32,6 +34,12 @@ import TecIntroQuizz from "./components/Cursos/Tecnologia/QuizzTec/TecIntro";
 import Ajustes from "./components/Ajustes.jsx"
 
 import RutasProtegidas from './RutasProtegidas.jsx'
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url,
+).toString() 
+
 
 function App() {
   // TODO: aca de sebe meter el context provider 

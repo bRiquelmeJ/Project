@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../../Styles/pCursos.css';
+import '../../../Styles/btn-back.css';
 import Mascota from '../../../img/generales/Logo EquidApp.png';
 import ImagenesIntro from './ImagenesIntro'
 
@@ -7,7 +8,7 @@ import ImagenesIntro from './ImagenesIntro'
 
 function ContenidoStem() {
   const paragraphs = [
-    "Hola soy “ingrese nombre aquí” y seré tu compañera en EquidApp.",
+    "Hola soy “JMO” y seré tu compañera en EquidApp.",
     "Muchas gracias por registrarte, estás por entrar en un mundo lleno de oportunidades y descubrimiento",
     "el mundo STEM o CTIM en español está formado por la primera letra de 4 áreas de estudio que significa ciencia, tecnología, ingeniería y matemáticas",
     "cada una de estas materias es increíble!, y aprendiendo de ellas podrías convertirte en una futura Doctora, Investigadora o ingeniería!",
@@ -45,10 +46,10 @@ function ContenidoStem() {
         </div>
         <div className="col-lg-8 d-flex pt-5">
           <div className="col talkingPetText" onClick={handleNext}>
-            <p>{paragraphs[currentIndex]}</p>
+            <p className= "parrafo">{paragraphs[currentIndex]}</p>
             <p className='ClickContinuar'>Click para Continuar</p>
             <div>
-              <button onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
+              <button className="btn btnbackstem"onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
                 Retroceder
               </button>
             </div>
