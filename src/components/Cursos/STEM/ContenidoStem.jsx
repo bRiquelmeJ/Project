@@ -10,11 +10,13 @@ function ContenidoStem() {
   const paragraphs = [
     "Hola soy “ingrese nombre aquí” y seré tu compañera en EquidApp.",
     "Muchas gracias por registrarte, estás por entrar en un mundo lleno de oportunidades y descubrimiento",
-    "el mundo STEM o CTIM en español, este nombre está formado por la primera letra de 4 áreas de estudio que significa ciencia, tecnología, ingeniería y matemáticas",
-    "Ahora puede que no parezca muy divertido, pero en realidad cada una es ¡increíblemente!",
-    "Y no solo eso, ¡aprendiendo de ellas podrías convertirte en una futura Doctora, Investigadora o ingeniería!",
+    "el mundo STEM o CTIM en español está formado por la primera letra de 4 áreas de estudio que significa ciencia, tecnología, ingeniería y matemáticas",
+    "cada una de estas materias es increíblemente, y aprendiendo de ellas podrías convertirte en una futura Doctora, Investigadora o ingeniería!",
     "No hay límites en lo que quieras ser y el día de mañana puedes ser tú la que inspire a otras niñas",
-    "Pero es mejor que lo veas tú misma ¡Vamos Descubramos el mundo STEM!"
+    "¡Vamos Descubramos el mundo STEM!",
+    "Primero vamos a hacer un pequeño test, aqui te haremos algunas preguntas",
+    "Este test es para ver que tanto conoces de estas carreras y no te preocupes, puedes repetirlo hasta que consigas todas las respuestas",
+    "Luego puedes explorar como tu quieras, pero partamos haciendo click en el cuadro con el signo de pregunta que esta justo bajo tu nombre!"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
