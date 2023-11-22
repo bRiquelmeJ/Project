@@ -11,11 +11,11 @@ function ContenidoStem() {
     "Hola soy “ingrese nombre aquí” y seré tu compañera en EquidApp.",
     "Muchas gracias por registrarte, estás por entrar en un mundo lleno de oportunidades y descubrimiento",
     "el mundo STEM o CTIM en español está formado por la primera letra de 4 áreas de estudio que significa ciencia, tecnología, ingeniería y matemáticas",
-    "cada una de estas materias es increíblemente, y aprendiendo de ellas podrías convertirte en una futura Doctora, Investigadora o ingeniería!",
+    "cada una de estas materias es increíble!, y aprendiendo de ellas podrías convertirte en una futura Doctora, Investigadora o ingeniería!",
     "No hay límites en lo que quieras ser y el día de mañana puedes ser tú la que inspire a otras niñas",
     "¡Vamos Descubramos el mundo STEM!",
-    "Primero vamos a hacer un pequeño test, aqui te haremos algunas preguntas",
-    "Este test es para ver que tanto conoces de estas carreras y no te preocupes, puedes repetirlo hasta que consigas todas las respuestas",
+    "Primero vamos a hacer un pequeño Quizz, aqui te haremos algunas preguntas",
+    "Este Quizz es para ver que tanto conoces de estas carreras y no te preocupes, puedes repetirlo hasta que consigas todas las respuestas",
     "Luego puedes explorar como tu quieras, pero partamos haciendo click en el cuadro con el signo de pregunta que esta justo bajo tu nombre!"
   ];
 
