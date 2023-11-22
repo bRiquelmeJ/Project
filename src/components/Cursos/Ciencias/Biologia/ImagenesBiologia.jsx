@@ -24,7 +24,7 @@ const ImagenesBiologia = ({ currentIndex, changePoints }) => {
       <img
         src={images[currentImage]}
         alt={`Imagen ${currentImage + 1}`}
-        className="img-fluid insideBox" // Añade la clase aquí
+        className="img-fluid insideBox" 
       />
     </div>
   );

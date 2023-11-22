@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../../../../Styles/pCursos.css';
+import "../../../../Styles/btn-back.css";
+
 import Mascota from '../../../../img/generales/Logo EquidApp.png';
 import ImagenesIntro from './ImagenesBiologia'
 
@@ -31,8 +33,7 @@ function ContenidoBiologia() {
     <div className="container">
       <div className="row">
         <div className="col-lg-12">
-          <div className="imagenintro">
-            {/* Pasa el índice actual y los puntos de cambio como propiedades */}
+          <div>
             <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
           </div>
         </div>
@@ -41,7 +42,7 @@ function ContenidoBiologia() {
             <p>{paragraphs[currentIndex]}</p>
             <p className='ClickContinuar'>Click para Continuar</p>
             <div>
-              <button onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
+              <button className="btn btnbackstem" onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
                 Retroceder
               </button>
             </div>

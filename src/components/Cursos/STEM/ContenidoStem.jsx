@@ -37,19 +37,18 @@ function ContenidoStem() {
 
   return (
     <div className="container">
-      <div className="row pt-5">
+      <div className="row">
         <div className="col-lg-12">
-          <div className="imagenintro">
-            {/* Pasa el índice actual y los puntos de cambio como propiedades */}
+          <div>
             <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
           </div>
         </div>
         <div className="col-lg-8 d-flex pt-5">
           <div className="col talkingPetText" onClick={handleNext}>
-            <p className= "parrafo">{paragraphs[currentIndex]}</p>
+            <p>{paragraphs[currentIndex]}</p>
             <p className='ClickContinuar'>Click para Continuar</p>
             <div>
-              <button className="btn btnbackstem"onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
+              <button className="btn btnbackstem" onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
                 Retroceder
               </button>
             </div>
