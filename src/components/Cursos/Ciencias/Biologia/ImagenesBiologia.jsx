@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import '../../../Styles/pCursos.css';
-import img1 from '../../../img/contenido/Bienvenida.jpg';
-import img2 from '../../../img/contenido/STEM.jpg';
-import img3 from '../../../img/contenido/3.jpg';
+import '../../../../Styles/pCursos.css';
+import img1 from '../../../../img/contenido/biologia.jpg';
 
-const ImagenesIntro = ({ currentIndex, changePoints }) => {
+
+const ImagenesBiologia = ({ currentIndex, changePoints }) => {
   const [images] = useState([
     img1,
-    img2,
-    img3
+    
     // ... otras imágenes
   ]);
 
@@ -32,4 +30,4 @@ const ImagenesIntro = ({ currentIndex, changePoints }) => {
   );
 };
 
-export default ImagenesIntro;
+export default ImagenesBiologia;

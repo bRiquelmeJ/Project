@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import ModalContentVideo from "./BiologiaContenido";
 import ModalContentInfo from "./BiologiaContenidoInfo";
-import Sidebar from "../../Cursos/Sidebar";
-import "../../../Styles/ciencias.css";
-import '../../../Styles/pCursos.css';
+import Sidebar from "../../../Cursos/Sidebar";
+import "../../../../Styles/ciencias.css";
+import '../../../../Styles/pCursos.css';
 import { Link } from "react-router-dom";
-import "../../../Styles/btn-back.css";
-import "../../../Styles/text-content.css";
-import Imagen from "../../../img/generales/Logo EquidApp.png";
+import "../../../../Styles/btn-back.css";
+import "../../../../Styles/text-content.css";
+import ContenidoBiologia from "./ContenidoBiologia";
 
 function Biologia() {
   const [showModalVideo, setShowModalVideo] = useState(false);
@@ -29,20 +29,11 @@ function Biologia() {
           <p></p>
         </div>
 
-        <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
-          <div className="text-center text-content p-4">
-            <p>
-              Los biólogos estudian la vida a diferentes niveles, desde las células individuales, pasando por los organismos, hasta la biósfera completa del planeta Tierra. Ven y aprende más acerca de los temas fundamentales de la biología.
-            </p>
-          </div>
-          <div className="text-center">
-            <img src={Imagen} alt="Biologia" className="img-fluid h-50" />
-          </div>
+        <div className="mt-3 container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+          <ContenidoBiologia />
         </div>
 
-
-
-        <div className="btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5">
+        <div className="btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5 pt-4">
           <>
             <button class="game-button" onClick={() => setShowModalVideo(true)}>
               <svg class="play-icon" viewBox="0 0 40 40">
