@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import ModalContentInfo from './IAContenidoInfo'
-import ModalContentVideo from './IAContenido'
-import Sidebar from '../Sidebar';
-import '../../../Styles/tecnologia.css';
-import'../../../Styles/pCursos.css';
+import ModalContentVideo from './ProgramacionContenido'
+import ModalContentInfo from './ProgramacionContenidoInfo'
+import Sidebar from '../../Sidebar';
+import '../../../../Styles/tecnologia.css';
 import { Link } from 'react-router-dom';
-import '../../../Styles/btn-back.css';
-import '../../../Styles/text-content.css';
-import '../../../Styles/pCursos.css';
-import Imagen from '../../../img/generales/Logo EquidApp.png';
+import '../../../../Styles/btn-back.css';
+import '../../../../Styles/text-content.css';
+import '../../../../Styles/pCursos.css';
+import Imagen from '../../../../img/generales/Logo EquidApp.png';
 
-
-function IA() {
+function Programacion() {
   const [showModalVideo, setShowModalVideo] = useState(false);
   const [showModalInfo, setShowModalInfo] = useState(false);
 
@@ -28,17 +26,17 @@ function IA() {
           <Link to="/Tecnologia" className="text-start btn btn-back">
             Volver atrás
           </Link>
-          <h2 className="perfilFont">Bienvenid@ a Inteligencia Artificial</h2>
+          <h2 className="perfilFont">Bienvenid@ a Programación</h2>
           <p></p><p></p>
         </div>
 
         <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
           <div className="text-center text-content p-4">
           <p>
-          Sumérgete en el apasionante mundo de la inteligencia artificial, desentrañando los secretos de cómo las máquinas pueden reconocer patrones en datos, tomar decisiones autónomas y hasta entender el lenguaje humano. Explora cómo la inteligencia artificial puede transformar nuestra forma de trabajar y vivir, desde asistentes virtuales hasta vehículos autónomos. ¡Únete y descubre los asombrosos poderes de las IAs
+          La programación es el arte de dar vida a tus ideas en el mundo digital. Es como aprender un nuevo idioma para crear aplicaciones, juegos y soluciones innovadoras. Cada línea de código es un paso más cerca de convertir tus pensamientos en realidad. Bienvenido al emocionante viaje de la programación, donde la creatividad se encuentra con el potencial ilimitado de la tecnología
           </p>
         </div>
-        <div className="text-center">
+        <div>
             <img src={Imagen} alt="Biologia" className="img-fluid" />
           </div>
         </div>
@@ -66,7 +64,7 @@ function IA() {
         <ModalContentInfo onClose={() => setShowModalInfo(false)} />,
         document.body)}
           </>
-        </div> 
+        </div>
       </div>
       
       
@@ -74,4 +72,4 @@ function IA() {
   );
 }
 
-export default IA;
+export default Programacion;

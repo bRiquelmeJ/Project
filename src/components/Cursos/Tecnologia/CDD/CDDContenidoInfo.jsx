@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Quimica from '../../../pdf/Recurso Quimica.docx.pdf'
+import CDD from '../../../../pdf/Recurso de Analisis de datos.docx.pdf'
 import { useState } from 'react';
 import {Document, Page} from "react-pdf"
 
@@ -11,8 +11,8 @@ export default function ModalContentInfo({ onClose }) {
     } return (
     
     <div className="modalpdf">
-    <div className="pdf-div">
-        <Document file={Quimica} onLoadSuccess={onDocumentLoadSuccess}>
+        <div className="pdf-div">
+        <Document file={CDD} onLoadSuccess={onDocumentLoadSuccess}>
             {Array.apply(null, Array(numPages))
             .map((x,i)=> i+1).map((page)=> {
                 return (
@@ -23,6 +23,7 @@ export default function ModalContentInfo({ onClose }) {
         </Document>
 
     </div>
+
         <button onClick={onClose}  type="button" className="btn-close" aria-label="Close"></button>
     </div>
     );

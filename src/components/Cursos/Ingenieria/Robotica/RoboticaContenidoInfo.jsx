@@ -1,8 +1,7 @@
 import React from 'react';
-import Computacion from '../../../pdf/Recurso de Computacion.docx.pdf'
+import Robotica from '../../../../pdf/Recurso de Robotica.docx.pdf'
 import { useState } from 'react';
 import {Document, Page} from "react-pdf"
-
 
 export default function ModalContentInfo({ onClose }) {
     const [numPages, setNumPages] = useState();
@@ -12,7 +11,7 @@ export default function ModalContentInfo({ onClose }) {
     
     <div className="modalpdf">
         <div className="pdf-div">
-            <Document file={Computacion} onLoadSuccess={onDocumentLoadSuccess}>
+            <Document file={Robotica} onLoadSuccess={onDocumentLoadSuccess}>
                 {Array.apply(null, Array(numPages))
                 .map((x,i)=> i+1).map((page)=> {
                     return (
@@ -23,8 +22,6 @@ export default function ModalContentInfo({ onClose }) {
             </Document>
 
         </div>
-
-
         <button onClick={onClose}  type="button" className="btn-close" aria-label="Close"></button>
     </div>
     );

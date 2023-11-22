@@ -1,6 +1,6 @@
 
 import React from 'react';
-import IA from '../../../pdf/Recurso de IA.docx.pdf'
+import IA from '../../../../pdf/Recurso de IA.docx.pdf'
 import { useState } from 'react';
 import {Document, Page} from "react-pdf"
 
