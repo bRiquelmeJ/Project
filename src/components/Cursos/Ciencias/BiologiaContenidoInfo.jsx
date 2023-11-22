@@ -11,25 +11,25 @@ const [numPages, setNumPages] = useState();
         setNumPages(numPages);
     } return (
     <div className="modalpdf">
-      <div className="pdf-div">
+    <div className="pdf-div">
         <Document file={Biologia} onLoadSuccess={onDocumentLoadSuccess}>
-          {Array.apply(null, Array(numPages)).map((x, i) => i + 1).map((page) => {
+        {Array.apply(null, Array(numPages)).map((x, i) => i + 1).map((page) => {
             return (
-              <Page
+            <Page
                 key={page}
                 pageNumber={page}
                 renderTextLayer={false}
                 renderAnnotationLayer={false}
                 width={800} 
                 customTextRenderer={(textItem) => (
-                  <div style={{ fontSize: '30px', lineHeight: '1.5' }}>{textItem.str}</div>
+                <div style={{ fontSize: '30px', lineHeight: '1.5' }}>{textItem.str}</div>
                 )}
-              />
+            />
             );
-          })}
+        })}
         </Document>
-      </div>
-      <button onClick={onClose} type="button" className="btn-close" aria-label="Close"></button>
     </div>
-  );
+    <button onClick={onClose} type="button" className="btn-close" aria-label="Close"></button>
+    </div>
+);
 }
