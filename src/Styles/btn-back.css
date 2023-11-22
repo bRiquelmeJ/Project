@@ -32,4 +32,17 @@
     .btn-back-mujeres{
         margin: 1% 0 0 34%;
     }
+    .btnbackstem {
+        
+    }
+}
+.btnbackstem {
+    background-color: #C979FF;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+        background-color: #9E0FFF;
+        color: #fff;
+    }
 }
