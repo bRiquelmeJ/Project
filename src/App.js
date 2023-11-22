@@ -34,6 +34,7 @@ import Ajustes from "./components/Ajustes.jsx"
 import RutasProtegidas from './RutasProtegidas.jsx'
 
 function App() {
+  // TODO: aca de sebe meter el context provider 
   return (
     <AuthProvider>
       <div>

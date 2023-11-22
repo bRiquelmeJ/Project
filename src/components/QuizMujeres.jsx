@@ -106,7 +106,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
       }, 1000); // Esperar 1 segundo antes de pasar a la siguiente pregunta
     }
   };
-
+// TODO: aca se debe usar la funcion que obtiene las nuevas medallas del context
   const resetQuiz = () => {
     setCurrentQuestion(0);
     setScore(0);
