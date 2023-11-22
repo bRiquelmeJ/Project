@@ -6,13 +6,10 @@ import "../../../Styles/ciencias.css";
 
 
 export default function ModalContentInfo({ onClose }) {
-  const [numPages, setNumPages] = useState();
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
-
-  return (
+const [numPages, setNumPages] = useState();
+    function onDocumentLoadSuccess({numPages}) {
+        setNumPages(numPages);
+    } return (
     <div className="modalpdf">
       <div className="pdf-div">
         <Document file={Biologia} onLoadSuccess={onDocumentLoadSuccess}>
