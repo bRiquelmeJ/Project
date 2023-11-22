@@ -1,8 +1,8 @@
 import React from 'react';
-import Biologia from '../../../pdf/Recurso de Biología.docx.pdf'
+import Biologia from '../../../../pdf/Recurso de Biología.docx.pdf'
 import { useState } from 'react';
 import {Document, Page} from "react-pdf"
-import "../../../Styles/ciencias.css";
+import "../../../../Styles/ciencias.css";
 
 
 export default function ModalContentInfo({ onClose }) {
