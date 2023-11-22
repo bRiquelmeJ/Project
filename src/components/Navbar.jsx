@@ -31,9 +31,6 @@ function Navbar() {
                     <li className="nav-item">
                       <Link to="/home" className="nav-link text-white">Home</Link>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link active" href="#">Foro</a>
-                    </li>
                     <li className="nav-item dropdown">
                       <a className="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Cursos
