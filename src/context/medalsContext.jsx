@@ -1,17 +1,19 @@
-//Al teminar el quiz hacer un put y actualizar la medalla
-//En este archivo crear un context que me permita manipular las medallas
-//Este context tiene dos cosas, estado de las medallas y la funcion que hace get para obtener las medallas
-//la funcion ademas de obtener las nuevas medallas tiene que guardar las medallas nuevas en el local storage
-// y el context de proliferar tanto el estado como la funcion en tod la aplicacion
-// TODO: crear context
+import React, { createContext, useState, useContext } from 'react';
+import { fetchMedalsFromApi } from '../api/auth'; // Asume que esta es la función para obtener las medallas
 
-
-// MedalsContext.js
-import React, { createContext, useState, useEffect } from 'react';
-import { fetchMedalsFromApi } from '../api/auth'; // Asegúrate de tener la ruta correcta
-
+// Crear el contexto de medallas
 export const MedalsContext = createContext();
 
+// Crear un hook personalizado para acceder al contexto de medallas
+export const useMedals = () => {
+    const context = useContext(MedalsContext);
+    if (!context) {
+        throw new Error('useMedals must be used within a MedalsProvider');
+    }
+    return context;
+};
+
+// Crear el proveedor de contexto de medallas
 export const MedalsProvider = ({ children }) => {
     const [medals, setMedals] = useState(() => {
         // Intenta recuperar las medallas del localStorage o establece un array vacío si no hay ninguna
@@ -19,10 +21,8 @@ export const MedalsProvider = ({ children }) => {
         return savedMedals ? JSON.parse(savedMedals) : [];
     });
 
-    // Asumimos que recibes el userId de alguna parte, podría ser del AuthContext
-    const userId = ''; // Debes obtener el userId del AuthContext o de donde sea apropiado
-
-    const getMedals = async () => {
+    // Define cómo se obtienen las medallas, posiblemente pasando el userId como argumento
+    const getMedals = async (userId) => {
         try {
             const medalsData = await fetchMedalsFromApi(userId);
             setMedals(medalsData);
@@ -32,13 +32,7 @@ export const MedalsProvider = ({ children }) => {
         }
     };
 
-    // Carga inicial de medallas
-    useEffect(() => {
-        if (userId) {
-            getMedals();
-        }
-    }, [userId]);
-
+    // Proporciona el contexto a los componentes hijos
     return (
         <MedalsContext.Provider value={{ medals, getMedals }}>
             {children}
