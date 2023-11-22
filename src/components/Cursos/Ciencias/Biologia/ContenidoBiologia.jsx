@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
-import '../../../Styles/pCursos.css';
-import '../../../Styles/btn-back.css';
-import Mascota from '../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesIntro'
+import '../../../../Styles/pCursos.css';
+import "../../../../Styles/btn-back.css";
+
+import Mascota from '../../../../img/generales/Logo EquidApp.png';
+import ImagenesIntro from './ImagenesBiologia'
 
 
 
-function ContenidoStem() {
+function ContenidoBiologia() {
   const paragraphs = [
-    "Hola soy “JMO” y seré tu compañera en EquidApp.",
-    "Muchas gracias por registrarte, ¡Estás por entrar en un mundo lleno de oportunidades y descubrimiento!",
-    "El mundo STEM o CTIM en español está formado por la primera letra de las cuatro áreas de estudio: Ciencia, Tecnología, Ingeniería y Matemáticas",
-    "¡Cada una de estas materias es increíble! ¡Aprendiendo de ellas podrías convertirte en una futura doctora, investigadora o ingeniería!",
-    "No hay límites en lo que quieras ser y el día de mañana puedes ser tú la que inspire a otras niñas",
-    "¡Vamos! Descubramos el mundo STEM",
-    "Primero vamos a hacer un pequeño Quiz, aqui te haremos algunas preguntas",
-    "Este Quiz es para ver que tanto conoces de estas carreras y no te preocupes, puedes repetirlo hasta que consigas todas las respuestas",
-    "Luego puedes explorar como tu quieras, pero partamos haciendo click en el cuadro con el signo de pregunta que esta justo bajo tu nombre!"
+    "Los biólogos estudian la vida a diferentes niveles, desde las células individuales, pasando por los organismos, hasta la biósfera completa del planeta Tierra.",
+    "Ven y aprende más acerca de los temas fundamentales de la biología."
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -64,4 +58,4 @@ function ContenidoStem() {
   );
 }
 
-export default ContenidoStem;
+export default ContenidoBiologia;
