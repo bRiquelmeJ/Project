@@ -23,7 +23,7 @@ export default function ModalContentInfo({ onClose }) {
                 pageNumber={page}
                 renderTextLayer={false}
                 renderAnnotationLayer={false}
-                width={800} // Ajusta según sea necesario
+                width={800} 
                 customTextRenderer={(textItem) => (
                   <div style={{ fontSize: '30px', lineHeight: '1.5' }}>{textItem.str}</div>
                 )}
