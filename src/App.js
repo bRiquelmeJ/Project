@@ -20,11 +20,11 @@ import Fisica from "./components/Cursos/Ciencias/Fisica/Fisica"
 import Quimica from "./components/Cursos/Ciencias/Quimica/Quimica.jsx"
 import Tecnologia from "./components/Cursos/Tecnologia/Tecnologia"
 import Ingenieria from "./components/Cursos/Ingenieria/Ingenieria"
-import Computacion from "./components/Cursos/Ingenieria/Computacion"
-import Robotica from "./components/Cursos/Ingenieria/Robotica"
-import Programacion from "./components/Cursos/Tecnologia/Programacion"
-import IA from "./components/Cursos/Tecnologia/IA"
-import CienciaDeDatos from "./components/Cursos/Tecnologia/CienciaDeDatos"
+import Computacion from "./components/Cursos/Ingenieria/Computacion/Computacion.jsx"
+import Robotica from "./components/Cursos/Ingenieria/Robotica/Robotica.jsx"
+import Programacion from "./components/Cursos/Tecnologia/Programacion/Programacion.jsx"
+import IA from "./components/Cursos/Tecnologia/IA/IA.jsx"
+import CienciaDeDatos from "./components/Cursos/Tecnologia/CDD/CienciaDeDatos"
 import CursoIntro from "./components/Cursos/CursoIntro";
 import IntroStem from "./components/Cursos/STEM/IntroStem";
 import IngeIntro from "./components/Cursos/Ingenieria/IngeIntro";

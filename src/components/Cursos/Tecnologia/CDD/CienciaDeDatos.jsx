@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import ModalContentVideo from './CDDContenido'
 import ModalContentInfo from './CDDContenidoInfo'
-import Sidebar from '../Sidebar';
-import '../../../Styles/tecnologia.css';
+import Sidebar from '../../Sidebar';
+import '../../../../Styles/tecnologia.css';
 import { Link } from 'react-router-dom';
-import '../../../Styles/btn-back.css';
-import '../../../Styles/text-content.css';
-import '../../../Styles/pCursos.css';
-import Imagen from '../../../img/generales/Logo EquidApp.png';
+import '../../../../Styles/btn-back.css';
+import '../../../../Styles/text-content.css';
+import '../../../../Styles/pCursos.css';
+import Imagen from '../../../../img/generales/Logo EquidApp.png';
 
 
 function CienciaDeDatos() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Programacion from '../../../pdf/Recurso de programacion.docx.pdf'
+import Programacion from '../../../../pdf/Recurso de programacion.docx.pdf'
 import { useState } from 'react';
 import {Document, Page} from "react-pdf"
 

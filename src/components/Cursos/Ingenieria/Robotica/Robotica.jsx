@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import ModalContentVideo from './RoboticaContenido';
 import ModalContentInfo from './RoboticaContenidoInfo';
-import Sidebar from '../Sidebar';
-import '../../../Styles/ingenieria.css';
-import '../../../Styles/pCursos.css';
+import Sidebar from '../../Sidebar';
+import '../../../../Styles/ingenieria.css';
+import '../../../../Styles/pCursos.css';
 import { Link } from 'react-router-dom';
-import '../../../Styles/btn-back.css';
-import '../../../Styles/text-content.css';
-import Imagen from '../../../img/generales/Logo EquidApp.png';
+import '../../../../Styles/btn-back.css';
+import '../../../../Styles/text-content.css';
+import Imagen from '../../../../img/generales/Logo EquidApp.png';
 
 
 function Ingenieria() {

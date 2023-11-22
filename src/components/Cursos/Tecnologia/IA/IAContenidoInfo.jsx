@@ -1,5 +1,6 @@
+
 import React from 'react';
-import Robotica from '../../../pdf/Recurso de Robotica.docx.pdf'
+import IA from '../../../../pdf/Recurso de IA.docx.pdf'
 import { useState } from 'react';
 import {Document, Page} from "react-pdf"
 
@@ -11,17 +12,17 @@ export default function ModalContentInfo({ onClose }) {
     
     <div className="modalpdf">
         <div className="pdf-div">
-            <Document file={Robotica} onLoadSuccess={onDocumentLoadSuccess}>
-                {Array.apply(null, Array(numPages))
-                .map((x,i)=> i+1).map((page)=> {
-                    return (
-                        <Page key={page} pageNumber={page} renderTextLayer={false} renderAnnotationLayer= {false} />
-                    );
-                })
-                }
-            </Document>
-
+        <Document file={IA} onLoadSuccess={onDocumentLoadSuccess}>
+            {Array.apply(null, Array(numPages))
+            .map((x,i)=> i+1).map((page)=> {
+                return (
+                    <Page key={page} pageNumber={page} renderTextLayer={false} renderAnnotationLayer= {false} />
+                );
+            })
+            }
+        </Document>
         </div>
+
         <button onClick={onClose}  type="button" className="btn-close" aria-label="Close"></button>
     </div>
     );
