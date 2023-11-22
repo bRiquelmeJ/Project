@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext'
+import { MedalsProvider } from "./context/medalsContext.jsx";
 import Navbar from "./components/Navbar";
 import Registro from "./components/Registro";
 import Home from "./components/Home";
@@ -48,7 +49,7 @@ function App() {
                 <Route path="/registrarse" element={<Registro />} />
                 <Route path="/login" element={<Login />} />
 
-              <Route element={<RutasProtegidas />}>
+                <Route element={<MedalsProvider> <RutasProtegidas /> </MedalsProvider>}>
                 <Route path="/PlataformaCursos" element={<Pcursos />} />
                 <Route path="/recurso" element={<Recurso />} />
                 <Route path="/" element={<Pcursos />} />
