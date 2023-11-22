@@ -15,3 +15,21 @@
         margin-right: 5%;
     }
 }
+
+.btn-back-mujeres {
+    background-color: #C979FF;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    margin: 1% 0 0 5%;
+    &:hover{
+        background-color: #9E0FFF;
+        color: #fff;
+    }
+}
+
+@media (max-width: 768px){
+    .btn-back-mujeres{
+        margin: 1% 0 0 34%;
+    }
+}
