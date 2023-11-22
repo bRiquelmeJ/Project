@@ -15,25 +15,31 @@ import STEM from '../../img/medallas/STEM.png';
 import TECNOLOGIA from '../../img/medallas/TECNOLOGIA.png';
 import CambioImagen from '../../img/iconos/cambioimagen.png';
 import { useAuth } from "../../context/AuthContext";
-import { useMedals } from "../../context/medalsContext"; // Asegúrate de que esta es la ruta correcta
+import { fetchMedalsFromApi } from "../../api/auth"; // Importa la función directamente
+import Cookies from 'js-cookie';
 
 function Sidebar() {
-    const { user } = useAuth();
-    const {userId} = useAuth(); // Agregar userId
-    const { medals, getMedals } = useMedals();
+    const { user,id } = useAuth(); // user contiene la información del usuario incluido el _id
+    const [medals, setMedals] = useState([]); // Estado local para almacenar las medallas
     const [isAvatarModalOpen, setAvatarModalOpen] = useState(false);
     const [avatar, setAvatar] = useState(() => localStorage.getItem('userAvatar') || perfil);
 
     useEffect(() => {
-        if (user?._id) {
-            getMedals(user._userId);
+        // Obtén el token desde las cookies
+        const token = Cookies.get('token');
+        if (user?.id._id && token) {
+            fetchMedalsFromApi(user.id._id, token).then(response => {
+                console.log(response.data); // Imprime las medallas
+                setMedals(response.data); // Actualiza el estado local de medallas
+            }).catch(error => {
+                console.error('Error al obtener las medallas:', error);
+            });
         }
-    }, [user, getMedals]);
-    
+    }, [id]);
+
     useEffect(() => {
         console.log(medals);
     }, [medals]);
-
     const medalImages = [
         { name: 'CienciaM', image: CIENCIA },
         { name: 'IngenieriaM', image: INGENIERIA },
@@ -54,17 +60,17 @@ function Sidebar() {
             <div>
                 <img src={avatar} alt="Perfil" className="foto-perfil" />
                 <div className="medals-container">
-                    {medalImages.map((medalInfo, index) => {
-                        const isUnlocked = medals.some(medal => medal.nombre === medalInfo.name && medal.obtenida);
-                        return (
-                            <Medal 
-                                key={index} 
-                                unlocked={isUnlocked} 
-                                imageUnlocked={medalInfo.image} 
-                                imageLocked={medalInfo.image} // La misma imagen, el estilo se controla en el componente Medal
-                            />
-                        );
-                    })}
+                {Array.isArray(medals) && medalImages.map((medalInfo, index) => {
+    const isUnlocked = medals.some(medal => medal.nombre === medalInfo.name && medal.obtenida);
+    return (
+        <Medal 
+            key={index} 
+            unlocked={isUnlocked} 
+            imageUnlocked={medalInfo.image} 
+            imageLocked={medalInfo.image} // La misma imagen, el estilo se controla en el componente Medal
+        />
+    );
+})}
                 </div>
                 <h4 className='perfilFont'>{user.name}</h4>
             </div>
