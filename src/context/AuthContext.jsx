@@ -1,11 +1,10 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
-import { loginRequest, verifyTokenRequest } from '../api/auth';
-import Cookies from 'js-cookie';
+import { createContext, useState, useContext, useEffect } from "react";
+import { registerRequest, loginRequest, verifyTokenRequest } from '../api/auth'
+import { set } from "react-hook-form";
+import Cookies from "js-cookie";
 
-// Crear el contexto de autenticación
 export const AuthContext = createContext();
 
-// Hook personalizado para usar el contexto de autenticación
 export const useAuth = () => {
     const context = useContext(AuthContext);
     if (!context) {
@@ -14,60 +13,99 @@ export const useAuth = () => {
     return context;
 };
 
-// Proveedor de contexto de autenticación que envuelve la aplicación
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null); // Estado para el usuario actual
-    const [isAuthenticated, setIsAuthenticated] = useState(false); // Estado para el control de acceso
+    const [user, setUser] = useState(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [errors, setErrors] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [userId, setUserId] = useState(null); // Agregar userId
 
-    // Función para iniciar sesión
-    const signin = async (userData) => {
+    const signup = async (user) => {
         try {
-            const res = await loginRequest(userData);
-            Cookies.set('token', res.data.token); // Guarda el token en las cookies
-            setIsAuthenticated(true); // Establece el estado de autenticación a true
-            setUser(res.data.user); // Establece el usuario en el estado
+            const res = await registerRequest(user);
+            console.log(res.data);
+            setUser(res.data);
+            setIsAuthenticated(true);
         } catch (error) {
-            console.error('Error en signin:', error);
+            console.log(error.response)
+            setErrors(error.response.data);
         }
     };
 
-    // Función para cerrar sesión
-    const logout = () => {
-        Cookies.remove("token"); // Elimina el token de las cookies
-        setIsAuthenticated(false); // Establece el estado de autenticación a false
-        setUser(null); // Elimina el usuario del estado
+    const signin = async (user) => {
+        try {
+            const res = await loginRequest(user);
+            console.log(res);
+            setIsAuthenticated(true)
+            setUser(res.data)
+        } catch (error) {
+            if (Array.isArray(error.response.data)) {
+                return setErrors(error.response.data);
+            }
+            setErrors([error.response.data.message]);
+        }
     };
 
-    // Efecto para verificar el token y autenticar al usuario al cargar la app
-    useEffect(() => {
-        const checkLogin = async () => {
-            const token = Cookies.get('token');
-            if (!token) {
-                setIsAuthenticated(false); // Si no hay token, establece isAuthenticated a false
-                return;
-            }
+    const logout = () => {
+        Cookies.remove("token");
+        setIsAuthenticated(false);
+        setUser(null);
+    }
 
-            try {
-                const res = await verifyTokenRequest(token);
-                setIsAuthenticated(true); // Verifica el token y establece isAuthenticated a true
-                setUser(res.data.user); // Establece el usuario en el estado
-            } catch (error) {
-                console.error('Error verificando el token:', error);
-                setIsAuthenticated(false); // En caso de error, establece isAuthenticated a false
+    useEffect(() => {
+        if (errors.length > 0) {
+            const timer = setTimeout(() => {
+                setErrors([])
+            }, 5000)
+            return () => clearTimeout(timer)
+        }
+    }, [errors]);
+
+    useEffect(() => {
+        async function checkLogin() {
+            const cookies = Cookies.get();
+
+            if (!cookies.token) {
+                setIsAuthenticated(false);
+                setLoading(false);
+                return setUser(null);
             }
-        };
+            try {
+                const res = await verifyTokenRequest(cookies.token);
+                if (!res.data) {
+                    setIsAuthenticated(false);
+                    setLoading(false);
+                    return;
+                }
+
+                setIsAuthenticated(true);
+                setUser(res.data);
+                setUserId(res.data._id); // Establecer el userId
+                setLoading(false);
+            } catch (error) {
+                setIsAuthenticated(false)
+                setUser(null)
+                setLoading(false);
+            }
+        }
 
         checkLogin();
     }, []);
 
     return (
-        <AuthContext.Provider value={{
-            user, // El usuario actual
-            isAuthenticated, // Estado de autenticación del usuario
-            signin, // Función para iniciar sesión
-            logout, // Función para cerrar sesión
-        }}>
-            {children} // Los hijos que tendrán acceso al contexto
+        <AuthContext.Provider
+            value={{
+                signup,
+                signin,
+                logout,
+                loading,
+                user,
+                isAuthenticated,
+                errors,
+                userId, // Agregar userId al contexto
+            }}
+        >
+            {children}
         </AuthContext.Provider>
     );
 };

@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
 import { fetchMedalsFromApi } from '../api/auth'; // Asume que esta es la función para obtener las medallas
-
 // Crear el contexto de medallas
 export const MedalsContext = createContext();
 
@@ -22,20 +21,29 @@ export const MedalsProvider = ({ children }) => {
     });
 
     // Define cómo se obtienen las medallas, posiblemente pasando el userId como argumento
+    const [loading, setLoading] = useState(false);
+
     const getMedals = async (userId) => {
+        setLoading(true); // Inicia el indicador de carga
         try {
             const medalsData = await fetchMedalsFromApi(userId);
-            setMedals(medalsData);
-            localStorage.setItem('medals', JSON.stringify(medalsData));
+            if (medalsData) {
+                console.log('Medallas obtenidas:', medalsData); // Agrega esto para depuración
+                setMedals(medalsData);
+                localStorage.setItem('medals', JSON.stringify(medalsData));
+            } else {
+                console.log('No se recibieron medallas desde la API');
+            }
         } catch (error) {
             console.error('Error al obtener las medallas:', error);
+        } finally {
+            setLoading(false); // Finaliza el indicador de carga
         }
     };
-
-    // Proporciona el contexto a los componentes hijos
+    
+    
     return (
-        <MedalsContext.Provider value={{ medals, getMedals }}>
+        <MedalsContext.Provider value={{ medals, getMedals, loading }}>
             {children}
         </MedalsContext.Provider>
-    );
-};
+    );}

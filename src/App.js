@@ -38,6 +38,7 @@ function App() {
   // TODO: aca de sebe meter el context provider 
   return (
     <AuthProvider>
+      <MedalsProvider>
       <div>
         <Router>
           <div>
@@ -49,7 +50,7 @@ function App() {
                 <Route path="/registrarse" element={<Registro />} />
                 <Route path="/login" element={<Login />} />
 
-                <Route element={<MedalsProvider> <RutasProtegidas /> </MedalsProvider>}>
+                <Route element={ <RutasProtegidas /> }>
                 <Route path="/PlataformaCursos" element={<Pcursos />} />
                 <Route path="/recurso" element={<Recurso />} />
                 <Route path="/" element={<Pcursos />} />
@@ -82,6 +83,7 @@ function App() {
           </div>
         </Router>
       </div>
+      </MedalsProvider>
     </AuthProvider>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AvatarModal from './Avatar/AvatarModal';
 import perfil from '../../img/generales/perfil.jpeg';
 import '../../Styles/pCursos.css';
@@ -18,19 +18,29 @@ import { useAuth } from "../../context/AuthContext";
 import { useMedals } from "../../context/medalsContext"; // Asegúrate de que esta es la ruta correcta
 
 function Sidebar() {
-
     const { user } = useAuth();
-    const { medals } = useMedals(); // Obtiene el estado de las medallas desde el contexto
+    const {userId} = useAuth(); // Agregar userId
+    const { medals, getMedals } = useMedals();
     const [isAvatarModalOpen, setAvatarModalOpen] = useState(false);
     const [avatar, setAvatar] = useState(() => localStorage.getItem('userAvatar') || perfil);
 
+    useEffect(() => {
+        if (user?._id) {
+            getMedals(user._userId);
+        }
+    }, [user, getMedals]);
+    
+    useEffect(() => {
+        console.log(medals);
+    }, [medals]);
+
     const medalImages = [
-        { name: 'Ciencia', image: CIENCIA },
-        { name: 'Ingenieria', image: INGENIERIA },
-        { name: 'Matematicas', image: MATEMATICAS },
-        { name: 'Mujeres', image: MUJERES },
-        { name: 'Stem', image: STEM },
-        { name: 'Tecnologia', image: TECNOLOGIA },
+        { name: 'CienciaM', image: CIENCIA },
+        { name: 'IngenieriaM', image: INGENIERIA },
+        { name: 'MatematicasM', image: MATEMATICAS },
+        { name: 'MujeresM', image: MUJERES },
+        { name: 'StemM', image: STEM },
+        { name: 'TecnologiaM', image: TECNOLOGIA },
     ];
 
     const handleAvatarChange = (newAvatarSrc) => {
@@ -42,16 +52,19 @@ function Sidebar() {
     return (
         <div className="user-box row">
             <div>
-                <img src={avatar} alt="perfil" className="foto-perfil" />
+                <img src={avatar} alt="Perfil" className="foto-perfil" />
                 <div className="medals-container">
-                    {medalImages.map((medalInfo, index) => (
-                        <Medal 
-                            key={index} 
-                            unlocked={medals.some(medal => medal.name === medalInfo.name && medal.unlocked)} 
-                            imageUnlocked={medalInfo.image} 
-                            imageLocked={medalInfo.image} 
-                        />
-                    ))}
+                    {medalImages.map((medalInfo, index) => {
+                        const isUnlocked = medals.some(medal => medal.nombre === medalInfo.name && medal.obtenida);
+                        return (
+                            <Medal 
+                                key={index} 
+                                unlocked={isUnlocked} 
+                                imageUnlocked={medalInfo.image} 
+                                imageLocked={medalInfo.image} // La misma imagen, el estilo se controla en el componente Medal
+                            />
+                        );
+                    })}
                 </div>
                 <h4 className='perfilFont'>{user.name}</h4>
             </div>
@@ -67,13 +80,11 @@ function Sidebar() {
                     </Link>
                 </button>
                 <button type="button" className="btn" onClick={() => setAvatarModalOpen(true)}>
-                    <span >
-                         <img className='icons-btn' src={CambioImagen} alt="CambiosImagen" />{/* Agrega aquí el SVG o ícono para "Cambiar Avatar" */}
-                    </span>
+                    <img className='icons-btn' src={CambioImagen} alt="Cambio Imagen" />
                 </button>
                 <button type="button" className="btn">
-                    <Link to="/Ajustes">
-                    <img className='col icons-btn' src={Ajustes} alt="Ajustes" />
+                    <Link to="/ajustes">
+                        <img className='col icons-btn' src={Ajustes} alt="Ajustes" />
                     </Link>
                 </button>
                 <AvatarModal
@@ -81,7 +92,6 @@ function Sidebar() {
                     onClose={() => setAvatarModalOpen(false)}
                     onSelectAvatar={handleAvatarChange}
                 />
-            
             </div>
         </div>
     );
