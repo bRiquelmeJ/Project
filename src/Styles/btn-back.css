@@ -8,3 +8,10 @@
         color: #fff;
     }
 }
+
+@media (max-width: 768px){
+    .btn-back{
+        width: 30%;
+        margin-right: 5%;
+    }
+}

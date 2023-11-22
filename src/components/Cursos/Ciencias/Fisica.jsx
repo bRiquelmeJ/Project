@@ -42,7 +42,7 @@ function Fisica() {
                 </div>
                 <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly  mb-5'>
                     <>
-                        <button class="game-button" onClick={() => setShowModalVideo(true)}>
+                        <button class="game-button mb-2" onClick={() => setShowModalVideo(true)}>
                             <svg class="play-icon" viewBox="0 0 40 40">
                                 <path d="M 10,10 L 30,20 L 10,30 z"></path>
                             </svg>
