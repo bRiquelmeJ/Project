@@ -10,13 +10,13 @@ import ImagenesIntro from './ImagenesIntro'
 function ContenidoStem() {
   const paragraphs = [
     "Hola soy “JMO” y seré tu compañera en EquidApp.",
-    "Muchas gracias por registrarte, estás por entrar en un mundo lleno de oportunidades y descubrimiento",
-    "el mundo STEM o CTIM en español está formado por la primera letra de 4 áreas de estudio que significa ciencia, tecnología, ingeniería y matemáticas",
-    "cada una de estas materias es increíble!, y aprendiendo de ellas podrías convertirte en una futura Doctora, Investigadora o ingeniería!",
+    "Muchas gracias por registrarte, ¡Estás por entrar en un mundo lleno de oportunidades y descubrimiento!",
+    "El mundo STEM o CTIM en español está formado por la primera letra de las cuatro áreas de estudio: Ciencia, Tecnología, Ingeniería y Matemáticas",
+    "¡Cada una de estas materias es increíble! ¡Aprendiendo de ellas podrías convertirte en una futura doctora, investigadora o ingeniería!",
     "No hay límites en lo que quieras ser y el día de mañana puedes ser tú la que inspire a otras niñas",
-    "¡Vamos Descubramos el mundo STEM!",
-    "Primero vamos a hacer un pequeño Quizz, aqui te haremos algunas preguntas",
-    "Este Quizz es para ver que tanto conoces de estas carreras y no te preocupes, puedes repetirlo hasta que consigas todas las respuestas",
+    "¡Vamos! Descubramos el mundo STEM",
+    "Primero vamos a hacer un pequeño Quiz, aqui te haremos algunas preguntas",
+    "Este Quiz es para ver que tanto conoces de estas carreras y no te preocupes, puedes repetirlo hasta que consigas todas las respuestas",
     "Luego puedes explorar como tu quieras, pero partamos haciendo click en el cuadro con el signo de pregunta que esta justo bajo tu nombre!"
   ];
 
@@ -40,15 +40,15 @@ function ContenidoStem() {
     <div className="container">
       <div className="row pt-5">
         <div className="col-lg-12">
-          <div className="imagenintro">
+          <div>
             {/* Pasa el índice actual y los puntos de cambio como propiedades */}
-            <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
+            <ImagenesIntro  currentIndex={currentIndex} changePoints={imageChangePoints} />
           </div>
         </div>
         <div className="col-lg-8 d-flex pt-5">
           <div className="col talkingPetText" onClick={handleNext}>
             <p className= "parrafo">{paragraphs[currentIndex]}</p>
-            <p className='ClickContinuar'>Click para Continuar</p>
+            <p className='ClickContinuar parrafo'>Click para Continuar</p>
             <div>
               <button className="btn btnbackstem"onClick={(e) => { e.stopPropagation(); handlePrev(); }} disabled={currentIndex === 0}>
                 Retroceder
