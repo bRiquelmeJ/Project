@@ -31,7 +31,7 @@ import IngeIntro from "./components/Cursos/Ingenieria/IngeIntro";
 import CienciaIntro from "./components/Cursos/Ciencias/QuizzCiencia/CienciaIntro";
 import MatematicasIntroQuizz from "./components/Cursos/Matematicas/QuizzMate/MateIntro";
 import TecIntroQuizz from "./components/Cursos/Tecnologia/QuizzTec/TecIntro";
-import Ajustes from "./components/Ajustes.jsx"
+
 
 import RutasProtegidas from './RutasProtegidas.jsx'
 
@@ -81,7 +81,7 @@ function App() {
                 <Route path="/MujeresSTEM" element = {<MujeresSTEM />}/>
                 <Route path="/IntroStem" element = {<IntroStem />}/>
                 <Route path="/MujeresBio" element = {<MujeresBio />}/>
-                <Route path="/Ajustes" element = {<Ajustes />}/>
+              
               
               </Route>
               </Routes>
