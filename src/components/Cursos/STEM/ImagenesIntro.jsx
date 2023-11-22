@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../../../Styles/pCursos.css';
-import img1 from '../../../img/generales/Copia de EQUIDAPP.png';
-import img2 from '../../../img/generales/EQUIDAPP-portadaprueba.png';
-import img3 from '../../../img/generales/Banner3.png';
+import img1 from '../../../img/contenido/Stem/Bienvenida.jpg';
+import img2 from '../../../img/contenido/Stem/STEM.jpg';
+import img3 from '../../../img/contenido/Stem/3.jpg';
 
 const ImagenesIntro = ({ currentIndex, changePoints }) => {
   const [images] = useState([
