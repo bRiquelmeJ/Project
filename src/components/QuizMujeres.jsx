@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import MascotaFeliz from "../img/generales/Logo EquidApp.png";
 import MascotaTriste from "../img/generales/Equidapp-Triste.png";
 import Modal from "../components/Cursos/Avatar/Medallas/Mmodal";
@@ -69,35 +69,36 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
   const { user,id } = useAuth();
   const token = Cookies.get('token');
 
-  const handleAnswerOptionClick = async (isCorrect, answerText) => {
+  useEffect(() => {
+    if (showScore && score === questions.length) {
+      updateMedallas(user._id, 'CienciaM', token)
+        .then(medalUpdateResponse => {
+          console.log('Medalla actualizada:', medalUpdateResponse);
+          setShowMedalModal(true);
+        })
+        .catch(error => {
+          console.error('Error al actualizar la medalla:', error);
+        });
+    }
+  }, [showScore, score, user.id._id, , token]);
+
+  const handleAnswerOptionClick = (isCorrect, answerText) => {
     setSelectedAnswer(answerText);
     setFeedbackMessage(isCorrect ? "¡Correcto! ¡Muy bien hecho!" : "¡Incorrecto! Intenta de nuevo.");
     setMascotaImage(isCorrect ? MascotaFeliz : MascotaTriste);
 
     if (isCorrect) {
-        setScore(score + 1);
-        if (score + 1 === questions.length) {
-            // Aquí usamos updateMedallas de auth.js para actualizar la medalla
-            try {
-              const medalUpdateResponse = await updateMedallas(user.id._id, 'CienciaM', token);
-              console.log('Medalla actualizada:', medalUpdateResponse);
-              setShowMedalModal(true);
-          } catch (error) {
-              console.error('Error al actualizar la medalla:', error);
-          }
-        }
+      setScore(prevScore => prevScore + 1);
     }
 
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
-        setCurrentQuestion(nextQuestion);
+      setCurrentQuestion(nextQuestion);
     } else {
-        setShowScore(true);
+      setShowScore(true);
     }
-};
-  
+  };
 
-  // Renderizado del componente
   return (
     <div className='container mt-5'>
       {showScore ? (
