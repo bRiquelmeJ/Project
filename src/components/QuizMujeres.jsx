@@ -64,98 +64,139 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [randomQuestions, setRandomQuestions] = useState([]);
   const [showMedalModal, setShowMedalModal] = useState(false);
-
-  const { user } = useAuth(); // Obteniendo el usuario del contexto
-  const token = Cookies.get('token');
-
+  
+  const [medals, setMedals] = useState(() => {
+    const savedMedals = localStorage.getItem('medalsUnlocked');
+    return savedMedals ? JSON.parse(savedMedals) : Array(6).fill(false);
+  });
+// Dentro de tu componente
+const { user, token } = useAuth(); // Obtiene user y token del contexto de autenticación
+  const MEDAL_INDEX = 4;
   useEffect(() => {
-    if (showScore && score === questions.length && user?._id && token) {
-        updateMedallas(user._id, 'StemM', token)
-            .then(medalUpdateResponse => {
-                console.log('Medalla actualizada:', medalUpdateResponse);
-                setShowMedalModal(true);
-            })
-            .catch(error => {
-                console.error('Error al actualizar la medalla:', error.response || error);
-            });
-    }
-}, [showScore, score, user?._id, token]);
+    // Aquí es donde verificamos si la medalla de ciencia ya fue desbloqueada.
+    const checkMedalUnlocked = async () => {
+      try {
+        const response = await updateMedallas(user._id, 'StemM', token);
+        const isMedalUnlocked = response.some(medal => medal.nombre === 'StemM' && medal.obtenida);
+        if (isMedalUnlocked) {
+          setShowMedalModal(true);
+        }
+      } catch (error) {
+        console.error('Error al actualizar la medalla:', error);
+      }
+    };
 
-  const handleAnswerOptionClick = (isCorrect, answerText) => {
+    if (showScore && score === questions.length) {
+      checkMedalUnlocked();
+    }
+  }, [showScore, score, user?._id, token]);
+
+    useEffect(() => {
+      const randomizedQuestions = [...questions].sort(() => Math.random() - 0.5);
+      setRandomQuestions(randomizedQuestions);
+    }, []);
+  useEffect(() => {
+    if (medals[MEDAL_INDEX]) {
+      setShowScore(true);
+      setFeedbackMessage("Explora otras secciones para seguir aprendiendo y desbloqueando medallas.");
+      setMascotaImage(MascotaFeliz);
+    }
+  }, [medals, MEDAL_INDEX, setFeedbackMessage, setMascotaImage]);
+
+  const handleAnswerButtonClick = (isCorrect, answerText) => {
+    if (selectedAnswer === null) {
       setSelectedAnswer(answerText);
       setFeedbackMessage(isCorrect ? "¡Correcto! ¡Muy bien hecho!" : "¡Incorrecto! Intenta de nuevo.");
       setMascotaImage(isCorrect ? MascotaFeliz : MascotaTriste);
-
-      if (isCorrect) {
-          setScore(prevScore => prevScore + 1);
-      }
-
-      const nextQuestion = currentQuestion + 1;
-      if (nextQuestion < questions.length) {
+      setScore(isCorrect ? score + 1 : score);
+  
+      setTimeout(() => {
+        const nextQuestion = currentQuestion + 1;
+        if (nextQuestion < questions.length) {
           setCurrentQuestion(nextQuestion);
-      } else {
+          setSelectedAnswer(null); // Reiniciar la selección de respuesta para la próxima pregunta
+        } else {
           setShowScore(true);
-      }
+          if (score + 1 === questions.length) {
+            const updatedMedals = [...medals];
+            updatedMedals[MEDAL_INDEX] = true;
+            setMedals(updatedMedals);
+            localStorage.setItem('medalsUnlocked', JSON.stringify(updatedMedals));
+            setShowMedalModal(true);
+          }
+        }
+      }, 1000); // Esperar 1 segundo antes de pasar a la siguiente pregunta
+    }
+  };
+
+  const resetQuiz = () => {
+    setCurrentQuestion(0);
+    setScore(0);
+    setShowScore(false);
+    setSelectedAnswer(null);
+    setShowMedalModal(false);
   };
 
   return (
-      <div className='container mt-5'>
-          {showScore ? (
-              <div className='score-section text-center'>
-                  {showMedalModal ? (
-                      <div>
-                          <p className="h4">¡Felicidades! Medalla desbloqueada.</p>
-                          <img src={Insignia} alt="Medalla" className="img-fluid" />
-                      </div>
-                  ) : (
-                      <>
-                          <p className="h4">Has acertado {score} de {questions.length} preguntas.</p>
-                          <button className="btn btn-purple" onClick={() => setCurrentQuestion(0)}>Reintentar</button>
-                      </>
-                  )}
-              </div>
+    <div className='container mt-5'>
+      {showScore ? (
+        <div className='score-section text-center'>
+          {medals[MEDAL_INDEX] ? (
+            <div>
+              <p className="h4">¡Felicidades! Medalla desbloqueada..</p>
+              <img src={Insignia} alt="Medalla" className="img-fluid" />
+            </div>
           ) : (
-              <div className='card quizzCard'>
-                  <div className='card-body'>
-                      <div className='question-section mb-4'>
-                          <div className='question-count'>
-                              <span className="h3">Pregunta {currentQuestion + 1}</span>/{questions.length}
-                          </div>
-                          <div className='question-text h5'>
-                              {questions[currentQuestion].questionText}
-                          </div>
-                          <div className='answer-section'>
-                              <ul className="list-group mt-2">
-                                  {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                                      <li key={index} className="list-group-item">
-                                          <button
-                                              className={`btn btn-purple ${selectedAnswer === answerOption.answerText ? 'selected' : ''}`}
-                                              onClick={() => handleAnswerOptionClick(answerOption.isCorrect, answerOption.answerText)}
-                                          >
-                                              {answerOption.answerText}
-                                          </button>
-                                      </li>
-                                  ))}
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
+            <>
+              <p className="h4">Has acertado {score} de {questions.length} preguntas.</p>
+              <button className="btn btn-purple" onClick={resetQuiz}>Reintentar</button>
+            </>
+          )}
+        </div>
+      ) : (
+        <div className='card quizzCard'>
+          <div className='card-body'>
+            <div className='question-section mb-4'>
+              <div className='question-count'>
+                <span className="h3">Pregunta {currentQuestion + 1}</span>/{questions.length}
               </div>
-          )}
+              <div className='question-text h5'>
+                {randomQuestions[currentQuestion] && randomQuestions[currentQuestion].questionText}
+              </div>
+              <div className='answer-section'>
+                <ul className="list-group mt-2">
+                  {randomQuestions[currentQuestion] && randomQuestions[currentQuestion].answerOptions.map((answerOption, index) => (
+                    <li key={index}>
+                      <button
+                        onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)}
+                        className={`btn btn-purple mt-2 w-100 shadow-hover ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : ''}`}
+                        disabled={selectedAnswer !== null}
+                      >
+                        {answerOption.answerText}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
-          {showMedalModal && (
-              <Modal onClose={() => setShowMedalModal(false)}>
-                  <h2>¡Felicidades!</h2>
-                  <p>Has desbloqueado una medalla por tu excelente desempeño.</p>
-                  <Medal
-                      unlocked={true}
-                      imageUnlocked={Insignia}
-                      imageLocked={Insignia}
-                  />
-              </Modal>
-          )}
-      </div>
+      {showMedalModal && (
+        <Modal onClose={() => setShowMedalModal(false)}>
+          <h2>¡Felicidades!</h2>
+          <p>Has desbloqueado una medalla por tu excelente desempeño.</p>
+          <Medal
+            unlocked={true}
+            imageUnlocked={Insignia}
+            imageLocked={Insignia}
+          />
+        </Modal>
+      )}
+    </div>
   );
 }
 

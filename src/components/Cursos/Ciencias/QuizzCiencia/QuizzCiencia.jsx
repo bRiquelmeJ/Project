@@ -5,6 +5,12 @@ import Modal from "../../../Cursos/Avatar/Medallas/Mmodal";
 import Medal from "../../../Cursos/Avatar/Medallas/Medal";
 import Insignia from "../../../../img/medallas/CIENCIA.png";
 
+// Importa la función updateMedallas
+import { updateMedallas } from '../../../../api/auth'
+
+// Importa el contexto de autenticación
+import { useAuth } from '../../../../context/AuthContext';
+
 
 const questions = [
   //biologia
@@ -159,9 +165,27 @@ function QuizzCiencia({ setFeedbackMessage, setMascotaImage }) {
     const savedMedals = localStorage.getItem('medalsUnlocked');
     return savedMedals ? JSON.parse(savedMedals) : Array(6).fill(false);
   });
+// Dentro de tu componente
+const { user, token } = useAuth(); // Obtiene user y token del contexto de autenticación
+  const MEDAL_INDEX = 0;
+  useEffect(() => {
+    // Aquí es donde verificamos si la medalla de ciencia ya fue desbloqueada.
+    const checkMedalUnlocked = async () => {
+      try {
+        const response = await updateMedallas(user._id, 'CienciaM', token);
+        const isMedalUnlocked = response.some(medal => medal.nombre === 'CienciaM' && medal.obtenida);
+        if (isMedalUnlocked) {
+          setShowMedalModal(true);
+        }
+      } catch (error) {
+        console.error('Error al actualizar la medalla:', error);
+      }
+    };
 
-  const MEDAL_INDEX = 4;
-
+    if (showScore && score === questions.length) {
+      checkMedalUnlocked();
+    }
+  }, [showScore, score, user?._id, token]);
 
     useEffect(() => {
       const randomizedQuestions = [...questions].sort(() => Math.random() - 0.5);
