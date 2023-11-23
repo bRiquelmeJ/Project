@@ -1,6 +1,7 @@
 import axios from "./axios";
 import Cookies from "js-cookie";
 
+<<<<<<< Updated upstream
 export const registerRequest = (user) => {
     return axios.post(`/register`, user);
 };
@@ -8,6 +9,9 @@ export const registerRequest = (user) => {
 export const loginRequest = (user) => {
     return axios.post(`/login`, user);
 };
+=======
+export const registerRequest = (user) => axios.post(`/register`, user);
+>>>>>>> Stashed changes
 
 // Esta función ya no usa el hook y espera que el token sea pasado como argumento.
 export const verifyTokenRequest = (token) => {
@@ -18,14 +22,25 @@ export const verifyTokenRequest = (token) => {
     });
 };
 
+<<<<<<< Updated upstream
 // Esta función espera recibir el userId y el token como argumentos.
 export const fetchMedalsFromApi = async (userId, token) => {
     console.log('userId:', userId); // Imprime el userId
 
+=======
+export const verifyTokenRequest = () => axios.get('/verify');
+
+// Esta función ahora espera recibir userId como argumento
+export const fetchMedalsFromApi = async (userId) => {
+>>>>>>> Stashed changes
     try {
         const response = await axios.get(`/medals/${userId}`, {
             headers: {
+<<<<<<< Updated upstream
                 Authorization: `Bearer ${token}`,
+=======
+                Authorization: `Bearer ${Cookies.get('token')}`,
+>>>>>>> Stashed changes
             },
         });
         console.log(response.data); // Imprime los datos recibidos
@@ -61,6 +76,7 @@ export const updateMedallas = async (userId, nombreMedalla, token) => {
         throw error;
     }
 };
+<<<<<<< Updated upstream
 
 export const getMedallas = async (userId, token) => {
     try {
@@ -77,3 +93,5 @@ export const getMedallas = async (userId, token) => {
     }
 }
 
+=======
+>>>>>>> Stashed changes

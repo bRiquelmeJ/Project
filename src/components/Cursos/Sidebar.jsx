@@ -41,7 +41,11 @@ function Sidebar() {
         console.log(medals);
     }, [medals]);
     const medalImages = [
+<<<<<<< Updated upstream
         { name: 'CienciaM', image: CIENCIA },
+=======
+        { name: 'CienciasM', image: CIENCIA },
+>>>>>>> Stashed changes
         { name: 'IngenieriaM', image: INGENIERIA },
         { name: 'MatematicasM', image: MATEMATICAS },
         { name: 'MujeresM', image: MUJERES },

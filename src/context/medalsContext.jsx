@@ -1,5 +1,10 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import { fetchMedalsFromApi } from '../api/auth'; // Asume que esta es la función para obtener las medallas
+<<<<<<< Updated upstream
+=======
+import { AuthContext } from './AuthContext'; // Importa AuthContext
+
+>>>>>>> Stashed changes
 // Crear el contexto de medallas
 export const MedalsContext = createContext();
 
@@ -12,19 +17,24 @@ export const useMedals = () => {
     return context;
 };
 
-// Crear el proveedor de contexto de medallas
 export const MedalsProvider = ({ children }) => {
+    const { user: { id: userId } = {} } = useContext(AuthContext); // Accede al userId desde AuthContext
     const [medals, setMedals] = useState(() => {
-        // Intenta recuperar las medallas del localStorage o establece un array vacío si no hay ninguna
         const savedMedals = localStorage.getItem('medals');
         return savedMedals ? JSON.parse(savedMedals) : [];
     });
 
+<<<<<<< Updated upstream
     // Define cómo se obtienen las medallas, posiblemente pasando el userId como argumento
     const [loading, setLoading] = useState(false);
 
     const getMedals = async (userId) => {
         setLoading(true); // Inicia el indicador de carga
+=======
+    // Función para obtener medallas de la API y actualizar el estado
+    const getMedals = async () => {
+        if (!userId) return; // Si no hay userId, no hagas nada
+>>>>>>> Stashed changes
         try {
             const medalsData = await fetchMedalsFromApi(userId);
             if (medalsData) {
@@ -40,10 +50,24 @@ export const MedalsProvider = ({ children }) => {
             setLoading(false); // Finaliza el indicador de carga
         }
     };
+<<<<<<< Updated upstream
     
     
+=======
+
+    // Llama a getMedals automáticamente cuando el userId esté disponible
+    useEffect(() => {
+        getMedals();
+    }, [userId]); // Dependencia: vuelve a ejecutar el efecto cuando el userId cambie
+
+>>>>>>> Stashed changes
     return (
         <MedalsContext.Provider value={{ medals, getMedals, loading }}>
             {children}
         </MedalsContext.Provider>
+<<<<<<< Updated upstream
     );}
+=======
+    );
+};
+>>>>>>> Stashed changes
