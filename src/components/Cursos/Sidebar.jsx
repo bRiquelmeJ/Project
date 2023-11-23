@@ -6,7 +6,7 @@ import '../../Styles/pCursos.css';
 import { Link } from 'react-router-dom';
 import Quiz from '../../img/iconos/Quiz.svg';
 import Recursos from '../../img/iconos/Recursos.svg';
-import Ajustes from '../../img/iconos/Ajustes.png'
+
 import Medal from './Avatar/Medallas/Medal';
 import CIENCIA from '../../img/medallas/CIENCIA.png';
 import INGENIERIA from '../../img/medallas/Ingenieria.png';
