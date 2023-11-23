@@ -133,7 +133,7 @@ const questions = [
     questionText: "¿Qué tipo de programa se utiliza para escribir código de programación?",
     answerOptions: [
       { answerText: "Un navegador web", isCorrect: false },
-      { answerText: "Un procesador de texto", isCorrect: false },
+      { answerText: "Un procesador de texto", isCorrect: true },
       { answerText: "Una calculadora", isCorrect: false },
       { answerText: "Una cámara de fotos", isCorrect: false },
     ],
