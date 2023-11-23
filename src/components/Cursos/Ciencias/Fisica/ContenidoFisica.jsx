@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import '../../../../Styles/pCursos.css';
 import "../../../../Styles/btn-back.css";
-
 import Mascota from '../../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesFisica'
+import ImagenesFisica from './ImagenesFisica'
 
 
 
@@ -34,7 +33,7 @@ function ContenidoFisica() {
       <div className="row">
         <div className="col-lg-12">
           <div>
-            <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
+            <ImagenesFisica currentIndex={currentIndex} changePoints={imageChangePoints} />
           </div>
         </div>
         <div className="col-lg-8 d-flex pt-5">

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../../../Styles/pCursos.css';
-import img1 from '../../../img/contenido/biologia.jpg';
+import imagMate from '../../../img/contenido/matematica.jpg';
 
 
 const ImagenesMatematicas= ({ currentIndex, changePoints }) => {
   const [images] = useState([
-    img1,
+    imagMate,
     
     // ... otras imágenes
   ]);

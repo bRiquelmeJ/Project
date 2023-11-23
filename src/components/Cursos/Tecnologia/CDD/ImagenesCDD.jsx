@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../../../../Styles/pCursos.css';
-import img1 from '../../../../img/contenido/CDD.jpg';
+import imgCDD from '../../../../img/contenido/CDD.jpg';
 
 
 const ImagenesCDD= ({ currentIndex, changePoints }) => {
   const [images] = useState([
-    img1,
+    imgCDD,
     
     // ... otras imágenes
   ]);

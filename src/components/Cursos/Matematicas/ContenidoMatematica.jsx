@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import '../../../Styles/pCursos.css';
 import "../../../Styles/btn-back.css";
-
 import Mascota from '../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesMatematica'
+import ImagenesMatematicas from './ImagenesMatematica'
 
 
 
@@ -35,7 +34,7 @@ function ContenidoMatematica() {
       <div className="row">
         <div className="col-lg-12">
           <div>
-            <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
+            <ImagenesMatematicas currentIndex={currentIndex} changePoints={imageChangePoints} />
           </div>
         </div>
         <div className="col-lg-8 d-flex pt-5">

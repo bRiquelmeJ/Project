@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import '../../../../Styles/pCursos.css';
 import "../../../../Styles/btn-back.css";
-
 import Mascota from '../../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesProgramacion'
+import ImagenesProgramacion from './ImagenesProgramacion'
 
 
 
@@ -36,7 +35,7 @@ function ContenidoProgramacion() {
       <div className="row">
         <div className="col-lg-12">
           <div>
-            <ImagenesIntro currentIndex={currentIndex} changePoints={imageChangePoints} />
+            <ImagenesProgramacion currentIndex={currentIndex} changePoints={imageChangePoints} />
           </div>
         </div>
         <div className="col-lg-8 d-flex pt-5">
