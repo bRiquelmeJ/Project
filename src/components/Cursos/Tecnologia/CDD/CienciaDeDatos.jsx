@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import '../../../../Styles/btn-back.css';
 import '../../../../Styles/text-content.css';
 import '../../../../Styles/pCursos.css';
-import Imagen from '../../../../img/generales/Logo EquidApp.png';
+import ContenidoCDD from "./ContenidoCDD"
 
 
 function CienciaDeDatos() {
@@ -27,23 +27,14 @@ function CienciaDeDatos() {
           <Link to="/Tecnologia" className="text-start btn btn-back">
             Volver atrás
           </Link>
-          <h2 className="perfilFont">Bienvenid@ a Ciencia de Datos</h2>
+          <h2 className="perfilFont">Bienvenid@ a </h2>
           <p></p><p></p>
         </div>
 
-        <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
-          <div className="text-center text-content p-4">
-            <p>
-              La Ciencia de Datos, un campo fascinante e interdisciplinario, se erige como la brújula que guía la era digital.
-              En su esencia, es la búsqueda de conocimiento a través del análisis de datos, aprovechando información cruda para desvelar patrones, tendencias y revelaciones que impulsan la toma de decisiones
-              ¡Te invitamos a estudiar análisis de datos y desatar el potencial de la información!
-            </p>
-          </div>
-          <div className="text-center">
-            <img src={Imagen} alt="Biologia" className="img-fluid h-50" />
-          </div>
+        <div className="mt-3 container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+          <ContenidoCDD />
         </div>
-        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5'>
+        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5 pt-4'>
           <>
             <button class="game-button mb-2" onClick={() => setShowModalVideo(true)}>
               <svg class="play-icon" viewBox="0 0 40 40">

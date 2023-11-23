@@ -3,14 +3,16 @@ import '../../../../Styles/pCursos.css';
 import "../../../../Styles/btn-back.css";
 
 import Mascota from '../../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesBiologia'
+import ImagenesIntro from './ImagenesProgramacion'
 
 
 
 function ContenidoProgramacion() {
   const paragraphs = [
-    "Los biólogos estudian la vida a diferentes niveles, desde las células individuales, pasando por los organismos, hasta la biósfera completa del planeta Tierra.",
-    "Ven y aprende más acerca de los temas fundamentales de la biología."
+    "La programación es el arte de dar vida a tus ideas en el mundo digital. ",
+    "Es como aprender un nuevo idioma para crear aplicaciones, juegos y soluciones innovadoras.", 
+    "Cada línea de código es un paso más cerca de convertir tus pensamientos en realidad.",
+    "Bienvenido al emocionante viaje de la programación, donde la creatividad se encuentra con el potencial ilimitado de la tecnología"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

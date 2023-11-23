@@ -9,7 +9,7 @@ import '../../../../Styles/pCursos.css';
 import { Link } from 'react-router-dom';
 import '../../../../Styles/btn-back.css';
 import '../../../../Styles/text-content.css';
-import Imagen from '../../../../img/generales/Logo EquidApp.png';
+import ContenidoRobotica from './ContenidoRobotica'
 
 
 function Ingenieria() {
@@ -31,19 +31,11 @@ function Ingenieria() {
           <p></p><p></p>
         </div>
 
-        <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
-          <div className="text-center text-content p-4">
-            <p>
-              En este campo vanguardista, la creatividad y la tecnología convergen para dar vida a máquinas inteligentes y autónomas. <br></br>
-              La Robótica es mucho más que simples robots; es una ventana al futuro donde la ingeniería, la inteligencia artificial y la automatización se fusionan. <br></br>
-              Explorarás la creación de dispositivos capaces de moverse, interactuar y tomar decisiones por sí mismos.          </p>
-          </div>
-          <div className="text-center">
-            <img src={Imagen} alt="Biologia" className="img-fluid h-50" />
-          </div>
+        <div className="mt-3 container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+          <ContenidoRobotica />
         </div>
         
-        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5'>
+        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5 pt-4'>
           <>
             <button class="game-button mb-2" onClick={() => setShowModalVideo(true)}>
               <svg class="play-icon" viewBox="0 0 40 40">

@@ -3,14 +3,15 @@ import '../../../../Styles/pCursos.css';
 import "../../../../Styles/btn-back.css";
 
 import Mascota from '../../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesBiologia'
+import ImagenesIntro from './ImagenesRobotica'
 
 
 
 function ContenidoRobotica() {
   const paragraphs = [
-    "Los biólogos estudian la vida a diferentes niveles, desde las células individuales, pasando por los organismos, hasta la biósfera completa del planeta Tierra.",
-    "Ven y aprende más acerca de los temas fundamentales de la biología."
+    "En este campo vanguardista, la creatividad y la tecnología convergen para dar vida a máquinas inteligentes y autónomas.",
+    "La Robótica es mucho más que simples robots; es una ventana al futuro donde la ingeniería, la inteligencia artificial y la automatización se fusionan.",
+    "Explorarás la creación de dispositivos capaces de moverse, interactuar y tomar decisiones por sí mismos."
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
