@@ -237,7 +237,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
 
         <div className='score-section text-center'>
 
-          <p className="h4">Ya has desbloqueado la medalla de Stem. ¡Felicidades!</p>
+          <p>Ya has desbloqueado la medalla de Stem. ¡Felicidades!</p>
 
           <img src={Insignia} alt="Medalla de Stem" className="img-fluid" />
 
@@ -256,7 +256,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
 
   return (
 
-    <div className='container mt-5'>
+    <div className='quiz'>
 
       {showScore ? (
 
@@ -266,7 +266,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
 
             <div>
 
-              <p className="h4">¡Felicidades! Medalla desbloqueada.</p>
+              <p>¡Felicidades! Medalla desbloqueada.</p>
 
               <img src={Insignia} alt="Medalla" className="img-fluid" />
 
@@ -276,7 +276,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
 
             <>
 
-              <p className="h4">Has acertado {score} de {randomQuestions.length} preguntas.</p>
+              <p>Has acertado {score} de {randomQuestions.length} preguntas.</p>
 
               <button className="btn btn-purple" onClick={resetQuiz}>Reintentar</button>
 
@@ -290,15 +290,15 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
 
         <>
 
-          <div className='question-section mb-4'>
+          <div className='question-section'>
 
-            <div className='question-count'>
+            <div className='card-body'>
 
-              <span className="h3">Pregunta {currentQuestion + 1}</span>/{randomQuestions.length}
+              <span>Pregunta {currentQuestion + 1}</span>/{randomQuestions.length}
 
             </div>
 
-            <div className='question-text h5'>
+            <div className='card-body'>
 
               {randomQuestions[currentQuestion]?.questionText}
 
@@ -325,11 +325,11 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
 
           <div className='answer-section'>
 
-            <ul className="list-group mt-2">
+            <ul>
 
               {randomQuestions[currentQuestion]?.answerOptions.map((answerOption, index) => (
 
-                <li key={index} className="list-group-item">
+                <li key={index}>
 
                   <button
 
@@ -337,7 +337,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
 
                     disabled={selectedAnswer !== null}
 
-                    className={`btn ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn-primary'}`}
+                    className={`btn ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn btn-purple'}`}
 
                   >
 
