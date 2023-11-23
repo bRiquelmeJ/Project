@@ -230,39 +230,39 @@ function QuizzCiencia({ setFeedbackMessage, setMascotaImage }) {
 
   // Componente del cuestionario
   return (
-    <div className='container mt-5'>
+    <div className='quiz'>
       {showScore ? (
-        <div className='score-section text-center'>
+        <div className='score-section'>
           {showMedalModal ? (
             <div>
-              <p className="h4">¡Felicidades! Medalla desbloqueada.</p>
+              <p>¡Felicidades! Medalla desbloqueada.</p>
               <img src={Insignia} alt="Medalla" className="img-fluid" />
             </div>
           ) : (
             <>
-              <p className="h4">Has acertado {score} de {randomQuestions.length} preguntas.</p>
+              <p>Has acertado {score} de {randomQuestions.length} preguntas.</p>
               <button className="btn btn-purple" onClick={resetQuiz}>Reintentar</button>
             </>
           )}
         </div>
       ) : (
         <>
-          <div className='question-section mb-4'>
-            <div className='question-count'>
-              <span className="h3">Pregunta {currentQuestion + 1}</span>/{randomQuestions.length}
+          <div className='question-section'>
+            <div className='card-body'>
+              <span>Pregunta {currentQuestion + 1}</span>/{randomQuestions.length}
             </div>
-            <div className='question-text h5'>
+            <div className='card-body'>
               {randomQuestions[currentQuestion]?.questionText}
             </div>
           </div>
           <div className='answer-section'>
-            <ul className="list-group mt-2">
+            <ul>
               {randomQuestions[currentQuestion]?.answerOptions.map((answerOption, index) => (
-                <li key={index} className="list-group-item">
+                <li key={index}>
                   <button
                     onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)}
                     disabled={selectedAnswer !== null}
-                    className={`btn ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn-primary'}`}
+                    className={`btn ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn btn-purple'}`}
                   >
                     {answerOption.answerText}
                   </button>
