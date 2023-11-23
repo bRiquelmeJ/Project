@@ -62,35 +62,32 @@ export const AuthProvider = ({ children }) => {
     }, [errors]);
 
     useEffect(() => {
-        async function checkLogin() {
-            const cookies = Cookies.get();
-
-            if (!cookies.token) {
-                setIsAuthenticated(false);
-                setLoading(false);
-                return setUser(null);
-            }
+        const checkLogin = async () => {
+          const token = Cookies.get('token');
+          if (token) {
             try {
-                const res = await verifyTokenRequest(cookies.token);
-                if (!res.data) {
-                    setIsAuthenticated(false);
-                    setLoading(false);
-                    return;
-                }
-
+              const res = await verifyTokenRequest(token);
+              if (res.data._id) {
                 setIsAuthenticated(true);
-                setUser(res.data);
-                setUserId(res.data._id); // Establecer el userId
-                setLoading(false);
+                setUser(res.data); // Aquí establecemos el objeto de usuario completo
+                setUserId(res.data._id); // Y también guardamos el userId por separado
+              } else {
+                setIsAuthenticated(false);
+                setUser(null);
+                setUserId(null);
+              }
             } catch (error) {
-                setIsAuthenticated(false)
-                setUser(null)
-                setLoading(false);
+              setIsAuthenticated(false);
+              setUser(null);
+              setUserId(null);
             }
-        }
-
+            setLoading(false);
+          }
+        };
+    
         checkLogin();
-    }, []);
+      }, []);
+    
 
     return (
         <AuthContext.Provider

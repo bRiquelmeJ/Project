@@ -44,12 +44,17 @@ export const updateMedallas = async (userId, nombreMedalla, token) => {
             headers: { Authorization: `Bearer ${token}` }
         };
 
+        // Asegúrate de que la clave en el cuerpo de la solicitud coincida con lo que espera tu backend.
+        // Tu backend espera 'id' y 'nombreMedalla'.
         const body = {
+            id: userId, // Aquí estaba el error, debe ser 'id' según tu controlador backend
             nombreMedalla: nombreMedalla,
-            obtenida: true
+            // obtenida: true // Esta línea no es necesaria si tu backend establece 'obtenida' a true por defecto
         };
 
+        // La URL de la API debe coincidir con la definida en tus rutas backend.
         const response = await axios.put(`/medals/${userId}`, body, config);
+        console.log('Medalla actualizada con éxito:', response.data);
         return response.data;
     } catch (error) {
         console.error('Error al actualizar la medalla:', error.response ? error.response.data : error);
