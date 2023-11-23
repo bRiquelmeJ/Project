@@ -2,11 +2,8 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext'
-
 import { MedalsProvider } from "./context/medalsContext.jsx";
-
 import { pdfjs } from 'react-pdf';
-
 import Navbar from "./components/Navbar";
 import Registro from "./components/Registro";
 import Home from "./components/Home";
