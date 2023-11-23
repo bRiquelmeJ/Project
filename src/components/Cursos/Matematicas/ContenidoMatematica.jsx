@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import '../../../../Styles/pCursos.css';
-import "../../../../Styles/btn-back.css";
+import '../../../Styles/pCursos.css';
+import "../../../Styles/btn-back.css";
 
-import Mascota from '../../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesBiologia'
+import Mascota from '../../../img/generales/Logo EquidApp.png';
+import ImagenesIntro from './ImagenesMatematica'
 
 
 
 function ContenidoMatematica() {
   const paragraphs = [
-    "Los biólogos estudian la vida a diferentes niveles, desde las células individuales, pasando por los organismos, hasta la biósfera completa del planeta Tierra.",
-    "Ven y aprende más acerca de los temas fundamentales de la biología."
+    "Los matemáticos exploran el fascinante mundo de los números y las formas", 
+    "Desde problemas simples hasta complejas ecuaciones y patrones en la naturaleza.", 
+    "Únete y descubre más acerca de los conceptos fundamentales de las matemáticas, desde la aritmética básica hasta las complejas fórmulas que ayudan a entender el universo que nos rodea.",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import '../../../Styles/btn-back.css';
 import '../../../Styles/pCursos.css';
 import '../../../Styles/text-content.css';
-import Imagen from '../../../img/generales/Logo EquidApp.png';
 import "../../../Styles/MatematicasCSS.css"
+import ContenidoMatematica from "./ContenidoMatematica"
 
 const MatematicasIntro = () => {
   const [showModalVideo, setShowModalVideo] = useState(false);
@@ -24,21 +24,14 @@ const MatematicasIntro = () => {
           <Link to="/Matematicas" className="text-start btn btn-back">
             Volver atrás
           </Link>
-          <h2 className="perfilFont">Bienvenid@ a Matemáticas</h2>
+          <h2 className="perfilFont">Bienvenid@ a </h2>
           <p></p><p></p>
         </div>
 
-        <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
-          <div className="text-center text-content p-4">
-            <p>
-              Los matemáticos exploran el fascinante mundo de los números y las formas, desde problemas simples hasta complejas ecuaciones y patrones en la naturaleza. Únete y descubre más acerca de los conceptos fundamentales de las matemáticas, desde la aritmética básica hasta las complejas fórmulas que ayudan a entender el universo que nos rodea.
-            </p>
-          </div>
-          <div className="text-center">
-            <img src={Imagen} alt="Biologia" className="img-fluid" />
-          </div>
+        <div className="mt-3 container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+          <ContenidoMatematica />
         </div>
-        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5'>
+        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5 pt-4'>
           <>
             <button class="game-button mb-2" onClick={() => setShowModalVideo(true)}>
               <svg class="play-icon" viewBox="0 0 40 40">

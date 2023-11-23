@@ -3,14 +3,15 @@ import '../../../../Styles/pCursos.css';
 import "../../../../Styles/btn-back.css";
 
 import Mascota from '../../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesBiologia'
+import ImagenesIntro from './ImagenesQuimica'
 
 
 
 function ContenidoQuimica() {
   const paragraphs = [
-    "Los biólogos estudian la vida a diferentes niveles, desde las células individuales, pasando por los organismos, hasta la biósfera completa del planeta Tierra.",
-    "Ven y aprende más acerca de los temas fundamentales de la biología."
+    " La química explora la composición y transformación de la materia.",
+    " A través de experimentos y teorías, desentraña cómo interactúan las sustancias, proporcionando las bases para avances científicos y tecnológicos clave.",
+    " En su esencia, la química busca entender la naturaleza íntima de la materia y las fuerzas que la rigen en el universo."
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

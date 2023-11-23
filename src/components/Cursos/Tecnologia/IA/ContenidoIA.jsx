@@ -3,14 +3,15 @@ import '../../../../Styles/pCursos.css';
 import "../../../../Styles/btn-back.css";
 
 import Mascota from '../../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesBiologia'
+import ImagenesIntro from './ImagenesIA'
 
 
 
 function ContenidoIA() {
   const paragraphs = [
-    "Los biólogos estudian la vida a diferentes niveles, desde las células individuales, pasando por los organismos, hasta la biósfera completa del planeta Tierra.",
-    "Ven y aprende más acerca de los temas fundamentales de la biología."
+    "Sumérgete en el apasionante mundo de la inteligencia artificial, desentrañando los secretos de cómo las máquinas pueden reconocer patrones en datos, tomar decisiones autónomas y hasta entender el lenguaje humano.",
+    "Explora cómo la inteligencia artificial puede transformar nuestra forma de trabajar y vivir, desde asistentes virtuales hasta vehículos autónomos.", 
+    "¡Únete y descubre los asombrosos poderes de las IAs"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -24,6 +24,8 @@ function Biologia() {
           <Link to="/Ciencia" className="text-start btn btn-back">
             Volver atrás
           </Link>
+          <h2 className="perfilFont">Bienvenid@ a </h2>
+          <p></p><p></p>
         </div>
 
         <div className="mt-3 container-fluid d-md-flex flex-md-row align-items-center justify-content-center">

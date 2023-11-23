@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 import '../../../../Styles/btn-back.css';
 import '../../../../Styles/text-content.css';
 import '../../../../Styles/pCursos.css';
-import Imagen from '../../../../img/generales/Logo EquidApp.png';
+import ContenidoIA from "./ContenidoIA"
+
 
 
 function IA() {
@@ -28,22 +29,15 @@ function IA() {
           <Link to="/Tecnologia" className="text-start btn btn-back">
             Volver atrás
           </Link>
-          <h2 className="perfilFont">Bienvenid@ a Inteligencia Artificial</h2>
+          <h2 className="perfilFont">Bienvenid@ a </h2>
           <p></p><p></p>
         </div>
 
-        <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
-          <div className="text-center text-content p-4">
-          <p>
-          Sumérgete en el apasionante mundo de la inteligencia artificial, desentrañando los secretos de cómo las máquinas pueden reconocer patrones en datos, tomar decisiones autónomas y hasta entender el lenguaje humano. Explora cómo la inteligencia artificial puede transformar nuestra forma de trabajar y vivir, desde asistentes virtuales hasta vehículos autónomos. ¡Únete y descubre los asombrosos poderes de las IAs
-          </p>
-        </div>
-        <div className="text-center">
-            <img src={Imagen} alt="Biologia" className="img-fluid" />
-          </div>
+        <div className="mt-3 container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+          <ContenidoIA />
         </div>
 
-        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5'>
+        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5 pt-4'>
         <>
           <button class="game-button mb-2" onClick={() => setShowModalVideo(true)}>
           <svg class="play-icon" viewBox="0 0 40 40">
