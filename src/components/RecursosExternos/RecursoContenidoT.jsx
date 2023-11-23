@@ -20,7 +20,7 @@ export default function ModalContentT({ onClose }) {
         <div className="modal-1">
         <div class="card-group">
             
-            <div className="card1 cardT" style={{ width: '100%', maxWidth: '18rem' }} onClick={toFreeCodeCamp}>
+            <div className="card1 cardT" style={{ width: '100%', maxWidth: '13rem' }} onClick={toFreeCodeCamp}>
             <img src={FreeCodeCamp} 
                 alt="FreeCodeCamp"
                 style={{ cursor: "pointer" }}
