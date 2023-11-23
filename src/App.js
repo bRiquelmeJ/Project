@@ -2,7 +2,11 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext'
+
 import { MedalsProvider } from "./context/medalsContext.jsx";
+
+import { pdfjs } from 'react-pdf';
+
 import Navbar from "./components/Navbar";
 import Registro from "./components/Registro";
 import Home from "./components/Home";
@@ -14,25 +18,31 @@ import MatematicasIntro from "./components/Cursos/Matematicas/MatematicasIntro";
 import MujeresSTEM from "./components/Cursos/MujeresSTEM/Mujeres"
 import MujeresBio from "./components/Cursos/MujeresSTEM/MujeresBio"
 import Ciencia from "./components/Cursos/Ciencias/Ciencia"
-import Biologia from "./components/Cursos/Ciencias/Biologia"
-import Fisica from "./components/Cursos/Ciencias/Fisica"
-import Quimica from "./components/Cursos/Ciencias/Quimica"
+import Biologia from "./components/Cursos/Ciencias/Biologia/Biologia"
+import Fisica from "./components/Cursos/Ciencias/Fisica/Fisica"
+import Quimica from "./components/Cursos/Ciencias/Quimica/Quimica.jsx"
 import Tecnologia from "./components/Cursos/Tecnologia/Tecnologia"
 import Ingenieria from "./components/Cursos/Ingenieria/Ingenieria"
-import Computacion from "./components/Cursos/Ingenieria/Computacion"
-import Robotica from "./components/Cursos/Ingenieria/Robotica"
-import Programacion from "./components/Cursos/Tecnologia/Programacion"
-import IA from "./components/Cursos/Tecnologia/IA"
-import CienciaDeDatos from "./components/Cursos/Tecnologia/CienciaDeDatos"
+import Computacion from "./components/Cursos/Ingenieria/Computacion/Computacion.jsx"
+import Robotica from "./components/Cursos/Ingenieria/Robotica/Robotica.jsx"
+import Programacion from "./components/Cursos/Tecnologia/Programacion/Programacion.jsx"
+import IA from "./components/Cursos/Tecnologia/IA/IA.jsx"
+import CienciaDeDatos from "./components/Cursos/Tecnologia/CDD/CienciaDeDatos"
 import CursoIntro from "./components/Cursos/CursoIntro";
 import IntroStem from "./components/Cursos/STEM/IntroStem";
 import IngeIntro from "./components/Cursos/Ingenieria/IngeIntro";
 import CienciaIntro from "./components/Cursos/Ciencias/QuizzCiencia/CienciaIntro";
 import MatematicasIntroQuizz from "./components/Cursos/Matematicas/QuizzMate/MateIntro";
 import TecIntroQuizz from "./components/Cursos/Tecnologia/QuizzTec/TecIntro";
-import Ajustes from "./components/Ajustes.jsx"
+
 
 import RutasProtegidas from './RutasProtegidas.jsx'
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url,
+).toString() 
+
 
 function App() {
   // TODO: aca de sebe meter el context provider 
@@ -75,7 +85,7 @@ function App() {
                 <Route path="/MujeresSTEM" element = {<MujeresSTEM />}/>
                 <Route path="/IntroStem" element = {<IntroStem />}/>
                 <Route path="/MujeresBio" element = {<MujeresBio />}/>
-                <Route path="/Ajustes" element = {<Ajustes />}/>
+              
               
               </Route>
               </Routes>

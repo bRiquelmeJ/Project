@@ -91,6 +91,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
     setRandomQuestions(shuffledQuestions);
   }, []);
 
+
   // Manejador de respuestas
   const handleAnswerButtonClick = (isCorrect, answerText) => {
     setSelectedAnswer(answerText);

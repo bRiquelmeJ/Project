@@ -8,6 +8,7 @@ import IA from '../../../img/generales/IA.png';
 import CienciaDatos from '../../../img/generales/CIENCIADATOS.png';
 
 
+
 function Tecnologia() {
 
 return (

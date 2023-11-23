@@ -5,7 +5,7 @@ import '../../Styles/pCursos.css';
 import { Link } from 'react-router-dom';
 import Quiz from '../../img/iconos/Quiz.svg';
 import Recursos from '../../img/iconos/Recursos.svg';
-import Ajustes from '../../img/iconos/Ajustes.png';
+
 import Medal from './Avatar/Medallas/Medal';
 import CIENCIA from '../../img/medallas/CIENCIA.png';
 import INGENIERIA from '../../img/medallas/Ingenieria.png';
@@ -88,11 +88,8 @@ function Sidebar() {
                 <button type="button" className="btn" onClick={() => setAvatarModalOpen(true)}>
                     <img className='icons-btn' src={CambioImagen} alt="Cambio Imagen" />
                 </button>
-                <button type="button" className="btn">
-                    <Link to="/ajustes">
-                        <img className='col icons-btn' src={Ajustes} alt="Ajustes" />
-                    </Link>
-                </button>
+
+
                 <AvatarModal
                     isOpen={isAvatarModalOpen}
                     onClose={() => setAvatarModalOpen(false)}
