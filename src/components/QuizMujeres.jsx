@@ -164,18 +164,18 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
             </div>
           </div>
           <div className='answer-section'>
-            <ul className="list-group mt-2">
-              {randomQuestions[currentQuestion]?.answerOptions.map((answerOption, index) => (
-                <li key={index} className="list-group-item">
-                  <button
-                    onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)}
-                    disabled={selectedAnswer !== null}
-                    className={`btn ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn-primary'}`}
-                  >
-                    {answerOption.answerText}
-                  </button>
-                </li>
-              ))}
+            <ul className="purp -h100">
+            {randomQuestions[currentQuestion]?.answerOptions.map((answerOption, index) => (
+  <li key={index} className="list-group-item">
+    <button
+      onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)}
+      disabled={selectedAnswer !== null}
+      className={`btn m-2 w-100 ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn btn-purple'}`}
+    >
+      {answerOption.answerText}
+    </button>
+  </li>
+))}
             </ul>
           </div>
         </>
