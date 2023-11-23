@@ -61,3 +61,19 @@ export const updateMedallas = async (userId, nombreMedalla, token) => {
         throw error;
     }
 };
+
+export const getMedallas = async (userId, token) => {
+    try {
+        const response = await axios.get(`/medals/${userId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        console.log(response.data); // Imprime los datos recibidos
+        return response;
+    } catch (error) {
+        console.error('Error al obtener las medallas: ', error.response ? error.response.data : error);
+        throw error;
+    }
+}
+
