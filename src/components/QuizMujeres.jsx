@@ -130,7 +130,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
     return (
       <div className='container mt-5'>
         <div className='score-section text-center'>
-          <p className="h4">Ya has desbloqueado la medalla de Stem. ¡Felicidades!</p>
+          <p>Ya has desbloqueado la medalla de Stem. ¡Felicidades!</p>
           <img src={Insignia} alt="Medalla de Stem" className="img-fluid" />
         </div>
       </div>
@@ -140,7 +140,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
   return (
     <div className='container mt-5'>
       {showScore ? (
-        <div className='score-section'>
+        <div>
           {showMedalModal ? (
             <div>
               <p>¡Felicidades! Medalla desbloqueada.</p>
