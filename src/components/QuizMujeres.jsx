@@ -76,7 +76,6 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
   useEffect(() => {
     if (medals[MEDAL_INDEX]) {
       setShowScore(true);
-      setFeedbackMessage("Explora otras secciones para seguir aprendiendo y desbloqueando medallas.");
       setMascotaImage(MascotaFeliz);
     }
   }, [medals, MEDAL_INDEX, setFeedbackMessage, setMascotaImage]);
