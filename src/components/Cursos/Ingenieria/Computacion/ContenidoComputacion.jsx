@@ -3,14 +3,15 @@ import '../../../../Styles/pCursos.css';
 import "../../../../Styles/btn-back.css";
 
 import Mascota from '../../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesBiologia'
+import ImagenesIntro from './ImagenesComputacion'
 
 
 
 function ContenidoComputacion() {
   const paragraphs = [
-    "Los biólogos estudian la vida a diferentes niveles, desde las células individuales, pasando por los organismos, hasta la biósfera completa del planeta Tierra.",
-    "Ven y aprende más acerca de los temas fundamentales de la biología."
+    "Los expertos en computación exploran el fascinante mundo de las máquinas y la información a diferentes niveles.", 
+    "Desde el código en programas individuales hasta la gestión de sistemas complejos en toda la red.",
+    "Ven y aprende más de lo fundamental en la computación."
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

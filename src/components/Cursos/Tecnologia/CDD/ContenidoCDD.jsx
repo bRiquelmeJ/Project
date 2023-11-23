@@ -3,14 +3,15 @@ import '../../../../Styles/pCursos.css';
 import "../../../../Styles/btn-back.css";
 
 import Mascota from '../../../../img/generales/Logo EquidApp.png';
-import ImagenesIntro from './ImagenesBiologia'
+import ImagenesIntro from './ImagenesCDD'
 
 
 
 function ContenidoCDD() {
   const paragraphs = [
-    "Los biólogos estudian la vida a diferentes niveles, desde las células individuales, pasando por los organismos, hasta la biósfera completa del planeta Tierra.",
-    "Ven y aprende más acerca de los temas fundamentales de la biología."
+    "La Ciencia de Datos, un campo fascinante e interdisciplinario, se erige como la brújula que guía la era digital.",
+    "En su esencia, es la búsqueda de conocimiento a través del análisis de datos, aprovechando información cruda para desvelar patrones, tendencias y revelaciones que impulsan la toma de decisiones",
+    "¡Te invitamos a estudiar análisis de datos y desatar el potencial de la información!"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

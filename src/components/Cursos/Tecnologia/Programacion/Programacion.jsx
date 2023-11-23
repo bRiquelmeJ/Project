@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import '../../../../Styles/btn-back.css';
 import '../../../../Styles/text-content.css';
 import '../../../../Styles/pCursos.css';
-import Imagen from '../../../../img/generales/Logo EquidApp.png';
+import ContenidoProgramacion from "./ContenidoProgramacion"
 
 function Programacion() {
   const [showModalVideo, setShowModalVideo] = useState(false);
@@ -26,22 +26,15 @@ function Programacion() {
           <Link to="/Tecnologia" className="text-start btn btn-back">
             Volver atrás
           </Link>
-          <h2 className="perfilFont">Bienvenid@ a Programación</h2>
+          <h2 className="perfilFont">Bienvenid@ a</h2>
           <p></p><p></p>
         </div>
 
-        <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
-          <div className="text-center text-content p-4">
-          <p>
-          La programación es el arte de dar vida a tus ideas en el mundo digital. Es como aprender un nuevo idioma para crear aplicaciones, juegos y soluciones innovadoras. Cada línea de código es un paso más cerca de convertir tus pensamientos en realidad. Bienvenido al emocionante viaje de la programación, donde la creatividad se encuentra con el potencial ilimitado de la tecnología
-          </p>
-        </div>
-        <div>
-            <img src={Imagen} alt="Biologia" className="img-fluid" />
-          </div>
+        <div className="mt-3 container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+          <ContenidoProgramacion />
         </div>
 
-        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5'>
+        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5 pt-5'>
         <>
           <button class="game-button mb-2" onClick={() => setShowModalVideo(true)}>
           <svg class="play-icon" viewBox="0 0 40 40">

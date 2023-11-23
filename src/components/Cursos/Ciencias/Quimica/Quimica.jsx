@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import '../../../../Styles/btn-back.css';
 import '../../../../Styles/text-content.css';
 import Imagen from '../../../../img/generales/Logo EquidApp.png';
+import ContenidoQuimica from './ContenidoQuimica'
 
 function Quimica() {
     const [showModalVideo, setShowModalVideo] = useState(false);
@@ -24,27 +25,16 @@ function Quimica() {
                     <Link to="/Ciencia" className="text-start btn btn-back">
                         Volver atrás
                     </Link>
-                    <h2 className="perfilFont">Bienvenid@ a Química</h2>
+                    <h2 className="perfilFont">Bienvenid@ </h2>
                     <p></p><p></p>
                 </div>
 
 
-                <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
-                    <div className="text-center text-content p-4">
-                        <p>
-                            La química explora la composición y transformación de la materia. <br></br>
-
-                            A través de experimentos y teorías, desentraña cómo interactúan las sustancias, proporcionando las bases para avances científicos y tecnológicos clave. <br></br>
-
-                            En su esencia, la química busca entender la naturaleza íntima de la materia y las fuerzas que la rigen en el universo.
-                        </p>
-                    </div>
-                    <div className="text-center">
-                        <img src={Imagen} alt="Biologia" className="img-fluid h-50" />
-                    </div>
+                <div className="mt-3 container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+                    <ContenidoQuimica />
 
                 </div>
-                <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5'>
+                <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5 pt-4'>
                     <>
                         <button class="game-button mb-2" onClick={() => setShowModalVideo(true)}>
                             <svg class="play-icon" viewBox="0 0 40 40">

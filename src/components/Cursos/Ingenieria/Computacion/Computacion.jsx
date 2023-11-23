@@ -9,8 +9,7 @@ import '../../../../Styles/pCursos.css';
 import { Link } from 'react-router-dom';
 import '../../../../Styles/btn-back.css';
 import '../../../../Styles/text-content.css';
-import Imagen from '../../../../img/generales/Logo EquidApp.png';
-
+import ContenidoComputacion from "./ContenidoComputacion"
 
 function Ingenieria() {
   const [showModalVideo, setShowModalVideo] = useState(false);
@@ -26,21 +25,14 @@ function Ingenieria() {
           <Link to="/Ingenieria" className="text-start btn btn-back">
             Volver atrás
           </Link>
-          <h2 className="perfilFont">Bienvenid@ a Computación</h2>
+          <h2 className="perfilFont">Bienvenid@ a</h2>
           <p></p><p></p>
         </div>
 
-        <div className="mt-3 course-text container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
-          <div className="text-center text-content p-4">
-            <p>
-              Los expertos en computación exploran el fascinante mundo de las máquinas y la información a diferentes niveles, desde el código en programas individuales hasta la gestión de sistemas complejos en toda la red.
-            </p>
-          </div>
-          <div className="text-center">
-            <img src={Imagen} alt="Biologia" className="img-fluid h-50" />
-          </div>
+        <div className="mt-3 container-fluid d-md-flex flex-md-row align-items-center justify-content-center">
+          <ContenidoComputacion />
         </div>
-        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5'>
+        <div className='btn-group-horizontal d-flex flex-wrap justify-content-evenly mb-5 pt-4'>
           <>
             <button class="game-button mb-2" onClick={() => setShowModalVideo(true)}>
               <svg class="play-icon" viewBox="0 0 40 40">
