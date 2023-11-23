@@ -2,6 +2,9 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext'
+
+import { MedalsProvider } from "./context/medalsContext.jsx";
+
 import { pdfjs } from 'react-pdf';
 
 import Navbar from "./components/Navbar";
@@ -45,6 +48,7 @@ function App() {
   // TODO: aca de sebe meter el context provider 
   return (
     <AuthProvider>
+      <MedalsProvider>
       <div>
         <Router>
           <div>
@@ -56,7 +60,7 @@ function App() {
                 <Route path="/registrarse" element={<Registro />} />
                 <Route path="/login" element={<Login />} />
 
-              <Route element={<RutasProtegidas />}>
+                <Route element={ <RutasProtegidas /> }>
                 <Route path="/PlataformaCursos" element={<Pcursos />} />
                 <Route path="/recurso" element={<Recurso />} />
                 <Route path="/" element={<Pcursos />} />
@@ -89,6 +93,7 @@ function App() {
           </div>
         </Router>
       </div>
+      </MedalsProvider>
     </AuthProvider>
   );
 }

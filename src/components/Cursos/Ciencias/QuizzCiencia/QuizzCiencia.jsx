@@ -4,6 +4,13 @@ import MascotaTriste from "../../../../img/generales/Equidapp-Triste.png"
 import Modal from "../../../Cursos/Avatar/Medallas/Mmodal";
 import Medal from "../../../Cursos/Avatar/Medallas/Medal";
 import Insignia from "../../../../img/medallas/CIENCIA.png";
+import Cookies from 'js-cookie';
+
+// Importa la función updateMedallas
+import { fetchMedalsFromApi} from '../../../../api/auth'
+
+// Importa el contexto de autenticación
+import { useAuth } from '../../../../context/AuthContext';
 
 
 const questions = [
@@ -155,52 +162,52 @@ function QuizzCiencia({ setFeedbackMessage, setMascotaImage }) {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [randomQuestions, setRandomQuestions] = useState([]);
   const [showMedalModal, setShowMedalModal] = useState(false);
-  const [medals, setMedals] = useState(() => {
-    const savedMedals = localStorage.getItem('medalsUnlocked');
-    return savedMedals ? JSON.parse(savedMedals) : Array(6).fill(false);
-  });
+  const [quizAllowed, setQuizAllowed] = useState(false);
+  const { user, token } = useAuth();
 
-  const MEDAL_INDEX = 4;
-
-
-    useEffect(() => {
-      const randomizedQuestions = [...questions].sort(() => Math.random() - 0.5);
-      setRandomQuestions(randomizedQuestions);
-    }, []);
+  // Efecto para comprobar si la medalla de Ciencia está desbloqueada
   useEffect(() => {
-    if (medals[MEDAL_INDEX]) {
-      setShowScore(true);
-      setFeedbackMessage("Explora otras secciones para seguir aprendiendo y desbloqueando medallas.");
-      setMascotaImage(MascotaFeliz);
-    }
-  }, [medals, MEDAL_INDEX, setFeedbackMessage, setMascotaImage]);
+    const token = Cookies.get('token');
+    if (user?._id && token) {
+      fetchMedalsFromApi(user._id, token)
+        .then(response => {
+          const cienciaMedalUnlocked = response.data.some(medal => medal.nombre === 'CienciaM' && medal.obtenida);
+          setQuizAllowed(!cienciaMedalUnlocked);
+        })
+        .catch(error => {
+          console.error('Error al obtener las medallas:', error);
+          setQuizAllowed(true);
+        });
+  }
+  }, [user?._id, token]);
 
+  // Efecto para aleatorizar preguntas y limitar a 7
+  useEffect(() => {
+    const shuffledQuestions = [...questions].sort(() => 0.5 - Math.random()).slice(0, 7);
+    setRandomQuestions(shuffledQuestions);
+  }, []);
+
+  // Manejador de respuestas
   const handleAnswerButtonClick = (isCorrect, answerText) => {
-    if (selectedAnswer === null) {
-      setSelectedAnswer(answerText);
-      setFeedbackMessage(isCorrect ? "¡Correcto! ¡Muy bien hecho!" : "¡Incorrecto! Intenta de nuevo.");
-      setMascotaImage(isCorrect ? MascotaFeliz : MascotaTriste);
-      setScore(isCorrect ? score + 1 : score);
-  
+    setSelectedAnswer(answerText);
+    setFeedbackMessage(isCorrect ? "¡Correcto! ¡Muy bien hecho!" : "¡Incorrecto! Intenta de nuevo.");
+    setMascotaImage(isCorrect ? MascotaFeliz : MascotaTriste);
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < randomQuestions.length) {
       setTimeout(() => {
-        const nextQuestion = currentQuestion + 1;
-        if (nextQuestion < questions.length) {
-          setCurrentQuestion(nextQuestion);
-          setSelectedAnswer(null); // Reiniciar la selección de respuesta para la próxima pregunta
-        } else {
-          setShowScore(true);
-          if (score + 1 === questions.length) {
-            const updatedMedals = [...medals];
-            updatedMedals[MEDAL_INDEX] = true;
-            setMedals(updatedMedals);
-            localStorage.setItem('medalsUnlocked', JSON.stringify(updatedMedals));
-            setShowMedalModal(true);
-          }
-        }
-      }, 1000); // Esperar 1 segundo antes de pasar a la siguiente pregunta
+        setCurrentQuestion(nextQuestion);
+        setSelectedAnswer(null);
+      }, 1000);
+    } else {
+      setShowScore(true);
     }
   };
 
+  // Restablecer el cuestionario
   const resetQuiz = () => {
     setCurrentQuestion(0);
     setScore(0);
@@ -209,50 +216,61 @@ function QuizzCiencia({ setFeedbackMessage, setMascotaImage }) {
     setShowMedalModal(false);
   };
 
+  // Renderizado condicional si el quiz no está permitido
+  if (!quizAllowed) {
+    return (
+      <div className='container mt-5'>
+        <div className='score-section text-center'>
+          <p className="h4">Ya has desbloqueado la medalla de Ciencia. ¡Felicidades!</p>
+          <img src={Insignia} alt="Medalla de Ciencia" className="img-fluid" />
+        </div>
+      </div>
+    );
+  }
+
+  // Componente del cuestionario
   return (
     <div className='container mt-5'>
       {showScore ? (
         <div className='score-section text-center'>
-          {medals[MEDAL_INDEX] ? (
+          {showMedalModal ? (
             <div>
-              <p className="h4">¡Felicidades! Medalla desbloqueada..</p>
+              <p className="h4">¡Felicidades! Medalla desbloqueada.</p>
               <img src={Insignia} alt="Medalla" className="img-fluid" />
             </div>
           ) : (
             <>
-              <p className="h4">Has acertado {score} de {questions.length} preguntas.</p>
+              <p className="h4">Has acertado {score} de {randomQuestions.length} preguntas.</p>
               <button className="btn btn-purple" onClick={resetQuiz}>Reintentar</button>
             </>
           )}
         </div>
       ) : (
-        <div className='card quizzCard'>
-          <div className='card-body'>
-            <div className='question-section mb-4'>
-              <div className='question-count'>
-                <span className="h3">Pregunta {currentQuestion + 1}</span>/{questions.length}
-              </div>
-              <div className='question-text h5'>
-                {randomQuestions[currentQuestion] && randomQuestions[currentQuestion].questionText}
-              </div>
-              <div className='answer-section'>
-                <ul className="list-group mt-2">
-                  {randomQuestions[currentQuestion] && randomQuestions[currentQuestion].answerOptions.map((answerOption, index) => (
-                    <li key={index}>
-                      <button
-                        onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)}
-                        className={`btn btn-purple mt-2 w-100 shadow-hover ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : ''}`}
-                        disabled={selectedAnswer !== null}
-                      >
-                        {answerOption.answerText}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        <>
+          <div className='question-section mb-4'>
+            <div className='question-count'>
+              <span className="h3">Pregunta {currentQuestion + 1}</span>/{randomQuestions.length}
+            </div>
+            <div className='question-text h5'>
+              {randomQuestions[currentQuestion]?.questionText}
             </div>
           </div>
-        </div>
+          <div className='answer-section'>
+            <ul className="list-group mt-2">
+              {randomQuestions[currentQuestion]?.answerOptions.map((answerOption, index) => (
+                <li key={index} className="list-group-item">
+                  <button
+                    onClick={() => handleAnswerButtonClick(answerOption.isCorrect, answerOption.answerText)}
+                    disabled={selectedAnswer !== null}
+                    className={`btn ${selectedAnswer === answerOption.answerText ? (answerOption.isCorrect ? 'btn-success' : 'btn-danger') : 'btn-primary'}`}
+                  >
+                    {answerOption.answerText}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </>
       )}
 
       {showMedalModal && (
@@ -269,4 +287,5 @@ function QuizzCiencia({ setFeedbackMessage, setMascotaImage }) {
     </div>
   );
 }
+
 export default QuizzCiencia;
