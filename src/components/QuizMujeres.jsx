@@ -138,7 +138,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
   }
   // Componente del cuestionario
   return (
-    <div className='container mt-5'>
+    <div className='quiz container mt-5'>
       {showScore ? (
         <div>
           {showMedalModal ? (
@@ -157,7 +157,7 @@ function QuizIntroSTEM({ setFeedbackMessage, setMascotaImage }) {
         <>
           <div>
             <div className="card-body">
-              <span>Pregunta {currentQuestion + 1}</span>
+              <span >Pregunta {currentQuestion + 1}</span>
             </div>
             <div className='card-body'>
               {randomQuestions[currentQuestion]?.questionText}
