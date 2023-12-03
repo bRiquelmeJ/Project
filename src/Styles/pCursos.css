@@ -380,3 +380,6 @@ ul>li{
 .imagenintro {
   border-radius: 70px;
 }
+.card-body{
+  font-weight: bold;
+}
